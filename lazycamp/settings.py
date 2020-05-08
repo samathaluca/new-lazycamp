@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'home',
     'campspots',
+    'products',
+
 ]
 
 MIDDLEWARE = [
