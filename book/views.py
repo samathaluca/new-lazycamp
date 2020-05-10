@@ -7,18 +7,18 @@ def view_book(request):
 
     return render(request, 'book/book.html')
 
-# def add_to_book(request, item_id):
-#     """ Add the camp spot selection to book """
+def add_to_book(request, item_id):
+    """ Add the camp spot selection to book """
 
-#     quantity = int(request.POST.get('quantity'))
-#     redirect_url = request.POST.get('redirect_url')
-#     book = request.session.get('book', {})
+    stuff = int(request.POST.get('stuff'))
+    redirect_url = request.POST.get('redirect_url')
+    book = request.session.get('book', {})
 
-#     if item_id in list(book.keys()):
-#         book[item_id] += quantity
-#     else:
-#         book[item_id] = quantity
+    if item_id in list(book.keys()):
+        book[item_id] += stuff
+    else:
+        book[item_id] = stuff
 
-    # request.session['book'] = book
-    # print(request.session['book'])
-    # return redirect(redirect_url)
+    request.session['book'] = book
+    print(request.session['book'])
+    return redirect(redirect_url)

@@ -7,22 +7,22 @@ def book_contents(request):
     total = 0
     product_count = 0
 
-    if total < settings.FREE_DELIVERY_THRESHOLD:
-        delivery = total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE / 100)
-        free_delivery_delta = settings.FREE_DELIVERY_THRESHOLD - total
+    if total < settings.FREE_NIGHT_THRESHOLD:
+        night = total * Decimal(settings.STANDARD_NIGHT_PERCENTAGE / 100)
+        free_night_delta = settings.FREE_NIGHT_THRESHOLD - total
     else:
-        delivery = 0
-        free_delivery_delta = 0
+        night = 0
+        free_night_delta = 0
     
-    grand_total = delivery + total
+    grand_total = night + total
     
     context = {
         'book_items': book_items,
         'total': total,
         'product_count': product_count,
-        'delivery': delivery,
-        'free_delivery_delta': free_delivery_delta,
-        'free_delivery_threshold': settings.FREE_DELIVERY_THRESHOLD,
+        'night': night,
+        'free_night_delta': free_night_delta,
+        'free_night_threshold': settings.FREE_NIGHT_THRESHOLD,
         'grand_total': grand_total,
     }
 
