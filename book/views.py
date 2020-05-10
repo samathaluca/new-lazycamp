@@ -20,5 +20,4 @@ def add_to_book(request, item_id):
         book[item_id] = stuff
 
     request.session['book'] = book
-    print(request.session['book'])
     return redirect(redirect_url)
