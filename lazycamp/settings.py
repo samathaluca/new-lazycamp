@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'campspots',
     'products',
     'book',
+    'checkout',
 
 ]
 
