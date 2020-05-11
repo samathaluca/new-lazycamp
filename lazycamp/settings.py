@@ -67,6 +67,8 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'lazycamp.urls'
 
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -84,6 +86,10 @@ TEMPLATES = [
                 'django.template.context_processors.media',
                 'book.contexts.book_contents',
             ],
+            'builtins': [
+                'crispy_forms.templatetags.crispy_forms_tags',
+                'crispy_forms.templatetags.crispy_forms_field',
+            ]
         },
     },
 ]
