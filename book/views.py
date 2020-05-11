@@ -12,12 +12,24 @@ def add_to_book(request, item_id):
 
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
+    size = None
+    if 'product_size' in request.POST:
+        size = request.POST['product_size']
     book = request.session.get('book', {})
 
-    if item_id in list(book.keys()):
-        book[item_id] += quantity
+    if size:
+        if item_id in list(book.keys()):
+            if size in book[item_id]['items_by_size'].keys():
+                book[item_id]['items_by_size'][size] += quantity
+            else:
+                book[item_id]['items_by_size'][size] = quantity
+        else:
+            book[item_id] = {'items_by_size': {size: quantity}}
     else:
-        book[item_id] = quantity
+        if item_id in list(book.keys()):
+            book[item_id] += quantity
+        else:
+            book[item_id] = quantity
 
     request.session['book'] = book
     return redirect(redirect_url)
