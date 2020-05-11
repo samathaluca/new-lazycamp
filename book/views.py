@@ -10,14 +10,14 @@ def view_book(request):
 def add_to_book(request, item_id):
     """ Add the camp spot selection to book """
 
-    stuff = int(request.POST.get('stuff'))
+    quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
     book = request.session.get('book', {})
 
     if item_id in list(book.keys()):
-        book[item_id] += stuff
+        book[item_id] += quantity
     else:
-        book[item_id] = stuff
+        book[item_id] = quantity
 
     request.session['book'] = book
     return redirect(redirect_url)

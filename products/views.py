@@ -69,7 +69,7 @@ def product_detail(request, product_id):
     }
 
     return render(request, 'products/product_detail.html', context)
-    
+
 # https://docs.djangoproject.com/en/3.0/topics/db/queries/
 
 # By reading through the queries portion of the Django documentation.
