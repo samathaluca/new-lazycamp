@@ -72,7 +72,7 @@ def checkout(request):
                                 order=order,
                                 product=product,
                                 quantity=quantity,
-                                pitch_size=size,
+                                pitch_sizes=size,
                             )
                             order_line_item.save()
                 except Product.DoesNotExist:
