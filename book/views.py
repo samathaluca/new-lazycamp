@@ -15,16 +15,14 @@ def view_book(request):
 def add_to_book(request, item_id):
     """ Add a booking """
 
-    # product = get_object_or_404(Product, pk=item_id)
-    product = Product.objects.get(pk=item_id)
+    product = get_object_or_404(Product, pk=item_id)
+    # product = Product.objects.get(pk=item_id)
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
     size = None
-
-    if 'product_size' in request.POST:
-        size = request.POST['product_size']
+    if 'pitch_sizes' in request.POST:
+        size = request.POST['pitch_sizes']
     book = request.session.get('book', {})
-    
     if size:
         if item_id in list(book.keys()):
             if size in book[item_id]['items_by_size'].keys():
@@ -46,15 +44,15 @@ def add_to_book(request, item_id):
 
     request.session['book'] = book
     return redirect(redirect_url)
-    
+
 
 def adjust_book(request, item_id):
     """Adjust the quantity of the specified product to the specified amount"""
     product = get_object_or_404(Product, pk=item_id)
     quantity = int(request.POST.get('quantity'))
     size = None
-    if 'product_size' in request.POST:
-        size = request.POST['product_size']
+    if 'pitch_sizes' in request.POST:
+        size = request.POST['pitch_sizes']
     book = request.session.get('book', {})
 
     if size:
@@ -85,8 +83,8 @@ def remove_from_book(request, item_id):
     try:
         product = get_object_or_404(Product, pk=item_id)
         size = None
-        if 'product_size' in request.POST:
-            size = request.POST['product_size']
+        if 'pitch_sizes' in request.POST:
+            size = request.POST['pitch_sizes']
         book = request.session.get('book', {})
 
         if size:

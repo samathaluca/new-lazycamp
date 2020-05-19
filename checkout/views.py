@@ -54,7 +54,7 @@ def checkout(request):
             order = order_form.save(commit=False)
             pid = request.POST.get('client_secret').split('_secret')[0]
             order.stripe_pid = pid
-            order.original_book = json.dumps(book)
+            # order.original_book = json.dumps(book)
             order.save()
             for item_id, item_data in book.items():
                 try:
