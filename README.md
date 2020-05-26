@@ -401,10 +401,22 @@ add at top import dj_database_url
 
 ALLOWED_HOSTS = [os.environ.get("C9_HOSTNAME"), 'localhost', 'lazycamp.herokuapp.com']
 
-plus add postgres dashboard
+plus provision postgres from dashboard
 
 
 added pip3 install dj_database_url abd psycho-binary
+
+add gunicorn
+
+add procfile to tell heroku to create a web dyno
+
+app was present but not running properly
+
+run show migrations then migrate
+
+python3 manage.py loaddata categories
+
+python3 manage.py loaddata products
 
 
 
