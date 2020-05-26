@@ -385,3 +385,26 @@ Directory Structure and File Naming, Version control, Testing implementation, Te
 --------
 
 Happy coding!
+
+newcreate appconnect to gitfound the correct rep and added.
+added auto deploy
+then added manual deploy 
+
+added secret key to config vars
+
+remember disable_collectstatic stopped build so added 
+
+the added postgres through resources tab at top and added in gitpod. 
+
+settings.py file
+add at top import dj_database_url
+
+ALLOWED_HOSTS = [os.environ.get("C9_HOSTNAME"), 'localhost', 'lazycamp.herokuapp.com']
+
+plus add postgres dashboard
+
+
+added pip3 install dj_database_url abd psycho-binary
+
+
+
