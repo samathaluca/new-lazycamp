@@ -100,7 +100,7 @@ def add_product(request):
 def edit_product(request, product_id):
     """ Edit a product in the store """
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry, only store owners can do that.')
+        messages.error(request, 'Sorry, only hosts can do that.')
         return redirect(reverse('home'))
 
     product = get_object_or_404(Product, pk=product_id)
@@ -113,13 +113,15 @@ def edit_product(request, product_id):
         else:
             messages.error(request, 'Failed to update product. Please ensure the form is valid.')
     else:
-        form = ProductForm(instance=product)
-        messages.info(request, f'You are editing {product.name}')
+        # messages.info(request, f'You are editing {product.name}')
 
-    template = 'products/edit_product.html'
-    context = {
-        'form': form,
-        'product': product,
+        form = ProductForm(instance=product)
+        
+
+        template = 'products/edit_product.html'
+        context = {
+            'form': form,
+            'product': product,
     }
 
     return render(request, template, context)
@@ -131,7 +133,7 @@ def delete_product(request, product_id):
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
-
+    # messages.info(request, f'You are editing {product.name}')
     product = get_object_or_404(Product, pk=product_id)
     product.delete()
     messages.success(request, 'Product deleted!')
