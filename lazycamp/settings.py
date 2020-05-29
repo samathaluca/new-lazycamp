@@ -184,40 +184,24 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-FREE_NIGHT_THRESHOLD = 40
-STANDARD_NIGHT_PERCENTAGE = 0
-
-
-# AWS_S3_OBJECT_PARAMETERS = {
-#     'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
-#     'CacheControl': 'max-age=94608000'
-# }
-
 if 'USE_AWS' in os.environ:
-
+    # Cache control
     AWS_S3_OBJECT_PARAMETERS = {
         'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
         'CacheControl': 'max-age=94608000',
     }
 
-
     # bucket config
     AWS_STORAGE_BUCKET_NAME = 'lazycamp'
     AWS_S3_REGION_NAME = 'eu-west-2'
-    AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
-    AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
+    AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+    AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
 
     # AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 
     AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
-
-
-
-
     STATICFILES_STORAGE = 'custom_storage.StaticStorage'
     STATICFILES_LOCATION = 'static'
-
-
     DEFAULT_FILE_STORAGE = 'custom_storage.MediaStorage'
     MEDIAFILES_LOCATION = 'media'
 
@@ -225,7 +209,9 @@ if 'USE_AWS' in os.environ:
     STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
 
-
+# Stripe
+FREE_NIGHT_THRESHOLD = 40
+STANDARD_NIGHT_PERCENTAGE = 0
 STRIPE_CURRENCY = 'usd'
 STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
 STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
@@ -245,9 +231,6 @@ EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS')
 DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
 
-
-
-
 # Provider specific settings
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
@@ -261,33 +244,3 @@ SOCIALACCOUNT_PROVIDERS = {
         }
     }
 }
-
-
-
-# DISABLE_COLLECTSTATIC =1
-
-# STATICFILES_LOCATION = 'static'
-# STATICFILES_STORAGE = 'custom_storage.StaticStorage'
-
-
-# STATIC_ROOT= os.path.join(BASE_DIR, 'static')
-# STATIC_URL = '/static/'
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, 'lazycamp/static')
-# ]
-
-
-
-# MEDIAFILES_LOCATION = 'media'
-# DEFAULT_FILE_STORAGE = 'custom_storage.MediaStorage'
-
-# # Media Folder Settings
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-# MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
-# # MEDIA_URL = '/media/'
-
-# STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE')
-# STRIPE_SECRET = os.getenv('STRIPE_SECRET')
-
-# MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
-
