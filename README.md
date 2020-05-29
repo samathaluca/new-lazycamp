@@ -1,6 +1,5 @@
 travis 
-
-[![Build Status](https://travis-ci.org/samathaluca/lazycamp.svg?branch=master)](https://travis-ci.org/samathaluca/lazycamp)
+[![Build Status](https://travis-ci.org/samathaluca/new-lazycamp.svg?branch=master)](https://travis-ci.org/samathaluca/new-lazycamp)
 
 Lazy camp - Last minute campspot booking app.
 Link to Milestone Project 4
