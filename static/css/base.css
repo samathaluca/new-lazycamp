@@ -71,8 +71,12 @@ body {
 }
 
 .bg-black {
-    background: rgb(73, 218, 97) !important;
+    background: rgb(218, 73, 170) !important;
 }
+
+/* .bg-green {
+    background: rgb(73, 218, 97) !important;
+} */
 
 .overlay {
 	height: 100%;
