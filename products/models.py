@@ -27,19 +27,8 @@ class Product(models.Model):
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
     is_available = models.BooleanField(default=False)
-
-
-class Campspots(Product):
     pitch_sizes = models.BooleanField(default=False, null=True, blank=True)
-    Ater_eight_Arrival = models.BooleanField(default=True)
-
-
-class Physical(Product):
     starter = models.BooleanField(default=True)
-
-    
-
-# class Events(Product):
 
     def __str__(self):
         return self.name
