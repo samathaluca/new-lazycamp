@@ -14,6 +14,7 @@ def all_products(request):
     """ A view to show all products, including sorting and search queries """
 
     products = Product.objects.all()
+    # stops errors when loading page as input fields will be empty
     query = None
     categories = None
     sort = None
@@ -33,17 +34,26 @@ def all_products(request):
                 if direction == 'desc':
                     sortkey = f'-{sortkey}'
             products = products.order_by(sortkey)
+# splits in to only products that contain searched for category(GET catergory)
+# may be useful to get pnly products that have is available ticked
+# for business users to control
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
             products = products.filter(category__name__in=categories)
+# convert list of strings of category names passed through the URL in to loist of actual
+# cat obj to access all their fields in template
+# see contect to find list of category objects called current categories
             categories = Category.objects.filter(name__in=categories)
-
+# search request, no input gives error message
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
                 messages.error(request,
                                "You didn't enter any search criteria!")
                 return redirect(reverse('products'))
+# pending search term is present in name or description it will be returned
+# maybe add category or postal district too
+# i makes it non specific for example silv will still return silver
             queries = Q(name__icontains=query) | Q(description__icontains=query)
             products = products.filter(queries)
 

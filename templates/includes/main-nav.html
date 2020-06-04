@@ -9,7 +9,7 @@
                 <a href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item ">By Rating</a>
                 <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item ">By Category</a>
                 <a href="{% url 'products' %}?sort=lateArrival&direction=asc" class="dropdown-item ">By Late Arrival</a>
-                <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
+                <a href="{% url 'products' %}" class="dropdown-item">All Camping</a>
             </div>
         </li>
 
@@ -18,14 +18,13 @@
                 Campspot/Pitches
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
-                <a href="" class="dropdown-item">Activewear &amp; Essentials</a>
-                <a href="" class="dropdown-item">Aberdeenshire (or the County of Aberdeen)</a>
-                <a href="" class="dropdown-item">Angus (or Forfarshire or the County of Forfar)</a>
-                <a href="" class="dropdown-item">Argyll (or Argyllshire)</a>
-                <a href="{% url 'products' %}?category=activewear,essentials" class="dropdown-item">Activewear &amp; Essentials</a>
-                <a href="{% url 'products' %}?category=jeans" class="dropdown-item">Jeans</a>
-                <a href="{% url 'products' %}?category=shirts" class="dropdown-item">Shirts</a>
-                <a href="{% url 'products' %}?category=activewear,essentials,jeans,shirts" class="dropdown-item">All Clothing</a>
+                <a href="{% url 'products' %}?category=woodland_forest" class="dropdown-item">Woods &amp; Forest</a>
+                <a href="{% url 'products' %}?category=river_lakeside_beach" class="dropdown-item">Beach, River or Lakeside</a>
+                <a href="{% url 'products' %}?category=nature_retreat" class="dropdown-item">Nature Retreat</a>
+                <a href="{% url 'products' %}?category=woodland_forest,river_lakeside_beach,nature_retreat" class="dropdown-item">All Country</a>
+                <a href="{% url 'products' %}?category=woodland_forest,river_lakeside_beach,nature_retreat" class="dropdown-item">All City</a>
+                <a href="{% url 'products' %}?category=electric,breakfast,wc_shower" class="dropdown-item">Comforts</a>
+            
             </div>
         </li>
 
