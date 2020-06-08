@@ -33,6 +33,12 @@ def cache_checkout_data(request):
 
 
 def checkout(request):
+# need to inject in to the method something like
+# lineitem = order_line_item.save()
+# lineitem.product.number_available -= quantity
+# lineitem.product.save()
+
+
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 

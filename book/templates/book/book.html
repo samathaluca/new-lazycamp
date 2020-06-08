@@ -80,6 +80,7 @@
                                                             </span>
                                                         </button>
                                                     </div>
+                                                    <input name="booking_date" type="date">
                                                     {% if item.product.pitch_sizes %}
                                                         <input type="hidden" name="product_size" value="{{ item.pitch_size }}">
                                                     {% endif %}
@@ -93,6 +94,7 @@
                                         <p class="my-0">£{{ item.product.price | calc_subtotal:item.quantity }}</p>
                                     </td>
                                 </tr>
+                                
                             {% endfor %}
                             <tr>
                                 <td colspan="5" class="pt-5 text-right">

@@ -67,8 +67,27 @@ class OrderLineItem(models.Model):
     order = models.ForeignKey(Order, null=False, blank=False, on_delete=models.CASCADE, related_name='lineitems')
     product = models.ForeignKey(Product, null=False, blank=False, on_delete=models.CASCADE)
     quantity = models.IntegerField(null=False, blank=False, default=0)
+    # booking_date = models.DateTimeField
     pitch_sizes = models.CharField(max_length=2, null=True, blank=True) # XS, S, M, L, XL
     lineitem_total = models.DecimalField(max_digits=6, decimal_places=2, null=False, blank=False, editable=False)
+
+
+    # def clean(self):
+
+
+    #     # Don't allow purchasing of more items than are in inventory
+
+
+    #     if self.quantity > self.product.number_available:
+
+
+    #         raise ValidationError(
+
+
+    #             _('There aren\'t enough items to fulfil this order.'))
+
+
+
 
     def save(self, *args, **kwargs):
         """

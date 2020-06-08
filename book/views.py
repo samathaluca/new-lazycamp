@@ -18,6 +18,8 @@ def add_to_book(request, item_id):
     product = get_object_or_404(Product, pk=item_id)
     # product = Product.objects.get(pk=item_id)
     quantity = int(request.POST.get('quantity'))
+    booking_date = request.POST.get('booking_date')
+    print(booking_date)
     redirect_url = request.POST.get('redirect_url')
     size = None
     if 'pitch_sizes' in request.POST:
