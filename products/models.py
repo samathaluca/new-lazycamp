@@ -28,5 +28,9 @@ class Product(models.Model):
     lateArrival = models.BooleanField(default=True)
     is_available = models.BooleanField(default=False)
 
+    # number_available = models.IntegerField(default=0)
+
+
+
     def __str__(self):
         return self.name

@@ -68,6 +68,40 @@ def all_products(request):
 
     return render(request, 'products/products.html', context)
 
+# def booking_date(): get from the datepicker:
+# products = Product.objects.get()
+# then iterate over each one querying the OrderLineItem in the database:
+# for product in products:
+#     orders = OrderLineItems.objeacts.filter(product=product).filter(booking_date=booking_date).count()
+#     if orders < 3:
+#         product.is_available = True
+#     else:
+#         priduct.is_available = False
+
+
+def product_date(request):
+    """ A view to show individual product details """
+
+    product = get_object_or_404(Product)
+
+    template = 'products/product_date.html'
+    context = {
+            # 'form': form,
+            'date': date,
+    }
+
+    return render(request, template, context)
+
+
+
+
+
+
+
+
+
+
+
 
 def product_detail(request, product_id):
     """ A view to show individual product details """

@@ -20,6 +20,26 @@ def book_contents(request):
                 'quantity': item_data,
                 'product': product,
                 })
+
+            #     elseif:
+            # product = get_object_or_404(Product, pk=item_id)
+            # for date, quantity in item_data['items_by_date'].items():
+            #     total += quantity * product.price
+            #     product_count += quantity
+            #     book_items.append({
+            #         'item_id': item_id,
+            #         'quantity': quantity,
+            #         'product': product,
+            #         'date': date,
+            #     })
+
+
+
+
+
+
+
+
         else:
             product = get_object_or_404(Product, pk=item_id)
             for size, quantity in item_data['items_by_size'].items():
