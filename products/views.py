@@ -138,7 +138,7 @@ def product_date(request):
         'current_sorting': current_sorting,
     }
 
-    return render(request, 'products/products.html', context)
+    return render(request, 'products/product_date.html', context)
 
 def add_date(request, item_id):
     """ Add a quantity of the specified product to the shopping bag """

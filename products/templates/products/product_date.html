@@ -1,12 +1,4 @@
-<!-- {% for product in products %}
-    {% if product.is_available %}
- -->
-<!-- have the date picker in a separate form, that submits to a view with the date from the form.
-In the view I would query the database for campsites, filtering out all campsites where the number of orderLineItems models connected to it for that booking_date is 3 (remember it's more than likely the OrderLineItem model that you'll need to save the booking_date as a field on.)
-Then the view generates a HTML page that displays campsites available on that day. -->
-
-  
-{% extends "base.html" %}
+ {% extends "base.html" %}
 {% load static %}
 
 {% block page_header %}
@@ -24,7 +16,7 @@ Then the view generates a HTML page that displays campsites available on that da
     <div class="container-fluid">
         <div class="row">
             <div class="col text-center mt-3">
-                <h2 class="logo-font">Products</h2>
+                <h2 class="logo-font">Choose preferred Date</h2>
 
                 <form class="form update-form" method="POST" action="{% url 'add_date'%}">
                     {% csrf_token %}
