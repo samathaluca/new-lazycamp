@@ -95,6 +95,7 @@ def product_date(request):
     """ A view to show all products, including datepicker sorting and search queries """
 
     products = Product.objects.all()
+    # filter is_available
     query = None
     categories = None
     sort = None
@@ -113,7 +114,7 @@ def product_date(request):
                 if direction == 'desc':
                     sortkey = f'-{sortkey}'
             products = products.order_by(sortkey)
-            
+
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
             products = products.filter(category__name__in=categories)
@@ -124,7 +125,7 @@ def product_date(request):
             if not query:
                 messages.error(request, "You didn't enter any search criteria!")
                 return redirect(reverse('products'))
-            
+
             queries = Q(name__icontains=query) | Q(description__icontains=query)
             products = products.filter(queries)
 
@@ -139,8 +140,61 @@ def product_date(request):
 
     return render(request, 'products/products.html', context)
 
+def add_date(request, item_id):
+    """ Add a quantity of the specified product to the shopping bag """
+
+    quantity = int(request.POST.get('quantity'))
+    redirect_url = request.POST.get('redirect_url')
+    date = request.session.get('date', {})
+
+    if item_id in list(date.keys()):
+        date[item_id] += quantity
+    else:
+        date[item_id] = quantity
+
+    request.session['date'] = date
+    return redirect(redirect_url)
+
+# def add_date(request, item_id):
+#     """ Add a booking """
+
+#     product = get_object_or_404(Product, pk=item_id)
 
 
+#     # product = Product.objects.get(pk=item_id)
+#     quantity = int(request.POST.get('quantity'))
+#     add_date = request.POST.get('add_date')
+#     print(add_date)
+#     # booking_date = request.POST.get('booking_date')
+#     # print(booking_date)
+#     redirect_url = request.POST.get('redirect_url')
+#     # number_available = None
+
+
+#     if 'number_available' in request.POST:
+#         free = request.POST['number_available']
+#     datepicker = request.session.get('product_datepicker', {})
+#     if free:
+#         if item_id in list(datepicker.keys()):
+#             if free in datepicker[item_id]['items_by_free'].keys():
+#                 datepicker[item_id]['items_by_free'][free] += quantity
+#                 messages.success(request, f'Updated free {fre.upper()} {product.name} quantity to {datepicker[item_id]["items_by_free"][free]}')
+#             else:
+#                 datepicker[item_id]['items_by_free'][free] = quantity
+#                 messages.success(request, f'Added free {free.upper()} {product.name} to datepicker')
+#         else:
+#             datepicker[item_id] = {'items_by_free': {free: quantity}}
+#             messages.success(request, f'Added free {free.upper()} {product.name} to book')
+#     else:
+#         if item_id in list(datepicker.keys()):
+#             datepicker[item_id] += quantity
+#             messages.success(request, f'Updated {product.name} quantity to {datepicker[item_id]}')
+#         else:
+#             book[item_id] = quantity
+#             messages.success(request, f'Added {product.name} to datepicker')
+
+#     request.session['datepicker'] = datepicker
+#     return redirect(redirect_url)
 
 
 def product_detail(request, product_id):
