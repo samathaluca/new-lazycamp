@@ -155,12 +155,11 @@ def add_date(request, item_id):
     request.session['date'] = date
     return redirect(redirect_url)
 
+
 def add_date(request, item_id):
     """ Add a booking """
 
     product = get_object_or_404(Product, pk=item_id)
-
-
     # product = Product.objects.get(pk=item_id)
     quantity = int(request.POST.get('quantity'))
     add_date = request.POST.get('add_date')
@@ -170,7 +169,6 @@ def add_date(request, item_id):
     redirect_url = request.POST.get('redirect_url')
     # number_available = None
 
-
     if 'number_available' in request.POST:
         free = request.POST['number_available']
     datepicker = request.session.get('product_datepicker', {})
@@ -178,7 +176,7 @@ def add_date(request, item_id):
         if item_id in list(datepicker.keys()):
             if free in datepicker[item_id]['items_by_free'].keys():
                 datepicker[item_id]['items_by_free'][free] += quantity
-                messages.success(request, f'Updated free {fre.upper()} {product.name} quantity to {datepicker[item_id]["items_by_free"][free]}')
+                messages.success(request, f'Updated free {free.upper()} {product.name} quantity to {datepicker[item_id]["items_by_free"][free]}')
             else:
                 datepicker[item_id]['items_by_free'][free] = quantity
                 messages.success(request, f'Added free {free.upper()} {product.name} to datepicker')
@@ -188,7 +186,8 @@ def add_date(request, item_id):
     else:
         if item_id in list(datepicker.keys()):
             datepicker[item_id] += quantity
-            messages.success(request, f'Updated {product.name} quantity to {datepicker[item_id]}')
+            messages.success
+            (request, f'Updated {product.name} quantity to {datepicker[item_id]}')
         else:
             book[item_id] = quantity
             messages.success(request, f'Added {product.name} to datepicker')
@@ -258,7 +257,7 @@ def edit_product(request, product_id):
         context = {
             'form': form,
             'product': product,
-    }
+        }
 
     return render(request, template, context)
 
@@ -283,11 +282,17 @@ def delete_product(request, product_id):
 # The pipe here is what generates the or statement.
 # And the i in front of contains makes the queries case insensitive.
 # With those queries constructed.
-# Now I can pass them to the filter method in order to actually filter the products.
-# Now I'll add the query to the context. And in the template call it search term.
-# And we'll start with it as none at the top of this view to ensure we don't get an error
+# Now I can pass them to the filter method in order to actually
+# filter the products.
+# Now I'll add the query to the context. And in the template
+# call it search term.
+# And we'll start with it
+# as none at the top of this view to ensure we don't get an error
 # when loading the products page without a search term.
 # Let's save that and test whether it works.
-# I'll run a search for jeans, which as you can see returns all the jeans in our store.
-# Now let's run a search for soft. To verify that we're also searching in descriptions.
-# Looking at these items none of these first four contain the term soft in the product name.
+# I'll run a search for jeans, which as you
+# can see returns all the jeans in our store.
+# Now let's run a search for soft. To verify that
+# we're also searching in descriptions.
+# Looking at these items none of these first four
+# contain the term soft in the product name.
