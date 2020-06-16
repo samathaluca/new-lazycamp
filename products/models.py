@@ -30,7 +30,5 @@ class Product(models.Model):
 
     # number_available = models.IntegerField(default=0)
 
-
-
     def __str__(self):
         return self.name

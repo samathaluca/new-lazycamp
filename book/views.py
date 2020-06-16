@@ -39,10 +39,6 @@ def add_to_book(request, item_id):
     #         book[item_id] = {'items_by_date': {date: quantity}}
     #         messages.success(request, f'Added date {date.upper()} {product.name} to book')
 
-
-
-
-
     if 'pitch_sizes' in request.POST:
         size = request.POST['pitch_sizes']
     book = request.session.get('book', {})
@@ -93,8 +89,7 @@ def adjust_book(request, item_id):
             messages.success(request, f'Updated {product.name} quantity to {book[item_id]}')
         else:
             book.pop(item_id)
-            messages.success(request, f'Removed {product.name} from your booking')	
-
+            messages.success(request, f'Removed {product.name} from your booking')
 
     request.session['book'] = book
     return redirect(reverse('view_book'))
@@ -114,12 +109,10 @@ def remove_from_book(request, item_id):
             del book[item_id]['items_by_size'][size]
             if not book[item_id]['items_by_size']:
                 book.pop(item_id)
-                messages.success(request, f'Removed size {size.upper()} {product.name} from your booking')	
-        else:	
-            book.pop(item_id)	
-            messages.success(request, f'Removed {product.name} from your booking')	
-        
-
+                messages.success(request, f'Removed size {size.upper()} {product.name} from your booking')
+        else:
+            book.pop(item_id)
+            messages.success(request, f'Removed {product.name} from your booking')
         request.session['book'] = book
         return HttpResponse(status=200)
 
