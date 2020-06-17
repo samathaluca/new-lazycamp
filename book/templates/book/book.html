@@ -87,7 +87,8 @@
                                                             </span>
                                                         </button>
                                                     </div>
-                                                    <input name="booking_date" type="date">
+                                                    
+                                                    <input name="booking_date" type="date" value="{{item.date}}">
                                                     {% if item.product.pitch_sizes %}
                                                         <input type="hidden" name="product_size" value="{{ item.pitch_size }}">
                                                     {% endif %}

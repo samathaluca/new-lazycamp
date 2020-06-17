@@ -24,20 +24,20 @@ def add_to_book(request, item_id):
     size = None
 
 
-    #     if 'booking_date' in request.POST:
-    #     date = request.POST['booking_date']
-    # book = request.session.get('book', {})
-    # if date:
-    #     if item_id in list(book.keys()):
-    #         if date in book[item_id]['items_by_date'].keys():
-    #             book[item_id]['items_by_date'][date] += quantity
-    #             messages.success(request, f'Updated date {date.upper()} {product.name} quantity to {book[item_id]["items_by_date"][date]}')
-    #         else:
-    #             book[item_id]['items_by_date'][date] = quantity
-    #             messages.success(request, f'Added date {date.upper()} {product.name} to book')
-    #     else:
-    #         book[item_id] = {'items_by_date': {date: quantity}}
-    #         messages.success(request, f'Added date {date.upper()} {product.name} to book')
+    if 'booking_date' in request.POST:
+        date = request.POST['booking_date']
+    book = request.session.get('book', {})
+    if date:
+        if item_id in list(book.keys()):
+            if date in book[item_id]['items_by_date'].keys():
+                book[item_id]['items_by_date'][date] += quantity
+                messages.success(request, f'Updated date {date.upper()} {product.name} quantity to {book[item_id]["items_by_date"][date]}')
+            else:
+                book[item_id]['items_by_date'][date] = quantity
+                messages.success(request, f'Added date {date.upper()} {product.name} to book')
+        else:
+            book[item_id] = {'items_by_date': {date: quantity}}
+            messages.success(request, f'Added date {date.upper()} {product.name} to book')
 
     if 'pitch_sizes' in request.POST:
         size = request.POST['pitch_sizes']

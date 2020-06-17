@@ -140,20 +140,20 @@ def product_date(request):
 
 #     return render(request, 'products/product_date.html', context)
 
-def add_date(request, item_id):
-    """ Add a quantity of the specified product to the shopping bag """
+# def add_date(request, item_id):
+#     """ Add a quantity of the specified product to the shopping bag """
 
-    quantity = int(request.POST.get('quantity'))
-    redirect_url = request.POST.get('redirect_url')
-    date = request.session.get('date', {})
+#     quantity = int(request.POST.get('quantity'))
+#     redirect_url = request.POST.get('redirect_url')
+#     date = request.session.get('date', {})
 
-    if item_id in list(date.keys()):
-        date[item_id] += quantity
-    else:
-        date[item_id] = quantity
+#     if item_id in list(date.keys()):
+#         date[item_id] += quantity
+#     else:
+#         date[item_id] = quantity
 
-    request.session['date'] = date
-    return redirect(redirect_url)
+#     request.session['date'] = date
+#     return redirect(redirect_url)
 
 
 def add_date(request, item_id):
