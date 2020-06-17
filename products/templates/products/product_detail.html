@@ -55,6 +55,13 @@
                         {% with product.is_available as s %}
                             {% if s %}
                                 <div class="col-12">
+                                    <p><strong>Pick your date?:</strong></p>
+                                    <div class="form-control w-50">
+                                    <input id="datepicker"  name="booking_date" type="date">  
+                                    </div>
+                                </div>
+                             
+                                <div class="col-12">
                                     <p><strong>How many nights?:</strong></p>
                                     <select class="form-control rounded-0 w-50" name="night_number" id="id_night_number">
                                         <option value="1">1</option>
@@ -90,8 +97,8 @@
                                                 </span>
                                             </button>
                                      
+                                        </div>
                                     </div>
-                                    <input name="booking_date" type="date">   </div>
                                 </div>
                             </div>
 

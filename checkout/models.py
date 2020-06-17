@@ -67,7 +67,8 @@ class OrderLineItem(models.Model):
     order = models.ForeignKey(Order, null=False, blank=False, on_delete=models.CASCADE, related_name='lineitems')
     product = models.ForeignKey(Product, null=False, blank=False, on_delete=models.CASCADE)
     quantity = models.IntegerField(null=False, blank=False, default=0)
-    # booking_date = models.DateTimeField
+    booking_date = models.DateTimeField
+    # number_nights = models.IntegerField(null=False, blank=False, default=0)
     pitch_sizes = models.CharField(max_length=2, null=True, blank=True) # XS, S, M, L, XL
     lineitem_total = models.DecimalField(max_digits=6, decimal_places=2, null=False, blank=False, editable=False)
 

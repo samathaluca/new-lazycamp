@@ -11,6 +11,16 @@ body {
 }
 
 /* from Bulma */
+
+#datepicker {
+    border: none;
+    background-color: purple;
+    font-family: 'Lato';
+    justify-content: center;
+    border-color: #dc3545;
+}
+
+
 .icon {
     align-items: center;
     display: inline-flex;
