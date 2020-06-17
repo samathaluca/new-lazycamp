@@ -51,6 +51,7 @@ def book_contents(request):
                     'quantity': quantity,
                     'product': product,
                     'date': date,
+                    # 'size': size,
                 })
 
     if total < settings.FREE_NIGHT_THRESHOLD:
