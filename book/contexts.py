@@ -33,13 +33,6 @@ def book_contents(request):
             #         'date': date,
             #     })
 
-
-
-
-
-
-
-
         else:
             product = get_object_or_404(Product, pk=item_id)
             # for size, quantity in item_data['items_by_size'].items():
@@ -60,9 +53,9 @@ def book_contents(request):
     else:
         night = 0
         free_night_delta = 0
-    
+
     grand_total = night + total
-    
+
     context = {
         'book_items': book_items,
         'total': total,
