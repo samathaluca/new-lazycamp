@@ -37,6 +37,7 @@ def book_contents(request):
             product = get_object_or_404(Product, pk=item_id)
             # for size, quantity in item_data['items_by_size'].items():
             for date, quantity in item_data['items_by_date'].items():
+            # for date, quantity in item_data['items_by_date'].items(): 
                 total += quantity * product.price
                 product_count += quantity
                 book_items.append({
