@@ -39,28 +39,28 @@ def add_to_book(request, item_id):
             book[item_id] = {'items_by_date': {date: quantity}}
             messages.success(request, f'Added date {date.upper()} {product.name} to book')
 
-    if 'pitch_sizes' in request.POST:
-        size = request.POST['pitch_sizes']
-    book = request.session.get('book', {})
-    if size:
-        if item_id in list(book.keys()):
-            if size in book[item_id]['items_by_size'].keys():
-                book[item_id]['items_by_size'][size] += quantity
-                messages.success(request, f'Updated size {size.upper()} {product.name} quantity to {book[item_id]["items_by_size"][size]}')
-            else:
-                book[item_id]['items_by_size'][size] = quantity
-                messages.success(request, f'Added size {size.upper()} {product.name} to book')
-        else:
-            book[item_id] = {'items_by_size': {size: quantity}}
-            messages.success(request, f'Added size {size.upper()} {product.name} to book')
-    else:
-        if item_id in list(book.keys()):
-            book[item_id] += quantity
-            messages.success(request, f'Updated {product.name} quantity to {book[item_id]}')
-        else:
-            book[item_id] = quantity
-            messages.success(request, f'Added {product.name} to book')
-
+    # if 'pitch_sizes' in request.POST:
+    #     size = request.POST['pitch_sizes']
+    # book = request.session.get('book', {})
+    # if size:
+    #     if item_id in list(book.keys()):
+    #         if size in book[item_id]['items_by_size'].keys():
+    #             book[item_id]['items_by_size'][size] += quantity
+    #             messages.success(request, f'Updated size {size.upper()} {product.name} quantity to {book[item_id]["items_by_size"][size]}')
+    #         else:
+    #             book[item_id]['items_by_size'][size] = quantity
+    #             messages.success(request, f'Added size {size.upper()} {product.name} to book')
+    #     else:
+    #         book[item_id] = {'items_by_size': {size: quantity}}
+    #         messages.success(request, f'Added size {size.upper()} {product.name} to book')
+    # else:
+    #     if item_id in list(book.keys()):
+    #         book[item_id] += quantity
+    #         messages.success(request, f'Updated {product.name} quantity to {book[item_id]}')
+    #     else:
+    #         book[item_id] = quantity
+    #         messages.success(request, f'Added {product.name} to book')
+    print(book)
     request.session['book'] = book
     return redirect(redirect_url)
 
