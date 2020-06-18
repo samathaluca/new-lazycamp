@@ -53,7 +53,7 @@ def add_to_book(request, item_id):
 
     # if 'pitch_sizes' in request.POST:
     #     size = request.POST['pitch_sizes']
-    # book = request.session.get('book', {})
+    # book = request.session.get('book', {}) cvcv
     # if size:
     #     if item_id in list(book.keys()):
     #         if size in book[item_id]['items_by_size'].keys():
