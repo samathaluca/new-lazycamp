@@ -20,7 +20,10 @@ def add_to_book(request, item_id):
     # product = Product.objects.get(pk=item_id)
     quantity = int(request.POST.get('quantity'))
     booking_date = request.POST.get('booking_date')
+    number_nights = int(request.POST.get('number_nights'))
     print(booking_date)
+    print(number_nights)
+
     redirect_url = request.POST.get('redirect_url')
     size = None
 
@@ -31,13 +34,21 @@ def add_to_book(request, item_id):
     if date:
         if item_id in list(book.keys()):
             if date in book[item_id]['items_by_date'].keys():
-                book[item_id]['items_by_date'][date] += quantity
+                # book[item_id]['items_by_date'][date] += quantity
+                book[item_id]['items_by_date'][date]['number_people'] += quantity
+                book[item_id]['items_by_date'][date]['number_nights'] += number_nights
+                # book[item_id]['items_by_date']['number_nights'] += number_nights
                 messages.success(request, f'Updated date {date.upper()} {product.name} quantity to {book[item_id]["items_by_date"][date]}')
             else:
-                book[item_id]['items_by_date'][date] = quantity
+                # book[item_id]['items_by_date'][date] = quantity
+                # book[item_id]['items_by_date'][date][number_people] = quantity
+                book[item_id]['items_by_date'][date]['number_people'] = quantity
+                book[item_id]['items_by_date'][date]['number_nights'] = number_nights
+            # book[item_id]['items_by_date'][date][number_nights] = number_nights
                 messages.success(request, f'Added date {date.upper()} {product.name} to book')
         else:
-            book[item_id] = {'items_by_date': {date: quantity}}
+            # book[item_id] = {'items_by_date': {date: quantity}}
+            book[item_id] = {'items_by_date': {date: {'number_people': quantity, 'number_nights': number_nights}}}
             messages.success(request, f'Added date {date.upper()} {product.name} to book')
 
     # if 'pitch_sizes' in request.POST:
