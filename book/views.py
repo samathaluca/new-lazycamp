@@ -234,7 +234,7 @@ def remove_from_book(request, item_id):
 #     """Remove the item from booking"""
 
 #     try:
-#         product = get_object_or_404(Product, pk=item_id)
+#         product = get_object_or_404(Product, pk=item_id bnnm)
 #         size = None
 #         if 'pitch_sizes' in request.POST:
 #             size = request.POST['pitch_sizes']
