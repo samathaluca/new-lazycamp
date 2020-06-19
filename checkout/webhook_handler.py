@@ -130,14 +130,26 @@ class StripeWH_Handler:
                         )
                         order_line_item.save()
                     else:
-                        for size, quantity in item_data['items_by_size'].items():
+                        for date, booking_info in item_data['items_by_date'].items():
+                        # for date, quantity in item_data['items_by_date'].items():
+                            # for size, quantity in item_data['items_by_size'].items():
                             order_line_item = OrderLineItem(
                                 order=order,
+                                number_nights=booking_info['number_nights'],
                                 product=product,
-                                quantity=quantity,
-                                product_size=size,
+                                quantity=booking_info['number_people'],
+                                booking_date=date,
+                                # product_size=size,
                             )
-                            order_line_item.save()
+                            order_line_item.save()  
+                    #     for size, quantity in item_data['items_by_size'].items():
+                    #         order_line_item = OrderLineItem(
+                    #             order=order,
+                    #             product=product,
+                    #             quantity=quantity,
+                    #             product_size=size,
+                    #         )
+                    #         order_line_item.save()
             except Exception as e:
                 if order:
                     order.delete()
