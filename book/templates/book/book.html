@@ -31,7 +31,7 @@
                                     <th scope="col">Product Info</th>
                                     <th scope="col"></th>
                                     <th scope="col">Price</th>
-                                    <th scope="col">Qty</th>
+                                    <th scope="col">Adults</th>
                                     <th scope="col">Subtotal</th>
                                 </tr>
                             </thead>
@@ -47,8 +47,10 @@
                                     </td>
                                     <td class="py-3">
                                         <p class="my-0"><strong>{{ item.product.name }}</strong></p>
-                                        <p class="my-0"><strong>Size: </strong>{% if item.product.pitch_sizes %}{{ item.size|upper }}{% else %}N/A{% endif %}</p>
-                                        <p class="my-0 small text-muted">SKU: {{ item.product.sku|upper }}</p>
+                                        <!-- <p class="my-0"><strong>Size: </strong>{% if item.product.pitch_sizes %}{{ item.size|upper }}{% else %}N/A{% endif %}</p>
+                                        <p class="my-0 small text-muted">SKU: {{ item.product.sku|upper }}</p> -->
+                                        <p class="my-0"><strong>Arrival Date: </strong>{% if item.product.is_available %}{{ item.date|upper }}{% else %}N/A{% endif %}</p>
+                                        <p class="my-0 small text-muted">Number of Nights: {{ item.number_nights|upper }}</p>
                                     </td>
 
                                     <!-- <td class="py-3">
@@ -88,10 +90,10 @@
                                                         </button>
                                                     </div>
                                                     
-                                                    <input name="booking_date" type="date" value="{{item.date}}">
+                                                    <!-- <input name="booking_date" type="date" value="{{item.date}}">
                                                     {% if item.product.pitch_sizes %}
                                                         <input type="hidden" name="product_size" value="{{ item.pitch_size }}">
-                                                    {% endif %}
+                                                    {% endif %} -->
                                                 </div>
                                             </div>
                                         </form>
@@ -124,7 +126,7 @@
                                         <span class="icon">
                                             <i class="fas fa-chevron-left"></i>
                                         </span>
-                                        <span class="text-uppercase">Keep Hunting</span>
+                                        <span class="text-uppercase">Keep Looking</span>
                                     </a>
                                     <a href="{% url 'checkout' %}" class="btn btn-black rounded-0 btn-lg">
                                         <span class="text-uppercase">Secure Checkout</span>
@@ -144,7 +146,7 @@
                         <span class="icon">
                             <i class="fas fa-chevron-left"></i>
                         </span>
-                        <span class="text-uppercase">Keep Hunting</span>
+                        <span class="text-uppercase">Keep Looking</span>
                     </a>
                 {% endif %}
             </div>

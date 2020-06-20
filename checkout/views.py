@@ -13,7 +13,7 @@ from book.contexts import book_contents
 
 import stripe
 import json
-
+# import json
 
 @require_POST
 def cache_checkout_data(request):
@@ -75,11 +75,15 @@ def checkout(request):
                         )
                         order_line_item.save()
                     else:
-                        for date, quantity in item_data['items_by_date'].items():
+                        for date, booking_info in item_data['items_by_date'].items():
+                        # for date, quantity in item_data['items_by_date'].items():
+                            # for size, quantity in item_data['items_by_size'].items():
                             order_line_item = OrderLineItem(
                                 order=order,
+                                number_nights=booking_info['number_nights'],
                                 product=product,
-                                quantity=quantity,
+                                quantity=booking_info['number_people'],
+                                booking_date=date,
                                 # product_size=size,
                             )
                             order_line_item.save()
