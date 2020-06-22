@@ -16,18 +16,39 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col text-center mt-3">
-                <h2 class="logo-font">Choose preferred Date</h2>
+                <h2 class="logo-font">Sites Available Tonight</h2>
+
+                
 
                 <form class="form update-form" method="POST" action="{% url 'product_date'%}">
                     {% csrf_token %}
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <div class="input-group">
                             <div class="input-group-prepend">
-                                <input name="second_booking_date" type="date">
+                                <input name="booking_date" type="date">
                                 <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Book">
+                                                                    <p><strong>Select Date:</strong></p>
+                                    <input name="booking_date" type="date">
+                                                                        <p><strong>Select Date:</strong></p>
+                                    <input name="booking_date" type="date">
+                                    <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Date check">
+                                    
+                                    
                             </div>
-                        </div>
-                    </div>
+                        </div> -->
+                    <!-- </div> -->
+                                                    <!-- <div class="col-12"> -->
+                                    <p><strong>Select Date:</strong></p>
+                                    <input name="booking_date" type="date">
+                                    <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Availability Check">
+                                    <!-- <select class="form-control rounded-0 w-50" name="night_number" id="id_night_number">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3" selected>3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                    </select> -->
+                                <!-- </div> -->
                 </form>
 
 
@@ -58,7 +79,7 @@
                                 <div class="card-footer bg-white pt-0 border-0 text-left">
                                     <div class="row">
                                         <div class="col">
-                                            <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
+                                            <p class="lead mb-0 text-left font-weight-bold">£{{ product.price }}</p>
                                             {% if product.rating %}
                                                 <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
                                             {% else %}
