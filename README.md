@@ -418,4 +418,249 @@ python3 manage.py loaddata categories
 python3 manage.py loaddata products
 
 
+testing 
+following Django test documentation,
+I added a test to books.py which threw an error in the database.
+I then added test database in lazycamp settings.py file 
+This made changes
+python3 manage.py test products --settings=lazycamp.test_settings
+still had problems so I set up a separate test.settings.py file in product app to test the models function
+I tested with self.name() and passed the test.py file. When the self.name() was commented out the test failed.
+to test I ran command 
+python3 manage.py test products --settings=lazycamp.test_settings in the terminal
+
+gitpod /workspace/new-lazycamp/book $ python3 experiment.py 
+gitpod /workspace/new-lazycamp/book $ python3 experiment.py 
+7
+gitpod /workspace/new-lazycamp/book $ python3 experiment.py 
+7
+gitpod /workspace/new-lazycamp/book $ python3 experiment.py 
+8
+gitpod /workspace/new-lazycamp/book $ python3 experiment.py 
+8
+Traceback (most recent call last):
+  File "experiment.py", line 9, in <module>
+    test()
+  File "experiment.py", line 7, in test
+    assert(add(3,4)==7)
+AssertionError
+gitpod /workspace/new-lazycamp/book $ python3 experiment.py 
+7
+gitpod /workspace/new-lazycamp/book $ cd ..
+gitpod /workspace/new-lazycamp $ python3 manage.py test products
+Creating test database for alias 'default'...
+/workspace/.pip-modules/lib/python3.8/site-packages/django/db/backends/postgresql/base.py:294: RuntimeWarning: Normally Django will use a connection to the 'postgres' database to avoid running initialization queries against the production database when it's not needed (for example, when running tests). Django was unable to create a connection to the 'postgres' database and will use the first PostgreSQL database instead.
+  warnings.warn(
+Got an error creating the test database: permission denied to create database
+
+gitpod /workspace/new-lazycamp $ python3 manage.py test products
+Creating test database for alias 'default'...
+/workspace/.pip-modules/lib/python3.8/site-packages/django/db/backends/postgresql/base.py:294: RuntimeWarning: Normally Django will use a connection to the 'postgres' database to avoid running initialization queries against the production database when it's not needed (for example, when running tests). Django was unable to create a connection to the 'postgres' database and will use the first PostgreSQL database instead.
+  warnings.warn(
+Got an error creating the test database: permission denied to create database
+
+gitpod /workspace/new-lazycamp $ python3 manage.py test products
+Creating test database for alias 'default'...
+/workspace/.pip-modules/lib/python3.8/site-packages/django/db/backends/postgresql/base.py:294: RuntimeWarning: Normally Django will use a connection to the 'postgres' database to avoid running initialization queries against the production database when it's not needed (for example, when running tests). Django was unable to create a connection to the 'postgres' database and will use the first PostgreSQL database instead.
+  warnings.warn(
+Got an error creating the test database: permission denied to create database
+
+gitpod /workspace/new-lazycamp $ python3 manage.py test products --settings=test_settings
+Traceback (most recent call last):
+  File "manage.py", line 21, in <module>
+    main()
+  File "manage.py", line 17, in main
+    execute_from_command_line(sys.argv)
+  File "/workspace/.pip-modules/lib/python3.8/site-packages/django/core/management/__init__.py", line 401, in execute_from_command_line
+    utility.execute()
+  File "/workspace/.pip-modules/lib/python3.8/site-packages/django/core/management/__init__.py", line 395, in execute
+    self.fetch_command(subcommand).run_from_argv(self.argv)
+  File "/workspace/.pip-modules/lib/python3.8/site-packages/django/core/management/commands/test.py", line 23, in run_from_argv
+    super().run_from_argv(argv)
+  File "/workspace/.pip-modules/lib/python3.8/site-packages/django/core/management/base.py", line 320, in run_from_argv
+    parser = self.create_parser(argv[0], argv[1])
+  File "/workspace/.pip-modules/lib/python3.8/site-packages/django/core/management/base.py", line 294, in create_parser
+    self.add_arguments(parser)
+  File "/workspace/.pip-modules/lib/python3.8/site-packages/django/core/management/commands/test.py", line 44, in add_arguments
+    test_runner_class = get_runner(settings, self.test_runner)
+  File "/workspace/.pip-modules/lib/python3.8/site-packages/django/test/utils.py", line 301, in get_runner
+    test_runner_class = test_runner_class or settings.TEST_RUNNER
+  File "/workspace/.pip-modules/lib/python3.8/site-packages/django/conf/__init__.py", line 76, in __getattr__
+    self._setup(name)
+  File "/workspace/.pip-modules/lib/python3.8/site-packages/django/conf/__init__.py", line 63, in _setup
+    self._wrapped = Settings(settings_module)
+  File "/workspace/.pip-modules/lib/python3.8/site-packages/django/conf/__init__.py", line 142, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+  File "/home/gitpod/.pyenv/versions/3.8.2/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 973, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'test_settings'
+gitpod /workspace/new-lazycamp $ python3 manage.py test products --settings=lazycamp.test_settings
+Creating test database for alias 'default'...
+System check identified no issues (0 silenced).
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.004s
+
+OK
+Destroying test database for alias 'default'...
+gitpod /workspace/new-lazycamp $ python3 manage.py test products --settings=test_settings
+Traceback (most recent call last):
+  File "manage.py", line 21, in <module>
+    main()
+  File "manage.py", line 17, in main
+    execute_from_command_line(sys.argv)
+  File "/workspace/.pip-modules/lib/python3.8/site-packages/django/core/management/__init__.py", line 401, in execute_from_command_line
+    utility.execute()
+  File "/workspace/.pip-modules/lib/python3.8/site-packages/django/core/management/__init__.py", line 395, in execute
+    self.fetch_command(subcommand).run_from_argv(self.argv)
+  File "/workspace/.pip-modules/lib/python3.8/site-packages/django/core/management/commands/test.py", line 23, in run_from_argv
+    super().run_from_argv(argv)
+  File "/workspace/.pip-modules/lib/python3.8/site-packages/django/core/management/base.py", line 320, in run_from_argv
+    parser = self.create_parser(argv[0], argv[1])
+  File "/workspace/.pip-modules/lib/python3.8/site-packages/django/core/management/base.py", line 294, in create_parser
+    self.add_arguments(parser)
+  File "/workspace/.pip-modules/lib/python3.8/site-packages/django/core/management/commands/test.py", line 44, in add_arguments
+    test_runner_class = get_runner(settings, self.test_runner)
+  File "/workspace/.pip-modules/lib/python3.8/site-packages/django/test/utils.py", line 301, in get_runner
+    test_runner_class = test_runner_class or settings.TEST_RUNNER
+  File "/workspace/.pip-modules/lib/python3.8/site-packages/django/conf/__init__.py", line 76, in __getattr__
+    self._setup(name)
+  File "/workspace/.pip-modules/lib/python3.8/site-packages/django/conf/__init__.py", line 63, in _setup
+    self._wrapped = Settings(settings_module)
+  File "/workspace/.pip-modules/lib/python3.8/site-packages/django/conf/__init__.py", line 142, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+  File "/home/gitpod/.pyenv/versions/3.8.2/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 973, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'test_settings'
+gitpod /workspace/new-lazycamp $ python3 manage.py test products --settings=lazycamp.test_settings
+Creating test database for alias 'default'...
+System check identified no issues (0 silenced).
+F
+======================================================================
+FAIL: test_get_friendly_name (products.tests.TestCategory)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/new-lazycamp/products/tests.py", line 14, in test_get_friendly_name
+    self.assertEqual(cattwo.get_friendly_name(), 'cattwo')
+AssertionError: '' != 'cattwo'
++ cattwo
+
+----------------------------------------------------------------------
+Ran 1 test in 0.004s
+
+FAILED (failures=1)
+Destroying test database for alias 'default'...
+gitpod /workspace/new-lazycamp $ 
+gitpod /workspace/new-lazycamp $ 
+gitpod /workspace/new-lazycamp $ 
+gitpod /workspace/new-lazycamp $ python3 manage.py test products --settings=lazycamp.test_settings
+Creating test database for alias 'default'...
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.8/site-packages/django/db/backends/utils.py", line 86, in _execute
+    return self.cursor.execute(sql, params)
+  File "/workspace/.pip-modules/lib/python3.8/site-packages/django/db/backends/sqlite3/base.py", line 396, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: no such column: products_product.owner_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "manage.py", line 21, in <module>
+    main()
+  File "manage.py", line 17, in main
+    execute_from_command_line(sys.argv)
+  File "/workspace/.pip-modules/lib/python3.8/site-packages/django/core/management/__init__.py", line 401, in execute_from_command_line
+    utility.execute()
+  File "/workspace/.pip-modules/lib/python3.8/site-packages/django/core/management/__init__.py", line 395, in execute
+    self.fetch_command(subcommand).run_from_argv(self.argv)
+  File "/workspace/.pip-modules/lib/python3.8/site-packages/django/core/management/commands/test.py", line 23, in run_from_argv
+    super().run_from_argv(argv)
+  File "/workspace/.pip-modules/lib/python3.8/site-packages/django/core/management/base.py", line 328, in run_from_argv
+    self.execute(*args, **cmd_options)
+  File "/workspace/.pip-modules/lib/python3.8/site-packages/django/core/management/base.py", line 369, in execute
+    output = self.handle(*args, **options)
+  File "/workspace/.pip-modules/lib/python3.8/site-packages/django/core/management/commands/test.py", line 53, in handle
+    failures = test_runner.run_tests(test_labels)
+  File "/workspace/.pip-modules/lib/python3.8/site-packages/django/test/runner.py", line 684, in run_tests
+    old_config = self.setup_databases(aliases=databases)
+  File "/workspace/.pip-modules/lib/python3.8/site-packages/django/test/runner.py", line 604, in setup_databases
+    return _setup_databases(
+  File "/workspace/.pip-modules/lib/python3.8/site-packages/django/test/utils.py", line 169, in setup_databases
+    connection.creation.create_test_db(
+  File "/workspace/.pip-modules/lib/python3.8/site-packages/django/db/backends/base/creation.py", line 80, in create_test_db
+    self.connection._test_serialized_contents = self.serialize_db_to_string()
+  File "/workspace/.pip-modules/lib/python3.8/site-packages/django/db/backends/base/creation.py", line 123, in serialize_db_to_string
+    serializers.serialize("json", get_objects(), indent=None, stream=out)
+  File "/workspace/.pip-modules/lib/python3.8/site-packages/django/core/serializers/__init__.py", line 128, in serialize
+    s.serialize(queryset, **options)
+  File "/workspace/.pip-modules/lib/python3.8/site-packages/django/core/serializers/base.py", line 90, in serialize
+    for count, obj in enumerate(queryset, start=1):
+  File "/workspace/.pip-modules/lib/python3.8/site-packages/django/db/backends/base/creation.py", line 120, in get_objects
+    yield from queryset.iterator()
+  File "/workspace/.pip-modules/lib/python3.8/site-packages/django/db/models/query.py", line 346, in _iterator
+    yield from self._iterable_class(self, chunked_fetch=use_chunked_fetch, chunk_size=chunk_size)
+  File "/workspace/.pip-modules/lib/python3.8/site-packages/django/db/models/query.py", line 57, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/workspace/.pip-modules/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1151, in execute_sql
+    cursor.execute(sql, params)
+  File "/workspace/.pip-modules/lib/python3.8/site-packages/django/db/backends/utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/workspace/.pip-modules/lib/python3.8/site-packages/django/db/backends/utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/workspace/.pip-modules/lib/python3.8/site-packages/django/db/backends/utils.py", line 86, in _execute
+    return self.cursor.execute(sql, params)
+  File "/workspace/.pip-modules/lib/python3.8/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/workspace/.pip-modules/lib/python3.8/site-packages/django/db/backends/utils.py", line 86, in _execute
+    return self.cursor.execute(sql, params)
+  File "/workspace/.pip-modules/lib/python3.8/site-packages/django/db/backends/sqlite3/base.py", line 396, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: no such column: products_product.owner_id
+gitpod /workspace/new-lazycamp $ python3 manage.py makemigrations --dry-run
+Migrations for 'products':
+  products/migrations/0008_product_owner.py
+    - Add field owner to product
+gitpod /workspace/new-lazycamp $ python3 manage.py makemigrations
+You are trying to add a non-nullable field 'owner' to product without a default; we can't do that (the database needs something to populate existing rows).
+Please select a fix:
+ 1) Provide a one-off default now (will be set on all existing rows with a null value for this column)
+ 2) Quit, and let me add a default in models.py
+Select an option: 2
+gitpod /workspace/new-lazycamp $ python3 manage.py makemigrations
+You are trying to add a non-nullable field 'owner' to product without a default; we can't do that (the database needs something to populate existing rows).
+Please select a fix:
+ 1) Provide a one-off default now (will be set on all existing rows with a null value for this column)
+ 2) Quit, and let me add a default in models.py
+Select an option: 2
+gitpod /workspace/new-lazycamp $ python3 manage.py makemigrations
+Migrations for 'products':
+  products/migrations/0008_product_owner.py
+    - Add field owner to product
+gitpod /workspace/new-lazycamp $ python3 manage.py migrate
+Operations to perform:
+  Apply all migrations: account, admin, auth, checkout, contenttypes, products, profiles, sessions, sites, socialaccount
+Running migrations:
+  Applying products.0008_product_owner... OK
+gitpod /workspace/new-lazycamp $ python3 manage.py test products --settings=lazycamp.test_settings
+Creating test database for alias 'default'...
+System check identified no issues (0 silenced).
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.004s
+
+OK
+Destroying test database for alias 'default'...
+gitpod /workspace/new-lazycamp $ 
+
+
+
+
+
+
 
