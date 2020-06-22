@@ -21,8 +21,8 @@ def add_to_book(request, item_id):
     quantity = int(request.POST.get('quantity'))
     booking_date = request.POST.get('booking_date')
     number_nights = int(request.POST.get('number_nights'))
-    print(booking_date)
-    print(number_nights)
+    # print(booking_date)
+    # print(number_nights)
 
     redirect_url = request.POST.get('redirect_url')
     size = None

@@ -96,8 +96,8 @@ class OrderLineItem(models.Model):
         Override the original save method to set the lineitem total
         and update the order total.
         """
-        lineitem_total = self.product.price * self.quantity * self.number_nights
-        print(lineitem_total)
+        # lineitem_total = self.product.price * self.quantity * self.number_nights
+        # print(lineitem_total)
         self.lineitem_total = self.product.price * self.quantity * self.number_nights
         super().save(*args, **kwargs)
 

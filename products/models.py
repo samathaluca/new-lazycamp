@@ -1,5 +1,7 @@
 from django.db import models
 
+from django.contrib.auth.models import User
+
 
 class Category(models.Model):
 
@@ -12,10 +14,11 @@ class Category(models.Model):
         return self.name
 
     def get_friendly_name(self):
-        return self.friendly_name
+        return self.friendly_name or self.name
 
 
 class Product(models.Model):
+    owner = models.ForeignKey(User, on_delete=models.PROTECT, null=True)
     category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
     sku = models.CharField(max_length=254, null=True, blank=True)
     name = models.CharField(max_length=254)
