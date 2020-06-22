@@ -2,6 +2,7 @@ from decimal import Decimal
 from django.conf import settings
 from django.shortcuts import get_object_or_404
 from products.models import Product
+import datetime
 
 
 def book_contents(request):
@@ -45,7 +46,7 @@ def book_contents(request):
                     'item_id': item_id,
                     'quantity': booking_info['number_people'],
                     'product': product,
-                    'date': date,
+                    'date': datetime.datetime.strptime(date, '%Y-%m-%d').date,
                     'number_nights': booking_info['number_nights'],
                 })
 
