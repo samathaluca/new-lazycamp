@@ -1,4 +1,4 @@
- {% extends "base.html" %}
+{% extends "base.html" %}
 {% load static %}
 
 {% block page_header %}
@@ -17,8 +17,6 @@
         <div class="row">
             <div class="col text-center mt-3">
                 <h2 class="logo-font">Sites Available Tonight</h2>
-
-                
 
                 <form class="form update-form" method="POST" action="{% url 'product_date'%}">
                     {% csrf_token %}

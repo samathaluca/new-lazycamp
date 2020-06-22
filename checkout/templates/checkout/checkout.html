@@ -33,7 +33,8 @@
                         <p class="mb-1 mt-0 small text-muted">Item</p>
                     </div>
                     <div class="col-3 text-right">
-                        <p class="mb-1 mt-0 small text-muted">Subtotal</p>
+                        <p class="mb-1 mt-0 small text-muted">PPPN</p>
+                        
                     </div>
                 </div>
                 {% for item in book_items %}
@@ -49,25 +50,39 @@
                         </div>
                         <div class="col-7">
                             <p class="my-0"><strong>{{ item.product.name }}</strong></p>
-                            <p class="my-0 small">Size: {% if item.product.has_sizes %}{{ item.size|upper }}{% else %}N/A{% endif %}</p>
-                            <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
+                           <hr class="my-0">                                         
+                                        <!-- <p class="my-0"><strong>Size: </strong>{% if item.product.pitch_sizes %}{{ item.size|upper }}{% else %}N/A{% endif %}</p>
+                                        <p class="my-0 small text-muted">SKU: {{ item.product.sku|upper }}</p> -->
+                                        <p class="my-0"><strong>Arrival Date: </strong></p>
+                                        <p class="my-0">Number of Nights:</p>
+                            <p class="my-0">Adult Number:</p>
                         </div>
                         <div class="col-3 text-right">
                             <p class="my-0 small text-muted">£{{ item.product.price | calc_subtotal:item.quantity }}</p>
+                            <hr class="my-0">
+                        <p class="my-0 small text-muted" >{% if item.product.is_available %}{{ item.date|upper }}{% else %}N/A{% endif %}</p>
+                                        <p class="my-0 small text-muted">{{ item.number_nights|upper }}</p>
+                            <p class="my-0 small text-muted">{{ item.quantity }}</p>
                         </div>
                     </div>
+                    
                 {% endfor %}
                 <hr class="my-0">
                 <div class="row text-black text-right">
                     <div class="col-7 offset-2">
-                        <p class="my-0">Order Total:</p>
-                        <p class="my-0">Nights:</p>
+                        <!-- <p class="my-0">Order Total:</p> -->
+                        <!-- <p class="my-0">Nights:</p> -->
                         <p class="my-0">Grand Total:</p>
+                        <p class="my-0"><strong>Arrival Date:</strong></p>
                     </div>
                     <div class="col-3">
-                        <p class="my-0">£{{ total | floatformat:2 }}</p>
-                        <p class="my-0">£{{ night | floatformat:2 }}</p>
+                        <!-- <p class="my-0">£{{ total | floatformat:2 }}</p> -->
+                        <!-- <p class="my-0">£{{ night | floatformat:2 }}</p> -->
                         <p class="my-0"><strong>£{{ grand_total | floatformat:2 }}</strong></p>
+                        <p class="my-0 small text-muted" >{% if item.product.is_available %}{{ item.date|upper }}{% else %}N/A{% endif %}</p>
+                                        
+                        <p class="my-0"><strong>{% if item.product.is_available %}{{ item.date|upper }}{% else %}N/A{% endif %}</strong></p>
+                                        
                     </div>
                 </div>
             </div>
