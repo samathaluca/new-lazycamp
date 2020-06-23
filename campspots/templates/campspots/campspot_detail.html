@@ -30,12 +30,21 @@
                 <div class="product-details-container mb-5 mt-md-5">
                     <p class="mb-0">{{ campspot.name }}</p>
                     <p class="lead mb-0 text-left font-weight-bold">£{{ campspot.price }}</p>
+                    <p class="mb-0">Location: {{ campspot.county }}</p>
+                    <small class="text-muted"><i class="fas fa-map-marked mr-1"></i>{{ campspot.postcode }}</small>
+                    
                     {% if campspot.rating %}
                         <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ campspot.rating }} / 5</small>
                     {% else %}
                         <small class="text-muted">No Rating</small>
                     {% endif %}
-                    <p class="mt-3">{{ campspot.description }}</p>
+                    <p class="mt-3"><strong>THE BEST: </strong>{{ campspot.description }}</p>
+                    <small class="text-muted"><i class="fas fa-toilet-paper mr-1"></i>{{ campspot.nearest_toilet_and_shower }}</small>
+                    <p class="mt-3">Prepare for: {{ campspot.bare_all }}</p>
+                    <small class="text-muted"><i class="fas fa-bus-alt mr-1"></i>{{ campspot.public_transport_options }}</small>
+                    <p class="mt-3">Host Bares All: {{ campspot.host_brief }}</p>
+                    <small class="text-muted"><i class="fas fa-utensils mr-1"></i>{{ campspot.local_eatery_and_shop }}</small>
+                    
                 </div>
             </div>
         </div>
