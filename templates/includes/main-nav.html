@@ -5,12 +5,12 @@
                 My Priority/Preferences
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
-                <a href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item ">By Rating</a>
+                <a href="{% url 'campspots' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
+                <a href="{% url 'campspots' %}?sort=rating&direction=desc" class="dropdown-item ">By Rating</a>
                 <a href="{% url 'campspots' %}?sort=county&direction=asc" class="dropdown-item ">By Location</a>
-                <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item ">By Category</a>
-                <a href="{% url 'products' %}?sort=lateArrival&direction=asc" class="dropdown-item ">By Late Arrival</a>
-                <a href="{% url 'products' %}" class="dropdown-item">All Camping</a>
+                <a href="{% url 'campspots' %}?sort=category&direction=asc" class="dropdown-item ">By Category</a>
+                <!-- <a href="{% url 'campspots' %}?sort=arrive_anytime&direction=asc" class="dropdown-item ">By Late Arrival</a> -->
+                <a href="{% url 'products' %}" class="dropdown-item">All Camping Events &amp; Products</a>
             </div>
         </li>
 
@@ -19,12 +19,13 @@
                 Campspot/Pitches
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
-                <a href="{% url 'products' %}?category=woodland_forest" class="dropdown-item">Woods &amp; Forest</a>
-                <a href="{% url 'products' %}?category=river_lakeside_beach" class="dropdown-item">Beach, River or Lakeside</a>
-                <a href="{% url 'products' %}?category=nature_retreat" class="dropdown-item">Nature Retreat</a>
-                <a href="{% url 'products' %}?category=woodland_forest,river_lakeside_beach,nature_retreat" class="dropdown-item">All Country</a>
-                <a href="{% url 'products' %}?category=woodland_forest,river_lakeside_beach,nature_retreat" class="dropdown-item">All City</a>
-                <a href="{% url 'products' %}?category=electric,breakfast,wc_shower" class="dropdown-item">Comforts</a>
+                <a href="{% url 'campspots' %}?category=woodland" class="dropdown-item">Woods &amp; Forest</a>
+                <a href="{% url 'campspots' %}?category=beach" class="dropdown-item">Beach, River or Lakeside</a>
+                <a href="{% url 'campspots' %}?category=farmland" class="dropdown-item">Farm Land</a>
+                <a href="{% url 'campspots' %}?category=nature" class="dropdown-item">Nature Retreat</a>
+                <a href="{% url 'campspots' %}?category=woodland,beach,nature" class="dropdown-item">Peaceful</a>
+                <a href="{% url 'campspots' %}?category=city" class="dropdown-item">City Life</a>
+                <!-- <a href="{% url 'products' %}?category=electric,breakfast,wc_shower" class="dropdown-item">Comforts</a> -->
             
             </div>
         </li>
