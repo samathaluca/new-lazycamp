@@ -659,6 +659,12 @@ Destroying test database for alias 'default'...
 gitpod /workspace/new-lazycamp $ 
 
 
+Django's built-in testing framework
+
+python3 manage.py test
+
+checks all of the apps for filenames that begin with the word test and runs all of the methods in that file that begin with test_
+
 
 
 
