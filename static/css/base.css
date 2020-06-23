@@ -54,6 +54,12 @@ body {
     border: 1px solid black;
 }
 
+/* .pink {
+    background: purple;
+    /* color: black !important; /* use important to override link colors for <a> elements */
+    /* border: 1px solid black; */
+}
+
 .btn-outline-black:hover,
 .btn-outline-black:active,
 .btn-outline-black:focus {
