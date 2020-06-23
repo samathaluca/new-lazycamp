@@ -15,17 +15,28 @@ def all_campspots(request):
 
     return render(request, 'campspots/campspots.html', context)
 
-
 def campspot_detail(request, campspot_id):
-    """ A view to show campspot details """
+    """ A view to show individual product details """
 
     campspot = get_object_or_404(Campspot, pk=campspot_id)
 
     context = {
-        'campspot': campspot,
+        'camspot': campspot,
     }
 
     return render(request, 'campspots/campspot_detail.html', context)
+
+
+# def campspot_detail(request, campspot_id):
+#     """ A view to show campspot details """
+
+#     campspot = get_object_or_404(Campspot, pk=campspot_id)
+
+#     context = {
+#         'campspot': campspot,
+#     }
+
+#     return render(request, 'campspots/campspot_detail.html', context)
 
 
 
