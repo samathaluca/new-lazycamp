@@ -21,7 +21,7 @@
                         </a>
                         {% else %}
                         <a href="">
-                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}joy.jpg" alt="{{ campspot.name }}">
+                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ campspot.name }}">
                         </a>
                     {% endif %}
                 </div>
@@ -29,7 +29,7 @@
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="product-details-container mb-5 mt-md-5">
                     <p class="mb-0">{{ campspot.name }}</p>
-                    <p class="lead mb-0 text-left font-weight-bold">${{ campspot.price }}</p>
+                    <p class="lead mb-0 text-left font-weight-bold">£{{ campspot.price }}</p>
                     {% if campspot.rating %}
                         <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ campspot.rating }} / 5</small>
                     {% else %}
