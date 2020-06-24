@@ -6,7 +6,7 @@ from django.conf import settings
 
 from django_countries.fields import CountryField
 
-from products.models import Product
+from campspots.models import Campspot
 from profiles.models import UserProfile
 
 class Order(models.Model):
@@ -66,7 +66,7 @@ class Order(models.Model):
 
 class OrderLineItem(models.Model):
     order = models.ForeignKey(Order, null=False, blank=False, on_delete=models.CASCADE, related_name='lineitems')
-    product = models.ForeignKey(Product, null=False, blank=False, on_delete=models.CASCADE)
+    campspot = models.ForeignKey(Campspot, null=True, blank=False, on_delete=models.CASCADE)
     quantity = models.IntegerField(null=False, blank=False, default=0)
     booking_date = models.DateTimeField(null=True)
     number_nights = models.IntegerField(null=True)
@@ -98,11 +98,14 @@ class OrderLineItem(models.Model):
         """
         # lineitem_total = self.product.price * self.quantity * self.number_nights
         # print(lineitem_total)
-        self.lineitem_total = self.product.price * self.quantity * self.number_nights
+        self.lineitem_total = self.campspot.price * self.quantity * self.number_nights
         super().save(*args, **kwargs)
 
     def __str__(self):
-        return f'SKU {self.product.sku} on order {self.order.order_number}'
+        # return f'SKU {self.product.sku} on order {self.order.order_number}'
+        
+        return f'POSTCODE {self.campspot.postcode} on order {self.order.order_number}'
+
 
 
 

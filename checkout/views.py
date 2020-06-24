@@ -6,7 +6,7 @@ from django.conf import settings
 from .forms import OrderForm
 from .models import Order, OrderLineItem
 
-from products.models import Product
+from campspots.models import Campspot
 from profiles.models import UserProfile
 from profiles.forms import UserProfileForm
 from book.contexts import book_contents
@@ -33,11 +33,6 @@ def cache_checkout_data(request):
 
 
 def checkout(request):
-# need to inject in to the method something like
-# lineitem = order_line_item.save()
-# lineitem.product.number_available -= quantity
-# lineitem.product.save()
-
 
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
@@ -66,11 +61,11 @@ def checkout(request):
             order.save()
             for item_id, item_data in book.items():
                 try:
-                    product = Product.objects.get(id=item_id)
+                    campspot = Campspot.objects.get(id=item_id)
                     if isinstance(item_data, int):
                         order_line_item = OrderLineItem(
                             order=order,
-                            product=product,
+                            campspot=campspot,
                             quantity=item_data,
                         )
                         order_line_item.save()
@@ -81,15 +76,15 @@ def checkout(request):
                             order_line_item = OrderLineItem(
                                 order=order,
                                 number_nights=booking_info['number_nights'],
-                                product=product,
+                                campspot=campspot,
                                 quantity=booking_info['number_people'],
                                 booking_date=date,
-                                # product_size=size,
+                                # campspot_size=size,
                             )
                             order_line_item.save()
-                except Product.DoesNotExist:
+                except Campspot.DoesNotExist:
                     messages.error(request, (
-                        "One of the products in your booking wasn't found in our database. "
+                        "One of the campspots in your booking wasn't found in our database. "
                         "Please call us for assistance!")
                     )
                     order.delete()
@@ -105,7 +100,7 @@ def checkout(request):
         book = request.session.get('book', {})
         if not book:
             messages.error(request, "There's nothing in your booking")
-            return redirect(reverse('products'))
+            return redirect(reverse('campspots'))
 
         current_book = book_contents(request)
         total = current_book['grand_total']

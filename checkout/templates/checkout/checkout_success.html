@@ -72,14 +72,14 @@
                     <div class="row">
                         <div class="col-12 col-md-4">
                             <p class="small mb-0 text-black font-weight-bold">
-                                {{ item.product.name }}{% if item.product_booking_date %} - Arrival Date {{ item.product.booking_date|upper }}{% endif %}
+                                {{ item.campspot.name }}{% if item.campspot_booking_date %} - Arrival Date {{ item.campspot.booking_date|upper }}{% endif %}
                             </p>
                         </div>
                         <div class="col-12 col-md-8 text-md-right">
-                            <p class="small mb-0">{{ item.quantity }} @ £{{ item.product.price }} each</p>
+                            <p class="small mb-0">{{ item.quantity }} @ £{{ item.campspot.price }} each</p>
                         </div>
                         <div class="col-12 col-md-8 text-md-right">
-                            <p class="small mb-0">{{ item.number_nights }} @ £{{ item.product.number_nights }} each</p>
+                            <p class="small mb-0">{{ item.number_nights }} @ £{{ item.campspot.number_nights }} each</p>
                         </div>
                     </div>
                     {% endfor %}
@@ -213,7 +213,7 @@
                         <span class="text-uppercase">Back to Profile</span>
                     </a>
                 {% else %}
-                    <a href="{% url 'products' %}?category=new_arrivals,deals,clearance" class="btn btn-black rounded-0 my-2">
+                    <a href="{% url 'campspots' %}?category=new_arrivals,deals,clearance" class="btn btn-black rounded-0 my-2">
                         <span class="icon mr-2">
                             <i class="fas fa-gifts"></i>
                         </span>

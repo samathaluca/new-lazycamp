@@ -4,7 +4,7 @@ from django.template.loader import render_to_string
 from django.conf import settings
 
 from .models import Order, OrderLineItem
-from products.models import Product
+from campspots.models import Campspot
 from profiles.models import UserProfile
 
 import json
@@ -31,8 +31,8 @@ class StripeWH_Handler:
             subject,
             body,
             settings.DEFAULT_FROM_EMAIL,
-            [cust_email, order.product.owner.email]
-        )        
+            # [cust_email, order.campspot.owner.email]
+        )   [cust_email]
 
     def handle_event(self, event):
         """
@@ -121,35 +121,26 @@ class StripeWH_Handler:
                     stripe_pid=pid,
                 )
                 for item_id, item_data in json.loads(book).items():
-                    product = Product.objects.get(id=item_id)
+                    campspot = Campspot.objects.get(id=item_id)
                     if isinstance(item_data, int):
                         order_line_item = OrderLineItem(
                             order=order,
-                            product=product,
+                            campspot=campspot,
                             quantity=item_data,
                         )
                         order_line_item.save()
                     else:
                         for date, booking_info in item_data['items_by_date'].items():
-                        # for date, quantity in item_data['items_by_date'].items():
-                            # for size, quantity in item_data['items_by_size'].items():
                             order_line_item = OrderLineItem(
                                 order=order,
                                 number_nights=booking_info['number_nights'],
-                                product=product,
+                                campspot=campspot,
                                 quantity=booking_info['number_people'],
                                 booking_date=date,
-                                # product_size=size,
+ 
                             )
                             order_line_item.save()
-                        # for size, quantity in item_data['items_by_size'].items():
-                        #     order_line_item = OrderLineItem(
-                        #         order=order,
-                        #         product=product,
-                        #         quantity=quantity,
-                        #         product_size=size,
-                        #     )
-                        #     order_line_item.save()
+
             except Exception as e:
                 if order:
                     order.delete()
