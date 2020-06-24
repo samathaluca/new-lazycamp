@@ -1,7 +1,11 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
+from django.contrib.auth.decorators import login_required
 from .models import Campspot, Category
+from django.db.models.functions import Lower
+
+from .forms import CampspotForm
 
 # Create your views here.
 
@@ -56,7 +60,7 @@ def all_campspots(request):
 
 
 def campspot_detail(request, campspot_id):
-    """ A view to show individual product details """
+    """ A view to show individual campspot details """
 
     campspot = get_object_or_404(Campspot, pk=campspot_id)
 
@@ -65,3 +69,70 @@ def campspot_detail(request, campspot_id):
     }
 
     return render(request, 'campspots/campspot_detail.html', context)
+
+
+@login_required
+def add_campspot(request):
+    """ Add a campspot to the store """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
+    if request.method == 'POST':
+        form = CampspotForm(request.POST, request.FILES)
+        if form.is_valid():
+            campspot = form.save()
+            messages.success(request, 'Successfully added campspot!')
+            return redirect(reverse('campspot_detail', args=[campspot.id]))
+        else:
+            messages.error(request, 'Failed to add campspot. Please ensure the form is valid.')
+    else:
+        form = CampspotForm()
+        template = 'campspots/add_campspot.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
+
+
+@login_required
+def edit_campspot(request, campspot_id):
+    """ Edit a campspot in the store """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only hosts can do that.')
+        return redirect(reverse('home'))
+
+    campspot = get_object_or_404(Campspot, pk=campspot_id)
+    if request.method == 'POST':
+        form = CampspotForm(request.POST, request.FILES, instance=campspot)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully updated campspot!')
+            return redirect(reverse('campspot_detail', args=[campspot.id]))
+        else:
+            messages.error(request, 'Failed to update campspot. Please ensure the form is valid.')
+    else:
+        # messages.info(request, f'You are editing {campspot.name}')
+
+        form = CampspotForm(instance=campspot)
+        template = 'campspots/edit_campspot.html'
+        context = {
+            'form': form,
+            'campspot': campspot,
+        }
+
+    return render(request, template, context)
+
+
+@login_required
+def delete_campspot(request, campspot_id):
+    """ Delete a campspot from the store """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+    # messages.info(request, f'You are editing {campspot.name}')
+    campspot = get_object_or_404(Campspot, pk=campspot_id)
+    campspot.delete()
+    messages.success(request, 'Campspot deleted!')
+    return redirect(reverse('campspots'))
