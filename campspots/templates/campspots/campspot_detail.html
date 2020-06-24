@@ -41,6 +41,16 @@
             <small class="text-muted"><i class="fas fa-bus-alt mr-1"></i>{{ campspot.public_transport_options }}</small>
             <p class="mt-3">Host Bares All: {{ campspot.host_brief }}</p>
             <small class="text-muted"><i class="fas fa-utensils mr-1"></i>{{ campspot.local_eatery_and_shop }}</small>
+            
+                                {% if request.user.is_superuser %}	
+                        <small class="ml-3">	
+                            <a href="{% url 'edit_campspot' campspot.id %}">Edit</a> | 	
+                            <a class="text-danger" href="{% url 'delete_campspot' campspot.id %}">Delete</a>	
+                        </small>
+                    {% endif %}
+            
+            
+            
             <form class="form" action="{% url 'add_to_book' campspot.id %}" method="POST">
                {% csrf_token %}
                <div class="form-row">
