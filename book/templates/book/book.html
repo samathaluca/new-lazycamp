@@ -30,9 +30,9 @@
                                 <tr>
                                     <th scope="col">Campspot Info</th>
                                     <th scope="col"></th>
-                                    <th scope="col">Price</th>
-                                    <th scope="col">Adults</th>
-                                    <th scope="col">Subtotal</th>
+                                    <th scope="col">Number of adults</th>
+                                    <th scope="col">PPPN</th>
+                                    <th scope="col">Total per night</th>
                                 </tr>
                             </thead>
 
@@ -50,7 +50,7 @@
                                         <!-- <p class="my-0"><strong>Size: </strong>{% if item.product.pitch_sizes %}{{ item.size|upper }}{% else %}N/A{% endif %}</p>
                                         <p class="my-0 small text-muted">SKU: {{ item.product.sku|upper }}</p> -->
                                         <p class="my-0"><strong>Arrival Date: </strong>{% if item.campspot.is_available %}{{ item.date }}{% else %}N/A{% endif %}</p>
-                                        <p class="my-0 small text-muted">Number of Nights here: {{ item.number_nights|upper }}</p>
+                                        <p class="my-0 text-muted">Number of Nights booked: {{ item.number_nights|upper }}</p>
                                     </td>
 
                                     <!-- <td class="py-3">
@@ -59,9 +59,6 @@
                                         <p class="my-0 small text-muted">SKU: {{ item.product.sku|upper }}</p>
                                     </td> -->
                                     
-                                    <td class="py-3">
-                                        <p class="my-0">£{{ item.campspot.price }}</p>
-                                    </td>
 
 
                                     <td class="py-3 w-25">
@@ -100,6 +97,10 @@
                                         <a class="update-link text-info"><small>Update</small></a>
                                         <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}" data-product_size="{{ item.size}}"><small>Remove</small></a>
                                     </td>
+                                                                        <td class="py-3">
+                                        <p class="my-0">£{{ item.campspot.price }}</p>
+                                    </td>
+
                                     <td class="py-3">
                                         <p class="my-0">£{{ item.campspot.price | calc_subtotal:item.quantity }}</p>
                                     </td>

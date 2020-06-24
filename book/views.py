@@ -22,10 +22,8 @@ def add_to_book(request, item_id):
     number_nights = int(request.POST.get('number_nights'))
     # print(booking_date)
     # print(number_nights)
-
     redirect_url = request.POST.get('redirect_url')
     size = None
-
 
     if 'booking_date' in request.POST:
         date = request.POST['booking_date']
