@@ -20,16 +20,18 @@
                 {% for item in book_items %}
                     <div class="row">
                         <div class="col-3 my-1">
-                            {% if item.product.image %}	
-                            <img class="w-100" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">	
+                            {% if item.campspot.image %}	
+                            <img class="w-100" src="{{ item.campspot.image.url }}" alt="{{ item.campspot.name }}">	
                             {% else %}	
-                            <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">	
+                            <img class="w-100" src="{{ MEDIA_URL }}joy.jpg" alt="{{ item.campspot.name }}">	
                             {% endif %}
                         </div>
                         <div class="col-9">
-                            <p class="my-0"><strong>{{ item.product.name }}</strong></p>
-                            <p class="my-0 small">Size: {% if item.product.has_sizes %}{{ item.size|upper }}{% else %}N/A{% endif %}</p>
-                            <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
+                            <p class="my-0"><strong>{{ item.campspot.name }}</strong></p>
+                            <p class="my-0 small">Booking Date: {{ item.date }}</p>
+                            <p class="my-0 small text-muted">Number of Nights: {{ item.number_nights }}</p>
+                            <p class="my-0 small text-muted">Number of Adults: {{ item.quantity }}</p>
+                        
                         </div>
                     </div>
                 {% endfor %}
