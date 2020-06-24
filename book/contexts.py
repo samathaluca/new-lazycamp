@@ -1,7 +1,7 @@
 from decimal import Decimal
 from django.conf import settings
 from django.shortcuts import get_object_or_404
-from products.models import Product
+from campspots.models import Campspot
 import datetime
 
 
@@ -9,43 +9,32 @@ def book_contents(request):
 
     book_items = []
     total = 0
-    product_count = 0
+    campspot_count = 0
     book = request.session.get('book', {})
 
     for item_id, item_data in book.items():
         if isinstance(item_data, int):
-            product = get_object_or_404(Product, pk=item_id)
-            total += item_data * product.price
-            product_count += item_data
+            campspot = get_object_or_404(Campspot, pk=item_id)
+            total += item_data * campspot.price
+            campspot_count += item_data
             book_items.append({
                 'item_id': item_id,
                 'quantity': item_data,
-                'product': product,
+                'campspot': campspot,
                 # 'number_nights': number_nights,
                 })
 
-            #     elseif:
-            # product = get_object_or_404(Product, pk=item_id)
-            # for date, quantity in item_data['items_by_date'].items():
-            #     total += quantity * product.price
-            #     product_count += quantity
-            #     book_items.append({
-            #         'item_id': item_id,
-            #         'quantity': quantity,
-            #         'product': product,
-            #         'date': date,
-            #   #     })
+
         else:
-            product = get_object_or_404(Product, pk=item_id)
+            campspot = get_object_or_404(Campspot, pk=item_id)
             # for size, quantity in item_data['items_by_size'].items():
             for date, booking_info in item_data['items_by_date'].items():
-                # total += booking_info['number_people'] * product.price
-                total += booking_info["number_people"] * product.price * booking_info["number_nights"]
-                product_count += booking_info['number_people']
+                total += booking_info["number_people"] * campspot.price * booking_info["number_nights"]
+                campspot_count += booking_info['number_people']
                 book_items.append({
                     'item_id': item_id,
                     'quantity': booking_info['number_people'],
-                    'product': product,
+                    'campspot': campspot,
                     'date': datetime.datetime.strptime(date, '%Y-%m-%d').date,
                     'number_nights': booking_info['number_nights'],
                 })
@@ -62,7 +51,7 @@ def book_contents(request):
     context = {
         'book_items': book_items,
         'total': total,
-        'product_count': product_count,
+        'campspot_count': campspot_count,
         'night': night,
         'free_night_delta': free_night_delta,
         'free_night_threshold': settings.FREE_NIGHT_THRESHOLD,
