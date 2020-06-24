@@ -29,8 +29,8 @@
                             <thead class="text-black">
                                 <tr>
                                     <th scope="col">Campspot Info</th>
-                                    <th scope="col"></th>
-                                    <th scope="col">Number of adults</th>
+                                    <th scope="col">Campspot Arrival date</th>
+                                    <th scope="col">Booking Details</th>
                                     <th scope="col">PPPN</th>
                                     <th scope="col">Total per night</th>
                                 </tr>
@@ -50,16 +50,17 @@
                                         <!-- <p class="my-0"><strong>Size: </strong>{% if item.product.pitch_sizes %}{{ item.size|upper }}{% else %}N/A{% endif %}</p>
                                         <p class="my-0 small text-muted">SKU: {{ item.product.sku|upper }}</p> -->
                                         <p class="my-0"><strong>Arrival Date: </strong>{% if item.campspot.is_available %}{{ item.date }}{% else %}N/A{% endif %}</p>
-                                        <p class="my-0 text-muted">Number of Nights booked: {{ item.number_nights|upper }}</p>
+                                       <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}" data-product_size="{{ item.size}}"><small>Remove Booking</small></a>
+                                 
                                     </td>
 
-                                    <!-- <td class="py-3">
-                                        <p class="my-0"><strong>{{ item.product.name }}</strong></p>
-                                        <p class="my-0"><strong>Date: </strong>{% if item.product.booking_date %}{{ item.date|upper }}{% else %}N/A{% endif %}</p>
-                                        <p class="my-0 small text-muted">SKU: {{ item.product.sku|upper }}</p>
-                                    </td> -->
+                                    <td class="py-3">
+<p class="my-0 text-muted">Number of Nights booked: {{ item.number_nights|upper }}</p>
+                                        <p class="my-0 text-muted">Number of Adults booked: {{ item.quantity|upper }}</p>
+                                        
+                                    </td>
                                     
-
+<!-- 
 
                                     <td class="py-3 w-25">
                                         <form class="form update-form" method="POST" action="{% url 'adjust_book' item.item_id %}">
@@ -75,7 +76,7 @@
                                                         </button>
                                                     </div>
                                                     <input class="form-control form-control-sm qty_input" type="number"
-                                                        name="quantity" value="{{ item.quantity }}" min="1" max="99"
+                                                        name="quantity" value="{{ item.quantity }}" min="1" max="21"
                                                         data-item_id="{{ item.item_id }}"
                                                         id="id_qty_{{ item.item_id }}">
                                                     <div class="input-group-append">
@@ -85,7 +86,7 @@
                                                                 <i class="fas fa-plus fa-sm"></i>
                                                             </span>
                                                         </button>
-                                                    </div>
+                                                    </div> -->
                                                     
                                                     <!-- <input name="booking_date" type="date" value="{{item.date}}">
                                                     {% if item.product.pitch_sizes %}
@@ -94,9 +95,8 @@
                                                 </div>
                                             </div>
                                         </form>
-                                        <a class="update-link text-info"><small>Update</small></a>
-                                        <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}" data-product_size="{{ item.size}}"><small>Remove</small></a>
-                                    </td>
+                                        <!-- <a class="update-link text-info"><small>Update</small></a> -->
+                                        </td>
                                                                         <td class="py-3">
                                         <p class="my-0">£{{ item.campspot.price }}</p>
                                     </td>
@@ -104,13 +104,15 @@
                                     <td class="py-3">
                                         <p class="my-0">£{{ item.campspot.price | calc_subtotal:item.quantity }}</p>
                                     </td>
+                                    
                                 </tr>
+                                    
                                 
                             {% endfor %}
                             <tr>
                                 <td colspan="5" class="pt-5 text-right">
                                     <h6><strong>Booking Total: £{{ total|floatformat:2 }}</strong></h6>
-                                    <h6>Night: £{{ night|floatformat:2 }}</h6>
+                                    <h6>Free Kids: £{{ night|floatformat:2 }}</h6>
                                     <h4 class="mt-4"><strong>Grand Total: £{{ grand_total|floatformat:2 }}</strong></h4>
                                     {% if free_night_delta > 0 %}
                                         <p class="mb-1 text-danger">
@@ -158,7 +160,7 @@
 
 {% block postloadjs %}
 {{ block.super }}
-{% include 'products/includes/quantity_input_script.html' %}
+{% include 'campspots/includes/quantity_input_script.html' %}
 
 <script type="text/javascript">
     // Update quantity on click
