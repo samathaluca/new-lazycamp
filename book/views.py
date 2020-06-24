@@ -33,6 +33,9 @@ def add_to_book(request, item_id):
     book = request.session.get('book', {})
     if date:
         if item_id in list(book.keys()):
+            print(date)
+            print(book)
+            print(book[item_id]['items_by_date'].keys())
             if date in book[item_id]['items_by_date'].keys():
                 # book[item_id]['items_by_date'][date] += quantity
                 book[item_id]['items_by_date'][date]['number_people'] += quantity
@@ -42,6 +45,7 @@ def add_to_book(request, item_id):
             else:
                 # book[item_id]['items_by_date'][date] = quantity
                 # book[item_id]['items_by_date'][date][number_people] = quantity
+                book[item_id]['items_by_date'][date] = {}
                 book[item_id]['items_by_date'][date]['number_people'] = quantity
                 book[item_id]['items_by_date'][date]['number_nights'] = number_nights
             # book[item_id]['items_by_date'][date][number_nights] = number_nights
@@ -72,7 +76,7 @@ def add_to_book(request, item_id):
     #     else:
     #         book[item_id] = quantity
     #         messages.success(request, f'Added {product.name} to book')
-
+    print(book)
     request.session['book'] = book
     return redirect(redirect_url)
 
