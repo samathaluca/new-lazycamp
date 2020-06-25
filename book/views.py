@@ -82,9 +82,8 @@ def adjust_book(request, item_id):
     return redirect(reverse('view_book'))
 
 
-def remove_from_book(request, item_id):
+def remove_from_book(request, item_id, date):
     """Remove the item from booking"""
-
     try:
         campspot = get_object_or_404(Campspot, pk=item_id)
         size = None
@@ -98,7 +97,10 @@ def remove_from_book(request, item_id):
                 book.pop(item_id)
                 messages.success(request, f'Removed size {size.upper()} {campspot.name} from your booking')
         else:
-            book.pop(item_id)
+            if len(book[item_id]['items_by_date']) > 1:
+                book[item_id]['items_by_date'].pop(date)
+            else:
+                book.pop(item_id)
             messages.success(request, f'Removed {campspot.name} from your booking')
         request.session['book'] = book
         return HttpResponse(status=200)

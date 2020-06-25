@@ -50,7 +50,7 @@
                                         <!-- <p class="my-0"><strong>Size: </strong>{% if item.product.pitch_sizes %}{{ item.size|upper }}{% else %}N/A{% endif %}</p>
                                         <p class="my-0 small text-muted">SKU: {{ item.product.sku|upper }}</p> -->
                                         <p class="my-0"><strong>Arrival Date: </strong>{% if item.campspot.is_available %}{{ item.date }}{% else %}N/A{% endif %}</p>
-                                       <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}" data-product_size="{{ item.size}}"><small>Clear Booking</small></a>
+                                       <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}" data-product_size="{{ item.size}}" data-date="{{ item.date }}"><small>Clear Booking</small></a>
                                  
                                     </td>
 
@@ -169,18 +169,37 @@
         form.submit();
     })
 
+    function formatDate(date) {
+        var d = new Date(date),
+            month = '' + (d.getMonth() + 1),
+            day = '' + d.getDate(),
+            year = d.getFullYear();
+
+        if (month.length < 2) 
+            month = '0' + month;
+        if (day.length < 2) 
+            day = '0' + day;
+
+        return [year, month, day].join('-');  
+
+    }
+
+
     // Remove item and reload on click
     $('.remove-item').click(function(e) {
         var csrfToken = "{{ csrf_token }}";
         var itemId = $(this).attr('id').split('remove_')[1];
         var size = $(this).data('product_size');
-        var url = `/book/remove/${itemId}/`;
+        var date = formatDate($(this).data('date'));
+        var url = `/book/remove/${itemId}/${date}`;
         var data = {'csrfmiddlewaretoken': csrfToken, 'product_size': size};
-
         $.post(url, data)
          .done(function() {
              location.reload();
          });
     })
+
+
+
 </script>
 {% endblock %}
