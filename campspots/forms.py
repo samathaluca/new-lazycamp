@@ -7,9 +7,13 @@ class CampspotForm(forms.ModelForm):
 
     class Meta:
         model = Campspot
-        fields = '__all__'
-
+        exclude = ['motorhome_service_point']
+        widgets = {
+            'bare_all': forms.CharField()
+        }
     image = forms.ImageField(label='Image', required=False, widget=CustomClearableFileInput)
+    host_brief = forms.CharField()
+
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
