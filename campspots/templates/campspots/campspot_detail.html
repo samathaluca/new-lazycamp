@@ -86,7 +86,7 @@
                   </div>
                   <div class="col-12">
                      <p><strong>Select Date:</strong></p>
-                     <input name="booking_date" type="date">
+                     <input name="booking_date" type="date" required="">
                   </div>
                   <div class="col-12">
                      <p class="mt-3"><strong>How many nights?:</strong></p>
@@ -107,7 +107,7 @@
 </button> -->
                   <input type="submit" class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom" title="Check your date!" value="Book Now">
                   <!-- <i class="fas fa-calendar-check">Date Check</i> -->
-                  <i class="fas fa-check-double">Double Check</i>
+                  <i class="fas fa-check-double"></i>
                </div>
                
                <input type="hidden" name="redirect_url" value="{{ request.path }}">
