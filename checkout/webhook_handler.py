@@ -19,21 +19,23 @@ class StripeWH_Handler:
 
     def _send_confirmation_email(self, order):
         """Send the user a confirmation email"""
-        cust_email = order.email
         subject = render_to_string(
             'checkout/confirmation_emails/confirmation_email_subject.txt',
             {'order': order})
         body = render_to_string(
             'checkout/confirmation_emails/confirmation_email_body.txt',
             {'order': order, 'contact_email': settings.DEFAULT_FROM_EMAIL})
-        
+        recipients = [order.user_profile.user.email, order.email] + [
+                    l.campspot.campspot_email for l in order.lineitems.all()
+                ]
+        print('To:', recipients)
         send_mail(
             subject,
             body,
             settings.DEFAULT_FROM_EMAIL,
-            [cust_email]
+            list(set(recipients))
             # [cust_email, order.campspot.owner.email]
-        )   
+        )
 
     def handle_event(self, event):
         """
@@ -90,7 +92,6 @@ class StripeWH_Handler:
                     street_address1__iexact=shipping_details.address.line1,
                     street_address2__iexact=shipping_details.address.line2,
                     county__iexact=shipping_details.address.state,
-                    grand_total=grand_total,
                     original_book=book,
                     stripe_pid=pid,
                 )
