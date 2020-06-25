@@ -31,7 +31,7 @@ def all_campspots(request):
                 direction = request.GET['direction']
                 if direction == 'desc':
                     sortkey = f'-{sortkey}'
-            campspots = campspots.order_by(sortkey)
+            campspots = campspots.order_by('is_available', sortkey)
 
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
