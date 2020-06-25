@@ -25,7 +25,7 @@ class Order(models.Model):
     date = models.DateTimeField(auto_now_add=True)
     night_cost = models.DecimalField(max_digits=6, decimal_places=2, null=False, default=0)
     order_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
-    grand_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
+    # grand_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
     beginner_tips = models.TextField(null=True, blank=True, default='')
     seasonned_tips = models.TextField(null=True, blank=True, default='')
     original_book = models.TextField(null=False, blank=False, default='')
@@ -37,19 +37,15 @@ class Order(models.Model):
         """
         return uuid.uuid4().hex.upper()
 
-    def update_total(self):
+    @property
+    def grand_total(self):
         """
         Update grand total each time a line item is added,
         accounting for delivery costs.
         """
-        self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum'] or 0
-        if self.order_total < settings.FREE_NIGHT_THRESHOLD:
-            self.night_cost = self.order_total * settings.STANDARD_NIGHT_PERCENTAGE / 100
-        else:
-            self.night_cost = 0
-        # self.grand_total = self.order_total + self.night_cost
-        self.grand_total = self.order_total + self.night_cost
-        self.save()
+        return self.lineitems.aggregate(
+            Sum('lineitem_total')
+        )['lineitem_total__sum'] or 0
 
     def save(self, *args, **kwargs):
         """
@@ -70,7 +66,7 @@ class OrderLineItem(models.Model):
     quantity = models.IntegerField(null=False, blank=False, default=0)
     booking_date = models.DateTimeField(null=True)
     number_nights = models.IntegerField(null=True)
-    pitch_sizes = models.CharField(max_length=2, null=True, blank=True) # XS, S, M, L, XL
+    pitch_sizes = models.CharField(max_length=2, null=True, blank=True) # bunk, S, M, L, XL
     lineitem_total = models.DecimalField(max_digits=6, decimal_places=2, null=False, blank=False, editable=False)
 
 
