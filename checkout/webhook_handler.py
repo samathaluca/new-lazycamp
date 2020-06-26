@@ -25,14 +25,14 @@ class StripeWH_Handler:
         body = render_to_string(
             'checkout/confirmation_emails/confirmation_email_body.txt',
             {'order': order, 'contact_email': settings.DEFAULT_FROM_EMAIL})
-        recipients = [order.user_profile.user.email, order.email] + [
+        recipients = [order.email] + [
                     l.campspot.campspot_email for l in order.lineitems.all()
                 ]
         print('To:', recipients)
         send_mail(
             subject,
             body,
-            settings.DEFAULT_FROM_EMAIL,
+            settings.DEFAULT_FROM_EMAIL,    
             list(set(recipients))
             # [cust_email, order.campspot.owner.email]
         )
