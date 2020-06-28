@@ -4,19 +4,19 @@ This is a confirmation of your order at Lazy Camp. Your order information is bel
 Order Date: {{ order.date }}
 Order Number: {{ order.order_number }}
 {% for item in order.lineitems.all %}
+
+Campspot Name: {{ item.campspot.name }}
+Campspot Email: {{ item.campspot.campspot_email }}
+Campspot Address: {{item.campspot.postcode}}
 Arrival Date: {{ item.booking_date }}
 Number of Adults : {{ item.quantity }}
 Number of Nights: {{ item.number_nights }}
-Price pppn: £{{ item.campspot.price }}
 
-Campspot details: 
-Campspot Name:{{ item.campspot.name }}
-Campspot Email:<{{ item.campspot.campspot_email }}
+Booking unit price £{{ item.campspot.price }}pppn
+{{ item.quantity }} adults 
+{{ item.number_nights }} nights 
 
-{{ item.quantity }} adults @ £{{ item.campspot.price }} each
-{{ item.number_nights }} nights {{ item.campspot.number_nights }} each
-
-{% endfor %}
+% endfor %}
 
 Grand Total Paid: £{{ order.grand_total }}
 
@@ -24,7 +24,7 @@ Your details: {{ order.street_address1 }} in {{ order.town_or_city }}, {{ order.
 
 We've got your phone number on file as {{ order.phone_number }}.
 
-If you have any questions, feel free to contact us at {{ item.campspot_email }}. {{contact.email}}
+If you have any questions, feel free to contact us at {{ contact_email }}.
 
 Thank you for your order!
 
@@ -33,7 +33,7 @@ Sincerely,
 Lazy Camp
 
 
-                       
+ {{ item.campspot.number_nights }} each                      
                     
                     
 
