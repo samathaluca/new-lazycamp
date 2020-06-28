@@ -27,11 +27,14 @@ def all_campspots(request):
                 sortkey = 'lower_name'
                 campspots = campspots.annotate(lower_name=Lower('name'))
 
+            if sortkey == 'category':
+                sortkey = 'category__name'
+
             if 'direction' in request.GET:
                 direction = request.GET['direction']
                 if direction == 'desc':
                     sortkey = f'-{sortkey}'
-            campspots = campspots.order_by('is_available', sortkey)
+            campspots = campspots.order_by(sortkey)
 
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
@@ -41,7 +44,7 @@ def all_campspots(request):
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
-                # messages.error(request, "You didn't enter any search criteria!")
+                messages.error(request, "You didn't enter any search criteria!")
                 return redirect(reverse('campspots'))
 
             queries = Q(county__icontains=query) | Q(description__icontains=query)
