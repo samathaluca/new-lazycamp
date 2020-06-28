@@ -13,6 +13,7 @@ class CampspotForm(forms.ModelForm):
         # }
     image = forms.ImageField(label='Image', required=False, widget=CustomClearableFileInput)
     host_brief = forms.CharField()
+    campspot_email = forms.EmailField()
 
 
     def __init__(self, *args, **kwargs):

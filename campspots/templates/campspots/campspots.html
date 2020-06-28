@@ -24,7 +24,7 @@
                 <div class="row">
                     {% for campspot in campspots %}
                         {% ifchanged campspot.is_available %}{%if not campspot.is_available%} </div><hr>
-                        <h3>Not current available</h3>
+                        <h3>Not currently available</h3>
                         <div class="row">
                         {%endif%}{% endifchanged %}
                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
