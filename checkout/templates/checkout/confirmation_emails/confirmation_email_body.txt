@@ -32,8 +32,7 @@ Sincerely,
 
 Lazy Camp
 
-
- {{ item.campspot.number_nights }} each                      
+                    
                     
                     
 
