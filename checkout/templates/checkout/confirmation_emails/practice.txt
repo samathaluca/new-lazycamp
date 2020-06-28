@@ -1,0 +1,2 @@
+{{ item.quantity }} adults @ £{{ item.campspot.price }} each
+{{ item.number_nights }} nights {{ item.campspot.number_nights }} each

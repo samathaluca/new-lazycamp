@@ -11,10 +11,9 @@ Price pppn: £{{ item.campspot.price }}
 
 Campspot details: 
 Campspot Name:{{ item.campspot.name }}
-Campspot Email:<{{ item.campspot.campspot_email }}
+Campspot Email:{{ item.campspot.campspot_email }}
 
-{{ item.quantity }} adults @ £{{ item.campspot.price }} each
-{{ item.number_nights }} nights {{ item.campspot.number_nights }} each
+----------------------------------------------------
 
 {% endfor %}
 
@@ -32,6 +31,9 @@ Sincerely,
 
 Lazy Camp
 
+              
+                    
+                    
 
 
 
