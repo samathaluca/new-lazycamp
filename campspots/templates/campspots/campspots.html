@@ -14,18 +14,13 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col text-center mt-3">
-                <h2 class="logo-font">All featured Campspots 2020</h2>
-
-	                {% for c in current_categories %}	
+                <h2 class="logo-font mt-4">All featured Campspots 2020</h2>
+                {% for c in current_categories %}	
                     <a class="category-badge text-decoration-none" href="{% url 'campspots' %}?category={{ c.name }}">	
                         <span class="p-2 mt-2 badge badge-white text-black rounded-0 border border-dark">{{ c.friendly_name }}</span>	
                     </a>	
                 {% endfor %}
-
-
-
-
-                <hr class="w-50 mb-1">
+            <hr class="w-50 mb-1">
             </div>
         </div>
         <div class="row">
@@ -55,24 +50,14 @@
                         </p>	
                     </div>	
                 </div>
-
-
-
-
-
-
-
-
                 <div class="row">
                     {% for campspot in campspots %}
-
-                    {% if campspot.is_available %}
-                        <!-- {% ifchanged campspot.is_available %}{%if not campspot.is_available%} </div><hr>
-                        <h3>Not currently available</h3>
-                        <div class="row">
-                        {%endif%}{% endifchanged %} -->
-
-
+                        <!-- {% if campspot.is_available %} -->
+                        {% ifchanged campspot.is_available %}
+                        {%if not campspot.is_available%} </div><hr>
+                        <!-- <h3>Not currently available</h3>
+                        <div class="row"> -->
+                        {%endif%}{% endifchanged %}
                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                             <div class="card h-100 border-0">
                                 {% if campspot.image %}
@@ -94,15 +79,10 @@
                                             <p class="lead mb-0 text-left font-weight-bold">£{{ campspot.price }}</p>
                                             <p>  pppn <small>(per person per night)</small> </p>
                                             <p class="mb-0">Location: {{ campspot.county }}</p>
-
-                      <!-- <p class="small mt-1 mb-0">	 -->
+                                            <p class="small mt-1 mb-0">	
                                                 <a class="text-muted" href="{% url 'campspots' %}?category={{ campspot.category.name }}">	
                                                     <i class="fas fa-tag mr-1"></i>{{ campspot.category.friendly_name }} </a>
-
-	                                            <!-- </p>	 -->
-                                            
-
-
+                                            </p>	
                                             <!-- <p class="lead mb-0 text-left font-weight-bold">£{{ campspot.county }}</p> -->
                                             {% if campspot.rating %}
                                                 <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ campspot.rating }} / 5</small>
@@ -116,30 +96,14 @@
                                                     <a class="text-danger" href="{% url 'delete_campspot' campspot.id %}">Delete</a>		
                                                 </small>		
                                             {% endif %} -->
-
-
-
-
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-{%endif%}
-
-
-
-
-
-
-
-
-
-
-
-
-                        {% if forloop.counter|divisibleby:1 %}
+                    {%endif%}
+                    {% if forloop.counter|divisibleby:1 %}
                             <div class="col-12 d-sm-none mb-5">
                                 <hr>
                             </div>
@@ -163,16 +127,15 @@
                 </div>
             </div>
         </div>
-    </div>
-
-	    <div class="btt-button shadow-sm rounded-0 border border-black">	
+    <!-- </div> -->
+    <div class="btt-button shadow-sm rounded-0 border border-black">	
         <a class="btt-link d-flex h-100">	
             <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>	
         </a>		
     </div>
-    	{% endblock %}
+{% endblock %}
 
-	{% block postloadjs %}	
+{% block postloadjs %}	
     {{ block.super }}	
     <script type="text/javascript">	
 		$('.btt-link').click(function(e) {	
