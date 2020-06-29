@@ -13,6 +13,13 @@
  * Item 3a
  * Item 3b
 
+As Grace Hopper said:
+> I’ve always been more interested
+> in the future than in the past.
+
+\*literal asterisks\*
+
+```javascript```
 
 ![GitHub Logo](/images/logo.png)
 Format: ![Alt Text](url)
