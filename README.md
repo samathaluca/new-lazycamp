@@ -1,7 +1,6 @@
 # LaZy Camp
 ## Lazy Camp
 ###### Lazy Camp
-
 <hr>
 
 *  Item 1
@@ -26,14 +25,33 @@ As Grace Hopper said:
 ![GitHub Logo](/images/logo.png)
 Format: ![Alt Text](url)
 
-http://github.com - automatic!
-[GitHub](http://github.com)
+https://new-lazycamp.herokuapp.com/ - automatic!
+[GitHub](https://new-lazycamp.herokuapp.com/)
 
 *This text will be italic*
 _This will also be italic_
 **This text will be bold**
 __This will also be bold__
 *You **can** combine them*
+
+# LaZy Camp
+
+<hr>
+
+The spontaneous campspot booking app.
+https://new-lazycamp.herokuapp.com/ - automatic!
+[Milestone Project4 - Lazycamp](https://new-lazycamp.herokuapp.com/)
+
+## Project purpose
+
+<hr>
+
+Camping on the spur of the moment is currently very difficult unless you are a seasoned camper who may or not be familiar with the area they want to visit.
+Even the large caravan and camping clubs either discourage last minute bookings by making it difficult or insist on arrival times that do not suit everybody.
+The freedom of the open road and the wonderment of spontaneity can be exhilerating. 
+
+This project will roll out in Scotland first where the number of tourists in the summer months excedes the number of overnight accommodation so visitors who are not very organised can even find themselves sleeping in police cells overnight.
+
 
 
 
