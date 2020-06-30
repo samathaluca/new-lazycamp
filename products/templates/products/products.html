@@ -14,10 +14,10 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col text-center mt-3">
-                <h2 class="logo-font">All Featured Sites 2020</h2>
+                <h2 class="logo-font mt-4">All Featured Sites 2020</h2>
                 {% for c in current_categories %}
-                    <a class="category-badge text-decoration-none" href="{% url 'products' %}?category={{ c.name }}">
-                        <span class="p-2 mt-2 badge badge-white text-black rounded-0 border border-dark">{{ c.friendly_name }}</span>
+                    <a class="category-badge text-decoration-none" href="{% url 'campspots' %}?category={{ c.name }}">
+                        <span class="p-2 mt-20 badge badge-white text-black rounded-0 border border-dark">{{ c.friendly_name }}</span>
                     </a>
                 {% endfor %}
                 <hr class="w-50 mb-1">
@@ -45,48 +45,48 @@
                     <div class="col-12 col-md-6 order-md-first">
                         <p class="text-muted mt-3 text-center text-md-left">
                             {% if search_term or current_categories or current_sorting != 'None_None' %}
-                                <span class="small"><a href="{% url 'products' %}">Products Home</a> | </span>
+                                <span class="small"><a href="{% url 'campspots' %}">Products Home</a> | </span>
                             {% endif %}
-                            {{ products|length }} Products{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
+                            {{ campspots|length }} Campspots{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
                         </p>
                     </div>
                 </div>
                 <div class="row">
-                    {% for product in products %}
+                    {% for campspot in campspots %}
                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                             <div class="card h-100 border-0">
-                                {% if product.image %}
-                                <a href="{% url 'product_detail' product.id %}">
-                                    <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                                {% if campspot.image %}
+                                <a href="{% url 'campspot_detail' campspot.id %}">
+                                    <img class="card-img-top img-fluid" src="{{ campspot.image.url }}" alt="{{ campspot.name }}">
                                 </a>
                                 {% else %}
-                                <a href="{% url 'product_detail' product.id %}">
-                                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                                <a href="{% url 'campspot_detail' campspot.id %}">
+                                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ campspot.name }}">
                                 </a>
                                 {% endif %}
                                 <div class="card-body pb-0">
-                                    <p class="mb-0">{{ product.name }}</p>
+                                    <p class="mb-0">{{ campspot.name }}</p>
                                 </div>
                                 <div class="card-footer bg-white pt-0 border-0 text-left">
                                     <div class="row">
                                         <div class="col">
-                                            <p class="lead mb-0 text-left font-weight-bold">£{{ product.price }}</p>
-                                            {% if product.category %}
+                                            <p class="lead mb-0 text-left font-weight-bold">£{{ campspot.price }}</p>
+                                            {% if campspot.category %}
                                             <p class="small mt-1 mb-0">
-                                                <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
-                                                    <i class="fas fa-tag mr-1"></i>{{ product.category.friendly_name }}
+                                                <a class="text-muted" href="{% url 'campspots' %}?category={{ campspot.category.name }}">
+                                                    <i class="fas fa-tag mr-1"></i>{{ campspot.category.friendly_name }}
                                                 </a>
                                             </p>
                                             {% endif %}
-                                            {% if product.rating %}
-                                                <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
+                                            {% if campspot.rating %}
+                                                <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ campspot.rating }} / 5</small>
                                             {% else %}
                                                 <small class="text-muted">No Rating</small>
                                             {% endif %}
                                             {% if request.user.is_superuser %}	
                                                 <small class="ml-3">	
-                                                    <a href="{% url 'edit_product' product.id %}">Edit</a> | 	
-                                                    <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>	
+                                                    <a href="{% url 'edit_campspot' campspot.id %}">Edit</a> | 	
+                                                    <a class="text-danger" href="{% url 'delete_campspot' campspot.id %}">Delete</a>	
                                                 </small>	
                                             {% endif %}
                                         </div>

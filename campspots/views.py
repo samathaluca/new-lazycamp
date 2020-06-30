@@ -9,11 +9,22 @@ from .forms import CampspotForm
 
 # Create your views here.
 
+# def product_date(request):
+#     """ A view to show individual product dates """
+
+#     # product = get_object_or_404(Product, pk=product_id)
+#     products = Product.objects.filter(is_available=True)
+#     context = {
+#         'products': products,
+#     }
+
+#     return render(request, 'products/product_date.html', context)
 
 def all_campspots(request):
     """ A view to show all campspots, including sorting and search queries """
 
-    campspots = Campspot.objects.all()
+    campspots = Campspot.objects.filter(is_available=True)
+    campspots_full = Campspot.objects.filter(is_available=False)
     query = None
     categories = None
     sort = None
@@ -57,9 +68,68 @@ def all_campspots(request):
         'search_term': query,
         'current_categories': categories,
         'current_sorting': current_sorting,
+        'campspots_full': campspots_full,
+
     }
 
     return render(request, 'campspots/campspots.html', context)
+
+
+
+
+
+
+
+# def all_campspots(request):
+#     """ A view to show all campspots, including sorting and search queries """
+
+#     campspots = Campspot.objects.all()
+#     query = None
+#     categories = None
+#     sort = None
+#     direction = None
+
+#     if request.GET:
+#         if 'sort' in request.GET:
+#             sortkey = request.GET['sort']
+#             sort = sortkey
+#             if sortkey == 'name':
+#                 sortkey = 'lower_name'
+#                 campspots = campspots.annotate(lower_name=Lower('name'))
+
+#             if sortkey == 'category':
+#                 sortkey = 'category__name'
+
+#             if 'direction' in request.GET:
+#                 direction = request.GET['direction']
+#                 if direction == 'desc':
+#                     sortkey = f'-{sortkey}'
+#             campspots = campspots.order_by(sortkey)
+
+#         if 'category' in request.GET:
+#             categories = request.GET['category'].split(',')
+#             campspots = campspots.filter(category__name__in=categories)
+#             categories = Category.objects.filter(name__in=categories)
+
+#         if 'q' in request.GET:
+#             query = request.GET['q']
+#             if not query:
+#                 messages.error(request, "You didn't enter any search criteria!")
+#                 return redirect(reverse('campspots'))
+
+#             queries = Q(county__icontains=query) | Q(description__icontains=query)
+#             campspots = campspots.filter(queries)
+
+#     current_sorting = f'{sort}_{direction}'
+
+#     context = {
+#         'campspots': campspots,
+#         'search_term': query,
+#         'current_categories': categories,
+#         'current_sorting': current_sorting,
+#     }
+
+#     return render(request, 'campspots/campspots.html', context)
 
 
 def campspot_detail(request, campspot_id):
