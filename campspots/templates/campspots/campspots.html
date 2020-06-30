@@ -58,7 +58,7 @@
                                 <a href="{% url 'campspot_detail' campspot.id %}">
                                     <img class="card-img-top img-fluid" src="{{ campspot.image.url }}" alt="{{ campspot.name }}">
                                 </a>
-                                <button type="button" class="btn btn-lg btn-light" disabled>Available</button>
+                                <button type="button" class="btn btn-lg btn-primary" disabled>Available</button>
                                 {% else %}
                                 <a href="{% url 'campspot_detail' campspot.id %}">
                                     <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}joy.jpg" alt="{{ campspot.name }}">
