@@ -63,7 +63,7 @@
                                 <a href="{% url 'campspot_detail' campspot.id %}">
                                     <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}joy.jpg" alt="{{ campspot.name }}">
                                 </a>
-                                <button type="button" class="btn btn-lg btn-success" disabled>Available</button>
+                                <button type="button" class="btn btn-lg btn-primary" disabled>Available</button>
                                 {% endif %}
                                 <div class="card-body pb-0">
                                     <p class="mb-0">{{ campspot.name }}</p>
