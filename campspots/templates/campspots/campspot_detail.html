@@ -105,8 +105,8 @@
          <!-- <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom" title="Check you date!">
   Book Now
 </button> -->
-                  <input type="submit" class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom" title="Check your date!" value="Book Now">
-                  <!-- <i class="fas fa-calendar-check">Date Check</i> -->
+                  <input type="submit" class="btn btn-success" data-toggle="tooltip" data-placement="bottom" title="Check your date!" value="Book Now">
+                  
                   <i class="fas fa-check-double"></i>
                </div>
                
@@ -117,6 +117,21 @@
                   </span>
                   <span class="text-uppercase">Keep Looking</span>
                   </a>
+
+                <!-- <div class="col{% if s %}-12 mt-2{% endif %}">
+                  <a href="{% url 'campspots' %}" class="btn btn-outline-black rounded-0 mt-5">
+                  <span class="icon">
+                  <i class="fas fa-chevron-left"></i>
+                  </span>
+                  <span class="text-uppercase">Keep Looking</span>
+                  </a>
+                                    <input type="submit" class="btn btn-success" data-toggle="tooltip" data-placement="bottom" title="Check your date!" value="Book Now">
+                  
+                  <i class="fas fa-check-double"></i>
+               </div>
+               <input type="hidden" name="redirect_url" value="{{ request.path }}">   -->
+
+
 
                               {% endif %}
                 
@@ -136,6 +151,8 @@
                   <input type="none" class="btn btn-black rounded-0 text-uppercase mt-5" value="FULL">
                </div>
                <input type="hidden" name="redirect_url" value="{{ request.path }}">   
+
+               
             
             {% endif %}
       </div>
