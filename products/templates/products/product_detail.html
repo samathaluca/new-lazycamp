@@ -113,7 +113,9 @@
                             {% endif %}
 
                             <div class="col-12">
-                                <p class="mt-3"><strong>Number of adults:</strong></p>
+                                                            
+
+                                <!-- <p class="mt-3"><strong>Number of adults:</strong></p>
                                 <div class="form-group w-50">
                                     <div class="input-group">
                                         <div class="input-group-prepend">
@@ -138,17 +140,42 @@
                                      
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
-
+                            
                             <div class="col{% if s %}-12 mt-2{% endif %}">
-                                <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 mt-5">
+                            <button type="button" class="btn btn-lg btn-secondary" disabled><i class="fa fa-whatsapp" aria-hidden="true"></i>
++44(0)7834340828</button>
+
+
+
+                            <a href="http://stackoverflow.com"><button type="button" class="btn btn-lg btn-success">Email Booking</button></a>
+
+                            <p>Email, phone and whatsapp bookings are not eligible for instant confirmation.</p> 
+                            <p>Please wait for a reply or book and pay online</p>
+
+
+                            <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 mt-5">
+                                    <span class="icon">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="text-uppercase">Keep Looking to book by phone</span>
+                            </a>
+                                              <a href="{% url 'campspots' %}" class="btn btn-outline-black rounded-0 mt-5">
+                  <span class="icon">
+                  <i class="fas fa-chevron-left"></i>
+                  </span>
+                  <span class="text-uppercase">Keep Looking to book online</span>
+                  </a>
+                                <!-- <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 mt-5">
                                     <span class="icon">
                                         <i class="fas fa-chevron-left"></i>
                                     </span>
                                     <span class="text-uppercase">Keep Looking</span>
-                                </a>
-                                <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Book">
+                                </a> -->
+
+                 
+                                <!-- <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Book"> -->
                             </div>
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                             {% endwith %}
