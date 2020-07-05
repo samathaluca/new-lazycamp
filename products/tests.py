@@ -2,6 +2,7 @@ from django.test import TestCase
 
 from products.models import Category
 
+
 class TestCategory(TestCase):
     def setUp(self):
         Category.objects.create(name='catone', friendly_name='First Category')
@@ -16,7 +17,7 @@ class TestCategory(TestCase):
 
 # Create your tests here.
 
-# testing branches 
+# testing branches
 
 # testing again
 
