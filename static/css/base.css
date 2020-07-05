@@ -10,6 +10,11 @@ body {
     font-family: 'Lato';
 }
 
+/* .btn-success {
+    background-color:trans;
+} */
+
+
 /* from Bulma */
 
 #datepicker {
@@ -39,6 +44,14 @@ body {
 
 .book-now-button {
     background: black;
+    color: white;
+    min-width: 260px;
+}
+
+
+.book-now-button {
+    background: rgb(218, 73, 170) !important;
+    /* background: violet; */
     color: white;
     min-width: 260px;
 }
