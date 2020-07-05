@@ -29,10 +29,10 @@
                             <thead class="text-black">
                                 <tr>
                                     <th scope="col">Campspot Info</th>
-                                    <th scope="col">Campspot Arrival date</th>
+                                    <th scope="col">Arrival date</th>
                                     <th scope="col">Booking Details</th>
-                                    <th scope="col">pppn</th>
-                                    <th scope="col">Total per night</th>
+                                    <!-- <th scope="col">pppn</th> -->
+                                    <th scope="col">Price/ Night</th>
                                 </tr>
                             </thead>
 
@@ -44,20 +44,23 @@
                                         {% else %}
                                         <img class="img-fluid rounded" src="{{ MEDIA_URL }}joy.jpg" alt="{{ item.campspot.name }}">
                                         {% endif %}
+                                        <p class="my-0"><strong>{{ item.campspot.name }}</strong></p>
+                                        <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}" data-product_size="{{ item.size}}" data-date="{{ item.date }}"><small><strong>Remove Stay</strong></small></a>
+                                 
                                     </td>
                                     <td class="py-3">
-                                        <p class="my-0"><strong>{{ item.campspot.name }}</strong></p>
+                                        
                                         <!-- <p class="my-0"><strong>Size: </strong>{% if item.product.pitch_sizes %}{{ item.size|upper }}{% else %}N/A{% endif %}</p>
                                         <p class="my-0 small text-muted">SKU: {{ item.product.sku|upper }}</p> -->
-                                        <p class="my-0"><strong>Arrival Date: </strong>{% if item.campspot.is_available %}{{ item.date }}{% else %}N/A{% endif %}</p>
-                                       <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}" data-product_size="{{ item.size}}" data-date="{{ item.date }}"><small>Clear Booking</small></a>
+                                        <p class="my-0">{% if item.campspot.is_available %}{{ item.date }}{% else %}N/A{% endif %}</p>
+                                       <!-- <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}" data-product_size="{{ item.size}}" data-date="{{ item.date }}"><small>Clear Booking</small></a> -->
                                  
                                     </td>
 
                                     <td class="py-3">
-<p class="my-0 text-muted">Number of Nights booked: {{ item.number_nights|upper }}</p>
-                                        <p class="my-0 text-muted">Number of Adults booked: {{ item.quantity|upper }}</p>
-                                        
+<p class="my-0 booking-details">Nights : {{ item.number_nights|upper }}</p>
+                                        <p class="my-0 booking-details">Adults : {{ item.quantity|upper }}</p>
+                                   <p class="my-0">pppn : £{{ item.campspot.price }}</p>     
                                     </td>
                                     
 <!-- 
@@ -97,9 +100,9 @@
                                         </form>
                                         <!-- <a class="update-link text-info"><small>Update</small></a> -->
                                         </td>
-                                                                        <td class="py-3">
+                                                                        <!-- <td class="py-3">
                                         <p class="my-0">£{{ item.campspot.price }}</p>
-                                    </td>
+                                    </td> -->
 
                                     <td class="py-3">
                                         <p class="my-0">£{{ item.campspot.price | calc_subtotal:item.quantity }}</p>
@@ -111,8 +114,8 @@
                             {% endfor %}
                             <tr>
                                 <td colspan="5" class="pt-5 text-right">
-                                    <h6><strong>Booking Total: £{{ total|floatformat:2 }}</strong></h6>
-                                    <h6>Free Kids: £{{ night|floatformat:2 }}</h6>
+                                    <!-- <h6><strong>Booking Total: £{{ total|floatformat:2 }}</strong></h6> -->
+                                    <!-- <h6>Free Kids: £{{ night|floatformat:2 }}</h6> -->
                                     <h4 class="mt-4"><strong>Grand Total: £{{ grand_total|floatformat:2 }}</strong></h4>
                                     {% if free_night_delta > 0 %}
                                         <p class="mb-1 text-danger">

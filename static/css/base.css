@@ -48,8 +48,15 @@ body {
     min-width: 260px;
 }
 
+.booking-details {
+    color: #007bff;
+    font-family: 'Lato';
+    font-weight: bold;
+}
+
 
 .book-now-button {
+    /* background: teal !important; */
     background: rgb(218, 73, 170) !important;
     /* background: violet; */
     color: white;
