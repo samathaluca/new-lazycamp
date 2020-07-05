@@ -1,5 +1,16 @@
 <script type="text/javascript">
 
+    // Tooltip
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+
+        $(document).ready(function () {
+            $("#txtdate").datepicker({
+                minDate: 0
+            });
+        });
+
     // Disable +/- buttons outside 1-99 range
     function handleEnableDisable(itemId) {
         var currentValue = parseInt($(`#id_qty_${itemId}`).val());
