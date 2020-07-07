@@ -22,6 +22,63 @@
         </div>
 
         <div class="row">
+            <div class="col-12 col-lg-6 order-lg-last mb-5">
+                <p class="text-muted">People Booked ({{ campspot_count }})</p>
+                <div class="row">
+                    <div class="col-7 offset-2">
+                        <p class="mb-1 mt-0 small text-muted">Item</p>
+                    </div>
+                    <div class="col-3 text-right">
+                        <p class="mb-1 mt-0 small text-muted">PPPN</p>
+                        
+                    </div>
+                </div>
+                {% for item in book_items %}
+                    <div class="row">
+                        <div class="col-2 mb-1">
+                            <a href="{% url 'campspot_detail' item.campspot.id %}">
+                                {% if item.campspot.image %}
+                                    <img class="w-100" src="{{ item.campspot.image.url }}" alt="{{ campspot.name }}">
+                                {% else %}
+                                    <img class="w-100" src="{{ MEDIA_URL }}joy.jpg" alt="{{ campspot.name }}">
+                                {% endif %}
+                            </a>
+                            <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}" data-product_size="{{ item.size}}" data-date="{{ item.date }}"><small><strong>Remove Stay</strong></small></a>
+                                 
+                        </div>
+                        <div class="col-7">
+
+                            <p class="my-0"><strong>Booking For: <small>{{ item.campspot.name }}</small></strong></p>
+                           <hr class="my-0">                                         
+                                        <p class="my-0"><strong>Arrival Date: </strong></p>
+                                        <p class="my-0">Number of Nights:</p>
+                            <p class="my-0">Adult Number:</p>
+                        </div>
+                        <div class="col-3 text-right">
+                            <p class="my-0 text-muted">£{{ item.campspot.price }} pppn</p>
+                            <hr class="my-0">
+                        <p class="my-0 text-muted" >{% if item.campspot.is_available %}<small>{{ item.date }}</small>{% else %}N/A{% endif %}</p>
+                                        <p class="my-0 text-muted">{{ item.number_nights|upper }}</p>
+                            <p class="my-0 text-muted">{{ item.quantity }}</p>
+                        </div>
+                    </div>
+                   <hr> 
+                {% endfor %}
+                <hr class="my-0">
+                <div class="row text-black text-right">
+                    <div class="col-7 offset-2">
+                    
+                        <p class="my-0">Grand Total:</p>
+                        
+                    </div>
+                    <div class="col-3">
+                        <p class="my-0"><strong>£{{ grand_total | floatformat:2 }}</strong></p>
+                                      
+                    </div>
+                </div>
+            </div>
+
+        <div class="row">
             <div class="col">
                 {% if book_items %}
                     <div class="table-responsive rounded">
