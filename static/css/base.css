@@ -25,6 +25,32 @@ body {
     border-color: #dc3545;
 }
 
+#opaque { 
+    opacity: 0.8;
+    /* background-color: limegreen; */
+}
+
+#opacity { 
+    opacity: 0.6;
+    /* background-color: limegreen; */
+
+}
+
+.btn-primary { 
+    opacity: 0.7;
+    /* background-color: limegreen; */
+
+}
+
+/* #opaque2 { 
+    opacity: 0.5;
+    /* background-color: limegreen; */
+} */
+
+
+
+
+
 
 .icon {
     align-items: center;

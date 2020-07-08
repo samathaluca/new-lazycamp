@@ -59,7 +59,7 @@
                                     <img class="card-img-top img-fluid" src="{{ campspot.image.url }}" alt="{{ campspot.name }}">
                                 </a>
                                 <a href="{% url 'campspot_detail' campspot.id %}"
-                                type="button" class="btn btn-lg btn-info"><h6>Book Online Now</h6>
+                                type="button" class="btn btn-lg btn-primary"><h6>Book Online Now</h6>
                                 </a>
                                 
                                 <!-- <a href="{% url 'campspot_detail' campspot.id %}"> -->
@@ -71,7 +71,7 @@
                                     <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}joy.jpg" alt="{{ campspot.name }}">
                                 </a>
                                 <a href="{% url 'campspot_detail' campspot.id %}"
-                                type="button" class="btn btn-lg btn-primary"><h6>Book Online Now</h6>
+                                type="button" id="opacity" class="btn btn-lg btn-primary"><h6>Book Online Now</h6>
                                 </a>
                                 <!-- <button type="button" class="btn btn-lg btn-primary" href="{% url 'campspot_detail' campspot.id %}" disabled>Available To book Now Online</button> -->
                                 {% endif %}

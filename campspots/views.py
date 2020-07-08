@@ -79,7 +79,7 @@ def campspot_detail(request, campspot_id):
 def add_campspot(request):
     """ Add a campspot to the store """
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry, only store owners can do that.')
+        messages.error(request, 'Sorry, only campspot owners can do that.')
         return redirect(reverse('home'))
 
     if request.method == 'POST':
