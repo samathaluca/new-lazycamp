@@ -32,7 +32,7 @@ class StripeWH_Handler:
         send_mail(
             subject,
             body,
-            settings.DEFAULT_FROM_EMAIL,    
+            settings.DEFAULT_FROM_EMAIL,
             list(set(recipients))
             # [cust_email, order.campspot.owner.email]
         )

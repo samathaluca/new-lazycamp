@@ -19,3 +19,16 @@ class ProductForm(forms.ModelForm):
         self.fields['category'].choices = friendly_names
         for field_name, field in self.fields.items():
             field.widget.attrs['class'] = 'border-black rounded-0'
+
+
+class EnquiryForm(forms.Form):
+
+    email = forms.EmailField()
+    phone = forms.CharField()
+    number_of_nights = forms.IntegerField()
+    number_of_people = forms.IntegerField()
+    # date = forms.DateField()
+    message = forms.CharField(widget=forms.Textarea)
+
+
+

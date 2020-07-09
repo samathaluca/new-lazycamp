@@ -3,9 +3,13 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
-
+from django.template.loader import render_to_string
+from django.core.mail import send_mail
+from django.conf import settings
 from .models import Product, Category
-from .forms import ProductForm
+from .forms import ProductForm, EnquiryForm
+
+
 
 # Create your views here.
 
@@ -200,9 +204,27 @@ def product_detail(request, product_id):
     """ A view to show individual product details """
 
     product = get_object_or_404(Product, pk=product_id)
+    enquiry_form = EnquiryForm(request.POST or None)
+    if enquiry_form.is_valid():
+
+        context = enquiry_form.cleaned_data.copy()
+        context['product'] = product
+
+        body = render_to_string('products/enquiry_email.txt', context)
+
+        send_mail(
+            f'Enquiry about {product.name}',
+            body,
+            settings.DEFAULT_FROM_EMAIL,
+            [enquiry_form.cleaned_data['email']]
+            # [cust_email, order.campspot.owner.email]
+        )
+        print('send an email')  # TODO
+    
 
     context = {
         'product': product,
+        'enquiry_form': enquiry_form,
     }
 
     return render(request, 'products/product_detail.html', context)

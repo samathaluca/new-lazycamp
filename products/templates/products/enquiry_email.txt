@@ -1,0 +1,3 @@
+Hello {{product.owner.get_full_name}},
+
+YOu have an euqniry about {{product}} ffrom {{date}}
