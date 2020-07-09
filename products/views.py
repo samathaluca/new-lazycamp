@@ -204,7 +204,9 @@ def product_detail(request, product_id):
     """ A view to show individual product details """
 
     product = get_object_or_404(Product, pk=product_id)
-    enquiry_form = EnquiryForm(request.POST or None)
+    user = request.user
+    initial =  {'email': user.email} if user.is_authenticated else None
+    enquiry_form = EnquiryForm(request.POST or None, initial=initial)
     if enquiry_form.is_valid():
 
         context = enquiry_form.cleaned_data.copy()
