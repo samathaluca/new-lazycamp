@@ -24,11 +24,9 @@ class ProductForm(forms.ModelForm):
 class EnquiryForm(forms.Form):
 
     email = forms.EmailField()
+    name = forms.CharField()
     phone = forms.CharField()
     number_of_nights = forms.IntegerField()
     number_of_people = forms.IntegerField()
     # date = forms.DateField()
     message = forms.CharField(widget=forms.Textarea)
-
-
-

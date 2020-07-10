@@ -54,7 +54,7 @@ def all_products(request):
             if not query:
                 messages.error(request,
                                "You didn't enter any search criteria!")
-                return redirect(reverse('products'))
+                return redirect(reverse('home'))
 # pending search term is present in name or description it will be returned
 # maybe add category or postal district too
 # i makes it non specific for example silv will still return silver

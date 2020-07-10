@@ -44,7 +44,7 @@ def all_campspots(request):
             query = request.GET['q']
             if not query:
                 messages.error(request, "You didn't enter any search criteria!")
-                return redirect(reverse('campspots'))
+                return redirect(reverse('home'))
 
             queries = Q(county__icontains=query) | Q(description__icontains=query) | Q(name__icontains=query) | Q(postcode__icontains=query)
             campspots = campspots.filter(queries)
