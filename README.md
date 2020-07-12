@@ -128,6 +128,8 @@ Testiminial Page
 
 
 ## Ux
+
+compare to booking.com lastminute.com aribnb couch surfing 
 User stories
 As a user I expect to be able to quickly find the nearest pitch/ site or spot where I can safely camp for the night.
 
@@ -246,12 +248,96 @@ I want my event to be evident closer to the time and be removed when the times h
 Feedback and comments from user groups
 
 
-Development planes
+## Development planes to achieve objectives.
 
-The strategy plane- is this still in favour to go for 5 planes?
+### The strategy plane
+
+
+
+Use agile design to lay out the foundations of booking system which is more attractive to users but satisfies the requirements of business users
+The strategy is to enable users to quickly find available camp spots that are free for the night they requirements
+within a searched for postal district or county.
+
+ffer over night stays on camping sites, spots, independent small pitching places, farms, fields, land, gardens, driveways so take the uncertainlty out of raod trips
+o
+
+
+Once the spots have been found in a given area that are available, the user can sort in to what is more important to them e.g price, category, 
+
+the strategy is to fill up spots for the spot owners seamlessly and effortlessly. 
+The current system needs to be simplified you have to ring round various sites and pay over the phone with a credit card.
+
+As the database fills with more campspots we will be able to offer extra filters
+
+simplify the bookings
+simplify  payment process
+promote smaller independent sites 
+fill empty spcaes
+immediately attract the 12 % of users who do not book ahead and wait to judge the weather 
+offer convenience and speed to the 88% of campers who want to book ahead. 
+
+still offer traditional phone and email booking so be useful and attractive by convention.
+
 The scope plane
+The scope will be to 
+atttract users by offering simplicity and fast locating which sites are available with fast reliable payment.
+
+The business user will be able to add their sites quickly and simply then turn the featuring on the site on and off with simple boolean checkbox.
+
 Structure
-Kkeleton
+The site is structure to guide the user to book online which will be the preferred option for users and business users once they manage to adopt the process.
+In the interim the structure does offer a less obvious traditional booking system by phone or email but the added option of 
+FB and whatspp or instagram messaging. 
+I considered a chatbox but user feedback favoured the familiarity of social media as a mechanism for direct contact with the benefits of
+users knowing when the messages were last checked and managing expectations of when their queries will be answered also knowing who they are speaking to.
+Chatboxes are a little impersonal and faceless for the travel industry which expects a more personal persuasive, friendlier touch.
+
+skeleton
+the home page uses design to direct the user to the online and payment booking system
+
+the email and phone booking options are available in the nav bar but the nav bar also puts the online booking first
+the skeleton directs the user to online booking using two different links.
+
+
+
+
+The Surface plane
+Appearance, images, colour choices and fonts.
+
+Modern design conventions were balanced with the desire to keep the interest and focus of the user and the user/contributor, both of which are not conventional by their natures.
+
+A unique large logo/home has been chosen for desktop following feedback to add interest to the form pages. This obscured too much of the information and did not fit the mobile design which was left with the original logo/home design.
+
+A home page with a lot of imagery, 
+quotes and contributor recovery stories was designed 
+for added interest and user prolonged engagement. Images 
+have been chosen to appeal to the users while presenting a simple message. 
+
+The forms to complete were kept very simple. 
+Focus to be kept on the information. The font is easy to read and the colours are muted. 
+
+ This will be adapted quickly as the questions may change 
+and the way they are presented may not benefit the user and help the information to be 
+absorbed.
+
+The font was been adjusted a number of times during the design phase. 
+The recommended Materialize template and component font always appeared optimal. 
+Materialize uses Roboto 2.0 as a standard font. Audiowide was used sparingly due to 
+being an intrusive looking font. It was used to command attention e.g. to check that 
+required fields in form were completed to avoid aborted submission attempts. Lato and 
+Ubuntu were chosen to add distinctive design to sections when needed with san serif back 
+up. They were used to add a little contrast for interest.
+
+In the final stages of development, user testing feedback influenced me to remove audiowide
+ and Ubuntu fonts and test permanent marker font style to get attention e.g. to check required fields were filled in forms.
+
+Extensive colour work has been tested during development. 
+
+women choose where to stay and eat so pink was favoured 
+
+Wireframes
+
+
 surface
 
 Wireframes
