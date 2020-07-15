@@ -1,20 +1,19 @@
 from django.contrib import admin
 from .models import Product, Category
 
-# Register your models here.
+# Model field display in admin.
 
 class ProductAdmin(admin.ModelAdmin):
     list_display = (
-        'sku',
+        'postcode',
         'name',
         'category',
         'price',
-        'rating',
         'image',
         'is_available',
     )
 
-    ordering = ('sku',)
+    ordering = ('county',)
 
 class CategoryAdmin(admin.ModelAdmin):
     list_display = (
