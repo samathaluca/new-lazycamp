@@ -5,7 +5,7 @@ from .models import Product, Category
 
 class ProductAdmin(admin.ModelAdmin):
     list_display = (
-        'postcode',
+        # 'postcode',
         'name',
         'category',
         'price',
@@ -13,7 +13,7 @@ class ProductAdmin(admin.ModelAdmin):
         'is_available',
     )
 
-    ordering = ('county',)
+    ordering = ('name',)
 
 class CategoryAdmin(admin.ModelAdmin):
     list_display = (
