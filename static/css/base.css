@@ -400,3 +400,14 @@ input[name='q']::placeholder {
         padding: .25rem .5rem !important;
     }
 }
+
+	#search-box {
+		display: none;
+	}
+
+
+@media only screen and (min-width: 993px) {
+	#smallNav {
+		display: none;
+	}
+}
