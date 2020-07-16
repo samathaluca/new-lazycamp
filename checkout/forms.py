@@ -1,5 +1,7 @@
+import datetime
 from django import forms
 from .models import Order
+
 
 
 class OrderForm(forms.ModelForm):
@@ -10,6 +12,14 @@ class OrderForm(forms.ModelForm):
                   'town_or_city', 'postcode', 'country',
                   'county',)
 
+    def clean_booking_date(self):
+        day = self.cleaned_data['booking_date']
+        if datetime.date.today() > day:
+            raise forms.ValidationError("Your chosen date has already passed")
+
+        return day
+
+    
     def __init__(self, *args, **kwargs):
         """
         Add placeholders and classes, remove auto-generated

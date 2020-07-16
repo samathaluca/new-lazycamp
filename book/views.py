@@ -8,25 +8,27 @@ from campspots.models import Campspot
 
 
 def view_book(request):
-    """ A view that renders the book contents page """
+    """ A view that renders the book contents page. Just returns template"""
 
     return render(request, 'book/book.html')
 
 
 def add_to_book(request, item_id):
-    """ Add a booking """
+    """ Add  booking view. Takes Campsot pk """
+    # TODO Use Django form
 
     campspot = get_object_or_404(Campspot, pk=item_id)
     quantity = int(request.POST.get('quantity'))
     booking_date = request.POST.get('booking_date')
     number_nights = int(request.POST.get('number_nights'))
-    # print(booking_date)
+    print(booking_date,type(booking_date))
     # print(number_nights)
     redirect_url = request.POST.get('redirect_url')
     size = None
 
     if 'booking_date' in request.POST:
         date = request.POST['booking_date']
+        # date is a string, not datetime.date
     book = request.session.get('book', {})
     if date:
         if item_id in list(book.keys()):
