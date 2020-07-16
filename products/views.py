@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.http import HttpResponseForbidden
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
@@ -8,6 +9,7 @@ from django.core.mail import send_mail
 from django.conf import settings
 from .models import Product, Category
 from .forms import ProductForm, EnquiryForm
+
 
 
 
@@ -227,8 +229,9 @@ def product_detail(request, product_id):
     context = {
         'product': product,
         'enquiry_form': enquiry_form,
+        'can_edit': request.user.is_superuser or (request.user == product.owner)
     }
-
+    print(context)
     return render(request, 'products/product_detail.html', context)
 
 
@@ -260,11 +263,14 @@ def add_product(request):
 @login_required
 def edit_product(request, product_id):
     """ Edit a product in the store """
-    if not request.user.is_superuser:
-        messages.error(request, 'Sorry, only hosts can do that.')
-        return redirect(reverse('home'))
 
     product = get_object_or_404(Product, pk=product_id)
+    if not (request.user.is_superuser or (request.user == product.owner)):
+        # messages.error(request, 'Sorry, only hosts can do that.')
+        # return redirect(reverse('home'))
+        return HttpResponseForbidden()
+
+   
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES, instance=product)
         if form.is_valid():
