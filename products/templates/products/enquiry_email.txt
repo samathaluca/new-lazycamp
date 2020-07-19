@@ -1,3 +1,10 @@
 Hello {{product.owner}},
 
-YOu have an euqniry about {{product}} ffrom {{date}}
+You sent us an enquiry about {{product}} from {{date}}.
+
+We can not offer instant confirmation unless you book a site online.
+
+All email enquiries will be confirmed within 48 hours. 
+
+Kind Wishes, Sam and the Lazycamp team.
+

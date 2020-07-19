@@ -19,7 +19,8 @@
                 <h2 class="logo-font mt-4">Campspot Phone/Email bookings.</h2>
                 <h4 class="logo-font mt-4">Payment on arrival.</h4>
                 <button type="button" class="btn btn-lg btn-secondary" disabled>Snail mail: lastminutecamp@aol.com</button>
-                                
+
+
                 
                 {% for c in current_categories %}	
                     <a class="category-badge text-decoration-none" href="{% url 'products' %}?category={{ c.name }}">	

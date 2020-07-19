@@ -2,6 +2,9 @@ from django.db import models
 
 from django.contrib.auth.models import User
 
+# from imagekit.models import ImageSpecField
+# from imagekit.processors import ResizeToFill
+
 
 class Category(models.Model):
 
@@ -30,6 +33,8 @@ class Product(models.Model):
     image = models.ImageField(null=True, blank=True)
     lateArrival = models.BooleanField(default=True)
     is_available = models.BooleanField(default=True)
+
+    # listing_image = ImageSpecField(source='image', processors=[ResizeToFill(300, 225)], format='JPEG')
 
     # number_available = models.IntegerField(default=0)
 
