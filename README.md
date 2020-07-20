@@ -69,7 +69,7 @@ In particular, as part of this section we recommend that you provide a list of U
 
 As a user type, I want to perform an action, so that I can achieve a goal.
 
-
+earn by diecting calls and emial enquiries then bookings 
 ## Quick guide / Features
 
 <hr>

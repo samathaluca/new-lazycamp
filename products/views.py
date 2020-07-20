@@ -97,6 +97,18 @@ def product_date(request):
     return render(request, 'products/product_date.html', context)
 
 
+def messenging(request):
+    """ A view to show individual product dates """
+
+    # product = get_object_or_404(Product, pk=product_id)
+    # products = Product.objects.filter(is_available=True)
+    # context = {
+    #     'products': products,
+    # }
+
+    return render(request, 'products/messenging.html')
+
+
 # def product_date(request):
 #     """ A view to show all products, including datepicker sorting and search queries """
 
