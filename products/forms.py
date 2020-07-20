@@ -29,5 +29,7 @@ class EnquiryForm(forms.Form):
     phone = forms.CharField()
     number_of_nights = forms.IntegerField()
     number_of_people = forms.IntegerField()
+    ideal_month = forms.CharField()
+    ideal_dates = forms.CharField()
     # date = forms.DateField()
     message = forms.CharField(widget=forms.Textarea)

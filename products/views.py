@@ -111,11 +111,11 @@ def messenging(request):
 
 
 def contact(request):
-    """ A view to show individual product details """
+    """ A view to allow contact emquiries """
 
     # product = get_object_or_404(Product, pk=product_id)
     user = request.user
-    initial =  {'email': user.email} if user.is_authenticated else None
+    initial =  {'email': user.email} if user.is_authenticated else Stranger
     enquiry_form = EnquiryForm(request.POST or None, initial=initial)
     if enquiry_form.is_valid():
 
@@ -129,7 +129,8 @@ def contact(request):
             body,
             settings.DEFAULT_FROM_EMAIL,
             [enquiry_form.cleaned_data['email']],
-            ['lastminutecamp@gmail.com']
+            ['lastminutecamp@aol.com'],
+            fail_silently=False
         )
         # print('send an email')  # TODO
     
@@ -137,76 +138,10 @@ def contact(request):
     context = {
         # 'product': product,
         'enquiry_form': enquiry_form,
-        'can_edit': request.user.is_superuser
+        # 'can_edit': request.user.is_superuser
     }
-  
+
     return render(request, 'products/contact.html', context)
-
-
-# def product_date(request):
-#     """ A view to show all products, including datepicker sorting and search queries """
-
-#     products = Product.objects.all()
-#     # filter is_available
-#     query = None
-#     categories = None
-#     sort = None
-#     direction = None
-
-#     if request.GET:
-#         if 'sort' in request.GET:
-#             sortkey = request.GET['sort']
-#             sort = sortkey
-#             if sortkey == 'name':
-#                 sortkey = 'lower_name'
-#                 products = products.annotate(lower_name=Lower('name'))
-
-#             if 'direction' in request.GET:
-#                 direction = request.GET['direction']
-#                 if direction == 'desc':
-#                     sortkey = f'-{sortkey}'
-#             products = products.order_by(sortkey)
-
-#         if 'category' in request.GET:
-#             categories = request.GET['category'].split(',')
-#             products = products.filter(category__name__in=categories)
-#             categories = Category.objects.filter(name__in=categories)
-
-#         if 'q' in request.GET:
-#             query = request.GET['q']
-#             if not query:
-#                 messages.error(request, "You didn't enter any search criteria!")
-#                 return redirect(reverse('products'))
-
-#             queries = Q(name__icontains=query) | Q(description__icontains=query)
-#             products = products.filter(queries)
-
-#     current_sorting = f'{sort}_{direction}'
-
-#     context = {
-#         'products': products,
-#         'search_term': query,
-#         'current_categories': categories,
-#         'current_sorting': current_sorting,
-#     }
-
-#     return render(request, 'products/product_date.html', context)
-
-# def add_date(request, item_id):
-#     """ Add a quantity of the specified product to the shopping bag """
-
-#     quantity = int(request.POST.get('quantity'))
-#     redirect_url = request.POST.get('redirect_url')
-#     date = request.session.get('date', {})
-
-#     if item_id in list(date.keys()):
-#         date[item_id] += quantity
-#     else:
-#         date[item_id] = quantity
-
-#     request.session['date'] = date
-#     return redirect(redirect_url)
-
 
 def add_date(request, item_id):
     """ Add a booking """
@@ -253,7 +188,7 @@ def product_detail(request, product_id):
 
     product = get_object_or_404(Product, pk=product_id)
     user = request.user
-    initial =  {'email': user.email} if user.is_authenticated else None
+    initial =  {'email': user.email} if user.is_authenticated else Stranger
     enquiry_form = EnquiryForm(request.POST or None, initial=initial)
     if enquiry_form.is_valid():
 
