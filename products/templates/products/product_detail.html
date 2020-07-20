@@ -86,13 +86,83 @@
                     </div>
 
 
+ <div class="col{% if s %}-12 mt-2{% endif %}">
+
+         <!-- <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom" title="Check you date!">
+  Book Now
+</button> -->
+
+                  <input type="submit" class="btn btn-success" data-toggle="tooltip" data-placement="bottom" title="Check your date!" value="Book Now">
+                  
+                  <i class="fas fa-check-double"></i>
+               </div>
+               
+               <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                 <a href="{% url 'campspots' %}" class="btn btn-outline-black rounded-0 mt-5">
+                  <span class="icon">
+                  <i class="fas fa-chevron-left"></i>
+                  </span>
+                  <span class="text-uppercase">Keep Looking</span>
+                  </a>
+
+                <!-- <div class="col{% if s %}-12 mt-2{% endif %}">
+                  <a href="{% url 'campspots' %}" class="btn btn-outline-black rounded-0 mt-5">
+                  <span class="icon">
+                  <i class="fas fa-chevron-left"></i>
+                  </span>
+                  <span class="text-uppercase">Keep Looking</span>
+                  </a>
+                                    <input type="submit" class="btn btn-success" data-toggle="tooltip" data-placement="bottom" title="Check your date!" value="Book Now">
+                  
+                  <i class="fas fa-check-double"></i>
+               </div>
+               <input type="hidden" name="redirect_url" value="{{ request.path }}">   -->
+
+
+
+               
+                
+            
+        </form>
+            {% if campspot.is_available %}
+            <small class="text-muted"><i class="fas fa-star mr-1"></i>Available tonight</small>
+            {% else %}
+                            <div class="col{% if s %}-12 mt-2{% endif %}">
+                  <a href="{% url 'campspots' %}" class="btn btn-outline-black rounded-0 mt-5">
+                  <span class="icon">
+                  <i class="fas fa-chevron-left"></i>
+                  </span>
+                  <span class="text-uppercase">Keep Looking</span>
+                  </a>
+                  <input type="none" class="btn btn-black rounded-0 text-uppercase mt-5" value="FULL">
+               </div>
+               <input type="hidden" name="redirect_url" value="{{ request.path }}">   
+
+               
+            
+            {% endif %}
+      </div>
+   </div>
+</div>
+</div>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
 
                                <div class="col-12">
                     <a href="mailto:samanthaluca@aol.com" target="_blank"> email enquiry </a></div>
 
                     </div>
                        </div>
-                            </div> -->
+                            </div> 
                                 <!-- <div class="col-12">
                                     <p><strong>Pick your date?:</strong></p>
                                     <div class="form-control w-50">
@@ -179,35 +249,12 @@
             </div>
         </div>
     </div>
-{% endblock %}
 
-{% block postloadjs %}
+
+<!-- {% block postloadjs %}
 {{ block.super }}
 {% include 'products/includes/quantity_input_script.html' %}
-{% endblock %}
-<!-- Load Facebook SDK for JavaScript -->
-      <div id="fb-root"></div>
-      <script>
-        window.fbAsyncInit = function() {
-          FB.init({
-            xfbml            : true,
-            version          : 'v7.0'
-          });
-        };
-
-        (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));</script>
-
-      <!-- Your Chat Plugin code -->
-      <div class="fb-customerchat"
-        attribution=setup_tool
-        page_id="102624628190785">
-      </div>
+{% endblock %} -->
 
 
       <i class="fa fa-calendar" aria-hidden="true"></i>
