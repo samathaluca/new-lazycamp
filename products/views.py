@@ -115,7 +115,7 @@ def contact(request):
 
     # product = get_object_or_404(Product, pk=product_id)
     user = request.user
-    initial =  {'email': user.email} if user.is_authenticated else Stranger
+    initial =  {'email': user.email} if user.is_authenticated else None
     enquiry_form = EnquiryForm(request.POST or None, initial=initial)
     if enquiry_form.is_valid():
 
@@ -188,7 +188,7 @@ def product_detail(request, product_id):
 
     product = get_object_or_404(Product, pk=product_id)
     user = request.user
-    initial =  {'email': user.email} if user.is_authenticated else Stranger
+    initial =  {'email': user.email} if user.is_authenticated else None
     enquiry_form = EnquiryForm(request.POST or None, initial=initial)
     if enquiry_form.is_valid():
 
