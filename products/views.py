@@ -109,6 +109,39 @@ def messenging(request):
     return render(request, 'products/messenging.html')
 
 
+def contact(request):
+    """ A view to show individual product details """
+
+    # product = get_object_or_404(Product, pk=product_id)
+    user = request.user
+    initial =  {'email': user.email} if user.is_authenticated else None
+    enquiry_form = EnquiryForm(request.POST or None, initial=initial)
+    if enquiry_form.is_valid():
+
+        context = enquiry_form.cleaned_data.copy()
+        # context['product'] = product
+
+        body = render_to_string('products/enquiry_email.txt', context)
+
+        send_mail(
+            # f'Enquiry about {product.name}',
+            body,
+            settings.DEFAULT_FROM_EMAIL,
+            [enquiry_form.cleaned_data['email']]
+            # [cust_email, order.campspot.owner.email]
+        )
+        # print('send an email')  # TODO
+    
+
+    context = {
+        # 'product': product,
+        'enquiry_form': enquiry_form,
+        'can_edit': request.user.is_superuser
+    }
+  
+    return render(request, 'products/contact.html', context)
+
+
 # def product_date(request):
 #     """ A view to show all products, including datepicker sorting and search queries """
 

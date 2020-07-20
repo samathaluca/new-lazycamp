@@ -26,6 +26,12 @@
     <title>Lazy Camp</title>
   </head>
   <body>
+      <div class="container header-container">
+        <div class="row">
+            <div class="col"><h1 style="color:white;">Messenger chat</h1></div>
+        </div>
+    </div>
+  
 <!-- Load Facebook SDK for JavaScript -->
       <div id="fb-root"></div>
       <script>
@@ -98,6 +104,12 @@
                             </div>
                         </a>
                     </li>
+                                        <li class="list-inline-item">
+                                        <a href="https://www.facebook.com/Lazy-Camp-102624628190785/ " target="_blank">  <i class="fa fa-facebook-official fa-lg" aria-hidden="true"></i>    <i class="fa fa-facebook" aria-hidden="true"></i>Facebook Booking</a>
+
+ 
+
+                     </li> 
                 </ul>
             </div>
         </div>
@@ -111,13 +123,17 @@
                 {% include 'includes/main-nav.html' %}
             </nav>
         </div>
+        </header>
 
-{% block page_header %}
+<!-- {% block page_header %}
     <div class="container header-container">
         <div class="row">
             <div class="col"><h1 style="color:white;">Messenger Chat</h1></div>
         </div>
     </div>
 {% endblock %}
+ -->
+
 
 </body>
+</html>
