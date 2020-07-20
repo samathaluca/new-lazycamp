@@ -13,6 +13,7 @@ from .forms import ProductForm, EnquiryForm
 
 
 
+
 # Create your views here.
 
 
@@ -127,8 +128,8 @@ def contact(request):
             # f'Enquiry about {product.name}',
             body,
             settings.DEFAULT_FROM_EMAIL,
-            [enquiry_form.cleaned_data['email']]
-            # [cust_email, order.campspot.owner.email]
+            # [enquiry_form.cleaned_data['email']]
+            ['lastminutecamp@gmail.com']
         )
         # print('send an email')  # TODO
     
