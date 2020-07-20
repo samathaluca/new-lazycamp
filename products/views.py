@@ -128,7 +128,7 @@ def contact(request):
             # f'Enquiry about {product.name}',
             body,
             settings.DEFAULT_FROM_EMAIL,
-            # [enquiry_form.cleaned_data['email']]
+            [enquiry_form.cleaned_data['email']],
             ['lastminutecamp@gmail.com']
         )
         # print('send an email')  # TODO
