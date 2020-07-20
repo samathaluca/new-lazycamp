@@ -204,9 +204,8 @@ def product_detail(request, product_id):
             [enquiry_form.cleaned_data['email']]
             # [cust_email, order.campspot.owner.email]
         )
-        print('send an email')  # TODO
-    
-
+        messages.success(request, 'Your email was sent Successfully!')
+        # print('send an email')  # TODO
     context = {
         'product': product,
         'enquiry_form': enquiry_form,
