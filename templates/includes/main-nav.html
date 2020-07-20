@@ -65,11 +65,15 @@
 
         <li class="nav-item dropdown">
             <a class="logo-font font-weight-bold nav-link text-black" href="#" id="specials-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Special Offers
+                Contact Us 
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="specials-link">
-                <a href="" class="dropdown-item">Free Nights</a>
-                <a href="" class="dropdown-item">Free entertainment</a>
+                <a href="{% url 'contact' %}" class="dropdown-item">General Enquiry</a>
+                <a href="{% url 'messenging' %}" class="dropdown-item">Messenger Chat</a>
+                <a href="tel:+447884040450" class="dropdown-item">Phone/Text</a>
+                <a href="https://web.whatsapp.com/" class="dropdown-item">WhatApp Chat</a>
+                <a href="mailto:samanthaluca@aol.com" class="dropdown-item">Quick Fire email</a>
+                <!-- <a href="" class="dropdown-item">Free entertainment</a>
                 <a href="" class="dropdown-item">Free drink</a>
                 <a href="" class="dropdown-item">Free food</a>
                 <a href="" class="dropdown-item">Free pick up</a>
@@ -79,7 +83,7 @@
                 <a href="{% url 'products' %}?category=new_arrivals" class="dropdown-item">New Arrivals</a>
                 <a href="{% url 'products' %}?category=deals" class="dropdown-item">Deals</a>
                 <a href="{% url 'products' %}?category=clearance" class="dropdown-item">Clearance</a>
-                <a href="{% url 'products' %}?category=new_arrivals,deals,clearance" class="dropdown-item">All Specials</a>
+                <a href="{% url 'products' %}?category=new_arrivals,deals,clearance" class="dropdown-item">All Specials</a> -->
             </div>
         </li>
     </ul>
