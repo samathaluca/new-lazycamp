@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.http import HttpResponseForbidden
 from django.contrib import messages
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
@@ -70,6 +71,7 @@ def campspot_detail(request, campspot_id):
 
     context = {
         'campspot': campspot,
+        'can_edit': request.user.is_superuser or (request.user == campspot.owner)
     }
 
     return render(request, 'campspots/campspot_detail.html', context)
@@ -95,6 +97,7 @@ def add_campspot(request):
         template = 'campspots/add_campspot.html'
     context = {
         'form': form,
+        
     }
 
     return render(request, template, context)
@@ -103,11 +106,14 @@ def add_campspot(request):
 @login_required
 def edit_campspot(request, campspot_id):
     """ Edit a campspot in the store """
-    if not request.user.is_superuser:
-        messages.error(request, 'Sorry, only hosts can do that.')
-        return redirect(reverse('home'))
 
     campspot = get_object_or_404(Campspot, pk=campspot_id)
+    if not (request.user.is_superuser or (request.user == campspot.owner)):
+        # messages.error(request, 'Sorry, only hosts can do that.')
+        # return redirect(reverse('home'))
+        return HttpResponseForbidden()
+
+    
     if request.method == 'POST':
         form = CampspotForm(request.POST, request.FILES, instance=campspot)
         if form.is_valid():

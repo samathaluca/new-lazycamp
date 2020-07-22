@@ -28,7 +28,7 @@ class StripeWH_Handler:
         recipients = [order.email] + [
                     l.campspot.campspot_email for l in order.lineitems.all()
                 ]
-        print('To:', recipients)
+        # print('To:', recipients)
         send_mail(
             subject,
             body,

@@ -125,7 +125,7 @@ def contact(request):
         body = render_to_string('products/enquiry_email.txt', context)
 
         send_mail(
-            # f'Enquiry about {product.name}',
+            'Enquiry',
             body,
             settings.DEFAULT_FROM_EMAIL,
             [enquiry_form.cleaned_data['email']],
@@ -211,7 +211,7 @@ def product_detail(request, product_id):
         'enquiry_form': enquiry_form,
         'can_edit': request.user.is_superuser or (request.user == product.owner)
     }
-    print(context)
+    # print(context)
     return render(request, 'products/product_detail.html', context)
 
 
