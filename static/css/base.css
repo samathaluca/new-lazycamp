@@ -19,6 +19,8 @@ body {
   }
 
 
+
+
 /* .btn-success {
     background-color:trans;
 } */
@@ -415,4 +417,14 @@ input[name='q']::placeholder {
 	#smallNav {
 		display: none;
 	}
+}
+
+
+@media only screen and (max-width: 650px) {
+
+#delivery-banner{
+    /* display: none; */
+    margin-bottom: 200rem;
+
+    }
 }

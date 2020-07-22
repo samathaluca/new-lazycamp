@@ -10,7 +10,9 @@
 {% endblock %}
 
 {% block search_products %}{% endblock %}
-{% block search_mobile_products %}{% endblock %}
+
+<!-- search_mobile -->
+<!-- {% block search_mobile_products %}{% endblock %} -->
 
 {% block content %}
     <div class="overlay"></div>
@@ -19,9 +21,9 @@
             <div class="col text-center mt-3">
                 <h2 class="logo-font mt-20">Campspot Phone/Email bookings.</h2>
                 <h4 class="logo-font mt-4">Payment on arrival.</h4>
-                <button type="button" class="btn btn-lg btn-secondary" disabled>Snail mail: lastminutecamp@aol.com</button>
+                <!-- <button type="button" class="btn btn-lg btn-secondary" disabled>Snail mail: lastminutecamp@aol.com</button> -->
                 <a href="mailto:samanthaluca@aol.com" class="btn btn-lg btn-secondary" disabled> Quick Fire email</a>
-
+                <h3>lastminutecamp@aol.com</h3>
                 
                 {% for c in current_categories %}	
                     <a class="category-badge text-decoration-none" href="{% url 'products' %}?category={{ c.name }}">	

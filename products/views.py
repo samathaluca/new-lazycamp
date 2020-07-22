@@ -11,12 +11,6 @@ from .models import Product, Category, Event
 from .forms import ProductForm, EnquiryForm
 
 
-
-
-
-# Create your views here.
-
-
 def all_products(request):
     """ A view to show all products, including sorting and search queries """
 
@@ -115,8 +109,9 @@ def contact(request):
 
     # product = get_object_or_404(Product, pk=product_id)
     user = request.user
-    initial =  {'email': user.email} if user.is_authenticated else None
+    initial = {'email': user.email} if user.is_authenticated else None
     enquiry_form = EnquiryForm(request.POST or None, initial=initial)
+
     if enquiry_form.is_valid():
 
         context = enquiry_form.cleaned_data.copy()
@@ -125,15 +120,15 @@ def contact(request):
         body = render_to_string('products/enquiry_email.txt', context)
 
         send_mail(
-            'Enquiry',
+            'enquiry',
             body,
             settings.DEFAULT_FROM_EMAIL,
             [enquiry_form.cleaned_data['email']],
-            ['lastminutecamp@aol.com'],
-            fail_silently=False
+            # ['lastminutecamp@aol.com'],
+            # fail_silently=False
         )
         # print('send an email')  # TODO
-    
+        messages.success(request, 'Your email was sent Successfully!')
 
     context = {
         # 'product': product,
@@ -142,6 +137,34 @@ def contact(request):
     }
 
     return render(request, 'products/contact.html', context)
+
+    # enquiry_form = EnquiryForm(request.POST or None, initial=initial)
+    # if enquiry_form.is_valid():
+
+    #         context = enquiry_form.cleaned_data.copy()
+      
+
+    #         body = render_to_string('products/enquiry_email.txt', context)
+
+    #         send_mail(
+    #             subject,
+    #             body,
+    #             settings.DEFAULT_FROM_EMAIL,
+    #             [enquiry_form.cleaned_data['email']],
+
+    #         )
+        
+    #         messages.success(request, 'Your email was sent Successfully!')
+
+    # context = {
+                
+    #     'enquiry_form': enquiry_form,
+    #         }
+
+    # return render(request, 'products/contact.html', context)
+
+
+
 
 def add_date(request, item_id):
     """ Add a booking """
@@ -188,7 +211,7 @@ def product_detail(request, product_id):
 
     product = get_object_or_404(Product, pk=product_id)
     user = request.user
-    initial =  {'email': user.email} if user.is_authenticated else None
+    initial = {'email': user.email} if user.is_authenticated else None
     enquiry_form = EnquiryForm(request.POST or None, initial=initial)
     if enquiry_form.is_valid():
 
