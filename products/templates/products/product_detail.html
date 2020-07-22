@@ -31,9 +31,19 @@
                     {% endif %}
                 </div>
             </div>
+            
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="product-details-container mb-5 mt-md-5">
-                    <p class="mb-0">{{ product.name }}</p>
+                    <p class="upper lead font-weight-bold mb-0">EVENT:  {{ product.event.name }}</p>
+                                                                <p class="small mt-1 mb-0">	
+                                                <a class="lead font-weight-bold" href="{% url 'products' %}?event={{ product.event.name }}">	
+                                                    <i class="fa fa-calendar" aria-hidden="true"></i>  {{ product.event_dates}}</a>
+                                            </p>
+                    <p class="mt-2">{{ product.description }}</p>
+                    <p class="upper lead mt-2">CAMPSPOT:  {{ product.name }}</p>
+                    <p class="upper mt-2">Location: {{ product.postcode }}</p>
+                    <p class="upper mt-2"><i class="fa fa-ticket" aria-hidden="true"></i>
+ Tickets available:  {{ product.number_available }}</p>
                     <p class="lead mb-0 text-left font-weight-bold">£{{ product.price }}</p>
                     {% if product.category %}
                     <p class="small mt-1 mb-0">
@@ -81,7 +91,9 @@
                         <form action="" method="post">
                         {% csrf_token %}
                             {{enquiry_form|crispy}}
-                            <button>Send</button>
+                             <button class="btn btn-success">Send</button>
+                             <!-- <button type="button" class="btn btn-lg btn-success"> Send Email Enquiry</button> -->
+                           
                         </form>
                     </div>
 
@@ -91,13 +103,20 @@
          <!-- <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom" title="Check you date!">
   Book Now
 </button> -->
-
+<!-- 
                   <input type="submit" class="btn btn-success" data-toggle="tooltip" data-placement="bottom" title="Check your date!" value="Book Now">
                   
                   <i class="fas fa-check-double"></i>
-               </div>
+               </div> -->
                
                <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                 <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 mt-5">
+                  <span class="icon">
+                  <i class="fas fa-chevron-left"></i>
+                  </span>
+                  <span class="text-uppercase">Keep Looking</span>
+                  </a>
+                                 <input type="hidden" name="redirect_url" value="{{ request.path }}">
                                  <a href="{% url 'campspots' %}" class="btn btn-outline-black rounded-0 mt-5">
                   <span class="icon">
                   <i class="fas fa-chevron-left"></i>
@@ -123,8 +142,8 @@
                
                 
             
-        </form>
-            {% if campspot.is_available %}
+        <!-- </form> -->
+            <!-- {% if campspot.is_available %}
             <small class="text-muted"><i class="fas fa-star mr-1"></i>Available tonight</small>
             {% else %}
                             <div class="col{% if s %}-12 mt-2{% endif %}">
@@ -136,7 +155,7 @@
                   </a>
                   <input type="none" class="btn btn-black rounded-0 text-uppercase mt-5" value="FULL">
                </div>
-               <input type="hidden" name="redirect_url" value="{{ request.path }}">   
+               <input type="hidden" name="redirect_url" value="{{ request.path }}">    -->
 
                
             

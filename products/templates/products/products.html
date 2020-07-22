@@ -19,7 +19,7 @@
                 <h2 class="logo-font mt-20">Campspot Phone/Email bookings.</h2>
                 <h4 class="logo-font mt-4">Payment on arrival.</h4>
                 <button type="button" class="btn btn-lg btn-secondary" disabled>Snail mail: lastminutecamp@aol.com</button>
-
+                <a href="mailto:samanthaluca@aol.com" class="btn btn-lg btn-secondary" disabled> Quick Fire email</a>
 
                 
                 {% for c in current_categories %}	
@@ -56,6 +56,19 @@
                             {{ products|length }} Products{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}	
                         </p>	
                     </div>	
+
+                    <!-- <div class="col-12 col-md-6 order-md-first">	
+                        <p class="text-muted mt-3 text-center text-md-left">	
+                            {% if search_term or current_categories or current_sorting != 'None_None' %}	
+                                <span class="small"><a href="{% url 'products' %}">Products Home</a> | </span>	
+                            {% endif %}	
+                            {{ products|length }} Products{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}	
+                        </p>	
+                    </div>	 -->
+
+
+
+
                 </div>
                 <div class="row">
                     {% for product in products %}
@@ -84,19 +97,25 @@
                                 <button type="button" class="btn btn-lg btn-success" disabled>Available</button> -->
                                 {% endif %}
                                 <div class="card-body pb-0">
-                                    <p class="mb-0">{{ product.name }}</p>
+                                    <p class="upper lead font-weight-bold mb-0">EVENT:{{ product.event.name }}</p>
+                                    
                                     <!-- <p class="mb-0">Location: {{ product.county }}</p> -->
                                 </div>
                                 <div class="card-footer bg-white pt-0 border-0 text-left">
                                     <div class="row">
                                         <div class="col">
+                                            <p class="small mt-1 mb-0">	
+                                                <a class="lead font-weight-bold" href="{% url 'products' %}?event={{ product.event.name }}">	
+                                                    <i class="fa fa-calendar" aria-hidden="true"></i>  {{ product.event_dates}}</a>
+                                            </p>	
                                             <p class="lead mb-0 text-left font-weight-bold">£{{ product.price }}</p>
                                             <p> pppn <small>(per person per night)</small> </p>
-                                            <p class="mb-0">Location: {{ product.county }}</p>
+                                            <p class="mb-0">Location: {{ product.postcode }}</p>
                                             <p class="small mt-1 mb-0">	
                                                 <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">	
                                                     <i class="fas fa-tag mr-1"></i>{{ product.category.friendly_name }} </a>
                                             </p>	
+                                            <p class="upper mb-0">{{ product.name }}</p>
                                             <!-- <p class="lead mb-0 text-left font-weight-bold">£{{ product.county }}</p> -->
                                             {% if product.rating %}
                                                 <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
