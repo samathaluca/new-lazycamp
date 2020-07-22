@@ -39,8 +39,8 @@
                                 <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>	
                                 <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>	
                                 <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>	
-                                <option value="rating_asc" {% if current_sorting == 'rating_asc' %}selected{% endif %}>Rating (low to high)</option>	
-                                <option value="rating_desc" {% if current_sorting == 'rating_desc' %}selected{% endif %}>Rating (high to low)</option>	
+                                <option value="event_asc" {% if current_sorting == 'event_asc' %}selected{% endif %}>Events (low to high)</option>	
+                                <!-- <option value="rating_desc" {% if current_sorting == 'rating_desc' %}selected{% endif %}>Rating (high to low)</option>	 -->
                                 <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>	
                                 <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name (Z-A)</option>	
                                 <option value="category_asc" {% if current_sorting == 'category_asc' %}selected{% endif %}>Category (A-Z)</option>	
@@ -159,79 +159,7 @@
             </div>
         </div>
     </div>
-            <div class="product-container col-10 offset-1">
-                    <h4> Not currently available </h4>
-                    <div class="row">
-                    
-                    {% for product in products_full %}
-                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                            <div class="card h-100 border-0">
-                                {% if product.image %}
-                                <a href="{% url 'product_detail' product.id %}">
-                                    <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
-                                </a>
-                                <button type="button" class="btn btn-lg btn-danger" disabled>FULLY BOOKED</button>
-                                {% else %}
-                                <a href="{% url 'product_detail' product.id %}">
-                                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}joy.jpg" alt="{{ product.name }}">
-                                </a>
-                                <button type="button" class="btn btn-lg btn-danger" disabled>Primary button</button>
-                                {% endif %}
-                                <div class="card-body pb-0">
-                                    <p class="mb-0">{{ product.name }}</p>
-                                    <!-- <p class="mb-0">Location: {{ campspot.county }}</p> -->
-                                </div>
-                                <div class="card-footer bg-white pt-0 border-0 text-left">
-                                    <div class="row">
-                                        <div class="col">
-                                            <p class="lead mb-0 text-left font-weight-bold">£{{ product.price }}</p>
-                                            <p>  pppn <small>(per person per night)</small> </p>
-                                            <p class="mb-0">Location: {{ product.county }}</p>
-                                            <p class="small mt-1 mb-0">	
-                                                <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">	
-                                                    <i class="fas fa-tag mr-1"></i>{{ product.category.friendly_name }} </a>
-                                            </p>	
-                                            <!-- <p class="lead mb-0 text-left font-weight-bold">£{{ product.county }}</p> -->
-                                            {% if product.rating %}
-                                                <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
-                                            {% else %}
-                                                <small class="text-muted">No Rating</small>
-                                            {% endif %}
 
-	                                            <!-- {% if request.user.is_superuser %}		
-                                                <small class="ml-3">		
-                                                    <a href="{% url 'edit_campspot' campspot.id %}">Edit</a> | 		
-                                                    <a class="text-danger" href="{% url 'delete_campspot' campspot.id %}">Delete</a>		
-                                                </small>		
-                                            {% endif %} -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    {% if forloop.counter|divisibleby:1 %}
-                            <div class="col-12 d-sm-none mb-5">
-                                <hr>
-                            </div>
-                        {% endif %}                        
-                        {% if forloop.counter|divisibleby:2 %}
-                            <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
-                                <hr>
-                            </div>
-                        {% endif %}
-                        {% if forloop.counter|divisibleby:3 %}
-                            <div class="col-12 d-none d-lg-block d-xl-none mb-5">
-                                <hr>
-                            </div>
-                        {% endif %}
-                        {% if forloop.counter|divisibleby:4 %}
-                            <div class="col-12 d-none d-xl-block mb-5">
-                                <hr>
-                            </div>
-                        {% endif %}
-                    {% endfor %}
-                </div>
-            </div>
         <!-- </div> -->
 
     <div class="btt-button shadow-sm rounded-0 border border-black">	
