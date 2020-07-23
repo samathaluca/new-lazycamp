@@ -21,7 +21,7 @@ def add_to_book(request, item_id):
     quantity = int(request.POST.get('quantity'))
     booking_date = request.POST.get('booking_date')
     number_nights = int(request.POST.get('number_nights'))
-    print(booking_date,type(booking_date))
+    # print(booking_date,type(booking_date))
     # print(number_nights)
     redirect_url = request.POST.get('redirect_url')
     size = None
@@ -32,9 +32,9 @@ def add_to_book(request, item_id):
     book = request.session.get('book', {})
     if date:
         if item_id in list(book.keys()):
-            print(date)
-            print(book)
-            print(book[item_id]['items_by_date'].keys())
+            # print(date)
+            # print(book)
+            # print(book[item_id]['items_by_date'].keys())
             if date in book[item_id]['items_by_date'].keys():
                 book[item_id]['items_by_date'][date]['number_people'] += quantity
                 book[item_id]['items_by_date'][date]['number_nights'] += number_nights
@@ -49,7 +49,7 @@ def add_to_book(request, item_id):
             messages.success(request, f'Added date {date.upper()} {campspot.name} to book')
 
 
-    print(book)
+    # print(book)
     request.session['book'] = book
     return redirect(redirect_url)
 
@@ -88,22 +88,22 @@ def remove_from_book(request, item_id, date):
     """Remove the item from booking"""
     try:
         campspot = get_object_or_404(Campspot, pk=item_id)
-        size = None
-        if 'pitch_sizes' in request.POST:
-            size = request.POST['pitch_sizes']
+        # size = None
+        # if 'pitch_sizes' in request.POST:
+        #     size = request.POST['pitch_sizes']
         book = request.session.get('book', {})
 
-        if size:
-            del book[item_id]['items_by_size'][size]
-            if not book[item_id]['items_by_size']:
-                book.pop(item_id)
-                messages.success(request, f'Removed size {size.upper()} {campspot.name} from your booking')
-        else:
-            if len(book[item_id]['items_by_date']) > 1:
+        # if size:
+        #     del book[item_id]['items_by_size'][size]
+        #     if not book[item_id]['items_by_size']:
+        #         book.pop(item_id)
+        #         messages.success(request, f'Removed size {size.upper()} {campspot.name} from your booking')
+        # else:
+        if len(book[item_id]['items_by_date']) > 1:
                 book[item_id]['items_by_date'].pop(date)
-            else:
+        else:
                 book.pop(item_id)
-            messages.success(request, f'Removed {campspot.name} from your booking')
+        messages.success(request, f'Removed {campspot.name} from your booking')
         request.session['book'] = book
         return HttpResponse(status=200)
 
