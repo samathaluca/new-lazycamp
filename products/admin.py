@@ -8,8 +8,8 @@ class ProductAdmin(admin.ModelAdmin):
     list_display = (
         # 'postcode',
         'name',
-        'date'
-        'event'
+        'date',
+        'event',
         'category',
         'price',
         # 'image',
