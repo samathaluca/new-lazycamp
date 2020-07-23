@@ -44,6 +44,7 @@ class Product(models.Model):
     late_arrival = models.BooleanField(default=True)
     is_available = models.BooleanField(default=True)
     number_available = models.IntegerField(default=0)
+    date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.name

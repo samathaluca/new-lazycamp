@@ -8,9 +8,11 @@ class ProductAdmin(admin.ModelAdmin):
     list_display = (
         # 'postcode',
         'name',
+        'date'
+        'event'
         'category',
         'price',
-        'image',
+        # 'image',
         'is_available',
     )
 
