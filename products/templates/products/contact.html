@@ -31,7 +31,15 @@
 
                   <!-- <a href="https://web.whatsapp.com/" target="_blank" type="button" class="btn btn-lg btn-success" disabled><i class="fa fa-whatsapp" aria-hidden="true"></i> WhatsApp Chat</a> -->
             </div>
-            
+                           <div class="col-12 col-lg-6">
+                        <form action="" method="post">
+                        {% csrf_token %}
+                            {{enquiry_form|crispy}}
+                             <button class="btn btn-success">Send</button>
+                             <!-- <button type="button" class="btn btn-lg btn-success"> Send Email Enquiry</button> -->
+                           
+                        </form>
+                    </div>     
 
 
  {% if enquiry_form.errors %}	
