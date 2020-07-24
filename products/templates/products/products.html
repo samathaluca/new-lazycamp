@@ -79,7 +79,7 @@
                             <div class="card  border-0">
                                 {% if product.image %}
                                 <a href="{% url 'product_detail' product.id %}">
-                                    <img class="card-img-top img-fluid" style="max-height:310px" src="{{ product.listing_image.url }}" alt="{{ product.name }}">
+                                    <img class="card-img-top img-fluid" style="max-height:310px" src="{{ product.image.url }}" alt="{{ product.name }}">
                                 </a>
                                 <a href="{% url 'product_detail' product.id %}"
                                 type="button" id="opaque" class="btn btn-lg btn-success"><h6>Available <i class="fa fa-phone" aria-hidden="true"></i> 07834 340828</h6>
