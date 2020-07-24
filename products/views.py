@@ -104,10 +104,9 @@ def messenging(request):
     return render(request, 'products/messenging.html')
 
 
-def contacts(request):
-    """ A view to allow contact enquiries """
+def contact(request):
+    """ A view to allow contact emquiries """
 
-    # product = get_object_or_404(Product, pk=product_id)
     user = request.user
     initial = {'email': user.email} if user.is_authenticated else None
     enquiry_form = EnquiryForm(request.POST or None, initial=initial)
@@ -115,7 +114,6 @@ def contacts(request):
     if enquiry_form.is_valid():
 
         context = enquiry_form.cleaned_data.copy()
-        # context['product'] = product
 
         body = render_to_string('products/enquiry_email.txt', context)
 
@@ -123,52 +121,14 @@ def contacts(request):
             'enquiry',
             body,
             settings.DEFAULT_FROM_EMAIL,
-            [enquiry_form.cleaned_data['email']],
-            # ['lastminutecamp@aol.com'],
-            # fail_silently=False
-        )
-        # print('send an email')  # TODO
+            [enquiry_form.cleaned_data['email']],)
         messages.success(request, 'Your email was sent Successfully!')
 
     context = {
-        # 'product': product,
         'enquiry_form': enquiry_form,
-        # 'can_edit': request.user.is_superuser
     }
 
     return render(request, 'products/contact.html', context)
-
-
-def contact(request):
-
-    user = request.user
-    initial = {'email': user.email} if user.is_authenticated else None
-    enquiry_form = EnquiryForm(request.POST or None, initial=initial)
-
-    if enquiry_form.is_valid():
-
-        context = enquiry_form.cleaned_data.copy()
-        """Send the user a confirmation email"""
-        subject = 'enquiry'
-        body = render_to_string('products/enquiry_email.txt', context)
-        recipients = ['email']
-        # print('To:', recipients)
-        send_mail(
-            subject,
-            body,
-            settings.DEFAULT_FROM_EMAIL,
-            list(set(recipients))
-            # [cust_email, order.campspot.owner.email]
-            )
-        # print('send an email')  # TODO
-        messages.success(request, 'Your email was sent Successfully!')
-
-        context = {
-
-            'enquiry_form': enquiry_form,
-            }
-
-        return render(request, 'products/contact.html', context)
 
 
 def add_date(request, item_id):
