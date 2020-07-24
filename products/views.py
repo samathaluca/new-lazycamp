@@ -104,8 +104,8 @@ def messenging(request):
     return render(request, 'products/messenging.html')
 
 
-def contact(request):
-    """ A view to allow contact emquiries """
+def contacts(request):
+    """ A view to allow contact enquiries """
 
     # product = get_object_or_404(Product, pk=product_id)
     user = request.user
@@ -138,32 +138,37 @@ def contact(request):
 
     return render(request, 'products/contact.html', context)
 
-    # enquiry_form = EnquiryForm(request.POST or None, initial=initial)
-    # if enquiry_form.is_valid():
 
-    #         context = enquiry_form.cleaned_data.copy()
-      
+def contact(request):
 
-    #         body = render_to_string('products/enquiry_email.txt', context)
+    user = request.user
+    initial = {'email': user.email} if user.is_authenticated else None
+    enquiry_form = EnquiryForm(request.POST or None, initial=initial)
 
-    #         send_mail(
-    #             subject,
-    #             body,
-    #             settings.DEFAULT_FROM_EMAIL,
-    #             [enquiry_form.cleaned_data['email']],
+    if enquiry_form.is_valid():
 
-    #         )
-        
-    #         messages.success(request, 'Your email was sent Successfully!')
+        context = enquiry_form.cleaned_data.copy()
+        """Send the user a confirmation email"""
+        subject = 'enquiry'
+        body = render_to_string('products/enquiry_email.txt', context)
+        recipients = ['email']
+        # print('To:', recipients)
+        send_mail(
+            subject,
+            body,
+            settings.DEFAULT_FROM_EMAIL,
+            list(set(recipients))
+            # [cust_email, order.campspot.owner.email]
+            )
+        # print('send an email')  # TODO
+        messages.success(request, 'Your email was sent Successfully!')
 
-    # context = {
-                
-    #     'enquiry_form': enquiry_form,
-    #         }
+        context = {
 
-    # return render(request, 'products/contact.html', context)
+            'enquiry_form': enquiry_form,
+            }
 
-
+        return render(request, 'products/contact.html', context)
 
 
 def add_date(request, item_id):
