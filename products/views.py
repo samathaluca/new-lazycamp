@@ -8,7 +8,7 @@ from django.template.loader import render_to_string
 from django.core.mail import send_mail
 from django.conf import settings
 from .models import Product, Category, Event
-from .forms import ProductForm, EnquiryForm
+from .forms import ProductForm, EnquiryForm, ContactForm
 
 
 def all_products(request):
@@ -109,7 +109,7 @@ def contact(request):
 
     user = request.user
     initial = {'email': user.email} if user.is_authenticated else None
-    enquiry_form = EnquiryForm(request.POST or None, initial=initial)
+    enquiry_form = ContactForm(request.POST or None, initial=initial)
 
     if enquiry_form.is_valid():
 

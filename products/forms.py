@@ -22,14 +22,20 @@ class ProductForm(forms.ModelForm):
             field.widget.attrs['class'] = 'border-black rounded-0'
 
 
-class EnquiryForm(forms.Form):
-
+class ContactForm(forms.Form):
     email = forms.EmailField()
     name = forms.CharField()
     phone = forms.CharField()
+    message = forms.CharField(widget=forms.Textarea)
+
+
+
+class EnquiryForm(ContactForm):
+
+
     number_of_nights = forms.IntegerField()
     number_of_people = forms.IntegerField()
     ideal_month = forms.CharField()
     ideal_dates = forms.CharField()
-    message = forms.CharField(widget=forms.Textarea)
+    
     # date = forms.DateField()
