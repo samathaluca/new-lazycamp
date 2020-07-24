@@ -84,29 +84,31 @@ def adjust_book(request, item_id):
     return redirect(reverse('view_book'))
 
 
-def remove_from_book(request, item_id, date):
+def remove_from_book(request, item_id, date=None):
     """Remove the item from booking"""
-    try:
-        campspot = get_object_or_404(Campspot, pk=item_id)
-        # size = None
-        # if 'pitch_sizes' in request.POST:
-        #     size = request.POST['pitch_sizes']
-        book = request.session.get('book', {})
+    # try:
+    campspot = get_object_or_404(Campspot, pk=item_id)
 
-        # if size:
-        #     del book[item_id]['items_by_size'][size]
-        #     if not book[item_id]['items_by_size']:
-        #         book.pop(item_id)
-        #         messages.success(request, f'Removed size {size.upper()} {campspot.name} from your booking')
-        # else:
-        if len(book[item_id]['items_by_date']) > 1:
-                book[item_id]['items_by_date'].pop(date)
-        else:
-                book.pop(item_id)
-        messages.success(request, f'Removed {campspot.name} from your booking')
-        request.session['book'] = book
-        return HttpResponse(status=200)
+    book = request.session.get('book', {})
+    #TODO remove date
+    if len(book[item_id]['items_by_date']) > 1:
+            book[item_id]['items_by_date'].pop(date)
+    else:
+            book.pop(item_id)
+    
+    request.session['book'] = book
+    return campspot
+    # except Exception as e:
+    #     return HttpResponse(status=500)
 
-    except Exception as e:
-        return HttpResponse(status=500)
-        
+def remove_from_book_ajax(request, item_id, date):        
+    remove_from_book(request, item_id, date)
+
+    return HttpResponse(status=200)
+
+def remove_and_rebook(request, item_id):
+    campspot = remove_from_book(request, item_id)
+    messages.success(request, f'Removed booking please rebook here')
+    return redirect(reverse('campspot_detail',args=[campspot.pk]))
+
+

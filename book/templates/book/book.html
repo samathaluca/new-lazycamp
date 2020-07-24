@@ -43,7 +43,7 @@
                                     <img class="w-100" src="{{ MEDIA_URL }}joy.jpg" alt="{{ campspot.name }}">
                                 {% endif %}
                             </a>
-                            <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}" data-product_size="{{ item.size}}" data-date="{{ item.date }}"><small><strong> Remove Stay</strong></small></a>
+                         <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}" data-product_size="{{ item.size}}" data-date="{{ item.date }}"><small><strong> Remove Stay</strong></small></a>
                           <!-- <i class="fa fa-times-circle-o" aria-hidden="true"></i>    -->
                         </div>
                         <div class="col-7">
@@ -103,6 +103,7 @@
                                         {% endif %}
                                         <p class="my-0"><strong>{{ item.campspot.name }}</strong></p>
                                         <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}" data-product_size="{{ item.size}}" data-date="{{ item.date }}"><small><strong>Remove Stay</strong></small></a>
+                                        <a href="{% url 'remove_and_rebook' item.campspot.pk %}" class="remove-item text-danger float-right"><small><strong>Rebook Stay</strong></small></a>
                                  
                                     </td>
                                     <td class="py-3">
