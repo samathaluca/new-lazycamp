@@ -2,11 +2,19 @@ Balsamiq
 
 ![Balsamiq ](/img/wireframes/home.png)
 
-![Balsamiq ](static/img/wireframes/home.png)
+![Balsamiq ](static/wireframes/home.png)
 
-![Balsamiq ](/static/img/wireframes/home.png)
+![Balsamiq ](/static/wireframes/home.png)
+
+![Balsamiq ](wireframes/home.png)
+
+![Balsamiq ](/wireframes/home.png)
+
 
 ![Balsamiq ](/test.md)
+
+[Balsamiq ](/templates/404.html)
+[Balsamiq ](templates/404.html)
 
 # LaZy Camp
 
