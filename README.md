@@ -1,7 +1,7 @@
 Balsamiq 
 
 
-![Balsamiq ](static/wireframes/home.png)
+
 
 ![Balsamiq ](/static/wireframes/home.png)
 
@@ -331,11 +331,7 @@ Chatboxes are a little impersonal and faceless for the travel industry which exp
 ### Skeleton
 The home page uses design to direct the user to the online and payment booking system
 
-
-
-
-
-The Surface plane
+### Surface plane
 Appearance, images, colour choices and fonts.
 
 Extensive colour work has been tested during development. 
@@ -349,32 +345,27 @@ Modern design conventions were followed.
 The forms to complete were kept very simple. 
 Focus to be kept on the information. 
 
-The font is easy to read. 
+The font chosen to be modern and easy to read. The logo uses a bespoke font with character, however, because the 'A' symbolised by a tent needs some interpretation the clarify of all the other letters was priority. 
 
- This will be adapted quickly as the questions may change 
-and the way they are presented may not benefit the user and help the information to be 
-absorbed.
+#### Wireframes
 
-The font was been adjusted a number of times during the design phase. 
-The recommended Materialize template and component font always appeared optimal. 
-Materialize uses Roboto 2.0 as a standard font. Audiowide was used sparingly due to 
-being an intrusive looking font. It was used to command attention e.g. to check that 
-required fields in form were completed to avoid aborted submission attempts. Lato and 
-Ubuntu were chosen to add distinctive design to sections when needed with san serif back 
-up. They were used to add a little contrast for interest.
+![Balsamiq ](static/wireframes/home.png)
 
-In the final stages of development, user testing feedback influenced me to remove audiowide
- and Ubuntu fonts and test permanent marker font style to get attention e.g. to check required fields were filled in forms.
+![Balsamiq ](static/wireframes/campspots.png)
 
+![Balsamiq ](static/wireframes/register.png)
 
+![Balsamiq ](static/wireframes/add_edit.png)
 
-Wireframes
+![Balsamiq ](static/wireframes/basket.png)
 
+![Balsamiq ](static/wireframes/checkout.png)
 
-surface
+![Balsamiq ](static/wireframes/order_confirmed.png)
 
-Wireframes
+<!-- ![Balsamiq ](static/wireframes/home.png)
 
+![Balsamiq ](static/wireframes/home.png) -->
 
 
 
