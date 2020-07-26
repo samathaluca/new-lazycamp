@@ -9,7 +9,7 @@
 {% block page_header %}
     <div class="container header-container">
         <div class="row">
-            <div class="col"></div>
+            <div class="col">Final Check</div>
         </div>
     </div>
 {% endblock %}
@@ -20,7 +20,7 @@
         <div class="row">
             <div class="col">
                 <hr>
-                <h2 class="logo-font mb-4">Checkout</h2>
+                <h2 class="logo-font mb-4">Booking</h2>
                 <hr>
             </div>
         </div>
@@ -39,8 +39,8 @@
                 </div>
                 {% for item in book_items %}
                     <div class="row">
-                        <div class="col-2 mb-1">                                        <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}" data-product_size="{{ item.size}}" data-date="{{ item.date }}">Remove</a>
-                                        <a href="{% url 'remove_and_rebook' item.campspot.pk %}" class="remove-item text-success float-left">Amend</a>
+                        <div class="col-2 mb-1">                                        <a class="remove-item text-danger text-center" id="remove_{{ item.item_id }}" data-product_size="{{ item.size}}" data-date="{{ item.date }}"><small>Remove</small></a>
+                                        <a href="{% url 'remove_and_rebook' item.campspot.pk %}" class="remove-item text-success float-left"><small>Amend</small></a>
                             <a href="{% url 'campspot_detail' item.campspot.id %}">
                                 {% if item.campspot.image %}
                                     <img class="w-100" src="{{ item.campspot.image.url }}" alt="{{ campspot.name }}">
