@@ -1,20 +1,15 @@
 Balsamiq 
 
-![Balsamiq ](/img/wireframes/home.png)
 
 ![Balsamiq ](static/wireframes/home.png)
 
 ![Balsamiq ](/static/wireframes/home.png)
 
-![Balsamiq ](wireframes/home.png)
-
-![Balsamiq ](/wireframes/home.png)
 
 
 ![Balsamiq ](/test.md)
 
-[Balsamiq ](/templates/404.html)
-[Balsamiq ](templates/404.html)
+
 
 # LaZy Camp
 
@@ -59,9 +54,13 @@ how your project is the best way to help them achieve these things.
 
 In particular, as part of this section we recommend that you provide a list of User Stories, with the following general structure:
 
-As a user type, I want to perform an action, so that I can achieve a goal.
+
+
+
 
 earn by diecting calls and emial enquiries then bookings 
+
+compare to booking.com lastminute.com aribnb couch surfing 
 ## Quick guide / Features
 
 <hr>
@@ -121,14 +120,67 @@ Testiminial Page
 
 ## Ux
 
-compare to booking.com lastminute.com aribnb couch surfing 
+### Goals
+
+#### Visitor Goals
+
+The target audience for Lazycamp are:
+
+* Experienced campers who get the urge to book last minute because of good weather.
+* Experienced campers who want to try a new area for a short stay.
+* Experienced campers who want to change sites rather than stay in one place. Maybe to follow good weather or explore a region of the country they do not know. 
+* People who enjoy road trips.
+* People who have never tried camping before because of the research and planning needed.
+* Spontaneous and adventurous people.
+ 
+User goals are:
+
+* Find a camping spot for the night last minute in the area they would like to stay.
+* Find an event for a weekend or week.  
+* Either to find a campspot quickly or browse for inspiration.
+* To be able to book campspots ahead of time quickly without having to search individual sites for availablity. 
+* Be able to navigate the site easily, find what I need and make a safe and secure purchase.
+* Book from a fast, reliable and trustworthy online system.
+* Have the option to phone/email or chat if I have questions.
+* To be able to book from my mobile phone then have all the details sent to my mobile phone in an email with simple process then only having to give my name and email address on arrival.
+* Not needing to check in during office hours because all access details and pitching information will automatically come to my phone at the time of booking in a precitable format including detailed directions from nearest landmark. 
+
+Lazycamp meets all these needs because:
+
+* Unavailable campsites are listed beneath all available sites for instant information on whether or not a site can be booked. 
+* The focus of the site design has been instant view of what the user wants in the right location.
+* The booking process is fast.
+* An email is sent to the user and the business user with all the details needed. 
+
+#### Business Goals
+
+* Fill all my camping spots and maximise revenue.
+* Attract new customers.
+* Provide all the customers information they need online so that they do need to call and email.
+* Manage customer expectations online so I always have happy customers who are right for what I have on offer so minimising the risk of complaints, bad reviews and refunds.
+* Have a booking system which I do not have to manage.
+* Have an online payment system I do not to manage and keep secure.
+
+Lazycamp meets all these needs because:
+
+* I can add and amend my data easily.
+* Booking and payments will be taken then forwarded to me.
+Lazycamp meets all these needs because:
+* Most queries will be answered online.
+Lazycamp meets all these needs because:
+* If customers do want to contact us, general questions will be answered for us by the Lazycamp team. 
+* Customer expectations will be managed by the lazycamp team and queries can be answered outside hours.   
+
+
 User stories
+
+As a user type, I want to perform an action, so that I can achieve a goal.
 As a user I expect to be able to quickly find the nearest pitch/ site or spot where I can safely camp for the night.
 
-As user I want to cleary see which campspots are available and not be wasting time being presented with fully booked campspots. Evn companies as big as Argos only inform customers that a product is sold out on the checkout page. This wastes time and is frustrating. 
-I do not want to waste my time or be frustrated.
+As user I want to cleary see which campspots are available and not be wasting time being presented with fully booked campspots. 
+I do not want to waste my time, be frustrated or disappointed.
 
-As a user if I have viewed a site and it is sold out I still want to see that the spot is featured but now fully booked. This will stop me being confused if the spot has disappeared from all views and I may wonder if I saw it on a different site. 
+As a user, if I have viewed a campsite and it is sold out, I want to see it still featured but now fully booked. This will stop me being confused if the spot has disappeared from all views and I may wonder if I saw it on a different site. 
 
 As a user I may have needs or preferences that I want to be able to prioritise in a search for example, pets, car space, public transport, shower, electricity, local amenities.
 
@@ -140,42 +192,42 @@ As a user I want to be able to access the pitch normal hours and spontaneously.
 
 As I user I want to ensure that the site participation is current and that I will have access and knowledge of where to go exactly.
 
-I do not want to be given outdated event or pitch information. Maybe a link to check uptodate bus routes or travel info or weather forecast in the area.
+I do not want to be given outdated event or pitch information. 
 
-I want to know a basic price and what will cost me extra. Do i need £1 coins for on site facilities. 
-
-As a user I may want to be able to rent or buy a basic kit so I do not have to preplan my trip and buy camping stuff I may only use once.
+I want to know a fixed basic price and what will cost me extra. Do I need £1 coins for on site facilities e.g showers, lockers or gaming. 
 
 As I user I may want to try camping for the first time with tips and ideas and to make my experience as comfortable as possible using know how from seasoned and well travelled campers
 
-As a user I may need local information e.g. scottish midges, noisy frogs, local early cockerel or noisy dawn chorus, farm animal smells etc,
+As a user I may need local information e.g. scottish midges, noisy frogs, local early cockerel or noisy dawn chorus, farm animal smells etc. I want to know the bad points as well as the good so I know what to expect, have the option to prepare so that I can relax and enjoy myself.
 
 As a user I would like a profile of previous bookings and to find them easily. 
 
-I would like to a very simple login process. I would like password reset . Ideally I would like to login through social media. 
+I would like to a very simple login process. I would like password reset. 
+Possibly I would like to login through social media. 
 
-I want to see images then reviews and other user images.
-
-I may enjoy a blog or chatroom to help get ideas or make plans? 
+As a user  enjoy a blog or chatroom to help get ideas or make plans? 
 
 I want my payment to be made easily and securely. I want email Acknowledgements
 
-I would like modal and messages then email confirmation. 
+I would like messages appear when I submit, enquire or book that tewll me I have been successful. 
+
+As  a user I would like email confirmation with all the information I will need to find and access the camp spot.. 
 
 If I am camping my phone may not be charged and I am unlikely to have been able to print my booking so I would like my email address and name to be evidence enough to the business user .
 
 I want flexibility and maybe a credit offer if I can not make my booking. 
 
-As a user I would like to be able to write a review and add images. 
-
 As a user I would like to read how other users got there and found it. How they slept is important. Did they feel secure?. 
 
 As a user I would like to know what is closest to my ideal spot if there are no ideal spots. for example i have 2 children and a dog so it must be a child and pet friendly site but I may be willing to park a distance away from the pitch or do without electric if needed. 
 
-As a user I would like spinners to show that my request is being processed.
+As a user I would like spinners to show that my payment is being processed.
 
 As a user I would appreciate tooltips to ensure I do not make mistakes when I make my booking.
 
+As a user I would like to make final checks to my booking before payment is made. 
+
+As a user I want to be able to use familiar chat messaging e.g. Facebook messaging. I can then check when the recipient last checked the messages and know when my message has been seen. I would prefer this to an unfamiliar chatbox not knowing if I am being responded to by a bot or a real person. 
 
 
 
@@ -223,10 +275,8 @@ Many people do not know how to prepare for a camping trip and so never experienc
 
 Late arrival is currently difficult. This will be one of the features on offer. 24/7 pitches will be available
 
-On the road trip to greece last summer we often found ourselves scaling fences with locked gates. Lazy camp will offer spots on the edge of campsites where late arrival is possible.
 
-
-
+As a business user I do not want to lose enquiries if the chat is not answered quickly enough, using messenger means all chat enquiries are stored so can be reignited while customer expectations of FB messenger will give more time to answer. 
 
 
 
@@ -244,51 +294,43 @@ Feedback and comments from user groups
 
 ### The strategy plane
 
-
-
 Use agile design to lay out the foundations of booking system which is more attractive to users but satisfies the requirements of business users
-The strategy is to enable users to quickly find available camp spots that are free for the night they requirements
+The strategy is to enable users to quickly find available camp spots that are free for the date they require
 within a searched for postal district or county.
 
-ffer over night stays on camping sites, spots, independent small pitching places, farms, fields, land, gardens, driveways so take the uncertainlty out of raod trips
-o
-
+Offer over night stays on camping sites, spots, independent small pitching places, farms, fields, land, gardens, driveways so take the uncertainlty out of raod trips
 
 Once the spots have been found in a given area that are available, the user can sort in to what is more important to them e.g price, category, 
 
-the strategy is to fill up spots for the spot owners seamlessly and effortlessly. 
-The current system needs to be simplified you have to ring round various sites and pay over the phone with a credit card.
+The strategy is to fill up spots for the spot owners seamlessly and effortlessly. 
+Most current system necessatate ringing round various sites and paying over the phone with a credit card. 
+This is unreliable and unsecured. 
 
 As the database fills with more campspots we will be able to offer extra filters
 
-simplify the bookings
-simplify  payment process
-promote smaller independent sites 
-fill empty spcaes
-immediately attract the 12 % of users who do not book ahead and wait to judge the weather 
+We strategised to simplify the bookings, simplify  payment process, promote smaller independent sites and 
+fill empty spaces on established sites.
+Strategy aim would immediately attract the 12 % of users who do not book ahead and wait to judge the weather 
 offer convenience and speed to the 88% of campers who want to book ahead. 
 
-still offer traditional phone and email booking so be useful and attractive by convention.
+Still offer traditional phone and email booking so be useful and attractive by convention.
 
-The scope plane
+### The scope plane
 The scope will be to 
-atttract users by offering simplicity and fast locating which sites are available with fast reliable payment.
+attract users by offering simplicity and fast locating which sites are available with fast reliable payment.
 
 The business user will be able to add their sites quickly and simply then turn the featuring on the site on and off with simple boolean checkbox.
 
-Structure
-The site is structure to guide the user to book online which will be the preferred option for users and business users once they manage to adopt the process.
-In the interim the structure does offer a less obvious traditional booking system by phone or email but the added option of 
-FB and whatspp or instagram messaging. 
-I considered a chatbox but user feedback favoured the familiarity of social media as a mechanism for direct contact with the benefits of
-users knowing when the messages were last checked and managing expectations of when their queries will be answered also knowing who they are speaking to.
+### Structure
+The site is structured to guide the user to book online which will be the preferred option for users and business users once they manage to adopt the process.
+In the interim the structure does offer a less obvious traditional booking system by phone or email but the added option of FB messaging. 
+Lazycamp considered that a chatbox but user feedback favoured the familiarity of social media as a mechanism for direct contact with the benefits of users knowing when the messages were last checked and managing expectations of when their queries will be answered also knowing who they are speaking to.
 Chatboxes are a little impersonal and faceless for the travel industry which expects a more personal persuasive, friendlier touch.
 
-skeleton
-the home page uses design to direct the user to the online and payment booking system
 
-the email and phone booking options are available in the nav bar but the nav bar also puts the online booking first
-the skeleton directs the user to online booking using two different links.
+### Skeleton
+The home page uses design to direct the user to the online and payment booking system
+
 
 
 
@@ -296,17 +338,18 @@ the skeleton directs the user to online booking using two different links.
 The Surface plane
 Appearance, images, colour choices and fonts.
 
-Modern design conventions were balanced with the desire to keep the interest and focus of the user and the user/contributor, both of which are not conventional by their natures.
+Extensive colour work has been tested during development. 
+Women choose where to stay and eat so pink was favoured.
 
-A unique large logo/home has been chosen for desktop following feedback to add interest to the form pages. This obscured too much of the information and did not fit the mobile design which was left with the original logo/home design.
+The bootstrap button and text colours which signify success, alert, warning, info and primary versus secondary actions/notification was adhered to. 
+The colours were softened for the holiday rather than corporate feel. 
 
-A home page with a lot of imagery, 
-quotes and contributor recovery stories was designed 
-for added interest and user prolonged engagement. Images 
-have been chosen to appeal to the users while presenting a simple message. 
+Modern design conventions were followed. 
 
 The forms to complete were kept very simple. 
-Focus to be kept on the information. The font is easy to read and the colours are muted. 
+Focus to be kept on the information. 
+
+The font is easy to read. 
 
  This will be adapted quickly as the questions may change 
 and the way they are presented may not benefit the user and help the information to be 
@@ -323,9 +366,7 @@ up. They were used to add a little contrast for interest.
 In the final stages of development, user testing feedback influenced me to remove audiowide
  and Ubuntu fonts and test permanent marker font style to get attention e.g. to check required fields were filled in forms.
 
-Extensive colour work has been tested during development. 
 
-women choose where to stay and eat so pink was favoured 
 
 Wireframes
 
