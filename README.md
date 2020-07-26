@@ -61,64 +61,9 @@ In particular, as part of this section we recommend that you provide a list of U
 earn by diecting calls and emial enquiries then bookings 
 
 compare to booking.com lastminute.com aribnb couch surfing 
-## Quick guide / Features
-
-<hr>
-
-1. Home app
- * index.hml loading page
- *
- *
-2. Campspots app
- * campspots.html renders all spots featured, separating available and non available spots 
- * campspot_detail.html individual campspot details with the option to book or return to campspot.html page to keep looking. 
- * users with an authorised profile can edit (edit_campspot) and delete campspots from this page.
- * add_campspot page allows authorised users to add campspot listings.
-3. Book app
- * after selecting number of nights, a booking date and number of adults in campspot_detail.html
- * book.html display the booking
- * The booking can be deleted on the book.html page
- * Can procede to either checkout.html or return to campspot.html to keep looking 
-
-4. Checkout app
- * checkout.html features a form and stripe payment details to make a booking.
- * checkout_success.html renders once booking has been made successfully.
- * a confirmation email is sent to the user and all the relevant business users so that details can be checked instantly without dependency on admin
-
-5. media
- 
- * media files are stored in the project
- * media files are stored in AWS bucket which links to heroku directly.
-
-6.
-
- * products. app to be developed to generate events and camping kit sales or removed undecided at this point
- *
- *
-
-
-
-*  Profile app 
-*  profile.html form completion allows users to register and add profile
-*  Item 2a -- user dashboard 
-*  Item 2b
-
-
-
-Static folder
-templates folder
-Register Page
-Login Page
-User Dashboard ------
-
-To Add
-Enquiry and contact PageBlog
-
-Testiminial Page
-
-
 
 ## Ux
+<hr>
 
 ### Goals
 
@@ -161,7 +106,7 @@ Lazycamp meets all these needs because:
 * Have a booking system which I do not have to manage.
 * Have an online payment system I do not to manage and keep secure.
 
-Lazycamp meets all these needs because:
+#### Lazycamp meets all these needs because:
 
 * I can add and amend my data easily.
 * Booking and payments will be taken then forwarded to me.
@@ -172,7 +117,7 @@ Lazycamp meets all these needs because:
 * Customer expectations will be managed by the lazycamp team and queries can be answered outside hours.   
 
 
-User stories
+## User stories
 
 As a user type, I want to perform an action, so that I can achieve a goal.
 As a user I expect to be able to quickly find the nearest pitch/ site or spot where I can safely camp for the night.
@@ -231,7 +176,7 @@ As a user I want to be able to use familiar chat messaging e.g. Facebook messagi
 
 
 
-Professionals/Business Users
+## Professionals/Business Users
 
 As a business user I want to promote my campspot and fill it up to the last minute to maximise bookings during the short camping season. 
 
@@ -278,16 +223,20 @@ Late arrival is currently difficult. This will be one of the features on offer. 
 
 As a business user I do not want to lose enquiries if the chat is not answered quickly enough, using messenger means all chat enquiries are stored so can be reignited while customer expectations of FB messenger will give more time to answer. 
 
-
-
-All visitors to the site will expect/want/need:
-
-
 As a business user As a user org I may want to offer a limited number of places and show count down.
 
 I want my event to be evident closer to the time and be removed when the times has past.
 
-Feedback and comments from user groups
+
+## All visitors to the site will expect/want/need:
+
+Good navigation.
+
+Fast pinpointing what I want.
+
+Fast booking.
+
+Be sold what I want and need not what the business wants to to buy.
 
 
 ## Development planes to achieve objectives.
@@ -367,34 +316,78 @@ The font chosen to be modern and easy to read. The logo uses a bespoke font with
 
 ![Balsamiq ](static/wireframes/home.png) -->
 
+## Quick guide / Features
+
+<hr>
+
+1. Home app
+ * index.hml loading page
+ *
+ *
+2. Campspots app
+ * campspots.html renders all spots featured, separating available and non available spots. There are also coming soon spots featured which have been added by the business user but  not yet authorised for inclusion on the site. They are situated with the unavailable fully booked sites at the bottom. 
+ * campspot_detail.html individual campspot details with the option to book or return to campspot.html page to keep looking. 
+ * users with an authorised profile can edit (edit_campspot) and delete campspots from this page.
+ * add_campspot page allows authorised users to add campspot listings.
+3. Book app
+ * after selecting number of nights, a booking date and number of adults in campspot_detail.html
+ * book.html displays the booking for users to double check before payment. 
+ * The booking can be deleted on the book.html page
+ * The booking can be amended by deleting the old booking and returning the user to original campspot_details chosen at the same time. 
+ * Can procede to either checkout.html or return to campspot.html to keep looking 
+
+4. Checkout app
+ * checkout.html features a form and stripe payment details to make a booking.
+ * checkout_success.html renders once booking has been made successfully.
+ * a confirmation email is sent to the user and all the relevant business users so that details can be checked instantly without dependency on admin
+
+5. Media
+ 
+ * media files are stored in the project
+ * media files are stored in AWS bucket which links to heroku directly.
+
+6. Products app- so named for agile design because this will also have new revenue and sales ideas added e.g. if demand for camping kit is there we will sell the ship to the site to be ready for use. 
+ * products.html renders all events featured. 
+ * product_detail.html individual event details.
+ * users with an authorised profile can edit (edit_campspot) and delete products from this page.
+ * add_product page allows authorised users to add product listings.
+
+ * Products app also contains contact information as this will be the section for products (events/kit or to spots which only accept payments directly). contact.html has contact form and telephone number.
+
+ * messenging.html allows FB chat.
+
+* Direct telephone call link
+* fast email enquiry by passing need for form. 
 
 
+7.   Profile app 
+*  profile.html form completion allows users to register and add profile
+*  Item 2a -- user dashboard 
+*  Item 2b
+*  Lists user orders in profile option
+*  Campspot Management allows edit and deleting. For example, simple checkbox to signify availability. 
+
+Static folder
+Templates folder
+Register Page
+Login Page
+
+### Features Left to Implement
+Possibly social media login. 
+
+All legals, refund policy, cookie policy.
+
+Customer rating API.
+
+Availabilty calculations and auto countdown for ticket sales and number of spots. 
 
 
-
-
-
-
-
-
-
-
-This section is also where you would share links to any wireframes, mockups, diagrams etc. that you created as part of the design process. These files should themselves either be included as a pdf file in the project itself (in an separate directory), or just hosted elsewhere online and can be in any format that is viewable inside the browser.
-
-Features
-In this section, you should go over the different parts of your project, and describe each in a sentence or so.
-
-Existing Features
-Feature 1 - allows users X to achieve Y, by having them fill out Z
-...
-For some/all of your features, you may choose to reference the specific project files that implement them, although this is entirely optional.
-
-In addition, you may also use this section to discuss plans for additional features to be implemented in the future:
-
-Features Left to Implement
-Another feature idea
 Technologies Used
 In this section, you should mention all of the languages, frameworks, libraries, and any other tools that you have used to construct this project. For each, provide its name, a link to its official site and a short sentence of why it was used.
+
+
+
+
 
 JQuery
 The project uses JQuery to simplify DOM manipulation.
