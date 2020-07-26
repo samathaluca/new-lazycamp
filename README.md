@@ -381,6 +381,8 @@ Customer rating API.
 
 Availabilty calculations and auto countdown for ticket sales and number of spots. 
 
+Image kit works perfectly locally but once deployed is not compatible with S3
+
 
 Technologies Used
 In this section, you should mention all of the languages, frameworks, libraries, and any other tools that you have used to construct this project. For each, provide its name, a link to its official site and a short sentence of why it was used.
@@ -432,49 +434,65 @@ In summer 2019, I drove to from Manchester in the UK to Mainland Greece then on 
 Another night I accidently camped on a communal residential lawn which has once been a campsite but was then private property. I was woke up by an 
 angry chalet owner insisting I was trespassing. +
 
-
-
-
-
-
-
-
-
-
-
 Defensive design planning
 
-DATABASE
-
-Features and design elements
-
-index.html page features
-
-Future features
-
-
-Tech Used
-HTML5 Semantic markup language as the shell of the site.
-CSS -This was used to style the elements of the HTML code.
-MATERIALIZE -HTML forms, cards, templates with nav bar, buttons etc. js materiliaze
-PYTHON3
-FLASK Framework to construct and render pages.
-MONGODB_ATLAS for nonsql database
-GITPOD IDE
-HEROKU - deployment
-GITHUB - used for version control
-VSC used to help format and beautify the code using extensions. Also as a back up IDE when internet access was limited.
-GIMP -This was used for resizing, cropping, fading and changing images to fit the site.
-PHOTOSHOP - For digital image production.
-FAVICON- used to develop tab icons which were replaced by photoshop 64px by 64px image.
-MARKDOWN -Language for Readme.md file
-PYMONGO - to make communication between Python and MongoDB possible
-[PIP and Pypi libraries]
 JQUERY -This added functionality to the site e.g. navigation toggle.
 JINJA - to simplify displaying data from the backend of this project smoothly and effectively in html.
 BEAUTIFIER - to check code and improve code readability.
-BALSAMIQ - wireframe design
-HEX CODES - different colours experimentation. 22, GOOGLE FONTS
+
+
+## Technologies Used
+
+### Tools
+
+* [Gitpod](https://www.gitpod.io/) is the IDE used for developing this project.
+* [Django](https://www.djangoproject.com/) as python web framework for rapid development and clean design.
+* [Stripe](https://stripe.com/gb) as payment platform to validate and accept credit card payments securely.
+* [AWS S3 Bucket](https://aws.amazon.com/)  to store static files and images entered into the database.
+* [Boto3](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html) to enable creation, configuration and management of AWS S3
+* [Django Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/) to style django forms.
+* [Heroku](https://www.gitpod.io/) Heroku for deployment
+* [Django Storages](https://django-storages.readthedocs.io/en/latest/) a collection of custom storage backends with django to work with boto3 and AWS S3.
+* [Gunicorn](https://pypi.org/project/gunicorn/)WSGI HTTP Server for UNIX to aid in deployment of the Django project to heroku.
+* [Pillow](https://pillow.readthedocs.io/en/stable/)as python imaging library to aid in processing image files to store in database.
+* [Psycopg2](https://pypi.org/project/psycopg2/) as PostgreSQL database adapter for Python.
+* [PIP](https://pip.pypa.io/en/stable/installing/) for installation of tools needed in this project.
+* [Github](https://github.com/) to store and share all project code remotely.
+* [Photoshop](https://www.adobe.com/uk/products/photoshop.html) to develop logo. 
+* [Gimp](https://www.gimp.org/) to edit and crop images. 
+* [Canva](https://www.canva.com/) to edit and crop images.
+* [Balsamiq/](https://balsamiq.com/)to create the wireframes for this project.
+
+
+* [Django ImageKit]()
+* [Django Allauth]()
+* [Facebook Messenger]()
+* [gmail]()
+
+
+* Django Heroku to improve deployment of django projects on heroku.
+https://pypi.org/project/django-heroku/
+
+* Waypoints Infinite scroll
+
+
+### Databases
+[PostgreSQL](https://www.postgresql.org/) for production database, provided by heroku.
+[SQlite3](https://www.sqlite.org/index.html) for development database, provided by django.
+
+
+### Libraries
+[JQuery](https://jquery.com/)to simplify DOM manipulation.
+[Bootstrap](https://www.bootstrapcdn.com/) to simplify the structure of the website and make the website responsive easily.
+[FontAwesome](https://www.bootstrapcdn.com/fontawesome/) to provide icons for The House of Mouse webshop.
+[Google Fonts](https://fonts.google.com/) to style the website fonts.
+
+### Languages
+This project uses HTML, CSS, JavaScript and Python3 programming languages.
+markdown -Language for Readme.md and test.md files
+
+
+
 Testing
 Chrome Devtools
 HTML Validator
