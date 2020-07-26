@@ -1,38 +1,12 @@
-# LaZy Camp
-## Lazy Camp
-###### Lazy Camp
-<hr>
+Balsamiq 
 
-*  Item 1
-*  Item 2
-*  Item 2a
-*  Item 2b
+![Balsamiq ](/img/wireframes/home.png)
 
-1. Item 1
-2. Item 2
-3. Item 3
- * Item 3a
- * Item 3b
+![Balsamiq ](static/img/wireframes/home.png)
 
-As Grace Hopper said:
-> I’ve always been more interested
-> in the future than in the past.
+![Balsamiq ](/static/img/wireframes/home.png)
 
-\*literal asterisks\*
-
-```javascript```
-
-![GitHub Logo](/images/logo.png)
-Format: ![Alt Text](url)
-
-https://new-lazycamp.herokuapp.com/ - automatic!
-[GitHub](https://new-lazycamp.herokuapp.com/)
-
-*This text will be italic*
-_This will also be italic_
-**This text will be bold**
-__This will also be bold__
-*You **can** combine them*
+![Balsamiq ](/test.md)
 
 # LaZy Camp
 
@@ -46,18 +20,28 @@ https://new-lazycamp.herokuapp.com/ - automatic!
 
 <hr>
 
-Camping on the spur of the moment is currently very difficult unless you are a seasoned camper who may and familiar with the area you want to visit.
-Even the large caravan and camping clubs either discourage last minute bookings by making it difficult or insist on arrival times that do not suit everybody.
-The freedom of the open road and the wonderment of spontaneity can be exhilerating. 
-Currently 12% of campers do not book ahead, blaming the weather. 
-In summer 2019, I drove to from Manchester in the UK to Mainland Greece then on to the Greek Islands. Booking camspites along the way was too difficult.
- One night my son and I were scaling a fence with our tents and sleeping bags.
-Another night I accidently camped on a communal residential lawn which has once been a campsite but was then private property. I was woke up by an 
-angry chalet owner insisting I was trespassing.
-Lazycamp is a next generation, user led, fast campspot booking system, hosting microcampsites that would be very difficult to find otherwise.
+Camping spontaneously on the spur of the moment is currently very difficult unless you are a seasoned camper or very familiar with the area you want to visit.
+Existing options discourage last minute bookings by making it difficult, often blocking out the current and next date as booking options, or insist on early arrival times which prohibit last minute decisions for a night away. 
 
-This project will roll out in Wales and Scotland first. In Scotland the number of tourists in the summer months excedes the number of 
-overnight accommodation so visitors who are not very organised can even find themselves sleeping in police cells overnight.
+Lazycamp will instantly list available sites on the day, in the county or postal district you search for,  without having to search each individual site details only to find at the end your choice is unavailable. 
+
+The freedom of the open road can be exhilerating. This is currently easy if you use the major hotel booking sites but if you want to camp along the way it is  tricky.
+
+Currently 12% of campers do not book ahead, blaming the weather. Checking rain and sunshine is an important consideration for many tent lovers. Again this is discouraged by the camping and caravanning industry in the UK because allowing users to wait and check the weather makes many business users feel vulnerable. When asked users will always say they would camp more if you could book without the need for so much planning. Lazycamp aims to give the evidence to business users that if they are willing to take late bookings they will fill all their empty spots and generate more income. 
+
+This concept has proved itself in all other areas of accommodation booking. Making it easier for users to book when they want is going to benefit users immediately and business users ultimately. 
+
+Lazycamp will also open up the opportunity for microcampsites to spring up near to airports, festivals and seasonal attractions that may not be profitable to run all year round , for example, in Scotland, the number of tourists each summer excedes the number of overnight accommodation. A farm which may have a beautiful view of a lavender field or autumn forest may want to just run for a month. Lazycamp is a next generation, user led,fast campspot booking system, which will promote these microcampsites that would be very difficult to find otherwise.
+
+Lazycamp creates flexibility that does not exist currently and limits the amount of research necessary to find what you a user wants.
+
+In addition to overnight camping and caravanning, Lazycamp will promote camping events for between 30-300 people. The theme of the events will vary from tech, food or alcohol detox to campfire music, outdoor cooking and holistic fresh air therapies. 
+With  crowded indoor gatherings still being actively discouraged this is the perfect time for people to explore wild camping, microcampsites or established campsites for a short break or holiday.
+
+Lazy camp is all about making it easy and attractive for users who do not enjoy extensive research and preplanning. 
+
+This project will roll out in Wales and Scotland first. The focus being in a smaller area will hopefully attract more hosts and users as searches will generate more options. 
+
 Because the camping season in the UK is so short campsites need to fill their sites to be viable. Lazycamp will fill last minute spots and cancellations. 
 
 UX
@@ -410,7 +394,10 @@ Media
 The photos used in this site were obtained from ...
 Acknowledgements
 I received inspiration for this project from X
-
+In summer 2019, I drove to from Manchester in the UK to Mainland Greece then on to the Greek Islands. Booking camspites along the way was too difficult.
+ One night my son and I were scaling a fence with our tents and sleeping bags.
+Another night I accidently camped on a communal residential lawn which has once been a campsite but was then private property. I was woke up by an 
+angry chalet owner insisting I was trespassing. +
 
 
 
