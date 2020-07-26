@@ -387,33 +387,68 @@ Image kit works perfectly locally but once deployed is not compatible with S3
 Technologies Used
 In this section, you should mention all of the languages, frameworks, libraries, and any other tools that you have used to construct this project. For each, provide its name, a link to its official site and a short sentence of why it was used.
 
+## Testing
+
+Testing information can be found in separate ![test.md](/test.md) file
+
+## Deployment
+
+To deploy Lazycamp booking site to heroku, the following steps should be taken:
+
+1. Create a requirements.txt file using the terminal command pip freeze > requirements.txt.
+
+2. Create a Procfile with the terminal command echo web: python app.py > Procfile.
+
+3. git add and git commit the new requirements and Procfile and then git push the project to GitHub.
+
+4. Create a new app on the Heroku website by clicking the "New" button in your dashboard. Give it a name and set the region to whichever is applicable for your location.
+
+5. From the heroku dashboard of your newly created application, click on "Deploy" > "Deployment method" and select GitHub.
+
+6. Confirm the linking of the heroku app to the correct GitHub repository.
+
+7. In the heroku dashboard for the application, click on "Settings" > "Reveal Config Vars".
+
+Set the following config vars:
+
+Key	Value
+AWS_ACCESS_KEY_ID	<your secret key>
+AWS_SECRET_ACCESS_KEY	<your secret key>
+AWS_STORAGE_BUCKET_NAME	<your AWS S3 bucket name>
+DATABASE_URL	<your postgres database url>
+HOSTNAME	<your heroku app hostname>
+SECRET_KEY	<your secret key>
+STRIPE_CANCEL_URL	<link to all-products page in your app>
+STRIPE_PUBLISHABLE	<your secret key>
+STRIPE_SECRET	<your secret key>
+STRIPE_SUCCESS_URL	<link to checkout/confirm page in your app>
+
+From the command line of your local IDE:
+
+Enter the heroku postres shell
+Migrate the database models
+Create your superuser account in your new database
+Instructions on how to do these steps can be found in the heroku devcenter documentation.
+
+In your heroku dashboard, click "Deploy". Scroll down to "Manual Deploy", select the master branch then click "Deploy Branch".
+
+Once the build is complete, click the "View app" button provided.
+
+From the link provided add /admin to the end of the url, log in with your superuser account 
+
+
+and create instances of ShippingDestination and Product within the new database.
+
+Once instances of these items exist in your database your heroku site will run as expected.
 
 
 
 
-JQuery
-The project uses JQuery to simplify DOM manipulation.
-Testing
-In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your user stories from the UX section and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
 
-Whenever it is feasible, prefer to automate your tests, and if you've done so, provide a brief explanation of your approach, link to the test file(s) and explain how to run them.
 
-For any scenarios that have not been automated, test the user stories manually and provide as much detail as is relevant. 
-A particularly useful form for describing your testing process is via scenarios, such as:
 
-Contact form:
-Go to the "Contact Us" page
-Try to submit the empty form and verify that an error message about the required fields appears
-Try to submit the form with an invalid email address and verify that a relevant error message appears
-Try to submit the form with all inputs valid and verify that a success message appears.
-In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
 
-You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
 
-If this section grows too long, you may want to split it off into a separate file and link to it from here.
-
-Deployment
-This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub Pages or Heroku).
 
 In particular, you should provide all details of the differences between the deployed version and the development version, if any, including:
 
@@ -446,6 +481,7 @@ BEAUTIFIER - to check code and improve code readability.
 ### Tools
 
 * [Gitpod](https://www.gitpod.io/) is the IDE used for developing this project.
+* [Visual Studio Code](https://code.visualstudio.com/) is the IDE used for developing this project locally when no internet was available. Also for using extensions which proved to be more reliable in VSC than in the more rececently established gitpod e.g. beautifying the code
 * [Django](https://www.djangoproject.com/) as python web framework for rapid development and clean design.
 * [Stripe](https://stripe.com/gb) as payment platform to validate and accept credit card payments securely.
 * [AWS S3 Bucket](https://aws.amazon.com/)  to store static files and images entered into the database.
