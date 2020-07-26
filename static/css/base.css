@@ -10,6 +10,11 @@ body {
     font-family: 'Lato';
 }
 
+
+#lazylogo2 {
+  height: 50px;
+}
+
 #img-added  {
     height: "600px";} 
 
