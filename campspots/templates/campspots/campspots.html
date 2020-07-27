@@ -54,7 +54,7 @@
                <div class="card h-100 border-0">
                   {% if campspot.image %}
                   <a href="{% url 'campspot_detail' campspot.id %}">
-                  <img class="card-img-top img-fluid" src="{{ campspot.image.url }}" alt="{{ campspot.name }}">
+                  <img class="card-img-top img-fluid" style="max-height:175px" src="{{ campspot.image.url }}" alt="{{ campspot.name }}">
                   </a>
                   <a href="{% url 'campspot_detail' campspot.id %}"
                      type="button" class="btn btn-lg btn-primary">
