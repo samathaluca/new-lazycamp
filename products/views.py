@@ -115,7 +115,7 @@ def contact(request):
 
         context = enquiry_form.cleaned_data.copy()
 
-        body = render_to_string('products/enquiry_email.txt', context)
+        body = render_to_string('products/contact_email.txt', context)
 
         send_mail(
             'enquiry',
