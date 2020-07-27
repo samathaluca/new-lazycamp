@@ -79,7 +79,7 @@
                             <div class="card  border-0">
                                 {% if product.image %}
                                 <a href="{% url 'product_detail' product.id %}">
-                                    <img class="card-img-top img-fluid" style="max-height:175px" src="{{ product.image.url }}" alt="{{ product.name }}">
+                                    <img class="card-img-top img-fluid" style="max-height:250px" src="{{ product.image.url }}" alt="{{ product.name }}">
                                 </a>
                                 <a href="{% url 'product_detail' product.id %}"
                                 type="button" id="opaque" class="btn btn-lg btn-success"><h6>Available <i class="fa fa-phone" aria-hidden="true"></i> 07834 340828</h6>
@@ -89,7 +89,7 @@
                                 {% else %}
                                 <a href="{% url 'product_detail' product.id %}">
                                     <!-- <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}joy.jpg" alt="{{ product.name }}"  height="600"> -->
-                                     <img id="img-added" class="card-img-top img-fluid" style="max-height:175px" src="{{ MEDIA_URL }}joy.jpg" alt="{{ product.name }}">
+                                     <img id="img-added" class="card-img-top img-fluid" style="max-height:250px" src="{{ MEDIA_URL }}joy.jpg" alt="{{ product.name }}">
                                     
                                 </a>
                                 <a href="{% url 'product_detail' product.id %}"
