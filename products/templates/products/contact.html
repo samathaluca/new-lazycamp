@@ -47,24 +47,7 @@
     {% endif %}
                     
 
-                    <div class="col-12 col-lg-6">
-                        <form action="" method="post">
-                        {% csrf_token %}
-                            {{enquiry_form|crispy}}
-
-<button type="button" class="btn btn-lg btn-success"> Send Email Enquiry</button>
-                            <!-- <button>Send</button> -->
-                        </form>
-                    </div>
-
-                    </div>
-                    
-                            <div class="col-12">
-                                                            
-
-
-                            </div>
-                            
+      
                             <div class="col{% if s %}-12 mt-2{% endif %}">
 
 
@@ -72,13 +55,13 @@
 
 
 
-<!-- 
+
                             <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 mt-5">
                                     <span class="icon">
                                         <i class="fas fa-chevron-left"></i>
                                     </span>
                                     <span class="text-uppercase">Keep Looking to book by phone</span>
-                            </a> -->
+                            </a>
     <a href="{% url 'campspots' %}" class="btn btn-outline-black rounded-0 mt-5">
                   <span class="icon">
                   <i class="fas fa-chevron-left"></i>
