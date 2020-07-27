@@ -15,83 +15,76 @@
 {% endblock %}
 
 {% block content %}
-    <div class="overlay"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <hr>
-                <h2 class="logo-font mb-4">Booking</h2>
-                <hr>
+<div class="overlay"></div>
+<main class="container">
+   <header class="row">
+      <div class="col">
+         <hr>
+         <h2 class="logo-font mb-4">Booking</h2>
+         <hr>
+      </div>
+   </header>
+   <section class="row">
+      <div class="col-12 col-lg-12 order-lg-last mb-5">
+         <p class="text-muted">People Booked ({{ campspot_count }})</p>
+         <div class="row">
+            <div class="col-6 offset-3">
+               <p class="mb-1 mt-0 small text-muted">Campsite</p>
             </div>
-        </div>
-
-        <div class="row">
-            <div class="col-12 col-lg-6 order-lg-last mb-5">
-                <p class="text-muted">People Booked ({{ campspot_count }})</p>
-                <div class="row">
-                    <div class="col-6 offset-2">
-                        <p class="mb-1 mt-0 small text-muted">Item</p>
-                    </div>
-                    <div class="col-4 text-right">
-                        <p class="mb-1 mt-0 small text-muted">PPPN</p>
-                        
-                    </div>
-                </div>
-                {% for item in book_items %}
-                    <div class="row">
-                        <div class="col-2 mb-1">                                        <a class="remove-item text-danger text-center" id="remove_{{ item.item_id }}" data-product_size="{{ item.size}}" data-date="{{ item.date }}"><small>Remove</small></a>
-                                        <a href="{% url 'remove_and_rebook' item.campspot.pk %}" class="remove-item text-success float-left"><small>Amend</small></a>
-                            <a href="{% url 'campspot_detail' item.campspot.id %}">
-                                {% if item.campspot.image %}
-                                    <img class="w-100" src="{{ item.campspot.image.url }}" alt="{{ campspot.name }}">
-                                {% else %}
-                                    <img class="w-100" src="{{ MEDIA_URL }}joy.jpg" alt="{{ campspot.name }}">
-                                {% endif %}
-                            </a>
-                        </div>
-                        <div class="col-6">
-
-                            <p class="my-0"><strong>Booking For: <small>{{ item.campspot.name }}</small></strong></p>
-                           <hr class="my-0">                                         
-                                        <p class="my-0"><strong>Arrival Date: </strong></p>
-                                        <p class="my-0">Number of Nights:</p>
-                            <p class="my-0">Adult Number:</p>
-                        </div>
-                        <div class="col-4 text-right">
-                            <p class="my-0 text-muted">£{{ item.campspot.price }}</p>
-                            <hr class="my-0">
-                        <p class="my-0 text-muted" >{% if item.campspot.is_available %}<small>{{ item.date }}</small>{% else %}N/A{% endif %}</p>
-                                        <p class="my-0 text-muted">{{ item.number_nights|upper }}</p>
-                            <p class="my-0 text-muted">{{ item.quantity }}</p>
-                        </div>
-                    </div>
-                   <hr> 
-                {% endfor %}
- 
-                            <tr>
-                                    
-
-                                <td colspan="5" class="text-center">
-                                    <a href="{% url 'campspots' %}" class="btn btn-outline-black rounded-0 btn-lg">
-                                        <span class="icon">
-                                            <i class="fas fa-chevron-left"></i>
-                                        </span>
-                                        <span class="text-uppercase">Keep Looking</span>
-                                    </a>
-                                    <a href="{% url 'checkout' %}" class="btn btn-black rounded-0 btn-lg">
-                                        <span class="text-uppercase">Secure Checkout</span>
-                                        <span class="icon">
-                                            <i class="fas fa-lock"></i>
-                                        </span>
-                                    </a>
-                                </td>
-                            </tr>
-
-     
+            <div class="col-3 text-right">
+               <p class="mb-1 mt-0 small text-muted">PPPN</p>
+            </div>
+         </div>
+         {% for item in book_items %}
+         <div class="row">
+            <div class="col-3 mb-1">                                        
+               <a href="{% url 'campspot_detail' item.campspot.id %}">
+               {% if item.campspot.image %}
+               <img class="w-100" src="{{ item.campspot.image.url }}" alt="{{ campspot.name }}">
+               {% else %}
+               <img class="w-100" src="{{ MEDIA_URL }}joy.jpg" alt="{{ campspot.name }}">
+               {% endif %}
+               </a>
+               <div>
+                    <a class="remove-item text-danger text-center" id="remove_{{ item.item_id }}" data-product_size="{{ item.size}}" data-date="{{ item.date }}"><small>Remove</small></a>
+               </div>
+               <a href="{% url 'remove_and_rebook' item.campspot.pk %}" class="remove-item text-success float-left"><small>Amend</small></a>
+            </div>
+            <div class="col-6">
+               <p class="my-0"><strong>{{ item.campspot.name }}</strong></p>
+               <hr class="my-0">
+               <p class="my-0">Nights:</p>
+               <p class="my-0">Adults:</p>
+               <p class="my-0"><strong>Arrival Date: </strong></p>
+            </div>
+            <div class="col-3 text-right">
+               <p class="my-0 text-muted">£{{ item.campspot.price }}</p>
+               <hr class="my-0">
+               <p class="my-0 text-muted">{{ item.number_nights|upper }}</p>
+               <p class="my-0 text-muted">{{ item.quantity }}</p>
+               <p class="my-0 text-muted" >{% if item.campspot.is_available %}<small>{{ item.date }}</small>{% else %}N/A{% endif %}</p>
+            </div>
+         </div>
+         <hr>
+         {% endfor %}
+         <div colspan="5" class="text-center">
+            <a href="{% url 'campspots' %}" class="btn btn-outline-black rounded-0 btn-lg">
+            <span class="icon">
+            <i class="fas fa-chevron-left"></i>
+            </span>
+            <span class="text-uppercase">Keep Looking</span>
+            </a>
+            <a href="{% url 'checkout' %}" class="btn btn-black rounded-0 btn-lg">
+            <span class="text-uppercase">Secure Checkout</span>
+            <span class="icon">
+            <i class="fas fa-lock"></i>
+            </span>
+            </a>
+         </div>
+      </div>
+   </section>
+</main>
 {% endblock %}
-
-
-
 
 {% block postloadjs %}
 {{ block.super }}
@@ -104,6 +97,7 @@
         form.submit();
     })
 
+    // Change date format to be readable
     function formatDate(date) {
         var d = new Date(date),
             month = '' + (d.getMonth() + 1),
@@ -118,7 +112,6 @@
         return [year, month, day].join('-');  
 
     }
-
 
     // Remove item and reload on click
     $('.remove-item').click(function(e) {

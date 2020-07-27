@@ -1,4 +1,3 @@
-  
 from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
 
 from django.contrib import messages
@@ -21,10 +20,8 @@ def add_to_book(request, item_id):
     quantity = int(request.POST.get('quantity'))
     booking_date = request.POST.get('booking_date')
     number_nights = int(request.POST.get('number_nights'))
-    # print(booking_date,type(booking_date))
-    # print(number_nights)
     redirect_url = request.POST.get('redirect_url')
-    size = None
+    # size = None
 
     if 'booking_date' in request.POST:
         date = request.POST['booking_date']
@@ -32,9 +29,6 @@ def add_to_book(request, item_id):
     book = request.session.get('book', {})
     if date:
         if item_id in list(book.keys()):
-            # print(date)
-            # print(book)
-            # print(book[item_id]['items_by_date'].keys())
             if date in book[item_id]['items_by_date'].keys():
                 book[item_id]['items_by_date'][date]['number_people'] += quantity
                 book[item_id]['items_by_date'][date]['number_nights'] += number_nights
@@ -85,30 +79,30 @@ def adjust_book(request, item_id):
 
 
 def remove_from_book(request, item_id, date=None):
-    """Remove the item from booking"""
-    # try:
+    """Remove the campspot from booking"""
+
     campspot = get_object_or_404(Campspot, pk=item_id)
 
     book = request.session.get('book', {})
-    #TODO remove date
+    # if same campspot is booked on same day bookings added together
     if len(book[item_id]['items_by_date']) > 1:
-            book[item_id]['items_by_date'].pop(date)
+        book[item_id]['items_by_date'].pop(date)
     else:
-            book.pop(item_id)
-    
+        book.pop(item_id)
+
     request.session['book'] = book
     return campspot
-    # except Exception as e:
-    #     return HttpResponse(status=500)
 
-def remove_from_book_ajax(request, item_id, date):        
+
+def remove_from_book_ajax(request, item_id, date):
+    """Remove the campspot booking to be amended"""
     remove_from_book(request, item_id, date)
 
     return HttpResponse(status=200)
 
+
 def remove_and_rebook(request, item_id):
+    """Removed then back to campspot to amend"""
     campspot = remove_from_book(request, item_id)
-    messages.success(request, f'Removed booking please rebook here')
-    return redirect(reverse('campspot_detail',args=[campspot.pk]))
-
-
+    messages.success(request, f'Removed booking please rebook')
+    return redirect(reverse('campspot_detail', args=[campspot.pk]))
