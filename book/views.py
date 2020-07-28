@@ -32,7 +32,9 @@ def add_to_book(request, item_id):
             if date in book[item_id]['items_by_date'].keys():
                 book[item_id]['items_by_date'][date]['number_people'] += quantity
                 book[item_id]['items_by_date'][date]['number_nights'] += number_nights
-                messages.success(request, f'Updated date {date.upper()} {campspot.name} quantity to {book[item_id]["items_by_date"][date]}')
+                # messages.success(request, f'Updated booking details {date.upper()} at {campspot.name} check)
+                # messages.success(request, f'Updated date {date.upper()} {campspot.name} quantity to {book[item_id]["items_by_date"][date]}')
+                messages.success(request, f'booking for arrival on {date.upper()} at {campspot.name} has been amended')             
             else:
                 book[item_id]['items_by_date'][date] = {}
                 book[item_id]['items_by_date'][date]['number_people'] = quantity
