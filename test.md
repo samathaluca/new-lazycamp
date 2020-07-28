@@ -98,15 +98,35 @@ Travis. Having successfully run Travis using the old version of the Full stack D
 * The input search box is  set up to drive traffic to the online booking section. Manual tests confirm that 
 on each page in which it is displayed the search lists campspots available to book online. The best results are achieved by searching by Welsh County currently because all campspots added have one added. 
 * Check that on the products.html page the search box is hidden on desktop versions.
-* Check that on mobiles and tablets the search icon is displayed but that the placeholder notifies the divert to online booking. This may be disable following peer review if it is raised as a point of confusion. 
+* Check that on mobiles and tablets the search icon is displayed but that the placeholder notifies the divert to online booking. This may be disable following peer review if it is raised as a point of confusion. Previous testing by friends and family have not commented on this as. 
 
+#### Home page (index.html)
 
+1.  Hero Image displays well in all browsers on all screen sizes tested.
+2.  Call to action Book Now button is obvious, well positioned and on click lists all the campspots that are available to book immediateley online. 
 
+#### Campspot Page (campspot.html)
 
+1. Sorting options
 
+Select the different sorting options from the menu one by one, confirm that the campspots are sorted in the orders selected.
 
+2. Campspot cards -available section
 
-Logo Serves
+* Hover over product cards, confirm the hover effect works as expected on bottom button.
+* Confirm that the link to campspot details works from both campspot image and Book online Now button. 
+* Confirm that the photos, images, Location and prices displayed are correct.
+* Click multiple campspots, confirm that the user is taken to the correct campspot page if available.
+* Check that when the category name is clicked that all other campspots in the same category are displayed with invitation to "Book Online Now".
+
+2. Campspot cards - Not currently available section
+
+* Check that all fully booked campspots (that have been unticked as False in Boolean add/edit campspot checkbox by admin or the user) are displayed in the currently unavailable section underneath all the available sites and marked as "Fully Booked".
+
+* Check that all recently added campspots, by admin or authorised user have been added and are displayed in the currently unavailable section underneath all the available sites and marked as "Coming Soon".
+
+Confirm that one of each product is displayed in total.
+Check that there are no duplicates or missing products
 
 
 
