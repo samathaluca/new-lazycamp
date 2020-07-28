@@ -115,7 +115,9 @@ Select the different sorting options from the menu one by one, confirm that the 
 
 * Hover over product cards, confirm the hover effect works as expected on bottom button.
 * Confirm that the link to campspot details works from both campspot image and Book online Now button. 
-* Confirm that the photos, images, Location and prices displayed are correct.
+* Confirm that the photos, Location and prices displayed are correct.
+* Confirm that all image sizes are correct.
+* Check that no cards are misaligned. 
 * Click multiple campspots, confirm that the user is taken to the correct campspot page if available.
 * Check that when the category name is clicked that all other campspots in the same category are displayed with invitation to "Book Online Now".
 
@@ -125,13 +127,38 @@ Select the different sorting options from the menu one by one, confirm that the 
 
 * Check that all recently added campspots, by admin or authorised user have been added and are displayed in the currently unavailable section underneath all the available sites and marked as "Coming Soon".
 
-Confirm that one of each product is displayed in total.
-Check that there are no duplicates or missing products
+* Check that there are no duplicates or missing products
+
+#### Campspot Detail Page (campspot_detail.html)
 
 
+#### Product Page (product.html)
+
+Check that the aim of the products page is immediately obvious. The products displayed on this page will differ seasonally. 
+* Currently and in futures summer this page will promote scheduled events and campspots near festivals.
+
+* In the Winter it will promote Christmas event and camping kits gifts
+* In The Spring this page will promote camping kits and European events.
+* In the Autumn this page will promote Southern Mediterranean festivals and events alongside European roadtrip and camping kits recommended for different climates. In British Summer camping in Greece, Southern Italy, Southern Spain and Croatia is not recommended by Lazycamp. 
+
+1. Sorting options
+
+Select the different sorting options from the menu one by one, confirm that the products are sorted in the orders selected.
+
+2. Product cards
+
+* Hover over product cards, confirm the hover effect works as expected on bottom button.
+* Confirm that the link to product details works from both product image and Telephone number button. 
+Once this site has working payment in place the telephone number will that if the product owner/supplier. 
+* Confirm that the photos, Location and prices displayed are correct.
+* Confirm that all image sizes are correct.
+* Check that no cards are misaligned. 
+* Click multiple products, confirm that the user is taken to the correct product page.
+* Check that when the category name is clicked that all other products in the same category are displayed with invitation to "Book Online Now".
+* Check that when the event date is clicked that all other products listed as events are displayed.
 
 
-
+#### Product Detail Page (product_detail.html)
 
 
 
