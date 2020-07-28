@@ -167,24 +167,26 @@ the amend option deletes the booking and redirects the user to the same campspot
 The two link to secure checkout or backwards to keep looking both take to the expected pages
 
 
-#### Contact Page (contact.html)
-* Go to the contact page from the Contact dropdown in the navigation menu. 
-
-* Confirm that the contact form is laid out as expected.
-* Confirm that for a logged in user the email address field has already been populated.
-
-
-Confirm that for a user who is not logged in the email address field is blank.
-Try to send the form with no fields filled in, confirm that the user is alerted to fill in the required fields.
-Try to enter a non-email address into the email field, confirm that the user is alerted to fill in an email address.
-Send a complete form, confirm that the message is sent to my email address with all the information included.
 
 
 
+Checkout success 
+
+Check stripe
+Check confirmation emails have been sent to business owner , admin and user
 
 
 
 #### Product Page (product.html)
+
+
+
+
+Quickfire email 
+check email link works to direct dial from mobile and computers with 
+
+
+
 
 Check that the aim of the products page is immediately obvious. The products displayed on this page will differ seasonally. 
 * Currently and in futures summer this page will promote scheduled events and campspots near festivals.
@@ -226,12 +228,126 @@ Once this site has working payment in place the telephone number will that if th
 * Test the links to the products.html Events and the separate link to campspots.html Online Camps bookings 
 
 
+#### Contact Page (contact.html)
+* Go to the contact page from the Contact dropdown in the navigation menu. 
+
+* Confirm that the contact form is laid out as expected.
+* Confirm that for a logged in user the email address field has already been populated.
+* Confirm that for a user who is not logged in the email address field is blank.
+Try to send the form with no fields filled in, confirm that the user is alerted to fill in the required fields.
+* Try to enter a non-email address into the email field, confirm that the user is alerted to fill in an email address.
+* Send a complete form, confirm that the message is sent with all the information included. NOTE: this can only be tested in the deployed version due to incompatibility betweeb gitpod and heroku.
+
+* check phone number link works to direct dial from mobile and computers with skype or calling option 
+
+
+
+
+
+* Check links to continue browsing work well. 
+
+Quickfire email 
+check email link works to direct dial from mobile and computers with 
+
+skype or calling option 
+messenger chat in organise events too
+phone link 
+
+
+
+
+#### Register Page
+* Log out then go to the register page again. Confirm that the register form is displayed as expected.
+* Fill in the form with a username already in the database, confirm that the user is informed that they must use a unique username.
+* Fill in the email input with a non-email address, confirm the user is shown an error asking the to use an email address.
+<!-- Go into devtools, change the type attribute on the email form to text, attempt to send the form. confirm that the Django validation catches the error and tells the user to enter an email address. -->
+* Fill in the form with two different passwords, confirm the error is caught and the user is informed of their mistake.
+Fill in the registration form correctly, confirm that the user is automatically directed to the login page, and the message "Your account has been created <username>. You can now log in." is displayed above the login page.
+
+
+Login Page
+* Reload the login page, confirm that the message for a new account is not visible.
+* Attempt to log in with a username not in the database, confirm the relevant error message is shown.
+* Attempt to log in with a correct username but wrong password, confirm the relevant error message is shown.
+* Log in with a correct username and password, confirm that the user is logged in and that they are redirected to their cart page.
+* Try to return to the login page url when already logged in, confirm that the user is redirected to the cart page.
+
+* Reset password. Works correctly and the message is sent to the email supplied. 
+
+
+#### Profile Page
+* Go to the profile page of a newly created user. Confirm that the profile info form is populated with the users username and email address.
+* Confirm that the first name and last name fields are also available.
+* Fill in the form with a non-email address, confirm that the applicable error is shown to the user
+* Fill in the form correctly, confirm that the "Your account info has been updated." message is shown to the user and that the reloaded form is now populated with the new data.
+* Confirm that a user with no previous orders has the "no orders to show" text in the Orders section.
+* Make 2 separate orders on the website.
+* Return to the profile page, confirm that the orders are displayed in the Orders section of the profile page. With the top order being the most recent and open to show the full details. Confirm that all orders after it in the list are closed accordions, but that can be opened with a click.
+* Confirm that all data in the orders on the profile page is accurate.
+* Go into the admin panel, check all users are in the user section of the database.
+* Check if the email is verified or not. 
+
+
+
+
+#### Campspot managements 
+
+1. Add campspot
+
+check added to correct section of the campspot page 
+2. Edit Campspots check updated version is now in the campspot page
+
+Delete
+
+
+#### Event managements 
+
+1. Add Event
+
+check added to product page
+
+2. Edit Events
+
+Delete
+
+#### Admin checks.
+Check order is present
+Check latest campspots and product events are shown at the top of the page so all new additions can be seen in the database immediately 
+
+#### Each time a new order payment is made and so is added check stripe.
+
+#### Check that all the latest static and media versions have been uploaded to S3 bucket.
+Check all the recently added images in events and campspots are in s3 bucket. 
+
+
+Debug = False check 404 page 
+
+
+Bugs mended
+
+When two campspot bookings for the same venue were made previously they were totally separate and of once needed to be deleted then both were deleted.
+
+Also if two bookings were made on the same date they were stored separately.
+
+Both were an issue. The first may confuse and frustrate users who may then not make the effort to rebook.
+
+the second meant that duplicate bookings could confuse the business hosts and admin plus lead to queries made to stripe as to why two charges had been made. 
+
+This was an attempt at defensive design to reduce the potential for fraudulent reclaims to stripe. 
+
 
 Bugs- 
 The delete function is not working for the campspot unless superuser.
 Check view and admin authorisation. 
 may be incompatibility between campspots added in gitpod and in heroku. may be to access admin and remove all recently added campspots and products as first check.
 
+
+not very user friendly message when two camppot bookings for the same site on the same date are added 
+
+realised no easy access to the event management product/add page. 
+Code had already been added to the product view and templates had been made. 
+An option added "event management" to my account caused as error in heroku build. 
+The subsequent efforts to run the  heroku app in chrome failed for 3 hours despite refresh and clear session selected. Heroku worked well in all other browsers on desktop and all mobile devices tested. After 3 1/2 hour lapse Chrome loaded heroku app as expected and tests resumed. 
 
 
 
