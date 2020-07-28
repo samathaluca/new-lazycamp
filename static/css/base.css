@@ -12,11 +12,11 @@ body {
 
 
 #lazylogo2 {
-  height: 20px;
+  max-height: 50px;
 }
 
 #lazylogo3 {
-  height: 10px;
+  max-height: 25px;
 }
 
 #img-added  {

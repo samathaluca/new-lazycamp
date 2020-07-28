@@ -60,7 +60,7 @@
                <div class="card  border-0">
                   {% if product.image %}
                   <a href="{% url 'product_detail' product.id %}">
-                  <img class="card-img-top img-fluid" style="max-height:px" src="{{ product.image.url }}" alt="{{ product.name }}">
+                  <img class="card-img-top img-fluid" style="max-height:250px" src="{{ product.image.url }}" alt="{{ product.name }}">
                   </a>
                   <a href="{% url 'product_detail' product.id %}"
                      type="button" id="opaque" class="btn btn-lg btn-success">
@@ -68,7 +68,7 @@
                   </a>
                   {% else %}
                   <a href="{% url 'product_detail' product.id %}">
-                  <img id="img-added" class="card-img-top img-fluid" style="max-height:200px" src="{{ MEDIA_URL }}joy.jpg" alt="{{ product.name }}">
+                  <img id="img-added" class="card-img-top img-fluid" style="max-height:250px" src="{{ MEDIA_URL }}joy.jpg" alt="{{ product.name }}">
                   </a>
                   <a href="{% url 'product_detail' product.id %}"
                      type="button" class="btn btn-lg btn-success">
