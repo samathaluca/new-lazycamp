@@ -131,6 +131,58 @@ Select the different sorting options from the menu one by one, confirm that the 
 
 #### Campspot Detail Page (campspot_detail.html)
 
+* Click on image brings up large image in new tab.
+
+* If logged in user is either a superuser or is the authorised site owner they will have the option to edit or delete. Check that the edit and delete coloured text is displayed when logged in. If they edit and delete text is visible, check that the edit campspot links to the correct campspot id. 
+
+* If not logged in or on a campspot page for which you do not have the authority to edit or delete, check that the edit and delete options are not visible. 
+
+* Check that the Number of adults and Number of nights input boxes move up and down as expected. 
+
+* Check that the datepicker is revealed on click and the chosen date is selected.
+
+* Click on Book Now button and the number of adults, date and number of nights selected is revealed in a success toast with the message "added date and campspot name to book. 
+
+* If more than one booking is made check that they are all added in the campspot_detail booking success toast and that the total price is updated. 
+
+* If more than one booking is made for the same campspot, ensure that these bookings are added together and reflect the sum of the two bookings. Check that this is revealed in the success toast. 
+
+* Test that the keep looking link gives the option to add additional bookings.
+
+* "check your date!" tooltip is revealed on hover over the book now button.
+
+*  Check that the "Go to Secure Checkout" link on the success toast correctly renders the booking session on the book.html page.
+
+#### Booking page (book.html)
+
+* On the bookings page check
+
+all details are correct
+
+the image links to campspot_detail page
+the remove option deletes the booking from session and page
+
+the amend option deletes the booking and redirects the user to the same campspot and reminds the user to rebook in a toast
+
+The two link to secure checkout or backwards to keep looking both take to the expected pages
+
+
+#### Contact Page (contact.html)
+* Go to the contact page from the Contact dropdown in the navigation menu. 
+
+* Confirm that the contact form is laid out as expected.
+* Confirm that for a logged in user the email address field has already been populated.
+
+
+Confirm that for a user who is not logged in the email address field is blank.
+Try to send the form with no fields filled in, confirm that the user is alerted to fill in the required fields.
+Try to enter a non-email address into the email field, confirm that the user is alerted to fill in an email address.
+Send a complete form, confirm that the message is sent to my email address with all the information included.
+
+
+
+
+
 
 #### Product Page (product.html)
 
@@ -157,8 +209,33 @@ Once this site has working payment in place the telephone number will that if th
 * Check that when the category name is clicked that all other products in the same category are displayed with invitation to "Book Online Now".
 * Check that when the event date is clicked that all other products listed as events are displayed.
 
-
 #### Product Detail Page (product_detail.html)
+
+* Click on image brings up large image in new tab.
+
+* Confirm that for a logged in user the email address field has already been populated.
+
+* If logged in user is either a superuser or is the authorised site owner they will have the option to edit or delete. Check that the edit and delete coloured text is displayed when logged in. If they edit and delete text is visible, check that the edit product links to the correct product id. 
+
+* If not logged in or on a product page for which you do not have the authority to edit or delete, check that the edit and delete options are not visible. 
+
+* Test the product enquiry form reveals a toast with the success message "Your email was sent Successfully!" when completed and submitted. NOTE: this can only be tested in the deployed version due to gitpod and gmail incompatibility.
+
+* Test the "Please fill in this field" tooltip is revealed if the email is attempted to be sent without completion of all the required fields.
+
+* Test the links to the products.html Events and the separate link to campspots.html Online Camps bookings 
+
+
+
+Bugs- 
+The delete function is not working for the campspot unless superuser.
+Check view and admin authorisation. 
+may be incompatibility between campspots added in gitpod and in heroku. may be to access admin and remove all recently added campspots and products as first check.
+
+
+
+
+
 
 
 

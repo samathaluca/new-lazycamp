@@ -37,10 +37,10 @@ def add_to_book(request, item_id):
                 book[item_id]['items_by_date'][date] = {}
                 book[item_id]['items_by_date'][date]['number_people'] = quantity
                 book[item_id]['items_by_date'][date]['number_nights'] = number_nights
-                messages.success(request, f'Added date {date.upper()} {campspot.name} to book')
+                messages.success(request, f'Added date {date.upper()} {campspot.name} to booking')
         else:
             book[item_id] = {'items_by_date': {date: {'number_people': quantity, 'number_nights': number_nights}}}
-            messages.success(request, f'Added date {date.upper()} {campspot.name} to book')
+            messages.success(request, f'Added date {date.upper()} {campspot.name} to booking')
 
 
     # print(book)
