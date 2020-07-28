@@ -10,71 +10,109 @@ The following validation services and linter were used to check the validity of 
 
 [Chrome Devtools](https://developers.google.com/web/tools/chrome-devtools/) to test responsivitiy throughout.
 
-[Firefox Devtools]() to test responsivitiy throughout. 
+[Firefox Devtools](https://developer.mozilla.org/en-US/docs/Tools) to test responsivitiy throughout. 
 
 [HTML and CSS Beautifier](https://www.freeformatter.com/html-formatter.html) use format selection in beautify code
+
 [AutoPrefixer](https://autoprefixer.github.io/) -This project used AutoPrefixer to make sure the css code is valid for all browsers.
+
 [Markdown live-preview](https://markdownlivepreview.com/) -This project used markdown previewer to check the rendering of the readme.md file content.
+
 [PEP8 online](http://pep8online.com/)- Not secure but ok for testing console errors.
     
 [VSC code extensions](https://code.visualstudio.com/)- To test code when gitpod was not working well.
+
 [IDLE](https://www.python.org/)- to check python code
     
 
 
+### Manual Testing
 
+Below is a detailed account of all the manual testing that has been done to confirm all areas of the site work as expected.
 
-Testing
-Chrome Devtools
-HTML Validator
-CSS Validator
-HTML and CSS Beautifier use format selection in beautify code
-AutoPrefixer -This project used AutoPrefixer to make sure the css code is valid for all browsers.
-Markdown live-preview -This project used markdown previewer to check the rendering of the readme.md file content.
-PEP8 online- Not secure but ok for testing console errors.
-Gitpod- IDE used throughout the project.
-VSC code extensions- To test code when gitpod was not working well.
-IDLE- to check python code
-Javascript- Tested to check Materialize initialization.
-Early development testing.
+Due to the incompatability between gitpod IDE and gmail all sent email manual tests could only be carried out once the project had been deployed.
+FB messenger will not work in the IDE and needs to be deployed to test.
 
+Aside from the email and messenger manual tests, all commits to the github repository was preceded by changes that had been tested and proved to run successfully in the browser.
+After each new commit the deployed app was tested to check the changes were successful.
 
-Responsive Design - Recipes for Recovery app is fully responsive;
+After each change proved to work well in a particular screen size responsive design manual tests were completed using both chrome and Firefox dev tools. Each test was carried out in both browsers in both local and deployed versions.
 
+Periodically extensive manual testing was carried out using 2 desktop screen sizes, 3 laptops, 2 tablets and 4 different mobile phones. Knowledge that testing responsive design in dev tools is not always 100% accurate, true rendering on the physical devices was relied upon through development.  
 
+#### Devices tested
 
-
-Compatibility
-To ensure a broad range of users can successfully use this site, I tested it across the 6 major browsers in desktop, tablet and mobile configuration. Different versions used by friends, family and other students. No issues.
-
-Chrome
-
-Edge
-
-Firefox
-
-Safari
-
-Opera
-
-Devices tested
-Mobile phones
+##### Mobile phones
 
 Samsung S9,
 Iphone 6
 Iphone7
 Iphone 7S plus,
 Sony XA42
-Tablets tested
 
-Ipad = LNBEI 10 inch Android tablet
-Laptop tested
+##### Tablets tested
+
+Ipad
+LNBEI 10 inch Android tablet
+
+##### Laptop tested
 
 MacBook pro,
 Sony Vaio
 HP Pavillion DV6
-Desktop (unbranded Windows 7 OS) with different monitors 21 and 27inch.
 
+##### Desktop 
+
+(unbranded Windows 7 OS) with different monitors 21 and 27inch.
+
+#### Browsers 
+Between devices the browsers tested were as follows:
+Google Chrome,
+Opera,
+Firefox,
+Microsoft Edge,
+Safari,
+Android Brower,
+Samsung Browser
+
+wrote unitests which run successfully but I did not gain enough confidence in my ability to write automated tests to negate the need for the manual tests. 
+I understand that automated tests and TDD and essential when numerous people are working on the same project but as the sole contributor to the project my preference was reliance on manual testing.
+I also believe that in development work few customers are willing to pay for time taken to write the tests on their code so after grasping the basics of writing automated tests I concentrated efforts on user stories and testing that would reveal bugs the user will see when browsing. 
+
+Travis. Having successfully run Travis using the old version of the Full stack Developer module, I noted that Travis was no longer included in the updated videos. After some issue with Travis continuing to run lazycamp instead of new-lazycamp respository and even when successfully switching, Travis reverted back and ran tests on old repository, I was advised by the tutors that Travis had been  deprecated along with the use of Django 1 in projects along with Travis.. 
+
+
+
+
+
+
+
+
+
+### User Stories Testing
+
+Bugs the display of datepicker in old safari version
+
+the deleting of all products with the same id was an issue
+
+
+
+
+
+
+
+
+
+Early development testing.
+
+
+
+
+
+Responsive Design - Recipes for Recovery app is fully responsive;
+
+Compatibility
+To ensure a broad range of users can successfully use this site, I tested it across the 6 major browsers in desktop, tablet and mobile configuration. Different versions used by friends, family and other students. No issues.
 
 
 Python extension for Visual Studio Code and Pylint-django was used to validate Python.

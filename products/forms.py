@@ -29,13 +29,10 @@ class ContactForm(forms.Form):
     message = forms.CharField(widget=forms.Textarea)
 
 
-
 class EnquiryForm(ContactForm):
-
-
     number_of_nights = forms.IntegerField()
     number_of_people = forms.IntegerField()
     ideal_month = forms.CharField()
     ideal_dates = forms.CharField()
-    
+
     # date = forms.DateField()
