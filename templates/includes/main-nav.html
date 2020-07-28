@@ -1,93 +1,57 @@
 <div class="collapse navbar-collapse" id="main-nav">
-    <ul class="navbar-nav w-auto mx-auto">
-            <li class="nav-item d-block d-md-none">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'home' %}" id="home-link">
-                Home
-            </a>
-        </li>
-        <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Lazy Choices
-            </a>
-            <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                <a href="{% url 'campspots' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
-                <a href="{% url 'campspots' %}?sort=rating&direction=desc" class="dropdown-item ">By Rating</a>
-                <a href="{% url 'campspots' %}?sort=county&direction=asc" class="dropdown-item ">By Location</a>
-                <a href="{% url 'campspots' %}?sort=category&direction=asc" class="dropdown-item ">By Category</a>
-                <!-- <a href="{% url 'campspots' %}?sort=arrive_anytime&direction=asc" class="dropdown-item ">By Late Arrival</a> -->
-                <!-- <a href="{% url 'products' %}" class="dropdown-item">Phone and Email bookings &amp; Products</a> -->
-            </div>
-        </li>
-
-        <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="clothing-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Campspot/Pitches
-            </a>
-            <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
-                <a href="{% url 'campspots' %}?category=woodland" class="dropdown-item">Woods &amp; Forest</a>
-                <a href="{% url 'campspots' %}?category=beach" class="dropdown-item">Beach, River or Lakeside</a>
-                <a href="{% url 'campspots' %}?category=farmland" class="dropdown-item">Farm Land</a>
-                <a href="{% url 'campspots' %}?category=nature" class="dropdown-item">Nature Retreat</a>
-                <a href="{% url 'campspots' %}?category=woodland,beach,nature" class="dropdown-item">Peaceful</a>
-                <a href="{% url 'campspots' %}?category=city" class="dropdown-item">City Life</a>
-                <!-- <a href="{% url 'products' %}?category=electric,breakfast,wc_shower" class="dropdown-item">Comforts</a> -->
-            
-            </div>
-        </li>
-
-        <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="homeware-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Camping Events
-            </a>
-            <div class="dropdown-menu border-0" aria-labelledby="homeware-link">
-                <a href="{% url 'products' %}" class="dropdown-item">Browse Events</a>
-                <a href="{% url 'messenging' %}" class="dropdown-item">Organise Events</a>
-                <!-- <a href="{% url 'products' %}?category=bed_bath" class="dropdown-item">Party &amp; Fun</a>
-
-                <a href="" class="dropdown-item">Kids &amp; Teens</a>
-                <a href="" class="dropdown-item">Therapeutic</a>
-                <a href="" class="dropdown-item">Nature</a>
-                <a href="" class="dropdown-item">Star, planet and Moon Gazing</a>
-                <a href="" class="dropdown-item">Campfire with music</a>
-                <a href="" class="dropdown-item">Social</a>
-                <a href="" class="dropdown-item">Craft</a>
-                <a href="" class="dropdown-item">Wildlife</a>
-                <a href="" class="dropdown-item">Diet changes</a> -->
-                <!-- <a href="" class="dropdown-item">Tech detox</a>
-                <a href="" class="dropdown-item">Break up party</a>
-                <a href="" class="dropdown-item">Hen party</a>
-                <a href="" class="dropdown-item">Exercise, PT</a>
-                <a href="" class="dropdown-item">Walking</a>
-                <a href="" class="dropdown-item">Cycling</a>
-                <a href="" class="dropdown-item">Canoeing</a>
-                <a href="{% url 'products' %}?category=bed_bath" class="dropdown-item">Bed &amp; Bath</a>
-                <a href="{% url 'products' %}?category=kitchen_dining" class="dropdown-item">Kitchen &amp; Dining</a>
-                <a href="{% url 'products' %}?category=bed_bath,kitchen_dining" class="dropdown-item">All Homeware</a> -->
-            </div>
-        </li>
-
-        <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black" href="#" id="specials-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Contact Us 
-            </a>
-            <div class="dropdown-menu border-0" aria-labelledby="specials-link">
-                <a href="mailto:samanthaluca@aol.com" class="dropdown-item">Quick Fire email</a>
-                <a href="{% url 'messenging' %}" class="dropdown-item">Messenger Chat</a>
-                <a href="tel:+447884040450" class="dropdown-item">Phone/Text</a>
-                <!-- <a href="https://web.whatsapp.com/" class="dropdown-item">WhatApp Chat</a> -->
-                <a href="{% url 'contact' %}" class="dropdown-item">Enquiry Form</a>
-                <!-- <a href="" class="dropdown-item">Free entertainment</a>
-                <a href="" class="dropdown-item">Free drink</a>
-                <a href="" class="dropdown-item">Free food</a>
-                <a href="" class="dropdown-item">Free pick up</a>
-                <a href="" class="dropdown-item">Free Event</a>
-                <a href="" class="dropdown-item">Free Kids</a>
-                <a href="" class="dropdown-item">Free Pets</a>
-                <a href="{% url 'products' %}?category=new_arrivals" class="dropdown-item">New Arrivals</a>
-                <a href="{% url 'products' %}?category=deals" class="dropdown-item">Deals</a>
-                <a href="{% url 'products' %}?category=clearance" class="dropdown-item">Clearance</a>
-                <a href="{% url 'products' %}?category=new_arrivals,deals,clearance" class="dropdown-item">All Specials</a> -->
-            </div>
-        </li>
-    </ul>
+   <ul class="navbar-nav w-auto mx-auto">
+      <li class="nav-item d-block d-md-none">
+         <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'home' %}" id="home-link">
+         Home
+         </a>
+      </li>
+      <li class="nav-item dropdown">
+         <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         Lazy Choices
+         </a>
+         <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
+            <a href="{% url 'campspots' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
+            <a href="{% url 'campspots' %}?sort=rating&direction=desc" class="dropdown-item ">By Rating</a>
+            <a href="{% url 'campspots' %}?sort=county&direction=asc" class="dropdown-item ">By Location</a>
+            <a href="{% url 'campspots' %}?sort=category&direction=asc" class="dropdown-item ">By Category</a>
+            <!-- <a href="{% url 'campspots' %}?sort=arrive_anytime&direction=asc" class="dropdown-item ">By Late Arrival</a> -->
+            <!-- <a href="{% url 'products' %}" class="dropdown-item">Phone and Email bookings &amp; Products</a> -->
+         </div>
+      </li>
+      <li class="nav-item dropdown">
+         <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="clothing-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         Campspot/Pitches
+         </a>
+         <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
+            <a href="{% url 'campspots' %}?category=woodland" class="dropdown-item">Woods &amp; Forest</a>
+            <a href="{% url 'campspots' %}?category=beach" class="dropdown-item">Beach, River or Lakeside</a>
+            <a href="{% url 'campspots' %}?category=farmland" class="dropdown-item">Farm Land</a>
+            <a href="{% url 'campspots' %}?category=nature" class="dropdown-item">Nature Retreat</a>
+            <a href="{% url 'campspots' %}?category=woodland,beach,nature" class="dropdown-item">Peaceful</a>
+            <a href="{% url 'campspots' %}?category=city" class="dropdown-item">City Life</a>
+            <!-- <a href="{% url 'products' %}?category=electric,breakfast,wc_shower" class="dropdown-item">Comforts</a> -->
+         </div>
+      </li>
+      <li class="nav-item dropdown">
+         <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="homeware-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         Camping Events
+         </a>
+         <div class="dropdown-menu border-0" aria-labelledby="homeware-link">
+            <a href="{% url 'products' %}" class="dropdown-item">Browse Events</a>
+            <a href="{% url 'messenging' %}" class="dropdown-item">Organise Events</a>
+         </div>
+      </li>
+      <li class="nav-item dropdown">
+         <a class="logo-font font-weight-bold nav-link text-black" href="#" id="specials-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         Contact Us 
+         </a>
+         <div class="dropdown-menu border-0" aria-labelledby="specials-link">
+            <a href="mailto:samanthaluca@aol.com" class="dropdown-item">Quick Fire email</a>
+            <a href="{% url 'messenging' %}" class="dropdown-item">Messenger Chat</a>
+            <a href="tel:+447884040450" class="dropdown-item">Phone/Text</a>
+            <!-- <a href="https://web.whatsapp.com/" class="dropdown-item">WhatApp Chat</a> -->
+            <a href="{% url 'contact' %}" class="dropdown-item">Enquiry Form</a>
+         </div>
+      </li>
+   </ul>
 </div>

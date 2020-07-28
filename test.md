@@ -376,6 +376,10 @@ Code had already been added to the product view and templates had been made.
 An option added "event management" to my account caused as error in heroku build. 
 The subsequent efforts to run the  heroku app in chrome failed for 3 hours despite refresh and clear session selected. Heroku worked well in all other browsers on desktop and all mobile devices tested. After 3 1/2 hour lapse Chrome loaded heroku app as expected and tests resumed. 
 
+logo resized to original in s3 bucket
+
+messenger required clean sheet to work reliably in all browsers
+
 
 
 
