@@ -281,18 +281,19 @@ messenger chat in organise events too
 phone link 
 
 
-
+### My account dropdown 
 
 #### Register Page
 * Log out then go to the register page again. Confirm that the register form is displayed as expected.
-* Fill in the form with a username already in the database, confirm that the user is informed that they must use a unique username.
+* Fill in the form with a username already in the database, confirm that the user is informed that the username already exists.
+* Fill in a form with email address already in the data base and check that the user will be informed " A user is already registered with this email address. 
 * Fill in the email input with a non-email address, confirm the user is shown an error asking the to use an email address.
-<!-- Go into devtools, change the type attribute on the email form to text, attempt to send the form. confirm that the Django validation catches the error and tells the user to enter an email address. -->
 * Fill in the form with two different passwords, confirm the error is caught and the user is informed of their mistake.
 Fill in the registration form correctly, confirm that the user is automatically directed to the login page, and the message "Your account has been created <username>. You can now log in." is displayed above the login page.
+* Fill in password that is less than 8 characters and check the response will be " This password is too short. It must contain at least 8 characters."
+* link to messenger chat to discuss host verified sign up is visible and working.  
 
-
-Login Page
+#### Login Page
 * Reload the login page, confirm that the message for a new account is not visible.
 * Attempt to log in with a username not in the database, confirm the relevant error message is shown.
 * Attempt to log in with a correct username but wrong password, confirm the relevant error message is shown.

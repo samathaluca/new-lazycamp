@@ -139,7 +139,7 @@ def edit_campspot(request, campspot_id):
 def delete_campspot(request, campspot_id):
     """ Delete a campspot from the store """
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry, only store owners can do that.')
+        messages.error(request, 'Sorry, extra authorisation is needed to do that.')
         return redirect(reverse('home'))
     # messages.info(request, f'You are editing {campspot.name}')
     campspot = get_object_or_404(Campspot, pk=campspot_id)
