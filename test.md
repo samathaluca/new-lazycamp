@@ -109,9 +109,29 @@ on each page in which it is displayed the search lists campspots available to bo
 
 1. Sorting options
 
-Select the different sorting options from the menu one by one, confirm that the campspots are sorted in the orders selected.
+* Select the different sorting options from the top navigation menu one by one, confirm that the campspots are sorted in to the categories selected.
+For example, Click on peaceful selects all Beach, Woodland or Forest and Nature Retreats. 
+Check each category is displayed and that the categories can be resorted individually if the are multiple categories selected they can be reselected individually.
 
-2. Campspot cards -available section
+* From the Lazy choices or Campspot/pitches category dropdwon choices, the results can be sorted in to order that most suits the user.
+
+For example 
+
+If Gwent is inputed in search bar.
+The results of the search can then be sorted in to price, rating, name or category.
+There is scope for adding in different choices from the model fields so, for example,the county search could be further sorted in to postcode option.
+
+This is deemed to be important in the future when there are more campspots in the data base. 
+
+
+
+
+
+
+2. Up arrow postioned in the bottom right of page and jumps users back to the page top when clicked
+
+
+3. Campspot cards -available section
 
 * Hover over product cards, confirm the hover effect works as expected on bottom button.
 * Confirm that the link to campspot details works from both campspot image and Book online Now button. 
@@ -167,7 +187,7 @@ the amend option deletes the booking and redirects the user to the same campspot
 The two link to secure checkout or backwards to keep looking both take to the expected pages
 
 
-
+#### Checkout page 
 
 
 Checkout success 
@@ -198,6 +218,13 @@ Check that the aim of the products page is immediately obvious. The products dis
 1. Sorting options
 
 Select the different sorting options from the menu one by one, confirm that the products are sorted in the orders selected.
+
+The details of search sorting options are the same as for campspot page. 
+There is felxibility and scope to attract different types of customers. 
+
+DIFFERENT APPEAL to older and experienced campers used to booking by phone versus younger, dynamic online savvy users who may expect to find and book what they want onlin with secure payment without needed to pick up the phone. 
+
+* Up arrow postioned in the bottom right of page and jumps users back to the page top when clicked
 
 2. Product cards
 
@@ -341,7 +368,7 @@ The delete function is not working for the campspot unless superuser.
 Check view and admin authorisation. 
 may be incompatibility between campspots added in gitpod and in heroku. may be to access admin and remove all recently added campspots and products as first check.
 
-
+image kit works perfectly in girpod but not work with s3 buckets 
 not very user friendly message when two camppot bookings for the same site on the same date are added 
 
 realised no easy access to the event management product/add page. 
