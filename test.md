@@ -96,8 +96,9 @@ Travis. Having successfully run Travis using the old version of the Full stack D
 * Click the "price" link in the navbar, confirm that booking is empty or that all bookings are listed. 
 * In mobile versions search input bar is not dispayed until the search icon is clicked. 
 * The input search box is  set up to drive traffic to the online booking section. Manual tests confirm that 
-on each page in which it is displayed the search lists campspots available to book online.
-* To avoid confusion when on the products.html page the search box is hidden 
+on each page in which it is displayed the search lists campspots available to book online. The best results are achieved by searching by Welsh County currently because all campspots added have one added. 
+* Check that on the products.html page the search box is hidden on desktop versions.
+* Check that on mobiles and tablets the search icon is displayed but that the placeholder notifies the divert to online booking. This may be disable following peer review if it is raised as a point of confusion. 
 
 
 
