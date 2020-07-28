@@ -81,6 +81,31 @@ I also believe that in development work few customers are willing to pay for tim
 
 Travis. Having successfully run Travis using the old version of the Full stack Developer module, I noted that Travis was no longer included in the updated videos. After some issue with Travis continuing to run lazycamp instead of new-lazycamp respository and even when successfully switching, Travis reverted back and ran tests on old repository, I was advised by the tutors that Travis had been  deprecated along with the use of Django 1 in projects along with Travis.. 
 
+### Final Testing before Submission.
+
+#### Elements on every page
+
+1. Navbar
+
+* Click on Logo returns to home.
+* Tests on both mobile menu dropdown icon and desktop dropdown menus all link to the correct page. 
+* Confirm My account is visible and that when clicked the logged out the options "Register" and "Log in" are visible and that "Campspot Management", "My Profile" and "Log out" are not.
+* When Logged in the site, confirm that options "Campspot Management", "My Profile" and "Log out" are visible and that "Register" and "Log in" are not.
+* Add a booking to the session and, confirm that the total expenditure appears under the shopping icon with the correct price displayed in £ as a float with two decimal places.
+* Delete all items from the booking, confirm that the price of £0.00 is displayed in the navbar.
+* Click the "price" link in the navbar, confirm that booking is empty or that all bookings are listed. 
+* In mobile versions search input bar is not dispayed until the search icon is clicked. 
+* The input search box is  set up to drive traffic to the online booking section. Manual tests confirm that 
+on each page in which it is displayed the search lists campspots available to book online.
+* To avoid confusion when on the products.html page the search box is hidden 
+
+
+
+
+
+
+
+Logo Serves
 
 
 
