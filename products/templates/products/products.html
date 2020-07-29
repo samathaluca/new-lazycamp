@@ -68,7 +68,7 @@
                   </a>
                   {% else %}
                   <a href="{% url 'product_detail' product.id %}">
-                  <img id="img-added" class="card-img-top img-fluid" style="max-height:250px" src="{{ MEDIA_URL }}joy.jpg" alt="{{ product.name }}">
+                  <img id="img-added" class="card-img-top img-fluid style="max-height:250px src="{{ MEDIA_URL }}joy.jpg" alt="{{ product.name }}">
                   </a>
                   <a href="{% url 'product_detail' product.id %}"
                      type="button" class="btn btn-lg btn-success">
