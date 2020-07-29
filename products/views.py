@@ -80,16 +80,16 @@ def all_products(request):
 #         priduct.is_available = False
 
 
-def product_date(request):
-    """ A view to show individual product dates """
+# def product_date(request):
+#     """ A view to show individual product dates """
 
-    # product = get_object_or_404(Product, pk=product_id)
-    products = Product.objects.filter(is_available=True)
-    context = {
-        'products': products,
-    }
+#     # product = get_object_or_404(Product, pk=product_id)
+#     products = Product.objects.filter(is_available=True)
+#     context = {
+#         'products': products,
+#     }
 
-    return render(request, 'products/product_date.html', context)
+#     return render(request, 'products/product_date.html', context)
 
 
 def messenging(request):

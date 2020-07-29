@@ -17,7 +17,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato&display=swap">
         <link rel="stylesheet" href="{% static 'css/base.css' %}">
-        <link rel="shortcut icon" type="image/ico" href="/media/rocket_icon.png">
+        <link rel="shortcut icon" type="image/ico" href="https://lazycamp.s3.eu-west-2.amazonaws.com/media/IconWhite.png">
     {% endblock %}
 
     {% block extra_css %}
@@ -42,13 +42,15 @@
 
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
                 <a href="{% url 'home' %}" class="nav-link main-logo-link">
-                <img id="lazylogo" src="/static/img/resizedlogo.png" alt="logo">
+                <img id="lazylogo2" src="https://lazycamp.s3.eu-west-2.amazonaws.com/static/img/newLogoAlt100px.png" alt="logo">
                   <!-- <h2 class="logo-font text-black my-0"><strong>Pitches</strong> </h2> -->
 
                 </a>
                 
             </div>
-            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+
+            {% block search_products %}
+            <div id="search-box" class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <form method="GET" action="{% url 'campspots' %}">
                     <div class="input-group w-100">
                         <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search by Welsh County or Postal District">
@@ -62,6 +64,7 @@
                     </div>
                 </form>
             </div>
+            {% endblock %}
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                     <li class="list-inline-item dropdown">
@@ -103,10 +106,15 @@
         </div>
         <div class="row bg-white">
             <nav class="navbar navbar-expand-lg navbar-light w-100">
+            
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+                <!-- search_mobile -->
+                <!--  block search_mobile_products %} -->
                 {% include 'includes/mobile-top-header.html' %}
+                <!-- search_mobile -->
+                <!-- endblock %} -->
                 {% include 'includes/main-nav.html' %}
             </nav>
         </div>
@@ -136,7 +144,7 @@
             {% endfor %}
         </div>
     {% endif %}
-
+    
     {% block page_header %}
     {% endblock %}
 
