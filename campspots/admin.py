@@ -7,7 +7,7 @@ class CampspotAdmin(admin.ModelAdmin):
     list_display = (
         'postcode',
         'name',
-        'category',
+        'date',
         'price',
         'is_available',
         'county',

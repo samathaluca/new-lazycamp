@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 
 class Category(models.Model):
     """ Model to store different Categories with pluralised admin name
-     and firendly name for user """
+     and friendly name for user. # TODO """
     class Meta:
         verbose_name_plural = 'Categories'
     name = models.CharField(max_length=254)
@@ -19,7 +19,7 @@ class Category(models.Model):
 
 
 class Campspot(models.Model):
-    """ Model to store all campspot details which may be important to users """
+    """ Model to store all campspot details which may be important to users"""
     owner = models.ForeignKey(User, on_delete=models.PROTECT, null=True)
     category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
     name = models.CharField(max_length=254)
@@ -47,10 +47,8 @@ class Campspot(models.Model):
     public_transport_options = models.CharField(max_length=254)
     local_eatery_and_shop = models.CharField(max_length=254)
     campspot_email = models.EmailField()
+    date = models.DateTimeField(auto_now_add=True)
 
-    # TODO add date so help admin know when campspot was added.
-    ''' TODO (add defensive design to stop bus user errors)
-    image_url = models.URLField(max_length=1024,null=True, blank=True'''
 
     def __str__(self):
         return self.name

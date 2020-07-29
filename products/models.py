@@ -2,8 +2,8 @@ from django.db import models
 
 from django.contrib.auth.models import User
 
-from imagekit.models import ImageSpecField
-from imagekit.processors import ResizeToFill
+# from imagekit.models import ImageSpecField
+# from imagekit.processors import ResizeToFill
 
 
 class Category(models.Model):
@@ -43,7 +43,6 @@ class Product(models.Model):
     description = models.TextField()
     price = models.DecimalField(max_digits=6, decimal_places=2)
     image = models.ImageField(null=True, blank=True)
-    listing_image = ImageSpecField(source='image', processors=[ResizeToFill(300, 225)], format='JPEG')
     late_arrival = models.BooleanField(default=True)
     is_available = models.BooleanField(default=True)
     number_available = models.IntegerField(default=0)
