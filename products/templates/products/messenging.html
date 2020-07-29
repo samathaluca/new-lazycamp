@@ -1,4 +1,5 @@
 {% load static %}
+<!-- Messenger did not work reliably across all browsers with base.html, main-nav.html. -->
 <!doctype html>
 <html lang="en">
    <head>
@@ -48,7 +49,7 @@
          fjs.parentNode.insertBefore(js, fjs);
          }(document, 'script', 'facebook-jssdk'));
       </script>
-      <!-- Your Chat Plugin code -->
+      <!-- Chat Plugin code -->
       <div class="fb-customerchat"
          attribution=setup_tool
          page_id="102624628190785">
@@ -58,7 +59,6 @@
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
                <a href="{% url 'home' %}" class="nav-link main-logo-link">
                   <img id="lazylogo3" src="https://lazycamp.s3.eu-west-2.amazonaws.com/static/img/newLogoAlt100px.png" alt="logo">
-                  <!-- <h2 class="logo-font text-black my-0"><strong>Pitches</strong> </h2> -->
                </a>
             </div>
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">

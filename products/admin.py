@@ -6,13 +6,12 @@ from .models import Product, Category, Event
 
 class ProductAdmin(admin.ModelAdmin):
     list_display = (
-        # 'postcode',
         'name',
+        # date enable keeps check on recently added events easily in admin
         'date',
         'event',
         'category',
         'price',
-        # 'image',
         'is_available',
     )
 
@@ -25,11 +24,11 @@ class CategoryAdmin(admin.ModelAdmin):
         'name',
     )
 
+
 class EventAdmin(admin.ModelAdmin):
     list_display = (
         'name',
     )
-
 
 
 admin.site.register(Product, ProductAdmin)

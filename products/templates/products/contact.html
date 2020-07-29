@@ -1,88 +1,58 @@
 {% extends "base.html" %}
-
-
 {% load static %}
-
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-        <h2 class="logo-font mt-4">Contact Us</h2>
-            <!-- <div class="col">Contact Us</div> -->
-        </div>
-    </div>
-    <!-- <a href="tel:+447884040450" target="_blank" type="button" class="btn btn-lg btn-secondary" disabled><i class="fa fa-phone" aria-hidden="true"></i>  Telephone or Text </a> -->
-    <!-- </div> -->
+<div class="container header-container">
+   <div class="row">
+      <h2 class="logo-font mt-4">Contact Us</h2>
+   </div>
+</div>
 {% endblock %}
-
-
-
 {% block content %}
-
-
-
-    <div class="overlay"></div>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
-                <div class="image-container my-5">
-<a href="tel:+447884040450" target="_blank" type="button" class="btn btn-lg btn-secondary" disabled><i class="fa fa-phone" aria-hidden="true"></i>  Telephone or Text </a>
-   <p> +44(0)783434 0828</p>
-                </div>
-
-                  <!-- <a href="https://web.whatsapp.com/" target="_blank" type="button" class="btn btn-lg btn-success" disabled><i class="fa fa-whatsapp" aria-hidden="true"></i> WhatsApp Chat</a> -->
+<div class="overlay"></div>
+<div class="container-fluid">
+   <div class="row">
+      <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
+         <div class="image-container my-5">
+            <a href="tel:+447884040450" target="_blank" type="button" class="btn btn-lg btn-secondary" disabled><i class="fa fa-phone" aria-hidden="true"></i>  Telephone or Text </a>
+            <p> +44(0)783434 0828</p>
+         </div>
+      </div>
+      <div class="col-12 col-lg-6">
+         <form action="" method="post">
+            {% csrf_token %}
+            {{enquiry_form|crispy}}
+            <button class="btn btn-success">Send</button>
+         </form>
+      </div>
+      {% if enquiry_form.errors %}	
+      <h1> Please ensure the form is valid </h1>
+      {% endif %}
+      <div class="col{% if s %}-12 mt-2{% endif %}">
+         <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 mt-5">
+         <span class="icon">
+         <i class="fas fa-chevron-left"></i>
+         </span>
+         <span class="text-uppercase">Keep Looking to book by phone</span>
+         </a>
+         <a href="{% url 'campspots' %}" class="btn btn-outline-black rounded-0 mt-5">
+         <span class="icon">
+         <i class="fas fa-chevron-left"></i>
+         </span>
+         <span class="text-uppercase">Keep Looking to book online</span>
+         </a>
+         <p>Address: 20 Tudor Road Wilmslow SK9 2HB</p>
+         <!-- <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Book">
             </div>
-                           <div class="col-12 col-lg-6">
-                        <form action="" method="post">
-                        {% csrf_token %}
-                            {{enquiry_form|crispy}}
-                             <button class="btn btn-success">Send</button>
-                             <!-- <button type="button" class="btn btn-lg btn-success"> Send Email Enquiry</button> -->
-                           
-                        </form>
-                    </div>     
-
-
- {% if enquiry_form.errors %}	
-         <h1> Please ensure the form is valid </h1>
-    {% endif %}
-                    
-
-      
-                            <div class="col{% if s %}-12 mt-2{% endif %}">
-
-
-
-
-
-
-
-                            <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 mt-5">
-                                    <span class="icon">
-                                        <i class="fas fa-chevron-left"></i>
-                                    </span>
-                                    <span class="text-uppercase">Keep Looking to book by phone</span>
-                            </a>
-    <a href="{% url 'campspots' %}" class="btn btn-outline-black rounded-0 mt-5">
-                  <span class="icon">
-                  <i class="fas fa-chevron-left"></i>
-                  </span>
-                  <span class="text-uppercase">Keep Looking to book online</span>
-                  </a>
-                  <p>Address: 20 Tudor Road Wilmslow SK9 2HB</p>
-     <!-- <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Book">
-                            </div>
-                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
-
-                        </div> -->
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
+            <input type="hidden" name="redirect_url" value="{{ request.path }}">
+            
+            </div> -->
+         </form>
+      </div>
+   </div>
+</div>
+</div>
 {% endblock %}
-
 <!-- {% block postloadjs %}
-{{ block.super }}
-{% include 'products/includes/quantity_input_script.html' %}
-{% endblock %} -->
-
+   {{ block.super }}
+   {% include 'products/includes/quantity_input_script.html' %}
+   {% endblock %} -->

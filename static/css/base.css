@@ -10,6 +10,11 @@ body {
     font-family: 'Lato';
 }
 
+#img-size {
+    max-height:250px
+
+}
+
 
 #lazylogo2 {
   max-height: 50px;
