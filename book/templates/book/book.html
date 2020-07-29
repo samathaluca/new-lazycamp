@@ -15,7 +15,10 @@
 {% endblock %}
 
 {% block content %}
+
+<!-- Hide hero image -->
 <div class="overlay"></div>
+<!-- Heading -->
 <main class="container">
    <header class="row">
       <div class="col">
@@ -24,17 +27,19 @@
          <hr>
       </div>
    </header>
+   <!-- Frame booking details -->
    <section class="row">
       <div class="col-12 col-lg-12 order-lg-last mb-5">
          <p class="text-muted">People Booked ({{ campspot_count }})</p>
          <div class="row">
             <div class="col-6 offset-3">
-               <p class="mb-1 mt-0 small text-muted">Campsite</p>
+               <p class="mb-1 mt-0 small text-muted">Campspot</p>
             </div>
             <div class="col-3 text-right">
                <p class="mb-1 mt-0 small text-muted">PPPN</p>
             </div>
          </div>
+         <!-- Booked Campspot details -->
          {% for item in book_items %}
          <div class="row">
             <div class="col-3 mb-1">                                        
@@ -46,10 +51,13 @@
                {% endif %}
                </a>
                <div>
+               <!-- Remove campspot booking -->
                     <a class="remove-item text-danger text-center" id="remove_{{ item.item_id }}" data-product_size="{{ item.size}}" data-date="{{ item.date }}"><small>Remove</small></a>
                </div>
+               <!-- Remove and emend/rebook campspot -->
                <a href="{% url 'remove_and_rebook' item.campspot.pk %}" class="remove-item text-success float-left"><small>Amend</small></a>
             </div>
+            <!-- Booking details -->
             <div class="col-6">
                <p class="my-0"><strong>{{ item.campspot.name }}</strong></p>
                <hr class="my-0">
@@ -67,6 +75,7 @@
          </div>
          <hr>
          {% endfor %}
+         <!-- Links to Keep browsing or move forward to checkout -->
          <div colspan="5" class="text-center">
             <a href="{% url 'campspots' %}" class="btn btn-outline-black rounded-0 btn-lg">
             <span class="icon">
@@ -126,8 +135,6 @@
              location.reload();
          });
     })
-
-
-
 </script>
+
 {% endblock %}

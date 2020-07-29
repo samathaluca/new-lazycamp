@@ -1,8 +1,7 @@
 from django.contrib import admin
 from .models import Campspot, Category
 
-# Model fields display in Product admin.
-
+# Model fields display in Campspot admin.
 
 class CampspotAdmin(admin.ModelAdmin):
     list_display = (

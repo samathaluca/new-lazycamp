@@ -9,12 +9,8 @@ class CampspotForm(forms.ModelForm):
         model = Campspot
         exclude = ['motorhome_service_point']
         exclude = ['owner']
-        # widgets = {
-        #     'bare_all': forms.CharField()
-        # }
     image = forms.ImageField(label='Image', required=False, widget=CustomClearableFileInput)
     host_brief = forms.CharField()
-    # campspot_email = forms.EmailField()
 
 
     def __init__(self, *args, **kwargs):

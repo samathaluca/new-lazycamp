@@ -13,7 +13,7 @@ def view_book(request):
 
 
 def add_to_book(request, item_id):
-    """ Add  booking view. Takes Campsot pk """
+    """ Add  booking view. Takes Campspot pk """
     # TODO Use Django form
 
     campspot = get_object_or_404(Campspot, pk=item_id)
@@ -21,7 +21,6 @@ def add_to_book(request, item_id):
     booking_date = request.POST.get('booking_date')
     number_nights = int(request.POST.get('number_nights'))
     redirect_url = request.POST.get('redirect_url')
-    # size = None
 
     if 'booking_date' in request.POST:
         date = request.POST['booking_date']
@@ -32,8 +31,6 @@ def add_to_book(request, item_id):
             if date in book[item_id]['items_by_date'].keys():
                 book[item_id]['items_by_date'][date]['number_people'] += quantity
                 book[item_id]['items_by_date'][date]['number_nights'] += number_nights
-                # messages.success(request, f'Updated booking details {date.upper()} at {campspot.name} check)
-                # messages.success(request, f'Updated date {date.upper()} {campspot.name} quantity to {book[item_id]["items_by_date"][date]}')
                 messages.success(request, f'booking for arrival on {date.upper()} at {campspot.name} has been amended')             
             else:
                 book[item_id]['items_by_date'][date] = {}
@@ -44,14 +41,13 @@ def add_to_book(request, item_id):
             book[item_id] = {'items_by_date': {date: {'number_people': quantity, 'number_nights': number_nights}}}
             messages.success(request, f'Added date {date.upper()} {campspot.name} to booking')
 
-
-    # print(book)
     request.session['book'] = book
     return redirect(redirect_url)
 
 
 def adjust_book(request, item_id):
-    """Adjust the quantity of the specified campspot to the specified amount"""
+    """Adjust the pitch size relative to number of adults booked"""
+    # TODO Pitch Size option available for users. Admin/business user adjust charges potential.
     campspot = get_object_or_404(Campspot, pk=item_id)
     quantity = int(request.POST.get('quantity'))
     size = None
@@ -104,7 +100,7 @@ def remove_from_book_ajax(request, item_id, date):
 
 
 def remove_and_rebook(request, item_id):
-    """Removed then back to campspot to amend"""
+    """Removed then back to campspot to amend. Takes Campspot pk"""
     campspot = remove_from_book(request, item_id)
     messages.success(request, f'Removed booking please rebook')
     return redirect(reverse('campspot_detail', args=[campspot.pk]))

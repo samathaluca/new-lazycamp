@@ -315,7 +315,11 @@ Fill in the registration form correctly, confirm that the user is automatically 
 * Go into the admin panel, check all users are in the user section of the database.
 * Check if the email is verified or not. 
 
+#### Logout Page
 
+* confirm option to cancel is working.
+
+* Confirm sign out works and redirects to home page. With success message "You have signed out".
 
 
 #### Campspot managements 
@@ -325,7 +329,7 @@ Fill in the registration form correctly, confirm that the user is automatically 
 check added to correct section of the campspot page 
 2. Edit Campspots check updated version is now in the campspot page
 
-Delete
+Delete campspot 
 
 
 #### Event managements 
@@ -363,14 +367,22 @@ the second meant that duplicate bookings could confuse the business hosts and ad
 
 This was an attempt at defensive design to reduce the potential for fraudulent reclaims to stripe. 
 
+the deleting of all products with the same id was an issue
 
 Bugs- 
+
+
+Bugs the display of datepicker in old safari version
+
 The delete function is not working for the campspot unless superuser.
 Check view and admin authorisation. 
 may be incompatibility between campspots added in gitpod and in heroku. may be to access admin and remove all recently added campspots and products as first check.
 
 image kit works perfectly in girpod but not work with s3 buckets 
 not very user friendly message when two camppot bookings for the same site on the same date are added 
+
+orders are being replicated in the profile and admin section. This is caused by the webhook handler.
+Temporary message to user stating that they will only be charged once.  
 
 realised no easy access to the event management product/add page. 
 Code had already been added to the product view and templates had been made. 
@@ -379,19 +391,177 @@ The subsequent efforts to run the  heroku app in chrome failed for 3 hours despi
 
 logo resized to original in s3 bucket
 
-messenger required clean sheet to work reliably in all browsers
-
-
-
-
-
+messenger required clean sheet to work reliably in all browsers so original logo icon and no logo rendering.
 
 
 ### User Stories Testing
 
-Bugs the display of datepicker in old safari version
 
-the deleting of all products with the same id was an issue
+#### Visitor Goals
+
+
+User goals are:
+
+* Find a camping spot for the night last minute in the area they would like to stay.
+* Find an event for a weekend or week.  
+* Either to find a campspot quickly or browse for inspiration.
+* To be able to book campspots ahead of time quickly without having to search individual sites for availablity. 
+* Be able to navigate the site easily, find what I need and make a safe and secure purchase.
+* Book from a fast, reliable and trustworthy online system.
+* Have the option to phone/email or chat if I have questions.
+* To be able to book from my mobile phone then have all the details sent to my mobile phone in an email with simple process then only having to give my name and email address on arrival.
+* Not needing to check in during office hours because all access details and pitching information will automatically come to my phone at the time of booking in a precitable format including detailed directions from nearest landmark. 
+
+Lazycamp meets all these needs because:
+
+* Unavailable campsites are listed beneath all available sites for instant information on whether or not a site can be booked. 
+* The focus of the site design has been instant view of what the user wants in the right location.
+* The booking process is fast.
+* An email is sent to the user and the business user with all the details needed. 
+
+#### Business Goals
+
+* Fill all my camping spots and maximise revenue.
+* Attract new customers.
+* Provide all the customers information they need online so that they do need to call and email.
+* Manage customer expectations online so I always have happy customers who are right for what I have on offer so minimising the risk of complaints, bad reviews and refunds.
+* Have a booking system which I do not have to manage.
+* Have an online payment system I do not to manage and keep secure.
+
+#### Lazycamp meets all these needs because:
+
+* I can add and amend my data easily.
+* Booking and payments will be taken then forwarded to me.
+Lazycamp meets all these needs because:
+* Most queries will be answered online.
+Lazycamp meets all these needs because:
+* If customers do want to contact us, general questions will be answered for us by the Lazycamp team. 
+* Customer expectations will be managed by the lazycamp team and queries can be answered outside hours.   
+
+
+## User stories
+
+As a user type, I want to perform an action, so that I can achieve a goal.
+As a user I expect to be able to quickly find the nearest pitch/ site or spot where I can safely camp for the night.
+
+As user I want to cleary see which campspots are available and not be wasting time being presented with fully booked campspots. 
+I do not want to waste my time, be frustrated or disappointed.
+
+As a user, if I have viewed a campsite and it is sold out, I want to see it still featured but now fully booked. This will stop me being confused if the spot has disappeared from all views and I may wonder if I saw it on a different site. 
+
+As a user I may have needs or preferences that I want to be able to prioritise in a search for example, pets, car space, public transport, shower, electricity, local amenities.
+
+As I user I want to know if the site is quiet, lively, family oriented, waterside, farm, wood, mountain etc.
+
+As I user I want to know the price I will need to pay and a big advantage will be to prepay so that I can arrive when I want and know my place is secured.
+
+As a user I want to be able to access the pitch normal hours and spontaneously.
+
+As I user I want to ensure that the site participation is current and that I will have access and knowledge of where to go exactly.
+
+I do not want to be given outdated event or pitch information. 
+
+I want to know a fixed basic price and what will cost me extra. Do I need £1 coins for on site facilities e.g showers, lockers or gaming. 
+
+As I user I may want to try camping for the first time with tips and ideas and to make my experience as comfortable as possible using know how from seasoned and well travelled campers
+
+As a user I may need local information e.g. scottish midges, noisy frogs, local early cockerel or noisy dawn chorus, farm animal smells etc. I want to know the bad points as well as the good so I know what to expect, have the option to prepare so that I can relax and enjoy myself.
+
+As a user I would like a profile of previous bookings and to find them easily. 
+
+I would like to a very simple login process. I would like password reset. 
+Possibly I would like to login through social media. 
+
+As a user  enjoy a blog or chatroom to help get ideas or make plans? 
+
+I want my payment to be made easily and securely. I want email Acknowledgements
+
+I would like messages appear when I submit, enquire or book that tewll me I have been successful. 
+
+As  a user I would like email confirmation with all the information I will need to find and access the camp spot.. 
+
+If I am camping my phone may not be charged and I am unlikely to have been able to print my booking so I would like my email address and name to be evidence enough to the business user .
+
+I want flexibility and maybe a credit offer if I can not make my booking. 
+
+As a user I would like to read how other users got there and found it. How they slept is important. Did they feel secure?. 
+
+As a user I would like to know what is closest to my ideal spot if there are no ideal spots. for example i have 2 children and a dog so it must be a child and pet friendly site but I may be willing to park a distance away from the pitch or do without electric if needed. 
+
+As a user I would like spinners to show that my payment is being processed.
+
+As a user I would appreciate tooltips to ensure I do not make mistakes when I make my booking.
+
+As a user I would like to make final checks to my booking before payment is made. 
+
+As a user I want to be able to use familiar chat messaging e.g. Facebook messaging. I can then check when the recipient last checked the messages and know when my message has been seen. I would prefer this to an unfamiliar chatbox not knowing if I am being responded to by a bot or a real person. 
+
+
+
+## Professionals/Business Users
+
+As a business user I want to promote my campspot and fill it up to the last minute to maximise bookings during the short camping season. 
+
+As a business user I want to easily add and update campspot details.
+
+As a business user I want to quickly notify customers that the spot is fully booked and now unavailable tp prevent over booking.
+
+As a business user I want email notification of each booking with contact details of the customer.
+
+As a business user organiser I want flexibilty to be able to promote a camping event or fill pop up spots near a yearly festival or sporting event. 
+
+As a business user I will want to to be able to delete my campspot easily if last minute bookings are creating problems.
+
+As a business user i would like to be able to promote my last spots until the last minute.
+
+I will want to easily turn the availability on and off with immediate effect. 
+
+I want to be able to set a limit of pitches and once exceded no more be accepted. 
+
+I will want to add then amend possibly delete my pitches to manage customer expectations and minimse the effort of having people arrive late.
+
+I want to be able to get an email each time I have a booking or log on to my profile to see who and when users will be arriving each day. 
+
+I want to be able to offer extras that can be paid for locally or on the site. 
+
+As a user I want to know how much I am owed from my profile.
+
+AS a user I do not want to contacted outside hours and so customers can autofind info on the site for late arrival policy etc. or I want to charge extra for late arrivals. 
+
+As a business user I may offer a seperate late arrival area or a late arrival area as a trial only 
+
+Lazy camp is for the spontaneous. Last minute plans to fit the weather or the call of the wild.
+
+Coming out of the covid pandemic travellers may not wish to book abroad and may be keen to get away for a few days. If i can be ready for the end of lockdown the site may get a lot of interest. 
+
+The scottish 500 is an aspirational road trip with world class sunsets, wild beaches, cliffs, accessible islands with turquoise seas, mountains, culture, heritage, castles and legend. 
+To prebook this is tricky and limits the enjoyment of the trip.
+A last minute decision to divert or stay an extra night is bliss. lazy camp allows for this.
+
+Many people do not know how to prepare for a camping trip and so never experience the freedom it offers. Lazy camp will offer a set up ready to arrive with no kit and leave with your back back.
+
+Late arrival is currently difficult. This will be one of the features on offer. 24/7 pitches will be available
+
+
+As a business user I do not want to lose enquiries if the chat is not answered quickly enough, using messenger means all chat enquiries are stored so can be reignited while customer expectations of FB messenger will give more time to answer. 
+
+As a business user As a user org I may want to offer a limited number of places and show count down.
+
+I want my event to be evident closer to the time and be removed when the times has past.
+
+
+## All visitors to the site will expect/want/need:
+
+Good navigation.
+
+Fast pinpointing what I want.
+
+Fast booking.
+
+Be sold what I want and need not what the business wants to to buy.
+
+
+
 
 
 

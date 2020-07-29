@@ -79,7 +79,7 @@ def campspot_detail(request, campspot_id):
 
 @login_required
 def add_campspot(request):
-    """ Add a campspot to the store """
+    """ Add a campspot or campspot template for business users to edit """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only campspot owners can do that.')
         return redirect(reverse('home'))
@@ -97,7 +97,7 @@ def add_campspot(request):
         template = 'campspots/add_campspot.html'
     context = {
         'form': form,
-        
+
     }
 
     return render(request, template, context)
@@ -105,7 +105,7 @@ def add_campspot(request):
 
 @login_required
 def edit_campspot(request, campspot_id):
-    """ Edit a campspot in the store """
+    """ Edit a campspot authorised by superuser or campspot owner """
 
     campspot = get_object_or_404(Campspot, pk=campspot_id)
     if not (request.user.is_superuser or (request.user == campspot.owner)):
@@ -113,7 +113,6 @@ def edit_campspot(request, campspot_id):
         # return redirect(reverse('home'))
         return HttpResponseForbidden()
 
-    
     if request.method == 'POST':
         form = CampspotForm(request.POST, request.FILES, instance=campspot)
         if form.is_valid():
@@ -137,11 +136,10 @@ def edit_campspot(request, campspot_id):
 
 @login_required
 def delete_campspot(request, campspot_id):
-    """ Delete a campspot from the store """
+    """ Delete a campspot, superuser only """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, extra authorisation is needed to do that.')
         return redirect(reverse('home'))
-    # messages.info(request, f'You are editing {campspot.name}')
     campspot = get_object_or_404(Campspot, pk=campspot_id)
     campspot.delete()
     messages.success(request, 'Campspot deleted!')

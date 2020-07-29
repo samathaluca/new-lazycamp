@@ -372,6 +372,11 @@ Templates folder
 Register Page
 Login Page
 
+
+
+
+
+
 ### Features Left to Implement
 Possibly social media login. 
 
@@ -395,13 +400,13 @@ Testing information can be found in separate ![test.md](/test.md) file
 
 To deploy Lazycamp booking site to heroku, the following steps should be taken:
 
-1. Create a requirements.txt file using the terminal command pip freeze > requirements.txt.
+1. Create a requirements.txt file using the terminal command pip3 freeze > requirements.txt.
 
-2. Create a Procfile with the terminal command echo web: python app.py > Procfile.
+2. Create a Procfile with the terminal command echo web: python3 manage.py > Procfile.
 
 3. git add and git commit the new requirements and Procfile and then git push the project to GitHub.
 
-4. Create a new app on the Heroku website by clicking the "New" button in your dashboard. Give it a name and set the region to whichever is applicable for your location.
+4. Create a new app on the Heroku website by clicking the "New" button in your dashboard. Give it a name and set the region to whichever is applicable for your location. 
 
 5. From the heroku dashboard of your newly created application, click on "Deploy" > "Deployment method" and select GitHub.
 
@@ -425,19 +430,19 @@ STRIPE_SUCCESS_URL	<link to checkout/confirm page in your app>
 
 From the command line of your local IDE:
 
-Enter the heroku postres shell
+Enter the heroku postgres shell
 Migrate the database models
 Create your superuser account in your new database
 Instructions on how to do these steps can be found in the heroku devcenter documentation.
 
 In your heroku dashboard, click "Deploy". Scroll down to "Manual Deploy", select the master branch then click "Deploy Branch".
 
-Once the build is complete, click the "View app" button provided.
+Once the build is complete, click the "Open app" button provided.
 
 From the link provided add /admin to the end of the url, log in with your superuser account 
 
 
-and create instances of ShippingDestination and Product within the new database.
+and create instances within each model set up within the new database.
 
 Once instances of these items exist in your database your heroku site will run as expected.
 

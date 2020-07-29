@@ -6,6 +6,7 @@ import datetime
 
 
 def book_contents(request):
+    ''' add bookings to session'''
 
     book_items = []
     total = 0
@@ -21,13 +22,11 @@ def book_contents(request):
                 'item_id': item_id,
                 'quantity': item_data,
                 'campspot': campspot,
-                # 'number_nights': number_nights,
                 })
 
 
         else:
             campspot = get_object_or_404(Campspot, pk=item_id)
-            # for size, quantity in item_data['items_by_size'].items():
             for date, booking_info in item_data['items_by_date'].items():
                 total += booking_info["number_people"] * campspot.price * booking_info["number_nights"]
                 campspot_count += booking_info['number_people']
@@ -38,7 +37,7 @@ def book_contents(request):
                     'date': datetime.datetime.strptime(date, '%Y-%m-%d').date,
                     'number_nights': booking_info['number_nights'],
                 })
-
+    # Calculates special offers from settings
     if total < settings.FREE_NIGHT_THRESHOLD:
         night = total * Decimal(settings.STANDARD_NIGHT_PERCENTAGE / 100)
         free_night_delta = settings.FREE_NIGHT_THRESHOLD - total
