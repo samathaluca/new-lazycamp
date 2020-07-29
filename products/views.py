@@ -69,37 +69,9 @@ def all_products(request):
 
     return render(request, 'products/products.html', context)
 
-# def booking_date(): get from the datepicker:
-# products = Product.objects.get()
-# then iterate over each one querying the OrderLineItem in the database:
-# for product in products:
-#     orders = OrderLineItems.objeacts.filter(product=product).filter(booking_date=booking_date).count()
-#     if orders < 3:
-#         product.is_available = True
-#     else:
-#         priduct.is_available = False
-
-
-# def product_date(request):
-#     """ A view to show individual product dates """
-
-#     # product = get_object_or_404(Product, pk=product_id)
-#     products = Product.objects.filter(is_available=True)
-#     context = {
-#         'products': products,
-#     }
-
-#     return render(request, 'products/product_date.html', context)
-
 
 def messenging(request):
     """ A view to show individual product dates """
-
-    # product = get_object_or_404(Product, pk=product_id)
-    # products = Product.objects.filter(is_available=True)
-    # context = {
-    #     'products': products,
-    # }
 
     return render(request, 'products/messenging.html')
 
@@ -190,16 +162,16 @@ def product_detail(request, product_id):
             body,
             settings.DEFAULT_FROM_EMAIL,
             [enquiry_form.cleaned_data['email']]
-            # [cust_email, order.campspot.owner.email]
+
         )
         messages.success(request, 'Your email was sent Successfully!')
-        # print('send an email')  # TODO
+
     context = {
         'product': product,
         'enquiry_form': enquiry_form,
         'can_edit': request.user.is_superuser or (request.user == product.owner)
     }
-    # print(context)
+
     return render(request, 'products/product_detail.html', context)
 
 
@@ -234,11 +206,9 @@ def edit_product(request, product_id):
 
     product = get_object_or_404(Product, pk=product_id)
     if not (request.user.is_superuser or (request.user == product.owner)):
-        # messages.error(request, 'Sorry, only hosts can do that.')
-        # return redirect(reverse('home'))
+
         return HttpResponseForbidden()
 
-   
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES, instance=product)
         if form.is_valid():
@@ -262,7 +232,7 @@ def edit_product(request, product_id):
 
 @login_required
 def delete_product(request, product_id):
-    """ Delete a product from the store """
+    """ Delete a product or event """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, extra authorisation is needed to do that.')
         return redirect(reverse('home'))
@@ -271,26 +241,5 @@ def delete_product(request, product_id):
     product.delete()
     messages.success(request, 'Product deleted!')
     return redirect(reverse('products'))
-# https://docs.djangoproject.com/en/3.0/topics/db/queries/
 
-# By reading through the queries portion of the Django documentation.
-# Getting back to the code using Q is actually quite simple.
-# I'll set a variable equal to a Q object. Where the name contains the query.
-# Or the description contains the query.
-# The pipe here is what generates the or statement.
-# And the i in front of contains makes the queries case insensitive.
-# With those queries constructed.
-# Now I can pass them to the filter method in order to actually
-# filter the products.
-# Now I'll add the query to the context. And in the template
-# call it search term.
-# And we'll start with it
-# as none at the top of this view to ensure we don't get an error
-# when loading the products page without a search term.
-# Let's save that and test whether it works.
-# I'll run a search for jeans, which as you
-# can see returns all the jeans in our store.
-# Now let's run a search for soft. To verify that
-# we're also searching in descriptions.
-# Looking at these items none of these first four
-# contain the term soft in the product name.
+
