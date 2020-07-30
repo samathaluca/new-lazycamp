@@ -107,125 +107,132 @@ Lazycamp meets all these needs because:
 * Earn income on each paid booking made.
 * Earn Income by directing calls and email enquiries to sites if the owners/hosts want to take payment themselves. 
 
+
 ## User stories
 
-As a user I expect to be able to quickly find the nearest pitch/ campsite or spot where I can safely camp for the night.
+<hr>
 
-As user I want to clearly see which campspots are available and not be wasting time being presented with fully booked campspots. 
+* As a user I expect to be able to quickly find the nearest pitch/ campsite or spot where I can safely camp for the night.
+
+* As user I want to clearly see which campspots are available and not be wasting time being presented with fully booked campspots. 
 I do not want to waste my time, be frustrated or disappointed.
 
-As a user, if I have viewed a campsite and it is sold out, I want to see it still featured but now fully booked. This will stop me being confused if the spot has disappeared from all views and I may wonder if I saw it on a different website. 
+* As a user, if I have viewed a campsite and it is sold out, I want to see it still featured but now fully booked. This will stop me being confused if the spot has disappeared from all views and I may wonder if I saw it on a different website. 
 
-As a user I may have needs or preferences that I want to be able to prioritise in a search for example, pets, car space, public transport, shower, electricity, local amenities.
+* As a user I may have needs or preferences that I want to be able to prioritise in a search for example, pets, car space, public transport, shower, electricity, local amenities.
 
-As I user I want to know if the campsite is quiet, lively, family oriented, waterside, farm, wood, mountain etc.
+* As I user I want to know if the campsite is quiet, lively, family oriented, waterside, farm, wood, mountain etc.
 
-As I user I want to know the price I will need to pay.
+* As I user I want to know the price I will need to pay.
 
-I may want to prepay so that I can arrive when I want and know my place is secured.
+* I may want to prepay so that I can arrive when I want and know my place is secured.
 
-As a user I want to be able to access the pitch normal hours and spontaneously.
+* As a user I want to be able to access the pitch normal hours and spontaneously.
 
-As a user I want to find pitches that offer late arrival or late checkout depending on my preference. 
+* As a user I want to find pitches that offer late arrival or late checkout depending on my preference. 
 
-As I user I want to ensure that the campsite participation is current and that I will have access and knowledge of where to go exactly.
+* As I user I want to ensure that the campsite participation is current and that I will have access and knowledge of where to go exactly.
 
-I do not want to be given outdated event or pitch information. 
+* I do not want to be given outdated event or pitch information. 
 
-I want to know a fixed basic price and what will cost me extra. Do I need £1 coins for on site facilities e.g showers, lockers or gaming. 
+* I want to know a fixed basic price and what will cost me extra. Do I need £1 coins for on site facilities e.g showers, lockers or gaming. 
 
-As I user I may want to try camping for the first time with tips and ideas and to make my experience as comfortable as possible.
+* As I user I may want to try camping for the first time with tips and ideas and to make my experience as comfortable as possible.
 
-As a user I may need local information e.g. scottish midges, noisy frogs, local early cockerel or noisy dawn chorus, farm animal smells etc. I want to know the bad points as well as the good so I know what to expect, have the option to prepare so that I can relax and enjoy myself.
+* As a user I may need local information e.g. scottish midges, noisy frogs, local early cockerel or noisy dawn chorus, farm animal smells etc. I want to know the bad points as well as the good so I know what to expect, have the option to prepare so that I can relax and enjoy myself.
 
-As a user I would like a profile of previous bookings and to find them easily. 
+* As a user I would like a profile of previous bookings and to find them easily. 
 
-I would like to a very simple login process. I would like password reset. 
+* I would like to a very simple login process. I would like password reset. 
 
-As a user enjoy chat to help get ideas or make plans? 
+* As a user enjoy chat to help get ideas or make plans? 
 
-I want my payment to be made easily and securely. I want email Acknowledgements
+* I want my payment to be made easily and securely. I want email Acknowledgements
 
-I would like messages appear when I submit, enquire or book that tewll me I have been successful. 
+* I would like messages appear when I submit, enquire or book that tewll me I have been successful. 
 
-As  a user I would like email confirmation with all the information I will need to find and access the camp spot. 
+* As  a user I would like email confirmation with all the information I will need to find and access the camp spot. 
 
-If I am camping my phone may not be charged and I am unlikely to have been able to print my booking so I would like my email address and name to be evidence enough to the business user.
+* If I am camping my phone may not be charged and I am unlikely to have been able to print my booking so I would like my email address and name to be evidence enough to the business user.
 
-I want flexibility and maybe a credit offer if I can not make my booking. 
+* I want flexibility and maybe a credit offer if I can not make my booking. 
 
-As a user I would like to know what is closest to my ideal spot if there are no ideal spots. for example i have 2 children and a dog so it must be a child and pet friendly site but I may be willing to park a distance away from the pitch or do without electric if needed. 
+* As a user I would like to know what is closest to my ideal spot if there are no ideal spots. for example i have 2 children and a dog so it must be a child and pet friendly site but I may be willing to park a distance away from the pitch or do without electric if needed. 
 
-As a user I would like spinners to show that my payment is being processed.
+* As a user I would like spinners to show that my payment is being processed.
 
-As a user I would appreciate tooltips to ensure I do not make mistakes when I make my booking.
+* As a user I would appreciate tooltips to ensure I do not make mistakes when I make my booking.
 
-As a user I may make a mistake in my booking and I need a final check to ensure all details I have chosen are correct before making payment. 
+* As a user I may make a mistake in my booking and I need a final check to ensure all details I have chosen are correct before making payment. 
 
-As a user I want to be able to use familiar chat messaging e.g. Facebook messaging. I can then check when the recipient last checked the messages and know when my message has been seen. I would prefer this to an unfamiliar chatbox not knowing if I am being responded to by a not or a real person. 
+* As a user I want to be able to use familiar chat messaging e.g. Facebook messaging. I can then check when the recipient last checked the messages and know when my message has been seen. I would prefer this to an unfamiliar chatbox not knowing if I am being responded to by a not or a real person. 
 
-As a user I may want to attend events mini festivals or intimate events to meet like minded people around a campfire or sharing circle.
+* As a user I may want to attend events mini festivals or intimate events to meet like minded people around a campfire or sharing circle.
 
-As a user I may want to attend events mini festivals or intimate events to improve my physical or mental health, walking, tai chi, stress relief, relaxation techniques.
+* As a user I may want to attend events mini festivals or intimate events to improve my physical or mental health, walking, tai chi, stress relief, relaxation techniques.
 
-As a user I may want to attend events mini festivals or intimate events to learn a new skill, for example, yoga, foraging, meditation.
+* As a user I may want to attend events mini festivals or intimate events to learn a new skill, for example, yoga, foraging, meditation.
 
-As a user I may want to attend events mini festivals or intimate events to solve a problem, for example, I drink too much.
+* As a user I may want to attend events mini festivals or intimate events to solve a problem, for example, I drink too much.
 
 
 ## Professionals/Business User stories.
 
-As a business user I want to promote my campspot and fill it up to the last minute to maximise bookings during the short camping season. 
+<hr>
 
-As a business user I want to easily add and update campspot details quickly.
+* As a business user I want to promote my campspot and fill it up to the last minute to maximise bookings during the short camping season. 
 
-As a business user I want to quickly notify customers that the spot is fully booked and now unavailable tp prevent over booking.
+* As a business user I want to easily add and update campspot details quickly.
 
-As a business user I want email notification of each booking with contact details of the customer.
+* As a business user I want to quickly notify customers that the spot is fully booked and now unavailable tp prevent over booking.
 
-As a business user organiser I want flexibilty to be able to promote a camping event or fill pop up spots near a yearly festival or sporting event. 
+* As a business user I want email notification of each booking with contact details of the customer.
 
-As a business user I will want to to be able to turn off the availability of my campspot easily if last minute bookings are creating problems.
+* As a business user organiser I want flexibilty to be able to promote a camping event or fill pop up spots near a yearly festival or sporting event. 
 
-As a business user i would like to be able to promote my last spots until the last minute.
+* As a business user I will want to to be able to turn off the availability of my campspot easily if last minute bookings are creating problems.
 
-I will have a limited number of spaces and so I want to easily turn the availability on and off with immediate effect when fully booked. 
+* As a business user i would like to be able to promote my last spots until the last minute.
 
-I want to be able to set a limit of pitches and once exceded no more be accepted. 
+* I will have a limited number of spaces and so I want to easily turn the availability on and off with immediate effect when fully booked. 
 
-I will want to to manage customer expectations and minimse the effort of having people arrive late.
+* I want to be able to set a limit of pitches and once exceded no more be accepted. 
 
-I want to be able to get an email each time I have a booking.
+* I will want to to manage customer expectations and minimse the effort of having people arrive late.
 
-I want to be able to offer extras that can be paid for locally or on the site. 
+* I want to be able to get an email each time I have a booking.
 
-AS a user I do not want to contacted outside hours and so customers can autofind info on the site for late arrival policy etc. or I may want to choice of charging extra for late arrivals. 
+* I want to be able to offer extras that can be paid for locally or on the site. 
 
-As a business user I may offer a separate late arrival area or a late arrival area as a trial only 
+* AS a business user I do not want to contacted outside hours and so customers can autofind info on the site for late arrival policy etc. or I may want to choice of charging extra for late arrivals. 
 
-Coming out of the covid pandemic travellers may not wish to book abroad and may be keen to get away for a few days. I wantg to maximise my bookings to help with the business losses caused by closure during lock down. 
+* As a business user I may offer a separate late arrival area or a late arrival area as a trial only 
 
-As a business user I do not want to lose enquiries if the chat is not answered quickly enough, using messenger means all chat enquiries are stored so can be reignited while customer expectations of FB messenger will give more time to answer. 
+* Coming out of the covid pandemic travellers may not wish to book abroad and may be keen to get away for a few days. I wantg to maximise my bookings to help with the business losses caused by closure during lock down. 
 
-I want to plan an event and sell all the avaiable spaces. 
+* As a business user I do not want to lose enquiries if the chat is not answered quickly enough, using messenger means all chat enquiries are stored so can be reignited while customer expectations of FB messenger will give more time to answer. 
 
-I want my event to be evident closer to the time and be removed when the times has past.
+* I want to plan an event and sell all the avaiable spaces. 
+
+* I want my event to be evident closer to the time and be removed when the times has past.
 
 
 ## All visitors to the site will expect/want/need:
 
-Good navigation.
+* Good navigation.
 
-Fast pinpointing needs.
+* Fast pinpointing needs.
 
-Fast booking.
+* Fast booking.
 
-Fast secure payment. 
+* Fast secure payment. 
 
-Be sold what I want and need not what the business wants to to buy.
+* Be sold what I want and need not what the business wants to to buy.
 
 
 ## Development planes to achieve objectives.
+
+<hr>
 
 ### The strategy plane
 
@@ -248,17 +255,20 @@ Strategic aim would immediately attract the 12 % of users who do not book ahead 
 Still offer traditional phone and email booking so be useful and attractive by convention.
 
 ### The scope plane
+
 The scope will be to attract users by offering simplicity and fast locating which sites are available with fast reliable payment.
 
 The business user will be able to add their sites quickly and simply then turn the featuring on the site on and off with simple boolean checkbox.
 
 ### Structure
+
 The site is structured to guide the user to book online which will be the preferred option for users and business users once they manage to adopt the process.
 In the interim the structure does offer a less obvious traditional booking system by phone or email but the added option of FB messaging. 
 Lazycamp considered that a chatbox but user feedback favoured the familiarity of social media as a mechanism for direct contact with the benefits of users knowing when the messages were last checked and managing expectations of when their queries will be answered also knowing who they are speaking to.
 Chatboxes are a little impersonal and faceless for the travel industry which expects a more personal persuasive, friendlier touch.
 
-### Skeleton
+### Skeleton plane
+
 The home page uses design to direct the user to the online and payment booking system. 
 
 #### Information Architecture 
@@ -298,33 +308,33 @@ Vibrant sourced images were mixed with original authentic images of actual campi
 
 #### Wireframes
 
-### Home page wireframes.
+##### Home page wireframes.
 
 ![Balsamiq ](static/wireframes/home.png)
 
-### Campspot/Product page wireframes.
+##### Campspot/Product page wireframes.
 
 ![Balsamiq ](static/wireframes/campspots.png)
 
-### Register page wireframes.
+##### Register page wireframes.
 
 ![Balsamiq ](static/wireframes/register.png)
 
-### Add/Edit page wireframes.
+##### Add/Edit page wireframes.
 
 ![Balsamiq ](static/wireframes/add_edit.png)
 
-### Booking page wireframes.
-#### Rescoping favoured the change to check/remove or amend important details only.
+##### Booking page wireframes.
+###### Rescoping favoured the change to check/remove or amend important details only.
 Auto added information was moved to checkout only. 
 
 ![Balsamiq ](static/wireframes/basket.png)
 
-### Booking page wireframes.
+#### Booking page wireframes.
 
 ![Balsamiq ](static/wireframes/checkout.png)
 
-### Checkout success wireframes.
+#### Checkout success wireframes.
 
 ![Balsamiq ](static/wireframes/order_confirmed.png)
 
