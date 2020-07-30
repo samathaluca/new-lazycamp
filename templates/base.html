@@ -72,10 +72,10 @@
                         <div class="dropdown-menu border-0" aria-labelledby="user-options">
                             {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
-                                    <a href="{% url 'add_campspot' %}" class="dropdown-item">Camp Spot Edit</a>
+                                    <a href="{% url 'add_campspot' %}" class="dropdown-item">Add CampSpot</a>
                                 {% endif %}
                                 {% if request.user.is_superuser %}
-                                    <a href="{% url 'add_campspot' %}" class="dropdown-item">Event Edit</a>
+                                    <a href="{% url 'add_product' %}" class="dropdown-item">Add Event </a>
                                 {% endif %}
                                 <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
                                 <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
