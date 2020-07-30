@@ -15,6 +15,7 @@ body {
 
 }
 
+/* #home-text {color:blue;} */
 
 #lazylogo2 {
   max-height: 50px;
@@ -50,7 +51,8 @@ body {
     border-color: #dc3545;
 }
 
-#opaque { 
+#opaque,
+#opaque2 { 
     opacity: 0.8;
     /* background-color: limegreen; */
 }

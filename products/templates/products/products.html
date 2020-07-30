@@ -8,8 +8,6 @@
 </div>
 {% endblock %}
 {% block search_products %}{% endblock %}
-<!-- search_mobile -->
-<!-- {% block search_mobile_products %}{% endblock %} -->
 {% block content %}
 <div class="overlay"></div>
 <div class="container-fluid">
@@ -17,7 +15,6 @@
       <div class="col text-center mt-3">
          <h2 class="logo-font mt-20">Campspot Phone/Email bookings.</h2>
          <h4 class="logo-font mt-4">Payment on arrival.</h4>
-         <!-- <button type="button" class="btn btn-lg btn-secondary" disabled>Snail mail: lastminutecamp@aol.com</button> -->
          <a href="mailto:samanthaluca@aol.com" class="btn btn-lg btn-secondary" disabled> Quick Fire email</a>
          <h3>lastminutecamp@aol.com</h3>
          {% for c in current_categories %}	
@@ -60,7 +57,7 @@
                <div class="card  border-0">
                   {% if product.image %}
                   <a href="{% url 'product_detail' product.id %}">
-                  <img class="card-img-top img-fluid" style="max-height:250px" src="{{ product.image.url }}" alt="{{ product.name }}">
+                  <img class="card-img-top img-fluid" style="max-height:200px" src="{{ product.image.url }}" alt="{{ product.name }}">
                   </a>
                   <a href="{% url 'product_detail' product.id %}"
                      type="button" id="opaque" class="btn btn-lg btn-success">
@@ -68,10 +65,10 @@
                   </a>
                   {% else %}
                   <a href="{% url 'product_detail' product.id %}">
-                  <img id="img-added" class="card-img-top img-fluid style="max-height:250px src="{{ MEDIA_URL }}joy.jpg" alt="{{ product.name }}">
+                  <img id="img-added" class="card-img-top img-fluid" style="max-height:200px" src="{{ MEDIA_URL }}joy.jpg" alt="{{ product.name }}">
                   </a>
                   <a href="{% url 'product_detail' product.id %}"
-                     type="button" class="btn btn-lg btn-success">
+                     type="button" id="opaque2" class="btn btn-lg btn-success">
                      <h6>Available <i class="fa fa-phone" aria-hidden="true"></i> 07834 340828</h6>
                   </a>
                   {% endif %}

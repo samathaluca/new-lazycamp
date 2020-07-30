@@ -328,12 +328,10 @@ Vibrant sourced images were mixed with original authentic images of actual campi
 ![Balsamiq ](static/wireframes/add_edit.png)
 
 ##### Booking page wireframes.
-###### Rescoping favoured the change to check/remove or amend important details only.
-Auto added information was moved to checkout only. 
 
 ![Balsamiq ](static/wireframes/basket.png)
 
-#### Booking page wireframes.
+#### Checkout page wireframes.
 
 ![Balsamiq ](static/wireframes/checkout.png)
 

@@ -1,7 +1,6 @@
 ![README ](/README.md)
 
-## Automated Testing
-### Validation Services
+## Validation Services
 The following validation services and linter were used to check the validity of the website code.
 
 [W3C Markup Validation](https://validator.w3.org/) was used to validate HTML.
@@ -28,19 +27,19 @@ The following validation services and linter were used to check the validity of 
     
 
 
-### Manual Testing
+## Manual Testing
 
 Below is a detailed account of all the manual testing that has been done to confirm all areas of the site work as expected.
 
 Due to the incompatability between gitpod IDE and gmail all sent email manual tests could only be carried out once the project had been deployed.
 FB messenger will not work in the IDE and needs to be deployed to test.
 
-Aside from the email and messenger manual tests, all commits to the github repository was preceded by changes that had been tested and proved to run successfully in the browser.
+Aside from the email and messenger manual tests, all commits to the github repository were preceded by changes that had been tested and proved to run successfully in the IDE.
 After each new commit the deployed app was tested to check the changes were successful.
 
 After each change proved to work well in a particular screen size responsive design manual tests were completed using both chrome and Firefox dev tools. Each test was carried out in both browsers in both local and deployed versions.
 
-Periodically extensive manual testing was carried out using 2 desktop screen sizes, 3 laptops, 2 tablets and 4 different mobile phones. Knowledge that testing responsive design in dev tools is not always 100% accurate, true rendering on the physical devices was relied upon through development.  
+Periodically extensive manual testing was carried out using 2 desktop screen sizes, 3 laptops, 2 tablets and 7 different mobile phones. Knowledge that testing responsive design in dev tools is not always 100% accurate, true rendering on the physical devices was relied upon through development.  
 
 #### Devices tested
 
@@ -48,13 +47,15 @@ Periodically extensive manual testing was carried out using 2 desktop screen siz
 
 Samsung S9,
 Iphone 6
-Iphone7
+Iphone 7
 Iphone 7S plus,
-Sony XA42
+Sony XA2
+Sony X3
+Blackberry Priv
 
 ##### Tablets tested
 
-Ipad
+Ipad 2 early IOS did not show datepicker correctly.
 LNBEI 10 inch Android tablet
 
 ##### Laptop tested
@@ -65,7 +66,7 @@ HP Pavillion DV6
 
 ##### Desktop 
 
-(unbranded Windows 7 OS) with different monitors 21 and 27inch.
+(unbranded Windows 7 OS) with different monitors 21 and 24inch.
 
 #### Browsers 
 Between devices the browsers tested were as follows:
@@ -77,7 +78,7 @@ Safari,
 Android Brower,
 Samsung Browser
 
-wrote unitests which run successfully but I did not gain enough confidence in my ability to write automated tests to negate the need for the manual tests. 
+Unitests ran successfully before changing tp Postgres database. I did not gain enough confidence in my ability to write automated tests to negate the need for the manual tests. 
 I understand that automated tests and TDD and essential when numerous people are working on the same project but as the sole contributor to the project my preference was reliance on manual testing.
 I also believe that in development work few customers are willing to pay for time taken to write the tests on their code so after grasping the basics of writing automated tests I concentrated efforts on user stories and testing that would reveal bugs the user will see when browsing. 
 
@@ -89,7 +90,7 @@ Travis. Having successfully run Travis using the old version of the Full stack D
 
 1. Navbar
 
-* Click on Logo returns to home.
+* Click on Logo returns to home on desktop. Mobile version is styled so logo appears above search and on click reveals the search input.
 * Tests on both mobile menu dropdown icon and desktop dropdown menus all link to the correct page. 
 * Confirm My account is visible and that when clicked the logged out the options "Register" and "Log in" are visible and that "Campspot Management", "My Profile" and "Log out" are not.
 * When Logged in the site, confirm that options "Campspot Management", "My Profile" and "Log out" are visible and that "Register" and "Log in" are not.
@@ -113,9 +114,9 @@ on each page in which it is displayed the search lists campspots available to bo
 
 * Select the different sorting options from the top navigation menu one by one, confirm that the campspots are sorted in to the categories selected.
 For example, Click on peaceful selects all Beach, Woodland or Forest and Nature Retreats. 
-Check each category is displayed and that the categories can be resorted individually if the are multiple categories selected they can be reselected individually.
+Check each category is displayed and that the categories can be resorted individually. If sorting option displays multiple categories each can be reselected individually.
 
-* From the Lazy choices or Campspot/pitches category dropdwon choices, the results can be sorted in to order that most suits the user.
+* From the Lazy choices or Campspot/pitches category dropdown choices, the results can be sorted in to order that most suits the user.
 
 For example 
 
@@ -179,18 +180,19 @@ This is deemed to be important in the future when there are more campspots in th
 
 * On the bookings page check
 
-all details are correct
+* all details are correct
 
-the image links to campspot_detail page
-the remove option deletes the booking from session and page
+* the image links to campspot_detail page
+*  the remove option deletes the booking from session and page
 
-the amend option deletes the booking and redirects the user to the same campspot and reminds the user to rebook in a toast
+*  the amend option deletes the booking and redirects the user to the same campspot and reminds the user to rebook in a toast
 
-The two link to secure checkout or backwards to keep looking both take to the expected pages
+* The grand total to pay for the booking is displayed.
+
+* The two links to secure checkout or backwards to keep looking both take to the expected pages
 
 
 #### Checkout page 
-
 
 Checkout success 
 
@@ -198,33 +200,25 @@ Check stripe
 Check confirmation emails have been sent to business owner , admin and user
 
 
+#### Product Page (product.html)- In summer this promotes events.
 
-#### Product Page (product.html)
+* Check that the aim of the products page is immediately obvious. The products displayed on this page will differ seasonally. 
+* Currently and in future summers this page will promote scheduled events and campspots near festivals.
 
+ In the Winter it will promote Christmas event and camping kits gifts
 
+In The Spring this page will promote camping kits and European events.
 
-
-Quickfire email 
-check email link works to direct dial from mobile and computers with 
-
-
-
-
-Check that the aim of the products page is immediately obvious. The products displayed on this page will differ seasonally. 
-* Currently and in futures summer this page will promote scheduled events and campspots near festivals.
-
-* In the Winter it will promote Christmas event and camping kits gifts
-* In The Spring this page will promote camping kits and European events.
-* In the Autumn this page will promote Southern Mediterranean festivals and events alongside European roadtrip and camping kits recommended for different climates. In British Summer camping in Greece, Southern Italy, Southern Spain and Croatia is not recommended by Lazycamp. 
+In the Autumn this page will promote Southern Mediterranean festivals and events alongside European roadtrip and camping kits recommended for different climates. In British Summer camping in Greece, Southern Italy, Southern Spain and Croatia is not recommended by Lazycamp. 
 
 1. Sorting options
 
-Select the different sorting options from the menu one by one, confirm that the products are sorted in the orders selected.
+* Select the different sorting options from the menu one by one, confirm that the products are sorted in the orders selected.
 
-The details of search sorting options are the same as for campspot page. 
-There is felxibility and scope to attract different types of customers. 
+* The details of search sorting options are the same as for campspot page. 
+There is flexibility and scope to attract different types of customers. 
 
-DIFFERENT APPEAL to older and experienced campers used to booking by phone versus younger, dynamic online savvy users who may expect to find and book what they want onlin with secure payment without needed to pick up the phone. 
+DIFFERENT APPEAL to older and experienced campers used to booking by phone versus younger, dynamic online savvy users who may expect to find and book what they want online with secure payment without needing to pick up the phone. 
 
 * Up arrow postioned in the bottom right of page and jumps users back to the page top when clicked
 
@@ -237,8 +231,6 @@ Once this site has working payment in place the telephone number will that if th
 * Confirm that all image sizes are correct.
 * Check that no cards are misaligned. 
 * Click multiple products, confirm that the user is taken to the correct product page.
-* Check that when the category name is clicked that all other products in the same category are displayed with invitation to "Book Online Now".
-* Check that when the event date is clicked that all other products listed as events are displayed.
 
 #### Product Detail Page (product_detail.html)
 
@@ -277,6 +269,17 @@ Try to send the form with no fields filled in, confirm that the user is alerted 
 
 Quickfire email 
 check email link works to direct dial from mobile and computers with 
+
+
+
+
+
+Quickfire email 
+* Checked that email link works to direct dial from mobile and computers with e.g. skype call and email client
+
+
+
+
 
 skype or calling option 
 messenger chat in organise events too
@@ -357,43 +360,51 @@ Check all the recently added images in events and campspots are in s3 bucket.
 Debug = False check 404 page 
 
 
-Bugs mended
+### Bugs mended
 
-When two campspot bookings for the same venue were made previously they were totally separate and of once needed to be deleted then both were deleted.
+1. When two campspot bookings for the same date at the same venue were made previously, each booking was displayed separately yet if you attempted to delete one then both were deleted.
 
-Also if two bookings were made on the same date they were stored separately.
+Also if two bookings were made on the same date they were stored separately. There are now added together and updated with a toast advising the user as such.
 
-Both were an issue. The first may confuse and frustrate users who may then not make the effort to rebook.
+Both were an issue. The first may confuse and frustrate users who may then not make the effort to rebook. The second meant that duplicate bookings could confuse the business hosts and admin plus lead to queries made to stripe as to why two charges had been made. 
 
-the second meant that duplicate bookings could confuse the business hosts and admin plus lead to queries made to stripe as to why two charges had been made. 
+The solution was found by deleting products with the same id by date not just by id.
 
-This was an attempt at defensive design to reduce the potential for fraudulent reclaims to stripe. 
+2. When project was submitted for peer review on slack MPia_lead noticed that the main links were not working. 
+I hunted through all the python code, then html making changes and reverting to previous versions.
+I was confused that I had not notice but on emptying cache I duplicated the error.
 
-the deleting of all products with the same id was an issue
+I uninstalled imagekit remembering that I had noticed the links on the mobile version were shwoing some errors when I installed imagekit and at the same time added the Facebook messenger Javascript to the messenging.html page.
+I then methodically checked all the javascript for discrepancies between the most recent versions and versions prior to adding ImageKit.  
 
-Bugs- 
+Using Dev tools I found that the error was triggered at screen size 650px. I searched gitpod IDE
+and found a media queries for max-screen size 650px in base.css. When I commented this out the error disappeared and all links began working correctly. 
 
+3. Adding messenger to pages with included javascript did not work. 
 
-Bugs the display of datepicker in old safari version
+I made a fresh messenging.html page without any template inheritance and no other JS to make it work reliably,
 
-The delete function is not working for the campspot unless superuser.
-Check view and admin authorisation. 
-may be incompatibility between campspots added in gitpod and in heroku. may be to access admin and remove all recently added campspots and products as first check.
+4. Imagekit worked perfectly in gitpod but not I was not able to replicate the success in the deployed version. Research revealed an unresolved incompatility betweem django-imagekit and AWS S3 buckets on which I am relying for static and media file storage. 
+I initially commented out all reference to imagekit and was planning to leave in place in the interest of agile design planning to find an alernative media and storage system. 
+When I found the bug effecting the mobile screen size links I uninstalled imagekit to see if that could be the issue.
 
-image kit works perfectly in girpod but not work with s3 buckets 
-not very user friendly message when two camppot bookings for the same site on the same date are added 
+In the interest of defensive design allowing campspot owners and event organisers to add images to the site themselves is risky. For this reason I have removed the image URL as an option knowing that it can be confusing and often the page and not the image URL will be added. 
+
+As a temporary solution I have set the max-height of all added images to 250 px in base.css for campspot then inline max-height of 200px in campspot.html and products.html page respectively to test alternatives. 
+
+## Bugs # TODO 
 
 orders are being replicated in the profile and admin section. This is caused by the webhook handler.
-Temporary message to user stating that they will only be charged once.  
+Temporary message to user stating that they will only be charged once. 
+
+found that if the user mistakenly adds two conflicting bookings for the same site on different dates it is possible to delete them but not amend one of them. I will attempt to resolve this before submission if all documentation is up to date and code quality has been validated, formatted and re-checked thoroughly enough with a review of all comments. 
 
 realised no easy access to the event management product/add page. 
 Code had already been added to the product view and templates had been made. 
 An option added "event management" to my account caused as error in heroku build. 
 The subsequent efforts to run the  heroku app in chrome failed for 3 hours despite refresh and clear session selected. Heroku worked well in all other browsers on desktop and all mobile devices tested. After 3 1/2 hour lapse Chrome loaded heroku app as expected and tests resumed. 
 
-logo resized to original in s3 bucket
 
-messenger required clean sheet to work reliably in all browsers so original logo icon and no logo rendering.
 
 
 ### User Stories Testing
@@ -423,20 +434,17 @@ If this section grows too long, you may want to split it off into a separate fil
 
 # Automated testing 
 
-I attempted to use Django's built-in testing framework
+I attempted to use Django's built-in testing framework.
 
-Django's built-in testing framework
+After writing tests, I ran ```python3 manage.py test```
 
-python3 manage.py test
+This command checks all of the apps for filenames that begin with the word test and runs all of the methods in that file that begin with test_
 
-checks all of the apps for filenames that begin with the word test and runs all of the methods in that file that begin with test_
+In the terminal,  running ```python3 manage.py test``` worked well before beginning to use the postgres database.
 
-In the terminal running python3 manage.py test. This worked before changing to postgres database.
+After switching to postgres database from sqlite3 the tests would not run. 
 
-checks all of the apps for filenames that begin with the word test and runs all of the methods in that file that begin with test_
-
-
-Issues as I was trying to develop automated tests were repeated errors thrown in the database as follows. 
+As I tried to develop automated tests repeated errors were thrown in the database as follows. 
 ```
 gitpod /workspace/new-lazycamp/book $ cd ..
 gitpod /workspace/new-lazycamp $ python3 manage.py test products
@@ -452,7 +460,7 @@ I then added test database in lazycamp settings.py file.
 In the terminal, python3 manage.py test products --settings=lazycamp.test_settings
 still had problems so I set up a separate test.settings.py file in product app to test the models function
 I tested with self.name() and passed the test.py file. When the self.name() was commented out the test failed.
-To test I ran command 
+To added a test to products app and I ran command 
 python3 manage.py test products --settings=lazycamp.test_settings in the terminal
 ```
 gitpod /workspace/new-lazycamp/book $ python3 experiment.py 
