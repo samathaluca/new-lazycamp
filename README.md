@@ -1,14 +1,4 @@
-Balsamiq 
-
-
-
-
-![Balsamiq ](/static/wireframes/home.png)
-
-
-
-![Balsamiq ](/test.md)
-
+![LazyCamp Logo ](/static/img/newLogoAlt100px.png)
 
 
 # LaZy Camp
@@ -16,53 +6,44 @@ Balsamiq
 <hr>
 
 The spontaneous campspot booking app.
+
+View at: 
 https://new-lazycamp.herokuapp.com/ - automatic!
+
 [Milestone Project4 - Lazycamp](https://new-lazycamp.herokuapp.com/)
 
 ## Project purpose
 
 <hr>
 
-Camping spontaneously on the spur of the moment is currently very difficult unless you are a seasoned camper or very familiar with the area you want to visit.
+Camping last minute is currently very difficult unless you are a seasoned camper or very familiar with the area, in particular the site, you want to visit.
 Existing options discourage last minute bookings by making it difficult, often blocking out the current and next date as booking options, or insist on early arrival times which prohibit last minute decisions for a night away. 
 
 Lazycamp will instantly list available sites on the day, in the county or postal district you search for,  without having to search each individual site details only to find at the end your choice is unavailable. 
 
 The freedom of the open road can be exhilerating. This is currently easy if you use the major hotel booking sites but if you want to camp along the way it is  tricky.
 
-Currently 12% of campers do not book ahead, blaming the weather. Checking rain and sunshine is an important consideration for many tent lovers. Again this is discouraged by the camping and caravanning industry in the UK because allowing users to wait and check the weather makes many business users feel vulnerable. When asked users will always say they would camp more if you could book without the need for so much planning. Lazycamp aims to give the evidence to business users that if they are willing to take late bookings they will fill all their empty spots and generate more income. 
+The current market leader has recently (while I have been developing my project over lockdown)  improved dramatically but still requires a considerable investment of time to negotiate the site and book.  Lazycamp focuses on fast find and fast book with instant confirmation. 
+
+Currently 12% of campers do not book ahead, blaming the weather. Checking rain and sunshine is an important consideration for many tent lovers. This is discouraged by the camping and caravanning industry in the UK because allowing users to wait and check the weather makes many business users feel vulnerable. When asked users will always say they would camp more if you could book without the need for so much planning. Lazycamp aims satisfy the user and attract business users who are willing to take late bookings to fill all their empty spots and generate more income. 
 
 This concept has proved itself in all other areas of accommodation booking. Making it easier for users to book when they want is going to benefit users immediately and business users ultimately. 
 
-Lazycamp will also open up the opportunity for microcampsites to spring up near to airports, festivals and seasonal attractions that may not be profitable to run all year round , for example, in Scotland, the number of tourists each summer excedes the number of overnight accommodation. A farm which may have a beautiful view of a lavender field or autumn forest may want to just run for a month. Lazycamp is a next generation, user led,fast campspot booking system, which will promote these microcampsites that would be very difficult to find otherwise.
+Lazycamp will also open up the opportunity for microcampsites to spring up near to airports, festivals and seasonal attractions that may not be profitable to run all year round , for example, in Scotland, the number of tourists each summer excedes the number of overnight accommodation. A farm which may have a beautiful view of a lavender field or autumn forest may want to just run for a month. Lazycamp is a next generation, user led, fast campspot booking system, which will promote these microcampsites that would be very difficult to find otherwise.
 
 Lazycamp creates flexibility that does not exist currently and limits the amount of research necessary to find what you a user wants.
 
-In addition to overnight camping and caravanning, Lazycamp will promote camping events for between 30-300 people. The theme of the events will vary from tech, food or alcohol detox to campfire music, outdoor cooking and holistic fresh air therapies. 
+In addition to overnight camping and caravanning, Lazycamp will promote camping events for between 15-40 people. The theme of the events will vary from tech free, food or alcohol detox to campfire music, outdoor cooking and holistic fresh air therapies. 
 With  crowded indoor gatherings still being actively discouraged this is the perfect time for people to explore wild camping, microcampsites or established campsites for a short break or holiday.
 
 Lazy camp is all about making it easy and attractive for users who do not enjoy extensive research and preplanning. 
 
-This project will roll out in Wales and Scotland first. The focus being in a smaller area will hopefully attract more hosts and users as searches will generate more options. 
+This project will roll out in Wales first and Scotland to follow.  The focus being in a smaller area will hopefully attract more hosts and users as searches will generate more options. 
 
 Because the camping season in the UK is so short campsites need to fill their sites to be viable. Lazycamp will fill last minute spots and cancellations. 
 
-UX
-
-Use this section to provide insight into your UX process, focusing on who this website is for, what it is that they want to achieve and 
-how your project is the best way to help them achieve these things.
-
-In particular, as part of this section we recommend that you provide a list of User Stories, with the following general structure:
-
-
-
-
-
-earn by diecting calls and emial enquiries then bookings 
-
-compare to booking.com lastminute.com aribnb couch surfing 
-
 ## Ux
+
 <hr>
 
 ### Goals
@@ -73,14 +54,14 @@ The target audience for Lazycamp are:
 
 * Experienced campers who get the urge to book last minute because of good weather.
 * Experienced campers who want to try a new area for a short stay.
-* Experienced campers who want to change sites rather than stay in one place. Maybe to follow good weather or explore a region of the country they do not know. 
-* People who enjoy road trips.
-* People who have never tried camping before because of the research and planning needed.
+* Experienced campers who want to explore new places rather than stay in one place. Maybe to follow good weather or explore a region of the country they do not know. 
+* People who enjoy the freedom road trips.
+* People who have never tried camping before particularly those who have been discouraged because of the research and planning needed.
 * Spontaneous and adventurous people.
  
-User goals are:
+#### User goals are:
 
-* Find a camping spot for the night last minute in the area they would like to stay.
+* Find a camping spot for the night last minute in the area I would like to stay.
 * Find an event for a weekend or week.  
 * Either to find a campspot quickly or browse for inspiration.
 * To be able to book campspots ahead of time quickly without having to search individual sites for availablity. 
@@ -88,14 +69,16 @@ User goals are:
 * Book from a fast, reliable and trustworthy online system.
 * Have the option to phone/email or chat if I have questions.
 * To be able to book from my mobile phone then have all the details sent to my mobile phone in an email with simple process then only having to give my name and email address on arrival.
-* Not needing to check in during office hours because all access details and pitching information will automatically come to my phone at the time of booking in a precitable format including detailed directions from nearest landmark. 
+* Not needing to check in during office hours because all access details and pitching information I need will automatically come to my phone at the time of booking in a preditable format. 
 
 Lazycamp meets all these needs because:
 
 * Unavailable campsites are listed beneath all available sites for instant information on whether or not a site can be booked. 
 * The focus of the site design has been instant view of what the user wants in the right location.
 * The booking process is fast.
+* I can add and amend my booking easily.
 * An email is sent to the user and the business user with all the details needed. 
+
 
 #### Business Goals
 
@@ -105,10 +88,10 @@ Lazycamp meets all these needs because:
 * Manage customer expectations online so I always have happy customers who are right for what I have on offer so minimising the risk of complaints, bad reviews and refunds.
 * Have a booking system which I do not have to manage.
 * Have an online payment system I do not to manage and keep secure.
+* Have instant email notification of bookings with customer details. 
 
 #### Lazycamp meets all these needs because:
 
-* I can add and amend my data easily.
 * Booking and payments will be taken then forwarded to me.
 Lazycamp meets all these needs because:
 * Most queries will be answered online.
@@ -116,53 +99,60 @@ Lazycamp meets all these needs because:
 * If customers do want to contact us, general questions will be answered for us by the Lazycamp team. 
 * Customer expectations will be managed by the lazycamp team and queries can be answered outside hours.   
 
+#### Lazycamp Goal:
+
+* Offer established campsites a marketing and booking system that will generate income by filling in their spare pitches.
+* Offer microcampsites (1-5 pitches) a platform for promoting their spots.
+* Offer a 'couchsurfing' alternative with very low cost sharing someone's garden or land without. 
+* Earn income on each paid booking made.
+* Earn Income by directing calls and email enquiries to sites if the owners/hosts want to take payment themselves. 
 
 ## User stories
 
-As a user type, I want to perform an action, so that I can achieve a goal.
-As a user I expect to be able to quickly find the nearest pitch/ site or spot where I can safely camp for the night.
+As a user I expect to be able to quickly find the nearest pitch/ campsite or spot where I can safely camp for the night.
 
-As user I want to cleary see which campspots are available and not be wasting time being presented with fully booked campspots. 
+As user I want to clearly see which campspots are available and not be wasting time being presented with fully booked campspots. 
 I do not want to waste my time, be frustrated or disappointed.
 
-As a user, if I have viewed a campsite and it is sold out, I want to see it still featured but now fully booked. This will stop me being confused if the spot has disappeared from all views and I may wonder if I saw it on a different site. 
+As a user, if I have viewed a campsite and it is sold out, I want to see it still featured but now fully booked. This will stop me being confused if the spot has disappeared from all views and I may wonder if I saw it on a different website. 
 
 As a user I may have needs or preferences that I want to be able to prioritise in a search for example, pets, car space, public transport, shower, electricity, local amenities.
 
-As I user I want to know if the site is quiet, lively, family oriented, waterside, farm, wood, mountain etc.
+As I user I want to know if the campsite is quiet, lively, family oriented, waterside, farm, wood, mountain etc.
 
-As I user I want to know the price I will need to pay and a big advantage will be to prepay so that I can arrive when I want and know my place is secured.
+As I user I want to know the price I will need to pay.
+
+I may want to prepay so that I can arrive when I want and know my place is secured.
 
 As a user I want to be able to access the pitch normal hours and spontaneously.
 
-As I user I want to ensure that the site participation is current and that I will have access and knowledge of where to go exactly.
+As a user I want to find pitches that offer late arrival or late checkout depending on my preference. 
+
+As I user I want to ensure that the campsite participation is current and that I will have access and knowledge of where to go exactly.
 
 I do not want to be given outdated event or pitch information. 
 
 I want to know a fixed basic price and what will cost me extra. Do I need £1 coins for on site facilities e.g showers, lockers or gaming. 
 
-As I user I may want to try camping for the first time with tips and ideas and to make my experience as comfortable as possible using know how from seasoned and well travelled campers
+As I user I may want to try camping for the first time with tips and ideas and to make my experience as comfortable as possible.
 
 As a user I may need local information e.g. scottish midges, noisy frogs, local early cockerel or noisy dawn chorus, farm animal smells etc. I want to know the bad points as well as the good so I know what to expect, have the option to prepare so that I can relax and enjoy myself.
 
 As a user I would like a profile of previous bookings and to find them easily. 
 
 I would like to a very simple login process. I would like password reset. 
-Possibly I would like to login through social media. 
 
-As a user  enjoy a blog or chatroom to help get ideas or make plans? 
+As a user enjoy chat to help get ideas or make plans? 
 
 I want my payment to be made easily and securely. I want email Acknowledgements
 
 I would like messages appear when I submit, enquire or book that tewll me I have been successful. 
 
-As  a user I would like email confirmation with all the information I will need to find and access the camp spot.. 
+As  a user I would like email confirmation with all the information I will need to find and access the camp spot. 
 
-If I am camping my phone may not be charged and I am unlikely to have been able to print my booking so I would like my email address and name to be evidence enough to the business user .
+If I am camping my phone may not be charged and I am unlikely to have been able to print my booking so I would like my email address and name to be evidence enough to the business user.
 
 I want flexibility and maybe a credit offer if I can not make my booking. 
-
-As a user I would like to read how other users got there and found it. How they slept is important. Did they feel secure?. 
 
 As a user I would like to know what is closest to my ideal spot if there are no ideal spots. for example i have 2 children and a dog so it must be a child and pet friendly site but I may be willing to park a distance away from the pitch or do without electric if needed. 
 
@@ -170,17 +160,16 @@ As a user I would like spinners to show that my payment is being processed.
 
 As a user I would appreciate tooltips to ensure I do not make mistakes when I make my booking.
 
-As a user I would like to make final checks to my booking before payment is made. 
+As a user I may make a mistake in my booking and I need a final check to ensure all details I have chosen are correct before making payment. 
 
-As a user I want to be able to use familiar chat messaging e.g. Facebook messaging. I can then check when the recipient last checked the messages and know when my message has been seen. I would prefer this to an unfamiliar chatbox not knowing if I am being responded to by a bot or a real person. 
+As a user I want to be able to use familiar chat messaging e.g. Facebook messaging. I can then check when the recipient last checked the messages and know when my message has been seen. I would prefer this to an unfamiliar chatbox not knowing if I am being responded to by a not or a real person. 
 
 
-
-## Professionals/Business Users
+## Professionals/Business User stories.
 
 As a business user I want to promote my campspot and fill it up to the last minute to maximise bookings during the short camping season. 
 
-As a business user I want to easily add and update campspot details.
+As a business user I want to easily add and update campspot details quickly.
 
 As a business user I want to quickly notify customers that the spot is fully booked and now unavailable tp prevent over booking.
 
@@ -188,7 +177,7 @@ As a business user I want email notification of each booking with contact detail
 
 As a business user organiser I want flexibilty to be able to promote a camping event or fill pop up spots near a yearly festival or sporting event. 
 
-As a business user I will want to to be able to delete my campspot easily if last minute bookings are creating problems.
+As a business user I will want to to be able to turn off the availability of my campspot easily if last minute bookings are creating problems.
 
 As a business user i would like to be able to promote my last spots until the last minute.
 
@@ -196,30 +185,17 @@ I will want to easily turn the availability on and off with immediate effect.
 
 I want to be able to set a limit of pitches and once exceded no more be accepted. 
 
-I will want to add then amend possibly delete my pitches to manage customer expectations and minimse the effort of having people arrive late.
+I will want to to manage customer expectations and minimse the effort of having people arrive late.
 
-I want to be able to get an email each time I have a booking or log on to my profile to see who and when users will be arriving each day. 
+I want to be able to get an email each time I have a booking.
 
 I want to be able to offer extras that can be paid for locally or on the site. 
 
-As a user I want to know how much I am owed from my profile.
+AS a user I do not want to contacted outside hours and so customers can autofind info on the site for late arrival policy etc. or I may want to choice of charging extra for late arrivals. 
 
-AS a user I do not want to contacted outside hours and so customers can autofind info on the site for late arrival policy etc. or I want to charge extra for late arrivals. 
+As a business user I may offer a separate late arrival area or a late arrival area as a trial only 
 
-As a business user I may offer a seperate late arrival area or a late arrival area as a trial only 
-
-Lazy camp is for the spontaneous. Last minute plans to fit the weather or the call of the wild.
-
-Coming out of the covid pandemic travellers may not wish to book abroad and may be keen to get away for a few days. If i can be ready for the end of lockdown the site may get a lot of interest. 
-
-The scottish 500 is an aspirational road trip with world class sunsets, wild beaches, cliffs, accessible islands with turquoise seas, mountains, culture, heritage, castles and legend. 
-To prebook this is tricky and limits the enjoyment of the trip.
-A last minute decision to divert or stay an extra night is bliss. lazy camp allows for this.
-
-Many people do not know how to prepare for a camping trip and so never experience the freedom it offers. Lazy camp will offer a set up ready to arrive with no kit and leave with your back back.
-
-Late arrival is currently difficult. This will be one of the features on offer. 24/7 pitches will be available
-
+Coming out of the covid pandemic travellers may not wish to book abroad and may be keen to get away for a few days. I wantg to maximise my bookings to help with the business losses caused by closure during lock down. 
 
 As a business user I do not want to lose enquiries if the chat is not answered quickly enough, using messenger means all chat enquiries are stored so can be reignited while customer expectations of FB messenger will give more time to answer. 
 
@@ -232,9 +208,11 @@ I want my event to be evident closer to the time and be removed when the times h
 
 Good navigation.
 
-Fast pinpointing what I want.
+Fast pinpointing needs.
 
 Fast booking.
+
+Fast secure payment. 
 
 Be sold what I want and need not what the business wants to to buy.
 
@@ -724,4 +702,13 @@ python3 manage.py loaddata categories
 
 python3 manage.py loaddata products
 
+Inspiration
+
+The scottish 500 is an aspirational road trip with world class sunsets, wild beaches, cliffs, accessible islands with turquoise seas, mountains, culture, heritage, castles and legend. 
+To prebook this is tricky and limits the enjoyment of the trip.
+A last minute decision to divert or stay an extra night is bliss. lazy camp allows for this.
+
+Many people do not know how to prepare for a camping trip and so never experience the freedom it offers. Lazy camp will offer a set up ready to arrive with no kit and leave with your back back.
+
+Late arrival is currently difficult. This will be one of the features on offer. 24/7 pitches will be available
 

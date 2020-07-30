@@ -1,3 +1,5 @@
+![README ](/README.md)
+
 ## Automated Testing
 ### Validation Services
 The following validation services and linter were used to check the validity of the website code.
