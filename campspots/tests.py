@@ -6,7 +6,7 @@ from campspots.models import Category
 class TestCategory(TestCase):
     def setUp(self):
         Category.objects.create(name='catone', friendly_name='First Category')
-        Category.objects.create(name='cattwo', friendly_name='')
+        Category.objects.create(name='cattwo', friendly_name='cattwo')
 
     def test_get_friendly_name(self):
         catone = Category.objects.get(name='catone')

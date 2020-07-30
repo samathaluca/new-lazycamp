@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/samathaluca/new-lazycamp.svg?branch=master)](https://travis-ci.org/samathaluca/new-lazycamp)
+
+
 ![LazyCamp Logo ](/static/img/newLogoAlt100px.png)
 
 
