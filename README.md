@@ -164,6 +164,14 @@ As a user I may make a mistake in my booking and I need a final check to ensure 
 
 As a user I want to be able to use familiar chat messaging e.g. Facebook messaging. I can then check when the recipient last checked the messages and know when my message has been seen. I would prefer this to an unfamiliar chatbox not knowing if I am being responded to by a not or a real person. 
 
+As a user I may want to attend events mini festivals or intimate events to meet like minded people around a campfire or sharing circle.
+
+As a user I may want to attend events mini festivals or intimate events to improve my physical or mental health, walking, tai chi, stress relief, relaxation techniques.
+
+As a user I may want to attend events mini festivals or intimate events to learn a new skill, for example, yoga, foraging, meditation.
+
+As a user I may want to attend events mini festivals or intimate events to solve a problem, for example, I drink too much.
+
 
 ## Professionals/Business User stories.
 
@@ -181,7 +189,7 @@ As a business user I will want to to be able to turn off the availability of my 
 
 As a business user i would like to be able to promote my last spots until the last minute.
 
-I will want to easily turn the availability on and off with immediate effect. 
+I will have a limited number of spaces and so I want to easily turn the availability on and off with immediate effect when fully booked. 
 
 I want to be able to set a limit of pitches and once exceded no more be accepted. 
 
@@ -199,7 +207,7 @@ Coming out of the covid pandemic travellers may not wish to book abroad and may 
 
 As a business user I do not want to lose enquiries if the chat is not answered quickly enough, using messenger means all chat enquiries are stored so can be reignited while customer expectations of FB messenger will give more time to answer. 
 
-As a business user As a user org I may want to offer a limited number of places and show count down.
+I want to plan an event and sell all the avaiable spaces. 
 
 I want my event to be evident closer to the time and be removed when the times has past.
 
@@ -221,30 +229,26 @@ Be sold what I want and need not what the business wants to to buy.
 
 ### The strategy plane
 
-Use agile design to lay out the foundations of booking system which is more attractive to users but satisfies the requirements of business users
-The strategy is to enable users to quickly find available camp spots that are free for the date they require
-within a searched for postal district or county.
+Use agile design to lay out the foundations of booking system which is more attractive to users but satisfies the requirements of business users.
+The strategy is to enable users to quickly find available camp spots that are free for the date they require within a searched for postal district or county.
 
 Offer over night stays on camping sites, spots, independent small pitching places, farms, fields, land, gardens, driveways so take the uncertainlty out of raod trips
 
-Once the spots have been found in a given area that are available, the user can sort in to what is more important to them e.g price, category, 
+Once the available spots have been searched for and found in a selected location, the user can sort the options in to what is more important to them e.g price, category, 
 
 The strategy is to fill up spots for the spot owners seamlessly and effortlessly. 
 Most current system necessatate ringing round various sites and paying over the phone with a credit card. 
 This is unreliable and unsecured. 
 
-As the database fills with more campspots we will be able to offer extra filters
+As the database fills with more campspots we will be able to offer extra filters.
 
-We strategised to simplify the bookings, simplify  payment process, promote smaller independent sites and 
-fill empty spaces on established sites.
-Strategy aim would immediately attract the 12 % of users who do not book ahead and wait to judge the weather 
-offer convenience and speed to the 88% of campers who want to book ahead. 
+We strategised to simplify the bookings, simplify  payment process, promote smaller independent sites and fill empty spaces on established sites.
+Strategic aim would immediately attract the 12 % of users who do not book ahead and wait to judge the weather offer convenience and speed to the 88% of campers who want to book ahead. 
 
 Still offer traditional phone and email booking so be useful and attractive by convention.
 
 ### The scope plane
-The scope will be to 
-attract users by offering simplicity and fast locating which sites are available with fast reliable payment.
+The scope will be to attract users by offering simplicity and fast locating which sites are available with fast reliable payment.
 
 The business user will be able to add their sites quickly and simply then turn the featuring on the site on and off with simple boolean checkbox.
 
@@ -254,15 +258,31 @@ In the interim the structure does offer a less obvious traditional booking syste
 Lazycamp considered that a chatbox but user feedback favoured the familiarity of social media as a mechanism for direct contact with the benefits of users knowing when the messages were last checked and managing expectations of when their queries will be answered also knowing who they are speaking to.
 Chatboxes are a little impersonal and faceless for the travel industry which expects a more personal persuasive, friendlier touch.
 
-
 ### Skeleton
-The home page uses design to direct the user to the online and payment booking system
+The home page uses design to direct the user to the online and payment booking system. 
 
-### Surface plane
-Appearance, images, colour choices and fonts.
+#### Information Architecture 
 
-Extensive colour work has been tested during development. 
-Women choose where to stay and eat so pink was favoured.
+The dropdown link and button options guide the user intuitively from the home page to the booking of campspots stored in the postgres database. The campspots held in the database will be the where all searches will lead to as this is the primary purpose of lazycamp. 
+
+Products which are only available for local payment (not online) or change seasonally are stored separately in the data base. /n For the summer season this section will feature events. It is anticipated that this section will  include campsites who want to be featured but who do not want to have their payment made online. 
+
+Two separate apps logically guide the user to either fast online booking options or traditional email/phone/messaging options. A distinction between the two is then obvious without any decsion making by the user. 
+
+The information architecture is such that is minimises the amount of decisions a user needs to make before landing on the home page and checkout success. 
+
+The information architecture is set out to enable a speedy conclusion of all user goals. 
+
+All information that is expected to change including seasonnal products being promoted and contact method/ details have been separated in the code and the database so that the core of lazycamp is predictable for the user and familiarity allows users to find and refind what they want efficiently. 
+
+Images are stored in AWS S3 bucket.
+
+
+### Surface plane.
+
+Appearance, images, colour choices and fonts were all chosen for modernity.
+
+Different colours were tested in the logo design during development. User research resulted in the currently used logo being chosen. 
 
 The bootstrap button and text colours which signify success, alert, warning, info and primary versus secondary actions/notification was adhered to. 
 The colours were softened for the holiday rather than corporate feel. 
@@ -274,57 +294,76 @@ Focus to be kept on the information.
 
 The font chosen to be modern and easy to read. The logo uses a bespoke font with character, however, because the 'A' symbolised by a tent needs some interpretation the clarify of all the other letters was priority. 
 
+Vibrant sourced images were mixed with original authentic images of actual camping trips in Wales and Scotland. 
+
 #### Wireframes
+
+### Home page wireframes.
 
 ![Balsamiq ](static/wireframes/home.png)
 
+### Campspot/Product page wireframes.
+
 ![Balsamiq ](static/wireframes/campspots.png)
+
+### Register page wireframes.
 
 ![Balsamiq ](static/wireframes/register.png)
 
+### Add/Edit page wireframes.
+
 ![Balsamiq ](static/wireframes/add_edit.png)
+
+### Booking page wireframes.
+#### Rescoping favoured the change to check/remove or amend important details only.
+Auto added information was moved to checkout only. 
 
 ![Balsamiq ](static/wireframes/basket.png)
 
+### Booking page wireframes.
+
 ![Balsamiq ](static/wireframes/checkout.png)
+
+### Checkout success wireframes.
 
 ![Balsamiq ](static/wireframes/order_confirmed.png)
 
-<!-- ![Balsamiq ](static/wireframes/home.png)
-
-![Balsamiq ](static/wireframes/home.png) -->
 
 ## Quick guide / Features
 
 <hr>
 
-1. Home app
- * index.hml loading page
- *
- *
-2. Campspots app
+1. All pages: Templates (base.html/ main-nav.html/mobile top header)
+*  Nav bar
+
+2. Home app
+ * index.hml hero image on loading page
+ * Book Now button. 
+
+3. Campspots app
  * campspots.html renders all spots featured, separating available and non available spots. There are also coming soon spots featured which have been added by the business user but  not yet authorised for inclusion on the site. They are situated with the unavailable fully booked sites at the bottom. 
  * campspot_detail.html individual campspot details with the option to book or return to campspot.html page to keep looking. 
  * users with an authorised profile can edit (edit_campspot) and delete campspots from this page.
  * add_campspot page allows authorised users to add campspot listings.
-3. Book app
+
+4. Book app
  * after selecting number of nights, a booking date and number of adults in campspot_detail.html
  * book.html displays the booking for users to double check before payment. 
  * The booking can be deleted on the book.html page
  * The booking can be amended by deleting the old booking and returning the user to original campspot_details chosen at the same time. 
  * Can procede to either checkout.html or return to campspot.html to keep looking 
 
-4. Checkout app
+5. Checkout app
  * checkout.html features a form and stripe payment details to make a booking.
  * checkout_success.html renders once booking has been made successfully.
  * a confirmation email is sent to the user and all the relevant business users so that details can be checked instantly without dependency on admin
 
-5. Media
+6. Media
  
  * media files are stored in the project
  * media files are stored in AWS bucket which links to heroku directly.
 
-6. Products app- so named for agile design because this will also have new revenue and sales ideas added e.g. if demand for camping kit is there we will sell the ship to the site to be ready for use. 
+7. Products app- so named for agile design because this will also have new revenue and sales ideas added e.g. if demand for camping kit is there we will sell the ship to the site to be ready for use. 
  * products.html renders all events featured. 
  * product_detail.html individual event details.
  * users with an authorised profile can edit (edit_campspot) and delete products from this page.
@@ -338,21 +377,21 @@ The font chosen to be modern and easy to read. The logo uses a bespoke font with
 * fast email enquiry by passing need for form. 
 
 
-7.   Profile app 
-*  profile.html form completion allows users to register and add profile
+8.   Profile app 
+* profile.html form completion allows users to register and add profile
+* Login Page
+
 *  Item 2a -- user dashboard 
 *  Item 2b
 *  Lists user orders in profile option
 *  Campspot Management allows edit and deleting. For example, simple checkbox to signify availability. 
 
 Static folder
+
+
 Templates folder
-Register Page
-Login Page
-
-
-
-
+* Toasts
+* All auth
 
 
 ### Features Left to Implement
@@ -365,99 +404,6 @@ Customer rating API.
 Availabilty calculations and auto countdown for ticket sales and number of spots. 
 
 Image kit works perfectly locally but once deployed is not compatible with S3
-
-
-Technologies Used
-In this section, you should mention all of the languages, frameworks, libraries, and any other tools that you have used to construct this project. For each, provide its name, a link to its official site and a short sentence of why it was used.
-
-## Testing
-
-Testing information can be found in separate ![test.md](/test.md) file
-
-## Deployment
-
-To deploy Lazycamp booking site to heroku, the following steps should be taken:
-
-1. Create a requirements.txt file using the terminal command pip3 freeze > requirements.txt.
-
-2. Create a Procfile with the terminal command echo web: python3 manage.py > Procfile.
-
-3. git add and git commit the new requirements and Procfile and then git push the project to GitHub.
-
-4. Create a new app on the Heroku website by clicking the "New" button in your dashboard. Give it a name and set the region to whichever is applicable for your location. 
-
-5. From the heroku dashboard of your newly created application, click on "Deploy" > "Deployment method" and select GitHub.
-
-6. Confirm the linking of the heroku app to the correct GitHub repository.
-
-7. In the heroku dashboard for the application, click on "Settings" > "Reveal Config Vars".
-
-Set the following config vars:
-
-Key	Value
-AWS_ACCESS_KEY_ID	<your secret key>
-AWS_SECRET_ACCESS_KEY	<your secret key>
-AWS_STORAGE_BUCKET_NAME	<your AWS S3 bucket name>
-DATABASE_URL	<your postgres database url>
-HOSTNAME	<your heroku app hostname>
-SECRET_KEY	<your secret key>
-STRIPE_CANCEL_URL	<link to all-products page in your app>
-STRIPE_PUBLISHABLE	<your secret key>
-STRIPE_SECRET	<your secret key>
-STRIPE_SUCCESS_URL	<link to checkout/confirm page in your app>
-
-From the command line of your local IDE:
-
-Enter the heroku postgres shell
-Migrate the database models
-Create your superuser account in your new database
-Instructions on how to do these steps can be found in the heroku devcenter documentation.
-
-In your heroku dashboard, click "Deploy". Scroll down to "Manual Deploy", select the master branch then click "Deploy Branch".
-
-Once the build is complete, click the "Open app" button provided.
-
-From the link provided add /admin to the end of the url, log in with your superuser account 
-
-
-and create instances within each model set up within the new database.
-
-Once instances of these items exist in your database your heroku site will run as expected.
-
-
-
-
-
-
-
-
-
-
-In particular, you should provide all details of the differences between the deployed version and the development version, if any, including:
-
-Different values for environment variables (Heroku Config Vars)?
-Different configuration files?
-Separate git branch?
-In addition, if it is not obvious, you should also describe how to run your code locally.
-
-Credits
-Content
-The text for section Y was copied from the Wikipedia article Z
-Media
-The photos used in this site were obtained from ...
-Acknowledgements
-I received inspiration for this project from X
-In summer 2019, I drove to from Manchester in the UK to Mainland Greece then on to the Greek Islands. Booking camspites along the way was too difficult.
- One night my son and I were scaling a fence with our tents and sleeping bags.
-Another night I accidently camped on a communal residential lawn which has once been a campsite but was then private property. I was woke up by an 
-angry chalet owner insisting I was trespassing. +
-
-Defensive design planning
-
-JQUERY -This added functionality to the site e.g. navigation toggle.
-JINJA - to simplify displaying data from the backend of this project smoothly and effectively in html.
-BEAUTIFIER - to check code and improve code readability.
-
 
 ## Technologies Used
 
@@ -511,35 +457,84 @@ This project uses HTML, CSS, JavaScript and Python3 programming languages.
 markdown -Language for Readme.md and test.md files
 
 
+## Testing
 
+Testing information can be found in separate ![test.md](/test.md) file
 
-line 393 ## deployment
-Version control 
-previous repo 
+## Version Control with auto deploy to heroku. 
 
-branches used 
+For version control Github has been used. Github is a distributed Version Control Systems (DVCSs) recommended by Code Institute which ensures we have a store of all significant changes made during development. Using Gitpod alongside Github had major advantages in terms of how easy it was to stage, write commit messages and push versions.
 
+All significant version changes were pushed to github and automatically deployed to heroku once the app was connected to the github repository.
 
-and Heroku Deployment
-all significant version changes were pushed to github and automatically deployed to heroku once the app was connected to the github repository.
-If a branch was created the heroku auto deploy was deactivated in fabvour of manual deployment to check each time. 
+If a branch was for experimental work created the heroku auto deploy was deactivated in favour of manual deployment to check each time. 
 Once the branches were merged the master auto deply was reinstated. 
 
-For version control Github has been used. Github is a distributed Version Control Systems (DVCSs) recommended by Code Institute which ensures we have a store of all significant changes made during development. Using Gitpod alongside Github had major advantages in terms of how easy it was to stage, commit and push versions 
+Version control was used a working tool with return to code in previous version being common during development. Commit message were written to ensure changes were easy to find.
 
-I was careful to use commit messages that I could find again if needed. I use version control as a working tool and want it as lean and easy to find amendments as possible.
+From the point at which gitpod pushed to github automatically then deployed to heroku, github version control and heroku build log mirrored each other perfectly. The following steps pushed all changed from gitpod to github then directly to heroku to be seen in the build log then in the browser using the heroku dashboard "open app" button.
 
+### Gitpod and github/heroku commit/deploy
 
+click on branch icon
+Hover on changes and click + (plus) to stage changes
+Type commit message
+Hover on tick reveals commit tooltip. Click to commit.
+Hover on more actions '...' click reveals dropdown with push option. Click on push.
+Check that Build has succeeded in heroku dashboard. It may take a couple of minutes. Open app to check changes. Do not forget to refresh. Often F5 is needed to see the recent changes in the deployed app.
 
+Branches were selected from the Gitpod terminal using :
+git checkout -b new branch name
+
+return to master branch:
+git checkout master
 
 Version control was relied upon throughout the development process. A number of times changes were aborted and an old version was reverted to. For example 
 
 
+## Deployment
 
-To deploy Recipes for Recovery app to heroku, the following steps were taken:
+To deploy Lazycamp booking site to heroku, the following steps should be taken:
 
-Method one . Initially, for each version I initially pushed separately to either github and and heroku.
-I began deployment via the CLI in gitpod workspace terminal using the following commands until I saw the build log in heroku or github repository showed successful deployment and/or new version commit:
+1. Create a requirements.txt file using the terminal command pip3 freeze > requirements.txt.
+
+2. Create a Procfile with the terminal command echo web: python3 manage.py > Procfile.
+
+3. git add and git commit the new requirements and Procfile and then git push the project to GitHub.
+
+4. Create a new app on the Heroku website by clicking the "New" button in your dashboard. Give it a name and set the region to Europe. 
+
+5. From the heroku dashboard of your newly created application, click on "Deploy" > "Deployment method" and select GitHub.
+
+6. Confirm the linking of the heroku app to the correct GitHub repository.
+
+7. In the heroku dashboard for the application, click on "Settings" > "Reveal Config Vars".
+
+Set the following config vars:
+
+Key	Value
+AWS_ACCESS_KEY_ID	<your secret key>
+AWS_SECRET_ACCESS_KEY	<your secret key>
+AWS_STORAGE_BUCKET_NAME	<your AWS S3 bucket name>
+DATABASE_URL	<your postgres database url>
+HOSTNAME	<your heroku app hostname>
+SECRET_KEY	<your secret key>
+STRIPE_CANCEL_URL	<link to all-products page in your app>
+STRIPE_PUBLISHABLE	<your secret key>
+STRIPE_SECRET	<your secret key>
+STRIPE_SUCCESS_URL	<link to checkout/confirm page in your app>
+
+In your heroku dashboard, click "Deploy". Scroll down to "Manual Deploy", select the master branch then click "Deploy Branch".
+
+Once the build is complete, click the "Open app" button provided.
+
+From the link provided add /admin to the end of the url, log in with your superuser account 
+
+Create instances within each model set up within the new database.
+
+Once instances of these items exist in your database your heroku site will run as expected.
+
+### Deployment using command line. 
 
 npm install -g heroku
 
@@ -551,7 +546,7 @@ git add
 
 git commit -m "initial commit"
 
-git remote add heroku https://git.heroku.com/fallen-but-not-broken
+git remote add heroku https://git.heroku.com/new-lazycamp
 
 git push -u heroku master
 
@@ -563,51 +558,7 @@ echo web: python app.py > Procfile
 
 Initially I separately added to the github repository.
 
-git add git commit -m "" git remote add (my repository named fallen) git push -u origin master
-
-Method two
-When I tried to work out how to combine git push and heroku deploy I worked out a simpler method possible using the SOURCE CONTROL:Git branch icon in the gitpod workspace.
-
-This was achieved by connecting heroku to github and selecting automatic deploys.
-
-Github and heroku connected
-
-From that point on gitpod push to github automatically deployed to heroku and so github version control and heroku build log mirrored each other perfectly.
-
-Gitpod and github/heroku commit/deploy
-
-click on branch icon
-Hover on changes and click + (plus) to stage changes
-Type commit message
-Hover on tick reveals commit tooltip. Click to commit.
-Hover on more actions '...' click reveals dropdown with push option. Click on push.
-Check that Build has succeeded in heroku dashboard. It may take a couple of minutes. Open app to check changes. Do not forget to refresh. Often F5 is needed to see the recent changes in the deployed app.
-
-Step by Step deployment from fresh gitpod terminal workspace would be.
-
-Checked requirements.txt file using the terminal command pip freeze > requirements.txt.
-
-Checked Procfile with the terminal command echo web: python app.py > Procfile.
-
-Stage changes in gitpod. Write a commit message, click on the tick icon then push to Github.
-
-Create a new app on the Heroku website by clicking the "New" button in your dashboard. Give it a name and set the region to Europe.
-
-From the heroku dashboard of your newly created application, click on "Deploy" > "Deployment method" and select GitHub.
-
-Confirm the linking of the heroku app to the correct GitHub repository.
-
-In the heroku dashboard for the application, click on "Settings" > "Reveal Config Vars".
-
-Set the following config vars:
-
-Key Value
-
-IP 0.0.0.0
-
-MONGO_URI mongodb+srv://:@<cluster_name>-qtxun.mongodb.net/<database_name>?retryWrites=true&w=majority
-
-PORT 5000
+git add git commit -m "" git remote add (my repository named new-lazycamp) git push -u origin master
 
 In the heroku dashboard, click "Deploy".
 
@@ -615,11 +566,51 @@ In the "Manual Deployment" section of this page, made sure the master branch is 
 
 The site is now successfully deployed.
 
+Furthermore
+From the command line of Gitpod:
+
+Enter the heroku postgres shell
+Migrate the database models
+Create your superuser account in your new database
+Instructions on how to do these steps can be found in the heroku devcenter documentation.
+
+
 Environment variables, dependencies and any other differences between the dev and live versions.
-The only difference is that the MongoDb key values are stored in env.py for dev version (.gitignore file ensures MongoDB password is not revealed on github). For the live version MongoDB key values are stored and accessed in the config vars.
+The only difference is that the passwords and key values are stored in env.py for dev version (.gitignore file ensures passwords are not revealed on github). 
+For the live version password and key values are stored and accessed in the heroku config vars.
+
+
+### Running locally. 
+
+From new-lazycamp Github repository I opened the gitpod workspace in gitpod.io. 
+Python needed to be installed. 
+The fastest way to load all the requirements is with the following command 
+sudo pip3 install -r requirements.txt.
+
+
 
 Credits
 Content
+The text for section Y was copied from the Wikipedia article Z
+Media
+The photos used in this site were obtained from ...
+Acknowledgements
+I received inspiration for this project from X
+In summer 2019, I drove to from Manchester in the UK to Mainland Greece then on to the Greek Islands. Booking camspites along the way was too difficult.
+ One night my son and I were scaling a fence with our tents and sleeping bags.
+Another night I accidently camped on a communal residential lawn which has once been a campsite but was then private property. I was woke up by an 
+angry chalet owner insisting I was trespassing. +
+
+Defensive design planning
+
+JQUERY -This added functionality to the site e.g. navigation toggle.
+JINJA - to simplify displaying data from the backend of this project smoothly and effectively in html.
+BEAUTIFIER - to check code and improve code readability.
+
+
+
+## Credits
+## Content
 The recovery recipes (recovery stories) were written anonymously by people in recovery. All other content is original.
 
 ## Media
@@ -711,4 +702,6 @@ A last minute decision to divert or stay an extra night is bliss. lazy camp allo
 Many people do not know how to prepare for a camping trip and so never experience the freedom it offers. Lazy camp will offer a set up ready to arrive with no kit and leave with your back back.
 
 Late arrival is currently difficult. This will be one of the features on offer. 24/7 pitches will be available
+
+previous repo
 
