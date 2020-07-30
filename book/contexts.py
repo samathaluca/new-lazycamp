@@ -6,7 +6,7 @@ import datetime
 
 
 def book_contents(request):
-    ''' add bookings to session'''
+    '''add bookings to session'''
 
     book_items = []
     total = 0
@@ -37,7 +37,7 @@ def book_contents(request):
                     'date': datetime.datetime.strptime(date, '%Y-%m-%d').date,
                     'number_nights': booking_info['number_nights'],
                 })
-    # Calculates special offers from settings
+    # Calculate and adds special offers from settings
     if total < settings.FREE_NIGHT_THRESHOLD:
         night = total * Decimal(settings.STANDARD_NIGHT_PERCENTAGE / 100)
         free_night_delta = settings.FREE_NIGHT_THRESHOLD - total

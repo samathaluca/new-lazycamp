@@ -3,8 +3,8 @@ from django import forms
 from .models import Order
 
 
-
 class OrderForm(forms.ModelForm):
+    """ form for adding order details at checkout.  """
     class Meta:
         model = Order
         fields = ('full_name', 'email', 'phone_number',

@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import Order, OrderLineItem
 
+# Model fields displays in orders in Chexkout admin.
 
 class OrderLineItemAdminInline(admin.TabularInline):
     model = OrderLineItem

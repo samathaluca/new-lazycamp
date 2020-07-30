@@ -589,34 +589,35 @@ sudo pip3 install -r requirements.txt.
 
 
 
-Credits
-Content
-The text for section Y was copied from the Wikipedia article Z
-Media
-The photos used in this site were obtained from ...
-Acknowledgements
-I received inspiration for this project from X
-In summer 2019, I drove to from Manchester in the UK to Mainland Greece then on to the Greek Islands. Booking camspites along the way was too difficult.
- One night my son and I were scaling a fence with our tents and sleeping bags.
-Another night I accidently camped on a communal residential lawn which has once been a campsite but was then private property. I was woke up by an 
-angry chalet owner insisting I was trespassing. +
-
-Defensive design planning
-
-JQUERY -This added functionality to the site e.g. navigation toggle.
-JINJA - to simplify displaying data from the backend of this project smoothly and effectively in html.
-BEAUTIFIER - to check code and improve code readability.
-
 
 
 ## Credits
+
+The text for section Y was copied from the Wikipedia article Z
 ## Content
 The recovery recipes (recovery stories) were written anonymously by people in recovery. All other content is original.
 
 ## Media
 The photograph images used in this site were mostly obtained from canva (pixabay).com. All the wok/fire digital images and logos were created to bespoke spec, using photoshop. 
 
+
+
 ## Inspiration
+
+I received inspiration for this project from X
+In summer 2019, I drove to from Manchester in the UK to Mainland Greece then on to the Greek Islands. Booking camspites along the way was too difficult.
+ One night my son and I were scaling a fence with our tents and sleeping bags.
+Another night I accidently camped on a communal residential lawn which has once been a campsite but was then private property. I was woke up by an 
+angry chalet owner insisting I was trespassing. +
+
+Many people do not know how to prepare for a camping trip and so never experience the freedom it offers. Lazy camp will offer a set up ready to arrive with no kit and leave with your back back.
+
+Late arrival is currently difficult. This will be one of the features on offer. 24/7 pitches will be available
+
+
+The scottish 500 is an aspirational road trip with world class sunsets, wild beaches, cliffs, accessible islands with turquoise seas, mountains, culture, heritage, castles and legend. 
+To prebook this is tricky and limits the enjoyment of the trip.
+A last minute decision to divert or stay an extra night is bliss. lazy camp allows for this.
 
 
 ## Acknowledgements
@@ -624,38 +625,10 @@ The photograph images used in this site were mostly obtained from canva (pixabay
 
 ## Submission
 Assessment Criteria review
-I have aimed to fulfil all the assessment criteria below to a standard beyond that expected. Final review and readnme checks done. Your Data Centric Development project will be assessed based on the following criteria:
-
-Usability and Visual Impact:
-
-Project Purpose, UX design, Suitability for purpose, Navigation, Ease of use, Information Architecture, Defensive Design,
-
-Layout and Visual Impact:
-
-Responsive Design, Image Presentation, Colour scheme and typography
-
-Code Quality:
-
-Appropriate use of HTML, Appropriate use of CSS, Appropriate use of Python, Appropriate use of the template language
-
-Software Development practices:
-
-Directory Structure and File Naming, Version control, Testing implementation, Testing write-up, Readme file, Comments, Data store integration, Deployment implementation, Deployment write-up
+I have aimed to fulfil all the assessment criteria below to a standard beyond that expected. Final review and README.md checks done. 
 
 
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-
-`python3 -m http.server`
-
-`python3 app.py`
 
 --------
 
@@ -693,15 +666,15 @@ python3 manage.py loaddata categories
 
 python3 manage.py loaddata products
 
-Inspiration
 
-The scottish 500 is an aspirational road trip with world class sunsets, wild beaches, cliffs, accessible islands with turquoise seas, mountains, culture, heritage, castles and legend. 
-To prebook this is tricky and limits the enjoyment of the trip.
-A last minute decision to divert or stay an extra night is bliss. lazy camp allows for this.
-
-Many people do not know how to prepare for a camping trip and so never experience the freedom it offers. Lazy camp will offer a set up ready to arrive with no kit and leave with your back back.
-
-Late arrival is currently difficult. This will be one of the features on offer. 24/7 pitches will be available
+switch DEBUG = False on and test 404
 
 previous repo
 
+
+
+Defensive design planning
+
+JQUERY -This added functionality to the site e.g. navigation toggle.
+JINJA - to simplify displaying data from the backend of this project smoothly and effectively in html.
+BEAUTIFIER - to check code and improve code readability.

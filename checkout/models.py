@@ -9,6 +9,7 @@ from profiles.models import UserProfile
 
 
 class Order(models.Model):
+    """ Model to store all order details"""
     order_number = models.CharField(max_length=32, null=False, editable=False)
     user_profile = models.ForeignKey(
         UserProfile, on_delete=models.SET_NULL,
@@ -34,12 +35,6 @@ class Order(models.Model):
     class Meta:
         ordering = ['-date']
 
-    # def _generate_order_number(self):
-    #     """
-    #     Generate a random, unique order number using UUID
-    #     """
-    #     return uuid.uuid4().hex.upper()
-
     @property
     def grand_total(self):
         """
@@ -61,11 +56,9 @@ class Order(models.Model):
             self.order_number = self.date.strftime('%y%m%d') + str(self.pk)
             super().save()
 
-    # def __str__(self):
-    #     return self.order_number
-
 
 class OrderLineItem(models.Model):
+    """ Model to store details of each booking in the order"""
     order = models.ForeignKey(Order, null=False, blank=False, on_delete=models.CASCADE,
                               related_name='lineitems')
     campspot = models.ForeignKey(Campspot, null=True, blank=False, on_delete=models.CASCADE)
@@ -76,35 +69,15 @@ class OrderLineItem(models.Model):
     lineitem_total = models.DecimalField(max_digits=6, decimal_places=2, null=False, blank=False, editable=False)
 
 
-    # def clean(self):
-
-
-    #     # Don't allow purchasing of more items than are in inventory
-
-
-    #     if self.quantity > self.product.number_available:
-
-
-    #         raise ValidationError(
-
-
-    #             _('There aren\'t enough items to fulfil this order.'))
-
-
-
-
     def save(self, *args, **kwargs):
         """
         Override the original save method to set the lineitem total
         and update the order total.
         """
-        # lineitem_total = self.product.price * self.quantity * self.number_nights
-        # print(lineitem_total)
         self.lineitem_total = self.campspot.price * self.quantity * self.number_nights
         super().save(*args, **kwargs)
 
     def __str__(self):
-        # return f'SKU {self.product.sku} on order {self.order.order_number}'
         
         return f'POSTCODE {self.campspot.postcode} on order {self.order.order_number}'
 

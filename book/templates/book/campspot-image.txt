@@ -1,5 +1,0 @@
-{% if item.campspot.image %}
-<img class="img-fluid rounded" src="{{ item.campspot.image.url }}" alt="{{ item.campspot.name }}">
-{% else %}
-<img class="img-fluid rounded" src="{{ MEDIA_URL }}joy.png" alt="{{ item.campspot.name }}">
-{% endif %}

@@ -9,3 +9,6 @@ All email enquiries will be answered in order, within 48 hours.
 
 Kind Wishes, Sam and the Lazycamp team.
 
+
+{{ item.quantity }} adults @ £{{ item.campspot.price }} each
+{{ item.number_nights }} nights {{ item.campspot.number_nights }} each
