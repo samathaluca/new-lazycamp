@@ -442,7 +442,20 @@ Traditional pagination did not flow well withing the project so I began to attem
 
 * Image kit or similar option to resize user added images with correct aspect ratio preventing campspot and product cards to change size. 
 
-* Adding some jquery to the datepicker to prevent booking on past dates and future dates that are unavailable to book as yet. 
+* Adding some jquery to the datepicker to prevent booking on past dates and future dates that are unavailable to book as yet.
+
+## Defensive design planning
+
+Extensive design planning has been done. 
+Inbuilt Django validation has been utilised and check , for example, using form and model fields for data type validation and strings contains length validation, emailFields will only allow email input. 
+
+Image size work has been extensive and it has been set in css and html in different ways to ensure user can not add an image that will break the layout.
+
+All ways of adding, amending and removing orders to the booking page have been considered and tested for and defended against.
+
+Minimum price has been set so that errors will not allow orders to be processed at price in pnece which will also cause stripe isses. 
+
+Development work has been done to ensure that payment will not be processed without an order being sent to admin. Also an order can not sent to admin without payment.
 
 ## Technologies Used
 
@@ -668,16 +681,6 @@ I have aimed to fulfil all the assessment criteria below to a standard beyond th
 
 
 
---------
-
-Happy coding!
-
-newcreate appconnect to git found the correct rep and added.
-added auto deploy
-then added manual deploy 
-
-added secret key to config vars
-
 remember disable_collectstatic stopped build so added 
 
 the added postgres through resources tab at top and added in gitpod. 
@@ -692,22 +695,9 @@ plus provision postgres from dashboard
 
 added pip3 install dj_database_url abd psycho-binary
 
-add gunicorn
-
-add procfile to tell heroku to create a web dyno
-
-app was present but not running properly
-
-run show migrations then migrate
-
-python3 manage.py loaddata categories
-
-python3 manage.py loaddata products
 
 
 
-Defensive design planning
 
-JQUERY -This added functionality to the site e.g. navigation toggle.
-JINJA - to simplify displaying data from the backend of this project smoothly and effectively in html.
-BEAUTIFIER - to check code and improve code readability.
+
+
