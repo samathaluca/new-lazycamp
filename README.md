@@ -1,6 +1,3 @@
-[![Build Status](https://travis-ci.org/samathaluca/new-lazycamp.svg?branch=master)](https://travis-ci.org/samathaluca/new-lazycamp)
-
-
 ![LazyCamp Logo ](/static/img/newLogoAlt100px.png)
 
 
@@ -8,10 +5,8 @@
 
 <hr>
 
-The spontaneous campspot booking app.
+Spontaneous campspot online bookings- Fast.
 
-View at: 
-https://new-lazycamp.herokuapp.com/ - automatic!
 
 [Milestone Project4 - Lazycamp](https://new-lazycamp.herokuapp.com/)
 
@@ -356,17 +351,19 @@ My account drop down.
 4 more dropdowns named
 Lazy choices, campspot/pitches, camping events and contact us.  
 
-2. Home app
+2. Home app features.
  * index.hml hero image on loading page
  * Book Now button. 
 
-3. Campspots app
- * campspots.html renders all spots featured, separating available and non available spots. There are also coming soon spots featured which have been added by the business user but  not yet authorised for inclusion on the site. They are situated with the unavailable fully booked sites at the bottom. 
+3. Campspots app features.
+ * campspots.html renders all spots featured, separating available and non available spots. There are also coming soon spots featured which have been added as a shell by admin for editing by the business user. The coming soon campspots are not available until the is available option is selected on edit campspot page. The coming soon camspots are situated with the unavailable fully booked sites at the bottom. 
  * campspot_detail.html individual campspot details with the option to book or return to campspot.html page to keep looking. 
  * users with an authorised profile can edit (edit_campspot) and delete campspots from this page.
  * add_campspot page allows authorised users to add campspot listings.
+ * edit feature can be accessed if authorised.
+ * delete feature can be accessed if authorised.
 
-4. Book app
+4. Book app features
  * after selecting number of nights, a booking date and number of adults in campspot_detail.html
  * book.html displays the booking for users to double check before payment. 
  * The booking can be deleted on the book.html page
@@ -380,49 +377,72 @@ Lazy choices, campspot/pitches, camping events and contact us.
 
 6. Media
  
- * media files are stored in the project
- * media files are stored in AWS bucket which links to heroku directly.
+ * media files can be added by admin or the user. 
+ ( once added media files are stored in AWS bucket which links to heroku directly).
 
 7. Products app- so named for agile design because this will also have new revenue and sales ideas added e.g. if demand for camping kit is there we will sell the ship to the site to be ready for use. 
  * products.html renders all events featured. 
- * product_detail.html individual event details.
+ * product_detail.html individual event details and enquiry form to enable users to enquire about a specific event. 
  * users with an authorised profile can edit (edit_campspot) and delete products from this page.
  * add_product page allows authorised users to add product listings.
+ * edit feature can be accessed if authorised.
+ * delete feature can be accessed if authorised.
 
- * Products app also contains contact information as this will be the section for products (events/kit or to spots which only accept payments directly). contact.html has contact form and telephone number.
+* Products app also contains contact information as this will be the section for products (events/kit or to spots which only accept payments directly). contact.html has contact form and telephone number.
 
  * messenging.html allows FB chat.
 
 * Direct telephone call link
+
 * fast email enquiry by passing need for form. 
 
-8.   Profile app 
+* general enquiry through submission of a contact form on contact.html page.
+
+* enquiries specific to a particular product or event that require the user to supply all the relevant information they want in enquiry form on the product_detail.html page. 
+
+8.  Profile app 
 * profile.html form completion allows users to register and add profile
 * Login Page
 *  Lists user orders in profile option
 *  Campspot Management allows edit and deleting. For example, simple checkbox to signify availability. 
 
-9. Static folder
-* base.css file
+10. Templates folder
+* Toasts inform users of success, info, error and alerts.
+* All auth allows the range of django features to run. 
 
-<!-- 10. Templates folder
-* Toasts
-* All auth
-* base.html  -->
+9. Lazycamp 404 page.
 
+10. Static files.
+* Logo. 
+All wireframes and base.css needed on the site.
 
-### Features Left to Implement
-Possibly social media login. 
+### Future Features ideas.
 
-All legals, refund policy, cookie policy.
+1. Possibly social media login. I have set the project up ready but more research is needed to decide which social media option to choose.
 
-Customer rating API.
+3. Customer rating API.
 
-Availabilty calculations and auto countdown for ticket sales and number of spots. 
+4. Coded change availabilty from is available to unavailable after auto countdown for campspot sales and number of spots available on a specific date.
+For example, campspot_number_available model field added which allows business users to input e.g. 20. 
+Each time a campspot is sold it will reduce the number available. 
+Perhaps 
+if campspot_number_available - number_sold > 0 or !0 then campspot is shown as is_available.
+Once campspot = 0 the campspot is unavailable. 
 
-Image kit works perfectly locally but once deployed is not compatible with S3
+### Future Features needed. 
 
-Waypoints Infinite scroll 
+* All legals, refund policy, cookie policy need to be done carefully with extensive research. and legal advice
+
+* A Load More button on all campspot and product pages.
+I successfully implements pagination on a previous version of lazy camp when working from old videos.
+
+[Earlier version work - Lazycamp](https://github.com/samathaluca/lazycamp).
+
+Traditional pagination did not flow well withing the project so I began to attempt to implement the javascript plugin, infinite scroll. During reasearch it appears that infinite scroll can be harmful to the user experience so I have decided to opt for a “Load more” button which rates highly in usability studies.
+
+* Image kit or similar option to resize user added images with correct aspect ratio preventing campspot and product cards to change size. 
+
+* Adding some jquery to the datepicker to prevent booking on past dates and future dates that are unavailable to book as yet. 
 
 ## Technologies Used
 
@@ -479,16 +499,16 @@ For version control Github has been used. Github is a distributed Version Contro
 
 All significant version changes were pushed to github and automatically deployed to heroku once the app was connected to the github repository.
 
-If a branch was for experimental work created the heroku auto deploy was deactivated in favour of manual deployment to check each time. 
-Once the branches were merged the master auto deply was reinstated. 
+When I was working on a branch during experimental development, the heroku auto deploy was deactivated in favour of manual deployment to check each time. 
+Once the branches were merged, or if the branch was abandoned, the master auto deply was reinstated. 
 
-Version control was used a working tool with return to code in previous version being common during development. Commit message were written to ensure changes were easy to find.
+Version control was used as a working tool with return to code in previous version being common during development. Commit message were written to ensure changes were easy to find.
 
 From the point at which gitpod pushed to github automatically then deployed to heroku, github version control and heroku build log mirrored each other perfectly. The following steps pushed all changed from gitpod to github then directly to heroku to be seen in the build log then in the browser using the heroku dashboard "open app" button.
 
 ### Gitpod and github/heroku commit/deploy
 
-click on branch icon
+In gitpod IDE click on branch icon
 Hover on changes and click + (plus) to stage changes
 Type commit message
 Hover on tick reveals commit tooltip. Click to commit.
@@ -500,8 +520,6 @@ git checkout -b new branch name
 
 return to master branch:
 git checkout master
-
-Version control was relied upon throughout the development process. A number of times changes were aborted and an old version was reverted to. For example 
 
 
 ## Deployment
@@ -527,14 +545,15 @@ Set the following config vars:
 Key	Value
 AWS_ACCESS_KEY_ID	<your secret key>
 AWS_SECRET_ACCESS_KEY	<your secret key>
-AWS_STORAGE_BUCKET_NAME	<your AWS S3 bucket name>
+AWS_DEFAULT_ACL <NONE>
+USE_AWS <TRUE>
 DATABASE_URL	<your postgres database url>
-HOSTNAME	<your heroku app hostname>
+EMAIL_HOST_PASS	<your secret key>
+EMAIL_HOST_USER	<your secret key>
 SECRET_KEY	<your secret key>
-STRIPE_CANCEL_URL	<link to all-products page in your app>
-STRIPE_PUBLISHABLE	<your secret key>
-STRIPE_SECRET	<your secret key>
-STRIPE_SUCCESS_URL	<link to checkout/confirm page in your app>
+STRIPE_SECREY_KEY	<link to all-products page in your app>
+STRIPE_PUBLIC_KEY	<your secret key>
+GITPOD_STRIPE_SECRET	<your secret key>
 
 In your heroku dashboard, click "Deploy". Scroll down to "Manual Deploy", select the master branch then click "Deploy Branch".
 
@@ -587,47 +606,59 @@ Create your superuser account in your new database
 Instructions on how to do these steps can be found in the heroku devcenter documentation.
 
 
-Environment variables, dependencies and any other differences between the dev and live versions.
-The only difference is that the passwords and key values are stored in env.py for dev version (.gitignore file ensures passwords are not revealed on github). 
+##### Environment variables, dependencies and any other differences between the dev and live versions.
+The only significant difference is that the passwords and key values are stored in env.py for dev version (.gitignore file ensures passwords are not revealed on github). 
 For the live version password and key values are stored and accessed in the heroku config vars.
 
+There images stored in the two versions are not identical.
 
 ### Running locally. 
 
-From new-lazycamp Github repository I opened the gitpod workspace in gitpod.io. 
-Python needed to be installed. 
-The fastest way to load all the requirements is with the following command 
-sudo pip3 install -r requirements.txt.
+From new-lazycamp Github repository open the gitpod workspace in gitpod.io. 
+Python 3 needs to be installed on your machine, alongside PIP. 
+To allow you to access all functionality on the site locally, ensure you have created free accounts with the following services: - Stripe - AWS and set up an S3 bucket  - Gmail.
+
+The fastest way to load all the requirements in the gitpod workspace is with the following command 
+pip3 install -r requirements.txt.
+
 
 ## Credits
 
-The text for section Y was copied from the Wikipedia article Z
+The new-lazycamp repository commits 0-70 were based on module source provided
+[CI Source Code](https://github.com/ckz8780/boutique_ado_v1/)
 
-## Content
-The recovery recipes (recovery stories) were written anonymously by people in recovery. All other content is original.
+Version 71- final commit are original work.
 
 ## Media
-The photograph images used in this site were mostly obtained from canva (pixabay).com. All the wok/fire digital images and logos were created to bespoke spec, using photoshop. 
+The photograph images used in this site were obtained from canva.com, pixabay.com or personal original images taken in Scotland and Wales on camping trips. 
+The logo and the Icon are original. 
 
 ## Inspiration
 
-I received inspiration for this project from X
-In summer 2019, I drove to from Manchester in the UK to Mainland Greece then on to the Greek Islands. Booking camspites along the way was too difficult.
- One night my son and I were scaling a fence with our tents and sleeping bags.
-Another night I accidently camped on a communal residential lawn which has once been a campsite but was then private property. I was woke up by an 
-angry chalet owner insisting I was trespassing. +
+I received inspiration for this project during summer 2019.
+I drove to from Manchester in the UK to Mainland Greece then on to the Greek Islands. Booking camspites along the way was too difficult.
+One night my son and I were scaling a fence with our tents and sleeping bags.
+Another night I accidently camped on a communal residential lawn which has once been a campsite but was then private property. I was woke up by an angry chalet owner insisting I was trespassing. 
 
-Many people do not know how to prepare for a camping trip and so never experience the freedom it offers. Lazy camp will offer a set up ready to arrive with no kit and leave with your back back.
+I have driven from the UK to Norway, Southern Spain, through Croatia in to Albania and down in to Greece by various routes. Always part camping and when i could not find a campsite booking hotels as a back up. 
 
-Late arrival is currently difficult. This will be one of the features on offer. 24/7 pitches will be available
-
-
-The scottish 500 is an aspirational road trip with world class sunsets, wild beaches, cliffs, accessible islands with turquoise seas, mountains, culture, heritage, castles and legend. 
+Even in the UK, when driving to the outer Hebrides or along the aspirational scottish 500 road trip with world class sunsets, wild beaches, cliffs, accessible islands with turquoise seas, mountains, culture, heritage, castles and legend the only stress is finding campsites last minute.  
 To prebook this is tricky and limits the enjoyment of the trip.
-A last minute decision to divert or stay an extra night is bliss. lazy camp allows for this.
+A last minute decision to divert or stay an extra night is bliss. Lazy camp allows for this.
+
+Furthemore it is very difficult to book camping for a group. Most sites do not accept groups of more than 4/6 units. This is because of noise level and disturbing other campers.
+
+I hope to make camping last minute easier, encourage microcampsites to spring up in the manner of airbnb plus organise outdoor camping events as mini festivals accessible for all.
+
+This is a site I would like to use myself. 
 
 
 ## Acknowledgements
+Django girls.
+Michael, CI tutor for his encouragement as well as his mind blowing, skill stretching expertise.
+Brian my CI mentor.
+Mpia_lead for noticing a serious bug in peer review in slack. Thankfully I had posted in good time so I had chance to work out the issue. 
+Anna, CI tutor. 
 
 
 ## Submission
@@ -672,11 +703,6 @@ run show migrations then migrate
 python3 manage.py loaddata categories
 
 python3 manage.py loaddata products
-
-
-switch DEBUG = False on and test 404
-
-previous repo
 
 
 

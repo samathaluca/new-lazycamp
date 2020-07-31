@@ -125,11 +125,11 @@ def edit_campspot(request, campspot_id):
         # messages.info(request, f'You are editing {campspot.name}')
 
         form = CampspotForm(instance=campspot)
-        template = 'campspots/edit_campspot.html'
-        context = {
-            'form': form,
-            'campspot': campspot,
-        }
+    template = 'campspots/edit_campspot.html'
+    context = {
+        'form': form,
+        'campspot': campspot,
+    }
 
     return render(request, template, context)
 
