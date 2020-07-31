@@ -55,7 +55,7 @@
                     <a class="remove-item text-danger text-center" id="remove_{{ item.item_id }}" data-product_size="{{ item.size}}" data-date="{{ item.date }}"><small>Remove</small></a>
                </div>
                <!-- Remove and emend/rebook campspot -->
-               <a href="{% url 'remove_and_rebook' item.campspot.pk %}" class="remove-item text-success float-left"><small>Amend</small></a>
+               <a href="{% url 'remove_and_rebook' item.campspot.pk item.date %}" class="remove-item text-success float-left"><small>Amend</small></a>
             </div>
             <!-- Booking details -->
             <div class="col-6">

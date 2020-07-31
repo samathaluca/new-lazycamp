@@ -99,8 +99,15 @@ def remove_from_book_ajax(request, item_id, date):
     return HttpResponse(status=200)
 
 
-def remove_and_rebook(request, item_id):
+def remove_and_rebook(request, item_id, date):
     """Removed then back to campspot to amend. Takes Campspot pk"""
-    campspot = remove_from_book(request, item_id)
+    print('test')
+    book = request.session.get('book', {})
+    # if same campspot is booked on same day bookings added together
+    if len(book[item_id]['items_by_date']) > 1:
+        book[item_id]['items_by_date'].pop(date)
+    else:
+        book.pop(item_id)
     messages.success(request, f'Removed booking please rebook')
-    return redirect(reverse('campspot_detail', args=[campspot.pk]))
+    print('test')
+    return redirect('campspot_detail', item_id)

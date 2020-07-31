@@ -31,7 +31,7 @@ The following validation services and linter were used to check the validity of 
 
 Below is a detailed account of all the manual testing that has been done to confirm all areas of the site work as expected.
 
-Due to the incompatability between gitpod IDE and gmail all sent email manual tests could only be carried out once the project had been deployed.
+Due to the incompatability between gitpod IDE and gmail all send email manual tests could only be carried out once the project had been deployed.
 FB messenger will not work in the IDE and needs to be deployed to test.
 
 Aside from the email and messenger manual tests, all commits to the github repository were preceded by changes that had been tested and proved to run successfully in the IDE.
@@ -78,13 +78,7 @@ Safari,
 Android Brower,
 Samsung Browser
 
-Unitests ran successfully before changing tp Postgres database. I did not gain enough confidence in my ability to write automated tests to negate the need for the manual tests. 
-I understand that automated tests and TDD and essential when numerous people are working on the same project but as the sole contributor to the project my preference was reliance on manual testing.
-I also believe that in development work few customers are willing to pay for time taken to write the tests on their code so after grasping the basics of writing automated tests I concentrated efforts on user stories and testing that would reveal bugs the user will see when browsing. 
-
-Travis. Having successfully run Travis using the old version of the Full stack Developer module, I noted that Travis was no longer included in the updated videos. After some issue with Travis continuing to run lazycamp instead of new-lazycamp respository and even when successfully switching, Travis reverted back and ran tests on old repository, I was advised by the tutors that Travis had been  deprecated along with the use of Django 1 in projects along with Travis.. 
-
-### Final Testing before Submission.
+### Final Testing Guide.
 
 #### Elements on every page
 
@@ -126,13 +120,7 @@ There is scope for adding in different choices from the model fields so, for exa
 
 This is deemed to be important in the future when there are more campspots in the data base. 
 
-
-
-
-
-
 2. Up arrow postioned in the bottom right of page and jumps users back to the page top when clicked
-
 
 3. Campspot cards -available section
 
@@ -144,7 +132,7 @@ This is deemed to be important in the future when there are more campspots in th
 * Click multiple campspots, confirm that the user is taken to the correct campspot page if available.
 * Check that when the category name is clicked that all other campspots in the same category are displayed with invitation to "Book Online Now".
 
-2. Campspot cards - Not currently available section
+4. Campspot cards - Not currently available section
 
 * Check that all fully booked campspots (that have been unticked as False in Boolean add/edit campspot checkbox by admin or the user) are displayed in the currently unavailable section underneath all the available sites and marked as "Fully Booked".
 
@@ -192,12 +180,24 @@ This is deemed to be important in the future when there are more campspots in th
 * The two links to secure checkout or backwards to keep looking both take to the expected pages
 
 
-#### Checkout page 
+#### Checkout page (checkout.html)
 
-Checkout success 
+* Confirm checkout form is displayed.
+* Confirm that failure to fill out required fields will reveal an error e.g. Please enter an email address or please fill in this field.
+* Confirm that the cursor returns to the empty required field.
+* Confirm that the test card number 4242 4242 4242 4242 424 42424 process the order.
+* Confirm spinner is revealed as payment is processed.
+* Confirm that incorrect test card number has error message  "Your card number is incomplete."
+* Confirm that all correct booking details are on the checkout page with the correct total being shown and advised that "Your card will be charged £ Total due"
+* Confirm that both the "adjust booking" and "complete order" links work. 
 
-Check stripe
-Check confirmation emails have been sent to business owner , admin and user
+#### Checkout success (checkout.html)
+
+* Check stripe payment has succeeded and is shown in the dahsboard.
+* Check confirmation emails have been sent to business owner , admin and user
+* Check order is in admin if authorised.
+* Check order appears on user profile page.
+* Check the link to "Now click out the latest Events is working. 
 
 
 #### Product Page (product.html)- In summer this promotes events.
@@ -205,7 +205,7 @@ Check confirmation emails have been sent to business owner , admin and user
 * Check that the aim of the products page is immediately obvious. The products displayed on this page will differ seasonally. 
 * Currently and in future summers this page will promote scheduled events and campspots near festivals.
 
- In the Winter it will promote Christmas event and camping kits gifts
+In the Winter it will promote Christmas event and camping kits gifts
 
 In The Spring this page will promote camping kits and European events.
 
@@ -246,12 +246,13 @@ Once this site has working payment in place the telephone number will that if th
 
 * Test the "Please fill in this field" tooltip is revealed if the email is attempted to be sent without completion of all the required fields.
 
-* Test the links to the products.html Events and the separate link to campspots.html Online Camps bookings 
+* Test the links to the products.html Events and the separate link to campspots.html Online Camps bookings work.
 
+#### Contact Us Dropdown.
 
-#### Contact Page (contact.html)
-* Go to the contact page from the Contact dropdown in the navigation menu. 
+##### Contact Page (contact.html)
 
+* Get to the contact page from the Contact Us dropdown in the navigation menu. Click on enquiry.
 * Confirm that the contact form is laid out as expected.
 * Confirm that for a logged in user the email address field has already been populated.
 * Confirm that for a user who is not logged in the email address field is blank.
@@ -261,32 +262,29 @@ Try to send the form with no fields filled in, confirm that the user is alerted 
 
 * check phone number link works to direct dial from mobile and computers with skype or calling option 
 
-
-
-
-
 * Check links to continue browsing work well. 
 
-Quickfire email 
-check email link works to direct dial from mobile and computers with 
+##### Other Contact option in contact us dropdown. 
 
+1. Quickfire email 
 
+Check email link works immediately on mobile phones and computers with email client. 
 
+2. Check that messenger chat option in contact us dropdown links to messenging.html page.
 
+3. Phone/text in dropdown 
 
-Quickfire email 
-* Checked that email link works to direct dial from mobile and computers with e.g. skype call and email client
+Check direct dial from all mobiles with network and credit is achieved. 
+Check calls can be made from computers who have e.g. skype calls enabled or computer calling tools or apps installed. 
 
+#### Chat Messenger page ( messenging.html)
 
+* Test that Facebook messenger icon appears automatically in bottom right of the page (FB recommended that you do not try to reposition this). 
+If you have FB account already on logged in to mobile or desktop the messenger icon will automatically open in to a chat box which then sends messages to Lazycamp FB messenger. 
+* Check sent messages appear in lazycamp FB messenger.
+* Facebook and Instagram fa-icons are present and linking to lazycamp pages.. 
 
-
-
-skype or calling option 
-messenger chat in organise events too
-phone link 
-
-
-### My account dropdown 
+#### My account dropdown 
 
 #### Register Page
 * Log out then go to the register page again. Confirm that the register form is displayed as expected.
@@ -304,7 +302,6 @@ Fill in the registration form correctly, confirm that the user is automatically 
 * Attempt to log in with a correct username but wrong password, confirm the relevant error message is shown.
 * Log in with a correct username and password, confirm that the user is logged in and that they are redirected to their cart page.
 * Try to return to the login page url when already logged in, confirm that the user is redirected to the cart page.
-
 * Reset password. Works correctly and the message is sent to the email supplied. 
 
 
@@ -327,25 +324,40 @@ Fill in the registration form correctly, confirm that the user is automatically 
 * Confirm sign out works and redirects to home page. With success message "You have signed out".
 
 
-#### Campspot managements 
+#### Campspot management
 
 1. Add campspot
 
-check added to correct section of the campspot page 
+This is only allowed for logged in superusers from the my account dropdown or staff in admin.
+
+Check added campspot is added to the correct section of the campspot page and appears in admin on the correct date. 
+
 2. Edit Campspots check updated version is now in the campspot page
 
-Delete campspot 
+This is only allowed for superusers and the owner of the site.
+The link to edit will only appear on the campspot_detail.html page if the user is both authorised and logged in as superuser or product owner. 
+
+3. Delete campspot 
+
+This is currenly only allowed for superusers.
 
 
-#### Event managements 
+#### Event management
 
 1. Add Event
 
-check added to product page
+This is only allowed for logged in superusers from the my account dropdown or staff in admin.
+
+Once the add_product.html form is completed, check it has been added to product page and in admin. The most recently added will be at the top of the admin products.
 
 2. Edit Events
 
-Delete
+This is only allowed for superusers and the owner of the site.
+The link to edit will only appear on the products_detail.html page if the user is both authorised and logged in as superuser or product owner. 
+
+3. Delete Events from the link in the products_detail.html page. 
+
+This is only allowed for superusers.
 
 #### Admin checks.
 Check order is present
@@ -355,10 +367,6 @@ Check latest campspots and product events are shown at the top of the page so al
 
 #### Check that all the latest static and media versions have been uploaded to S3 bucket.
 Check all the recently added images in events and campspots are in s3 bucket. 
-
-
-Debug = False check 404 page 
-
 
 ### Bugs mended
 
@@ -430,6 +438,8 @@ In addition, you should mention in this section how your project looks and works
 You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
 
 If this section grows too long, you may want to split it off into a separate file and link to it from here.
+
+Debug = False check 404 page 
 
 
 # Automated testing 

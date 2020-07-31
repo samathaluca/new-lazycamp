@@ -345,7 +345,16 @@ Vibrant sourced images were mixed with original authentic images of actual campi
 <hr>
 
 1. All pages: Templates (base.html/ main-nav.html/mobile top header)
-*  Nav bar
+*  Nav bar- Mobile version
+Mobile Dropdown icon, click Logo reveals search input. Booking amount to pay with link to book.html page. 
+My account drop down.
+* Nav Bar desktop 
+Logo click returns to home. 
+Search Input. 
+Booking amount to pay with link to book.html page. 
+My account drop down.
+4 more dropdowns named
+Lazy choices, campspot/pitches, camping events and contact us.  
 
 2. Home app
  * index.hml hero image on loading page
@@ -387,22 +396,19 @@ Vibrant sourced images were mixed with original authentic images of actual campi
 * Direct telephone call link
 * fast email enquiry by passing need for form. 
 
-
 8.   Profile app 
 * profile.html form completion allows users to register and add profile
 * Login Page
-
-*  Item 2a -- user dashboard 
-*  Item 2b
 *  Lists user orders in profile option
 *  Campspot Management allows edit and deleting. For example, simple checkbox to signify availability. 
 
-Static folder
+9. Static folder
+* base.css file
 
-
-Templates folder
+<!-- 10. Templates folder
 * Toasts
 * All auth
+* base.html  -->
 
 
 ### Features Left to Implement
@@ -415,6 +421,8 @@ Customer rating API.
 Availabilty calculations and auto countdown for ticket sales and number of spots. 
 
 Image kit works perfectly locally but once deployed is not compatible with S3
+
+Waypoints Infinite scroll 
 
 ## Technologies Used
 
@@ -444,13 +452,6 @@ Image kit works perfectly locally but once deployed is not compatible with S3
 * [Django Allauth]()
 * [Facebook Messenger]()
 * [gmail]()
-
-
-* Django Heroku to improve deployment of django projects on heroku.
-https://pypi.org/project/django-heroku/
-
-* Waypoints Infinite scroll
-
 
 ### Databases
 [PostgreSQL](https://www.postgresql.org/) for production database, provided by heroku.
@@ -598,20 +599,15 @@ Python needed to be installed.
 The fastest way to load all the requirements is with the following command 
 sudo pip3 install -r requirements.txt.
 
-
-
-
-
 ## Credits
 
 The text for section Y was copied from the Wikipedia article Z
+
 ## Content
 The recovery recipes (recovery stories) were written anonymously by people in recovery. All other content is original.
 
 ## Media
 The photograph images used in this site were mostly obtained from canva (pixabay).com. All the wok/fire digital images and logos were created to bespoke spec, using photoshop. 
-
-
 
 ## Inspiration
 
