@@ -669,31 +669,19 @@ This is a site I would like to use myself.
 ## Acknowledgements
 Django girls.
 Michael, CI tutor for his encouragement as well as his mind blowing, skill stretching expertise.
-Brian my CI mentor.
+Brian Mc my CI mentor.
 Mpia_lead for noticing a serious bug in peer review in slack. Thankfully I had posted in good time so I had chance to work out the issue. 
 Anna, CI tutor. 
+Chris Z for always being right.
+Also Stephen the tutor who calmed me down in last hour before submission.
+
+Lastly Thank you to the community and support is Slack. 
+
+## Submission.
+
+I will send superuser details to show all the add/edit/delete functionality to student support by email as instructed to do so previously.
 
 
-## Submission
-Assessment Criteria review
-I have aimed to fulfil all the assessment criteria below to a standard beyond that expected. Final review and README.md checks done. 
-
-
-
-
-remember disable_collectstatic stopped build so added 
-
-the added postgres through resources tab at top and added in gitpod. 
-
-settings.py file
-add at top import dj_database_url
-
-ALLOWED_HOSTS = [os.environ.get("C9_HOSTNAME"), 'localhost', 'lazycamp.herokuapp.com']
-
-plus provision postgres from dashboard
-
-
-added pip3 install dj_database_url abd psycho-binary
 
 
 
